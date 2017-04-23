@@ -1,0 +1,5417 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V9.30.1.3056 for 8051               21/Apr/2017  17:48:47
+// Copyright 2004-2015 IAR Systems AB.
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Application\NodeAuth.c
+//    Command line       =  
+//        -f "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg"
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+//        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+//        1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x04000000 -DZDAPP_CONFIG_PAN_ID=0x0085
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=5
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+//        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+//        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440) -DCHANNEL_CNT=0x01 "C:\Texas
+//        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Application\NodeAuth.c" -D ZTOOL_P1 -D MT_TASK
+//        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D xNV_RESTORE
+//        -D NV_INIT -D OPEN_FCS -D PANID_INCREASE -lC "C:\Texas
+//        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\List" -lA
+//        "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\List"
+//        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+//        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+//        1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\Obj" -e
+//        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+//        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+//        --calling_convention=xdata_reentrant --place_constants=data_rom
+//        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+//        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+//        1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+//        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+//        "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Application\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+//        -On --require_prototypes
+//    List file          =  
+//        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\List\NodeAuth.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME NodeAuth
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?V4
+        EXTERN ?V5
+        EXTERN ?V6
+        EXTERN ?V7
+        EXTERN ?V8
+        EXTERN ?V9
+        EXTERN ?V10
+        EXTERN ?V11
+        EXTERN ?V12
+        EXTERN ?V13
+        EXTERN ?V14
+        EXTERN ?V15
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_ADD_X
+        EXTERN ?L_AND_X
+        EXTERN ?L_EQ
+        EXTERN ?L_EQ_X
+        EXTERN ?L_IOR
+        EXTERN ?L_IOR_TO_X
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SHL
+        EXTERN ?L_SUB
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?PUSH_XSTACK_I_FOUR
+        EXTERN ?PUSH_XSTACK_I_THREE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?UL_GE_X
+        EXTERN ?UL_GT
+        EXTERN ?UL_SHR
+        EXTERN ?XLOAD_R0123
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTACK_DISP100_8
+        EXTERN ?XSTACK_DISP101_8
+        EXTERN ?XSTACK_DISP102_8
+        EXTERN ?XSTORE_R0123
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC `??Authlist_add::?relay`
+        FUNCTION `??Authlist_add::?relay`,0203H
+        PUBLIC `??Authlist_del::?relay`
+        FUNCTION `??Authlist_del::?relay`,0203H
+        FUNCTION `??Authlist_delete_entry::?relay`,0203H
+        PUBLIC `??Authlist_find_by_key::?relay`
+        FUNCTION `??Authlist_find_by_key::?relay`,0203H
+        PUBLIC `??Authlist_get::?relay`
+        FUNCTION `??Authlist_get::?relay`,0203H
+        FUNCTION `??Authlist_init::?relay`,0203H
+        PUBLIC `??Authlist_item_cnt::?relay`
+        FUNCTION `??Authlist_item_cnt::?relay`,0203H
+        FUNCTION `??Authlist_should_insert::?relay`,0203H
+        PUBLIC `??Authlist_verify_device::?relay`
+        FUNCTION `??Authlist_verify_device::?relay`,0203H
+        FUNCTION `??List_cache_contain::?relay`,0203H
+        FUNCTION `??List_cache_find_by_key::?relay`,0203H
+        FUNCTION `??List_cache_force_load::?relay`,0203H
+        FUNCTION `??List_cache_load_next::?relay`,0203H
+        FUNCTION `??List_cache_load_on_need::?relay`,0203H
+        FUNCTION `??List_cache_recreate::?relay`,0203H
+        FUNCTION `??List_cache_write_back::?relay`,0203H
+        FUNCTION `??Mail_uplink::?relay`,0203H
+        FUNCTION `??Mail_uplink_key::?relay`,0203H
+        FUNCTION `??Mail_uplink_notify::?relay`,0203H
+        FUNCTION `??Mail_uplink_registered_cnt::?relay`,0203H
+        PUBLIC `??Node_auth_init::?relay`
+        FUNCTION `??Node_auth_init::?relay`,0203H
+        PUBLIC `??Node_auth_uart_msg_process::?relay`
+        FUNCTION `??Node_auth_uart_msg_process::?relay`,0203H
+        PUBLIC `??Node_auth_wipe::?relay`
+        FUNCTION `??Node_auth_wipe::?relay`,0203H
+        FUNCTION `??Set_registered_num::?relay`,0203H
+        PUBLIC Authlist_add
+        FUNCTION Authlist_add,0a1203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 27, STACK
+        PUBLIC Authlist_del
+        FUNCTION Authlist_del,0a1203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 24, STACK
+        FUNCTION Authlist_delete_entry,0a1203H
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 37, STACK
+        PUBLIC Authlist_find_by_key
+        FUNCTION Authlist_find_by_key,0a1203H
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 20, STACK
+        PUBLIC Authlist_get
+        FUNCTION Authlist_get,0a1203H
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 25, STACK
+        FUNCTION Authlist_init,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Authlist_item_cnt
+        FUNCTION Authlist_item_cnt,080203H
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 12, STACK
+        FUNCTION Authlist_should_insert,0a1203H
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 27, STACK
+        PUBLIC Authlist_verify_device
+        FUNCTION Authlist_verify_device,0a1203H
+        ARGFRAME XSTACK, 1, STACK
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 28, STACK
+        FUNCTION List_cache_contain,080203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 16, STACK
+        FUNCTION List_cache_find_by_key,0a1203H
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 25, STACK
+        FUNCTION List_cache_force_load,0a1203H
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 20, STACK
+        FUNCTION List_cache_load_next,0a1203H
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 12, STACK
+        FUNCTION List_cache_load_on_need,0a1203H
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 16, STACK
+        FUNCTION List_cache_recreate,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION List_cache_write_back,0a1203H
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 16, STACK
+        FUNCTION Mail_uplink,0a1203H
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 41, STACK
+        FUNCTION Mail_uplink_key,0a1203H
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 35, STACK
+        FUNCTION Mail_uplink_notify,0a1203H
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 23, STACK
+        FUNCTION Mail_uplink_registered_cnt,0a1203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 24, STACK
+        PUBLIC Node_auth_init
+        FUNCTION Node_auth_init,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC Node_auth_uart_msg_process
+        FUNCTION Node_auth_uart_msg_process,0a1203H
+        ARGFRAME XSTACK, 1, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 39, STACK
+        PUBLIC Node_auth_wipe
+        FUNCTION Node_auth_wipe,021203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION Set_registered_num,0a1203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 18, STACK
+        PUBWEAK WDCTL
+        PUBWEAK _A_IEN0
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_1
+        PUBWEAK __Constant_10
+        PUBWEAK __Constant_66
+        PUBWEAK __Constant_67
+        PUBWEAK __Constant_8
+        PUBWEAK __Constant_ff00
+        PUBWEAK __Constant_ff0000
+        PUBWEAK __Constant_fffffff0
+        PUBWEAK __Constant_ffffffff
+        PUBLIC gAuthConfig
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+HalUARTWrite        SYMBOL "HalUARTWrite"
+`??HalUARTWrite::?relay` SYMBOL "?relay", HalUARTWrite
+MT_UartCalcFCS      SYMBOL "MT_UartCalcFCS"
+`??MT_UartCalcFCS::?relay` SYMBOL "?relay", MT_UartCalcFCS
+memcmp              SYMBOL "memcmp"
+`??memcmp::?relay`  SYMBOL "?relay", memcmp
+osal_memcmp         SYMBOL "osal_memcmp"
+`??osal_memcmp::?relay` SYMBOL "?relay", osal_memcmp
+osal_memcpy         SYMBOL "osal_memcpy"
+`??osal_memcpy::?relay` SYMBOL "?relay", osal_memcpy
+osal_memset         SYMBOL "osal_memset"
+`??osal_memset::?relay` SYMBOL "?relay", osal_memset
+osal_nv_delete      SYMBOL "osal_nv_delete"
+`??osal_nv_delete::?relay` SYMBOL "?relay", osal_nv_delete
+osal_nv_item_init   SYMBOL "osal_nv_item_init"
+`??osal_nv_item_init::?relay` SYMBOL "?relay", osal_nv_item_init
+osal_nv_read        SYMBOL "osal_nv_read"
+`??osal_nv_read::?relay` SYMBOL "?relay", osal_nv_read
+osal_nv_write       SYMBOL "osal_nv_write"
+`??osal_nv_write::?relay` SYMBOL "?relay", osal_nv_write
+Authlist_add        SYMBOL "Authlist_add"
+`??Authlist_add::?relay` SYMBOL "?relay", Authlist_add
+Authlist_del        SYMBOL "Authlist_del"
+`??Authlist_del::?relay` SYMBOL "?relay", Authlist_del
+Authlist_find_by_key SYMBOL "Authlist_find_by_key"
+`??Authlist_find_by_key::?relay` SYMBOL "?relay", Authlist_find_by_key
+Authlist_get        SYMBOL "Authlist_get"
+`??Authlist_get::?relay` SYMBOL "?relay", Authlist_get
+Authlist_item_cnt   SYMBOL "Authlist_item_cnt"
+`??Authlist_item_cnt::?relay` SYMBOL "?relay", Authlist_item_cnt
+Authlist_verify_device SYMBOL "Authlist_verify_device"
+`??Authlist_verify_device::?relay` SYMBOL "?relay", Authlist_verify_device
+Node_auth_init      SYMBOL "Node_auth_init"
+`??Node_auth_init::?relay` SYMBOL "?relay", Node_auth_init
+Node_auth_uart_msg_process SYMBOL "Node_auth_uart_msg_process"
+`??Node_auth_uart_msg_process::?relay` SYMBOL "?relay", Node_auth_uart_msg_process
+Node_auth_wipe      SYMBOL "Node_auth_wipe"
+`??Node_auth_wipe::?relay` SYMBOL "?relay", Node_auth_wipe
+
+        EXTERN `??HalUARTWrite::?relay`
+        FUNCTION `??HalUARTWrite::?relay`,00H
+        EXTERN `??MT_UartCalcFCS::?relay`
+        FUNCTION `??MT_UartCalcFCS::?relay`,00H
+        EXTERN `??memcmp::?relay`
+        FUNCTION `??memcmp::?relay`,00H
+        EXTERN `??osal_memcmp::?relay`
+        FUNCTION `??osal_memcmp::?relay`,00H
+        EXTERN `??osal_memcpy::?relay`
+        FUNCTION `??osal_memcpy::?relay`,00H
+        EXTERN `??osal_memset::?relay`
+        FUNCTION `??osal_memset::?relay`,00H
+        EXTERN `??osal_nv_delete::?relay`
+        FUNCTION `??osal_nv_delete::?relay`,00H
+        EXTERN `??osal_nv_item_init::?relay`
+        FUNCTION `??osal_nv_item_init::?relay`,00H
+        EXTERN `??osal_nv_read::?relay`
+        FUNCTION `??osal_nv_read::?relay`,00H
+        EXTERN `??osal_nv_write::?relay`
+        FUNCTION `??osal_nv_write::?relay`,00H
+        EXTERN HalUARTWrite
+        FUNCTION HalUARTWrite,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MT_UartCalcFCS
+        FUNCTION MT_UartCalcFCS,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN Onboard_soft_reset
+        FUNCTION Onboard_soft_reset,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN memcmp
+        FUNCTION memcmp,010202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN nodeList
+        EXTERN osal_memcmp
+        FUNCTION osal_memcmp,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 41, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_memset
+        FUNCTION osal_memset,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_nv_delete
+        FUNCTION osal_nv_delete,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_nv_item_init
+        FUNCTION osal_nv_item_init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_nv_read
+        FUNCTION osal_nv_read,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_nv_write
+        FUNCTION osal_nv_write,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh 1.0.0\Projects\zstack\Application\NodeAuth.c
+//    1 /**************************************************************************************************
+//    2   Filename:       NodeAuth.c
+//    3   Revised:        2017-03-19
+//    4 
+//    5   Description -   Serial Transfer Application node authentication related func.
+//    6 
+//    7 **************************************************************************************************/
+//    8 
+//    9 
+//   10 /*********************************************************************
+//   11  * INCLUDES
+//   12  */
+//   13 #include "NodeAuth.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c9H
+// unsigned char volatile __sfr WDCTL
+WDCTL:
+        DATA8
+        DS 1
+//   14 #include "OSAL_Nv.h"
+//   15 #include "hal_aes.h"
+//   16 #include "hal_dma.h"
+//   17 
+//   18 #include "GenericApp.h"
+//   19 #include <string.h>  
+//   20 
+//   21 /*********************************************************************
+//   22  * MACROS
+//   23  */
+//   24 #define AUTH_LIST_CACHE_SIZE           (1<<4)
+//   25 #define AUTH_LIST_CACHE_ALIGN(_offset) (_offset & ~(AUTH_LIST_CACHE_SIZE -1))
+//   26 
+//   27 /*********************************************************************
+//   28  * CONSTANTS
+//   29  */
+//   30 
+//   31 /*********************************************************************
+//   32  * TYPEDEFS
+//   33  */
+//   34 
+//   35 /*********************************************************************
+//   36  * GLOBAL VARIABLES
+//   37  */
+//   38 
+//   39 struct
+//   40 {
+//   41     uint32 version;
+//   42     uint32 auth_registered_num;
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   43 } gAuthConfig = {
+gAuthConfig:
+        DATA8
+        DS 8
+        REQUIRE `?<Initializer for gAuthConfig>`
+        REQUIRE __INIT_XDATA_I
+//   44     .version = 1, // increase this and handle database upgrade if new items added!
+//   45     .auth_registered_num = 0
+//   46 };
+//   47 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   48 static NodeRegisterEntry gListCache[AUTH_LIST_CACHE_SIZE];
+gListCache:
+        DS 160
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//   49 static uint32 gListOffset = 0;
+gListOffset:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+//   50 static uint32 gListNum = 0;
+gListNum:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+//   51 
+//   52 //static const uint8 DEFAULT_AES_NONCE[13] = NODE_AUTH_DEFAULT_NONCE;
+//   53 //static const char  DEFAULT_AES_KEY[STATE_BLENGTH] = NODE_AUTH_DEFAULT_KEY;
+//   54 
+//   55 
+//   56 /*********************************************************************
+//   57  * EXTERNAL VARIABLES
+//   58  */
+//   59  extern nodeList_t *nodeList;  
+//   60 
+//   61 /*********************************************************************
+//   62  * LOCAL FUNCTION PROTOTYPE
+//   63  */
+//   64 #define List_cache_get(_o) (List_cache_load_on_need(_o), &gListCache[(_o)-gListOffset])
+//   65 #define Is_entry_deleted(_e) (0 != ((_e)->flag & NODE_REG_ENTRY_DELETED))
+//   66 #define Increase_registered_num() do { Set_registered_num(gAuthConfig.auth_registered_num + 1); } while(0)
+//   67 #define Decrease_registered_num() do { Set_registered_num(gAuthConfig.auth_registered_num - 1); } while(0)
+//   68 
+//   69 static uint8 Authlist_init( uint8 load );
+//   70 static void Authlist_delete_entry(uint32 index);
+//   71 static bool Authlist_should_insert(uint8 const* key, uint8 len, uint32 *index);
+//   72 
+//   73 static inline void List_cache_recreate( void );
+//   74 static void List_cache_force_load(uint32 offset);
+//   75 static bool List_cache_load_next( void );
+//   76 static uint32 List_cache_find_by_key(uint8 const* key, uint8 len);
+//   77 static uint32 List_cache_write_back( void );
+//   78 static inline bool List_cache_contain(uint32 offset);
+//   79 static inline void List_cache_load_on_need(uint32 offset);
+//   80 
+//   81 static void Set_registered_num(uint32 num);
+//   82 
+//   83 static uint16 Mail_uplink(uint8 port, uint8 cmd, uint8 len, void* buf);
+//   84 static inline uint16 Mail_uplink_registered_cnt(uint8 port);
+//   85 static inline uint16 Mail_uplink_key(uint8 port, uint32 index, uint8 const* key);
+//   86 static inline uint16 Mail_uplink_notify(uint8 port, uint8 const* extended_addr);
+//   87 
+//   88 /*********************************************************************
+//   89  * EXTERNAL FUNCTIONS
+//   90  */
+//   91  
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   92 uint8 Node_auth_init( void )
+Node_auth_init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function Node_auth_init
+        CODE
+//   93 {
+        FUNCALL Node_auth_init, osal_nv_item_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_init, osal_nv_read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_init, osal_nv_item_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_init, Authlist_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_init, Authlist_init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//   94     uint8 rc;
+//   95     if ( SUCCESS == (rc = osal_nv_item_init(APP_NV_AUTH_GLOBAL_CONFIG, sizeof(gAuthConfig), &gAuthConfig)) ) 
+        ; Setup parameters for call to function osal_nv_item_init
+        MOV     ?V0,#gAuthConfig & 0xff
+        MOV     ?V1,#(gAuthConfig >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R0
+        JNZ     ??Node_auth_init_0
+//   96     {
+//   97         osal_nv_read(APP_NV_AUTH_GLOBAL_CONFIG, 0, sizeof(gAuthConfig), &gAuthConfig);
+        ; Setup parameters for call to function osal_nv_read
+        MOV     ?V0,#gAuthConfig & 0xff
+        MOV     ?V1,#(gAuthConfig >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     ?V0,#0x8
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV     A,R1
+        SJMP    ??Node_auth_init_1
+//   98     }
+//   99     else if ( NV_ITEM_UNINIT == rc )
+??Node_auth_init_0:
+        MOV     A,#0x9
+        XRL     A,R6
+        JZ      ??Node_auth_init_1
+//  100     {
+//  101     }
+//  102     else
+//  103     {
+//  104         SystemReset();
+        CLR     0xa8.7
+        CLR     0xa8.7
+        MOV     0xc9,#-0x55
+        MOV     0xc9,#0x5b
+??Node_auth_init_2:
+        SJMP    ??Node_auth_init_2
+//  105     }
+//  106     if ( SUCCESS == (rc = osal_nv_item_init(
+//  107             APP_NV_AUTH_KEY_LIST, 
+//  108             sizeof(NodeRegisterEntry) * AUTH_LIST_MAX_LEN, 
+//  109             NULL))) 
+??Node_auth_init_1:
+        ; Setup parameters for call to function osal_nv_item_init
+        CLR     A
+        MOV     ?V0,A
+        MOV     ?V1,A
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     R4,#-0x4
+        MOV     R5,#0x3
+        MOV     R2,#0x2
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R0
+        JNZ     ??Node_auth_init_3
+//  110     {
+//  111         Authlist_init(TRUE);
+        ; Setup parameters for call to function Authlist_init
+        MOV     R1,#0x1
+        LCALL   `??Authlist_init::?relay`; Banked call to: Authlist_init
+        MOV     A,R1
+        SJMP    ??Node_auth_init_4
+//  112     }
+//  113     else if ( NV_ITEM_UNINIT == rc )
+??Node_auth_init_3:
+        MOV     A,#0x9
+        XRL     A,R6
+        JNZ     ??Node_auth_init_5
+//  114     {
+//  115         Authlist_init(FALSE);
+        ; Setup parameters for call to function Authlist_init
+        MOV     R1,#0x0
+        LCALL   `??Authlist_init::?relay`; Banked call to: Authlist_init
+        MOV     A,R1
+        SJMP    ??Node_auth_init_4
+//  116     }
+//  117     else
+//  118     {
+//  119         SystemReset();
+??Node_auth_init_5:
+        CLR     0xa8.7
+        CLR     0xa8.7
+        MOV     0xc9,#-0x55
+        MOV     0xc9,#0x5b
+??Node_auth_init_6:
+        SJMP    ??Node_auth_init_6
+//  120     }
+//  121     return SUCCESS;
+??Node_auth_init_4:
+        MOV     R1,#0x0
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_IEN0
+        REQUIRE WDCTL
+//  122 }
+//  123 
+//  124 
+//  125 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  126 void Node_auth_wipe( void )
+Node_auth_wipe:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function Node_auth_wipe
+        CODE
+//  127 {
+        FUNCALL Node_auth_wipe, osal_nv_delete
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_wipe, osal_nv_delete
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_wipe, Node_auth_init
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  128     osal_nv_delete(APP_NV_AUTH_GLOBAL_CONFIG, sizeof(gAuthConfig));
+        ; Setup parameters for call to function osal_nv_delete
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
+        MOV     A,R1
+//  129     osal_nv_delete(APP_NV_AUTH_KEY_LIST, sizeof(NodeRegisterEntry) * AUTH_LIST_MAX_LEN);
+        ; Setup parameters for call to function osal_nv_delete
+        MOV     R4,#-0x4
+        MOV     R5,#0x3
+        MOV     R2,#0x2
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
+        MOV     A,R1
+//  130     Node_auth_init();
+        ; Setup parameters for call to function Node_auth_init
+        LCALL   `??Node_auth_init::?relay`; Banked call to: Node_auth_init
+        MOV     A,R1
+//  131 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-4
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-3
+        LJMP    ?BRET
+          CFI EndBlock cfiBlock1
+//  132 
+//  133 
+//  134 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  135 static bool Authlist_should_insert(uint8 const* key, uint8 keylen, uint32 *index)
+Authlist_should_insert:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function Authlist_should_insert
+        CODE
+//  136 {
+        FUNCALL Authlist_should_insert, List_cache_force_load
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_should_insert, osal_memcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_should_insert, List_cache_load_next
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        REQUIRE ?V12
+        REQUIRE ?V13
+        REQUIRE ?V14
+        REQUIRE ?V15
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V15 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V14 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-21)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-23)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-24)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 24)
+        ; Saved register size: 24
+        ; Auto size: 0
+        MOV     ?V14,R2
+        MOV     ?V15,R3
+        MOV     A,R1
+        MOV     R6,A
+        MOV     ?V12,R4
+        MOV     ?V13,R5
+//  137     if (keylen != AUTH_LIST_KEY_LEN) {
+        MOV     A,#0x8
+        XRL     A,R6
+        JZ      ??Authlist_should_insert_0
+//  138         *index = AUTH_LIST_INVALID_INDEX;
+        MOV     R2,#-0x1
+        MOV     R3,#-0x1
+        MOV     R4,#-0x1
+        MOV     R5,#-0x1
+        MOV     DPL,?V12
+        MOV     DPH,?V13
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//  139         return 0;
+        MOV     R1,#0x0
+        LJMP    ??Authlist_should_insert_1 & 0xFFFF
+//  140     }
+//  141     uint32 avail = AUTH_LIST_INVALID_INDEX;
+??Authlist_should_insert_0:
+        MOV     ?V0,#-0x1
+        MOV     ?V1,#-0x1
+        MOV     ?V2,#-0x1
+        MOV     ?V3,#-0x1
+//  142     uint32 idx;
+//  143     List_cache_force_load(0);
+        ; Setup parameters for call to function List_cache_force_load
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+//  144     do {
+//  145         for (idx = 0; 
+??Authlist_should_insert_2:
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     ?V6,R2
+        MOV     ?V7,R3
+//  146              idx + gListOffset < AUTH_LIST_MAX_LEN && idx < gListNum ;
+??Authlist_should_insert_3:
+        MOV     DPTR,#__Constant_66
+        PUSH    DPL
+          CFI CFA_SP SP+-1
+        PUSH    DPH
+          CFI CFA_SP SP+-2
+        MOV     ?V8,?V4
+        MOV     ?V9,?V5
+        MOV     ?V10,?V6
+        MOV     ?V11,?V7
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V8
+        LCALL   ?L_ADD_X
+        POP     DPH
+          CFI CFA_SP SP+-1
+        POP     DPL
+          CFI CFA_SP SP+0
+        MOV     R0,#?V8
+        LCALL   ?UL_GE_X
+        JNC     $+5
+        LJMP    ??Authlist_should_insert_4 & 0xFFFF
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V4
+        LCALL   ?UL_GE_X
+        JNC     $+5
+        LJMP    ??Authlist_should_insert_4 & 0xFFFF
+//  147              ++idx)
+//  148         {
+//  149             if (avail == AUTH_LIST_INVALID_INDEX && 
+//  150                 Is_entry_deleted(&gListCache[idx]))
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0
+        LCALL   ?L_EQ_X
+        JNZ     ??Authlist_should_insert_5
+        MOV     R0,?V4
+        MOV     R1,?V5
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??Authlist_should_insert_5
+//  151             {
+//  152                 avail = idx + gListOffset;
+        MOV     ?V8,?V4
+        MOV     ?V9,?V5
+        MOV     ?V10,?V6
+        MOV     ?V11,?V7
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V8
+        LCALL   ?L_ADD_X
+        MOV     ?V0,?V8
+        MOV     ?V1,?V9
+        MOV     ?V2,?V10
+        MOV     ?V3,?V11
+        LJMP    ??Authlist_should_insert_6 & 0xFFFF
+//  153             }
+//  154             else if (!Is_entry_deleted(&gListCache[idx]) &&
+//  155                         osal_memcmp(key, gListCache[idx].key, keylen) )
+??Authlist_should_insert_5:
+        MOV     R0,?V4
+        MOV     R1,?V5
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        JC      ??Authlist_should_insert_6
+        ; Setup parameters for call to function osal_memcmp
+        MOV     R0,?V4
+        MOV     R1,?V5
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#(gListCache + 2) & 0xff
+        ADD     A,R0
+        MOV     ?V8,A
+        MOV     A,#((gListCache + 2) >> 8) & 0xff
+        ADDC    A,R1
+        MOV     ?V9,A
+        MOV     ?V10,#0x0
+        MOV     R0,#?V8
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 27)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     R5,#0x0
+        MOV     DPL,?V14
+        MOV     DPH,?V15
+        MOV     R1,DPL
+        MOV     R2,DPH
+        MOV     R3,#0x0
+        LCALL   `??osal_memcmp::?relay`; Banked call to: osal_memcmp
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     A,R1
+        JZ      ??Authlist_should_insert_6
+//  156             {
+//  157                 *index = idx + gListOffset;;
+        MOV     ?V8,?V4
+        MOV     ?V9,?V5
+        MOV     ?V10,?V6
+        MOV     ?V11,?V7
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V8
+        LCALL   ?L_ADD_X
+        MOV     R2,?V8
+        MOV     R3,?V9
+        MOV     R4,?V10
+        MOV     R5,?V11
+        MOV     DPL,?V12
+        MOV     DPH,?V13
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//  158                 return FALSE;
+        MOV     R1,#0x0
+        SJMP    ??Authlist_should_insert_1
+//  159             }
+//  160         }
+??Authlist_should_insert_6:
+        MOV     DPTR,#__Constant_1
+        MOV     R0,#?V4
+        LCALL   ?L_ADD_X
+        LJMP    ??Authlist_should_insert_3 & 0xFFFF
+//  161     } while (List_cache_load_next());
+??Authlist_should_insert_4:
+        ; Setup parameters for call to function List_cache_load_next
+        LCALL   `??List_cache_load_next::?relay`; Banked call to: List_cache_load_next
+        MOV     A,R1
+        JZ      $+5
+        LJMP    ??Authlist_should_insert_2 & 0xFFFF
+//  162 
+//  163     *index = avail;
+        MOV     DPL,?V12
+        MOV     DPH,?V13
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_TO_X
+//  164     return avail != AUTH_LIST_INVALID_INDEX;
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0
+        LCALL   ?L_EQ_X
+        JZ      ??Authlist_should_insert_7
+        MOV     R1,#0x1
+        SJMP    ??Authlist_should_insert_1
+??Authlist_should_insert_7:
+        MOV     R1,#0x0
+??Authlist_should_insert_1:
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+//  165 }
+          CFI EndBlock cfiBlock2
+//  166 
+//  167 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  168 uint8 Authlist_add(uint8 const* buf, uint8 len, uint32 *index)
+Authlist_add:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function Authlist_add
+        CODE
+//  169 {
+        FUNCALL Authlist_add, List_cache_force_load
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, Authlist_should_insert
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, List_cache_load_on_need
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, Set_registered_num
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, List_cache_write_back
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, Authlist_item_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_add, Authlist_item_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 20)
+        ; Saved register size: 20
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     A,R1
+        MOV     R6,A
+        MOV     ?V8,R4
+        MOV     ?V9,R5
+//  170     uint32 avail;
+//  171     NodeRegisterEntry* e;
+//  172 
+//  173     if (len != AUTH_LIST_KEY_LEN) return 0;
+        MOV     A,#0x8
+        XRL     A,R6
+        JZ      ??Authlist_add_0
+        MOV     R1,#0x0
+        LJMP    ??Authlist_add_1 & 0xFFFF
+//  174 
+//  175     List_cache_force_load(0);
+??Authlist_add_0:
+        ; Setup parameters for call to function List_cache_force_load
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+//  176 
+//  177     if (Authlist_should_insert(buf, len, &avail))
+        ; Setup parameters for call to function Authlist_should_insert
+        MOV     R4,?XSP + 0
+        MOV     R5,?XSP + 1
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R2,?V0
+        MOV     R3,?V1
+        LCALL   `??Authlist_should_insert::?relay`; Banked call to: Authlist_should_insert
+        MOV     A,R1
+        JNZ     $+5
+        LJMP    ??Authlist_add_2 & 0xFFFF
+//  178     {
+//  179         e = List_cache_get(avail);
+        ; Setup parameters for call to function List_cache_load_on_need
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?XLOAD_R2345
+        LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+        MOV     ?V10,?V4
+        MOV     ?V11,?V5
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+        MOV     A,?V10
+        CLR     C
+        SUBB    A,?V4
+        MOV     R0,A
+        MOV     A,?V11
+        SUBB    A,?V5
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V2,R0
+        MOV     ?V3,R1
+//  180         e->flag &= ~NODE_REG_ENTRY_DELETED;
+        MOV     DPL,?V2
+        MOV     DPH,?V3
+        MOVX    A,@DPTR
+        ANL     A,#0xfe
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ANL     A,#0xff
+        MOVX    @DPTR,A
+//  181         osal_memcpy(e->key, buf, len);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,?V0
+        MOV     ?V5,?V1
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 27)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     R5,#0x0
+        MOV     A,?V2
+        ADD     A,#0x2
+        MOV     R2,A
+        CLR     A
+        ADDC    A,?V3
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+//  182         
+//  183         Increase_registered_num();
+        ; Setup parameters for call to function Set_registered_num
+        MOV     DPTR,#gAuthConfig + 4
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#__Constant_1
+        MOV     R0,#?V4
+        LCALL   ?L_ADD_X
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+//  184         List_cache_write_back();
+        ; Setup parameters for call to function List_cache_write_back
+        LCALL   `??List_cache_write_back::?relay`; Banked call to: List_cache_write_back
+//  185         if(index) *index = avail;
+        MOV     A,?V8
+        ORL     A,?V9
+        JZ      ??Authlist_add_3
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        LCALL   ?XLOAD_R0123
+        MOV     DPL,?V8
+        MOV     DPH,?V9
+        LCALL   ?XSTORE_R0123
+//  186         return Authlist_item_cnt();
+??Authlist_add_3:
+        ; Setup parameters for call to function Authlist_item_cnt
+        LCALL   `??Authlist_item_cnt::?relay`; Banked call to: Authlist_item_cnt
+        SJMP    ??Authlist_add_1
+//  187     }
+//  188     else if (avail == AUTH_LIST_INVALID_INDEX)
+??Authlist_add_2:
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V4
+        LCALL   ?L_EQ_X
+        JNZ     ??Authlist_add_4
+//  189     {    
+//  190         return 0;
+        MOV     R1,#0x0
+        SJMP    ??Authlist_add_1
+//  191     }
+//  192     else
+//  193     {
+//  194         return Authlist_item_cnt(); 
+??Authlist_add_4:
+        ; Setup parameters for call to function Authlist_item_cnt
+        LCALL   `??Authlist_item_cnt::?relay`; Banked call to: Authlist_item_cnt
+??Authlist_add_1:
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+//  195     }
+//  196 }
+          CFI EndBlock cfiBlock3
+//  197 
+//  198 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  199 uint8 Authlist_get(uint32 index, uint8* buf, uint8* len)
+Authlist_get:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function Authlist_get
+        CODE
+//  200 {
+        FUNCALL Authlist_get, List_cache_load_on_need
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_get, List_cache_load_on_need
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_get, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_get, Authlist_item_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        REQUIRE ?V12
+        REQUIRE ?V13
+        MOV     A,#-0x16
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-21)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 22)
+        ; Saved register size: 22
+        ; Auto size: 0
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     ?V6,R4
+        MOV     ?V7,R5
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V3,A
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V1,A
+//  201     NodeRegisterEntry const* e;
+//  202 
+//  203     if (*len < AUTH_LIST_KEY_LEN) return 0;
+        MOV     DPL,?V0
+        MOV     DPH,?V1
+        MOVX    A,@DPTR
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??Authlist_get_0
+        MOV     R1,#0x0
+        LJMP    ??Authlist_get_1 & 0xFFFF
+//  204     else *len = AUTH_LIST_KEY_LEN;
+??Authlist_get_0:
+        MOV     DPL,?V0
+        MOV     DPH,?V1
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+//  205 
+//  206     List_cache_load_on_need(index);
+        ; Setup parameters for call to function List_cache_load_on_need
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+//  207 
+//  208     e = List_cache_get(index);
+        ; Setup parameters for call to function List_cache_load_on_need
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+        MOV     ?V12,?V4
+        MOV     ?V13,?V5
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V8
+        LCALL   ?L_MOV_X
+        MOV     A,?V12
+        CLR     C
+        SUBB    A,?V8
+        MOV     R0,A
+        MOV     A,?V13
+        SUBB    A,?V9
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+//  209     if (NULL == e || Is_entry_deleted(e))
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??Authlist_get_2
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??Authlist_get_3
+//  210     {
+//  211         return 0;
+??Authlist_get_2:
+        MOV     R1,#0x0
+        SJMP    ??Authlist_get_1
+//  212     }
+//  213     
+//  214     osal_memcpy(buf, e->key, AUTH_LIST_KEY_LEN);
+??Authlist_get_3:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOV     R1,DPL
+        MOV     R2,DPH
+        MOV     R3,#0x0
+        MOV     ?V8,R1
+        MOV     ?V9,R2
+        MOV     ?V10,R3
+        MOV     R0,#?V8
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 25)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R2,?V2
+        MOV     R3,?V3
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 22)
+//  215     return Authlist_item_cnt();
+        ; Setup parameters for call to function Authlist_item_cnt
+        LCALL   `??Authlist_item_cnt::?relay`; Banked call to: Authlist_item_cnt
+??Authlist_get_1:
+        MOV     R7,#0xe
+        LJMP    ?BANKED_LEAVE_XDATA
+//  216 }
+          CFI EndBlock cfiBlock4
+//  217 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  218 static void Authlist_delete_entry(uint32 index)
+Authlist_delete_entry:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function Authlist_delete_entry
+        CODE
+//  219 {
+        FUNCALL Authlist_delete_entry, Authlist_item_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, Authlist_item_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, List_cache_load_on_need
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 37, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, osal_memset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, List_cache_write_back
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, List_cache_load_on_need
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 37, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, osal_memset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, Set_registered_num
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_delete_entry, List_cache_write_back
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 34, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 34, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        REQUIRE ?V12
+        REQUIRE ?V13
+        REQUIRE ?V14
+        REQUIRE ?V15
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V15 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V14 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-21)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-23)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-24)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 24)
+        ; Saved register size: 24
+        ; Auto size: 10
+        MOV     A,#-0xa
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 34)
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V2,R4
+        MOV     ?V3,R5
+//  220     NodeRegisterEntry *last_entry_p, *to_del;
+//  221     NodeRegisterEntry last_entry_copy;
+//  222     uint32 last_index = Authlist_item_cnt() - 1;
+        ; Setup parameters for call to function Authlist_item_cnt
+        LCALL   `??Authlist_item_cnt::?relay`; Banked call to: Authlist_item_cnt
+        MOV     A,R1
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,R0
+        ADD     A,#-0x1
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        MOV     A,R1
+        RLC     A
+        SUBB    A,0xE0 /* A   */
+        MOV     R2,A
+        MOV     R3,A
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     ?V6,R2
+        MOV     ?V7,R3
+//  223 
+//  224     if (index >= Authlist_item_cnt() || 
+//  225         index >= AUTH_LIST_MAX_LEN)
+        ; Setup parameters for call to function Authlist_item_cnt
+        LCALL   `??Authlist_item_cnt::?relay`; Banked call to: Authlist_item_cnt
+        MOV     A,R1
+        MOV     ?V8,A
+        CLR     A
+        MOV     ?V9,A
+        MOV     ?V10,A
+        MOV     ?V11,A
+        MOV     R0,#?V8
+        MOV     R1,#?V0
+        LCALL   ?UL_GT
+        JNC     ??Authlist_delete_entry_0
+        MOV     DPTR,#__Constant_66
+        MOV     R0,#?V0
+        LCALL   ?UL_GE_X
+        JNC     ??Authlist_delete_entry_1
+//  226     {
+//  227         return;
+??Authlist_delete_entry_0:
+        LJMP    ??Authlist_delete_entry_2 & 0xFFFF
+//  228     }
+//  229     if (index != last_index) {
+??Authlist_delete_entry_1:
+        MOV     R0,#?V0
+        MOV     R1,#?V4
+        LCALL   ?L_EQ
+        JNZ     $+5
+        LJMP    ??Authlist_delete_entry_3 & 0xFFFF
+//  230         // not last entry, need to fill the blank
+//  231         last_entry_p = List_cache_get(last_index);
+        ; Setup parameters for call to function List_cache_load_on_need
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+        MOV     ?V12,?V4
+        MOV     ?V13,?V5
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V8
+        LCALL   ?L_MOV_X
+        MOV     A,?V12
+        CLR     C
+        SUBB    A,?V8
+        MOV     R0,A
+        MOV     A,?V13
+        SUBB    A,?V9
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+//  232         osal_memcpy(&last_entry_copy, last_entry_p, sizeof(NodeRegisterEntry));
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V8,R6
+        MOV     ?V9,R7
+        MOV     ?V10,#0x0
+        MOV     R0,#?V8
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     R4,#0xa
+        MOV     R5,#0x0
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 34)
+//  233         last_entry_p->flag |= NODE_REG_ENTRY_DELETED;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        ORL     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ORL     A,#0x0
+        MOVX    @DPTR,A
+//  234         osal_memset(last_entry_p->key, 0xff, AUTH_LIST_KEY_LEN);
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R1,#-0x1
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R7
+        MOV     R3,A
+        LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+//  235         List_cache_write_back();
+        ; Setup parameters for call to function List_cache_write_back
+        LCALL   `??List_cache_write_back::?relay`; Banked call to: List_cache_write_back
+        SJMP    ??Authlist_delete_entry_4
+//  236     } else {
+//  237         last_entry_p = NULL;
+??Authlist_delete_entry_3:
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//  238     }
+//  239 
+//  240     to_del = List_cache_get(index);
+??Authlist_delete_entry_4:
+        ; Setup parameters for call to function List_cache_load_on_need
+        MOV     R2,?V0
+        MOV     R3,?V1
+        MOV     R4,?V2
+        MOV     R5,?V3
+        LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+        MOV     ?V12,?V0
+        MOV     ?V13,?V1
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V8
+        LCALL   ?L_MOV_X
+        MOV     A,?V12
+        CLR     C
+        SUBB    A,?V8
+        MOV     R0,A
+        MOV     A,?V13
+        SUBB    A,?V9
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V14,R0
+        MOV     ?V15,R1
+//  241     if (last_entry_p != NULL) {
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??Authlist_delete_entry_5
+//  242         osal_memcpy(to_del, &last_entry_copy, sizeof(NodeRegisterEntry));
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,?XSP + 0
+        MOV     R1,?XSP + 1
+        MOV     ?V8,R0
+        MOV     ?V9,R1
+        MOV     ?V10,#0x0
+        MOV     R0,#?V8
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     R4,#0xa
+        MOV     R5,#0x0
+        MOV     R2,?V14
+        MOV     R3,?V15
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 34)
+        SJMP    ??Authlist_delete_entry_6
+//  243     } else {
+//  244         to_del->flag |= NODE_REG_ENTRY_DELETED;
+??Authlist_delete_entry_5:
+        MOV     DPL,?V14
+        MOV     DPH,?V15
+        MOVX    A,@DPTR
+        ORL     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ORL     A,#0x0
+        MOVX    @DPTR,A
+//  245         osal_memset(to_del->key, 0xff, AUTH_LIST_KEY_LEN);
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R1,#-0x1
+        MOV     A,?V14
+        ADD     A,#0x2
+        MOV     R2,A
+        CLR     A
+        ADDC    A,?V15
+        MOV     R3,A
+        LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+//  246     }
+//  247     Decrease_registered_num();
+??Authlist_delete_entry_6:
+        ; Setup parameters for call to function Set_registered_num
+        MOV     DPTR,#gAuthConfig + 4
+        MOV     R0,#?V8
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V8
+        LCALL   ?L_ADD_X
+        MOV     R2,?V8
+        MOV     R3,?V9
+        MOV     R4,?V10
+        MOV     R5,?V11
+        LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+//  248     List_cache_write_back();
+        ; Setup parameters for call to function List_cache_write_back
+        LCALL   `??List_cache_write_back::?relay`; Banked call to: List_cache_write_back
+//  249 }
+??Authlist_delete_entry_2:
+        MOV     A,#0xa
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock5
+//  250 
+//  251 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  252 void Authlist_del(uint8 const* key, uint8 keylen, uint32* index)
+Authlist_del:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function Authlist_del
+        CODE
+//  253 {
+        FUNCALL Authlist_del, Authlist_find_by_key
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_del, Authlist_delete_entry
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 20)
+        ; Saved register size: 20
+        ; Auto size: 0
+        MOV     ?V8,R2
+        MOV     ?V9,R3
+        MOV     A,R1
+        MOV     R6,A
+        MOV     ?V10,R4
+        MOV     ?V11,R5
+//  254     uint32 to_del;
+//  255     if(AUTH_LIST_INVALID_INDEX != (to_del = Authlist_find_by_key(key, keylen)))
+        ; Setup parameters for call to function Authlist_find_by_key
+        MOV     ?V0,R6
+        CLR     A
+        MOV     ?V1,A
+        MOV     ?V2,A
+        MOV     ?V3,A
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_FOUR
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R2,?V8
+        MOV     R3,?V9
+        LCALL   `??Authlist_find_by_key::?relay`; Banked call to: Authlist_find_by_key
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V2,R4
+        MOV     ?V3,R5
+        MOV     ?V4,?V0
+        MOV     ?V5,?V1
+        MOV     ?V6,?V2
+        MOV     ?V7,?V3
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0
+        LCALL   ?L_EQ_X
+        JZ      ??Authlist_del_0
+//  256     {
+//  257         Authlist_delete_entry(to_del);
+        ; Setup parameters for call to function Authlist_delete_entry
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        LCALL   `??Authlist_delete_entry::?relay`; Banked call to: Authlist_delete_entry
+//  258     }
+//  259 }
+??Authlist_del_0:
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock6
+//  260 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  261 uint8 Authlist_item_cnt( void )
+Authlist_item_cnt:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function Authlist_item_cnt
+        CODE
+//  262 {
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  263     return gAuthConfig.auth_registered_num;
+        MOV     DPTR,#gAuthConfig + 4
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     R1,?V0
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  264 }
+          CFI EndBlock cfiBlock7
+//  265 
+//  266 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  267 uint32 Authlist_find_by_key(uint8 const * key, uint32 keylen)
+Authlist_find_by_key:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function Authlist_find_by_key
+        CODE
+//  268 {
+        FUNCALL Authlist_find_by_key, List_cache_force_load
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_find_by_key, List_cache_find_by_key
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_find_by_key, List_cache_load_next
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 20)
+        ; Saved register size: 20
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     A,#0x14
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+//  269     uint32 rc = AUTH_LIST_INVALID_INDEX;
+        MOV     ?V8,#-0x1
+        MOV     ?V9,#-0x1
+        MOV     ?V10,#-0x1
+        MOV     ?V11,#-0x1
+//  270     if (keylen != AUTH_LIST_KEY_LEN) return rc;
+        MOV     DPTR,#__Constant_8
+        MOV     R0,#?V4
+        LCALL   ?L_EQ_X
+        JZ      ??Authlist_find_by_key_0
+        MOV     R2,?V8
+        MOV     R3,?V9
+        MOV     R4,?V10
+        MOV     R5,?V11
+        SJMP    ??Authlist_find_by_key_1
+//  271     
+//  272     List_cache_force_load(0);
+??Authlist_find_by_key_0:
+        ; Setup parameters for call to function List_cache_force_load
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+//  273     
+//  274     do {
+//  275         if(AUTH_LIST_INVALID_INDEX != (rc = List_cache_find_by_key(key, keylen)))
+??Authlist_find_by_key_2:
+        ; Setup parameters for call to function List_cache_find_by_key
+        MOV     ?V0,?V4
+        MOV     ?V1,?V5
+        MOV     R1,?V0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??List_cache_find_by_key::?relay`; Banked call to: List_cache_find_by_key
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V2,R4
+        MOV     ?V3,R5
+        MOV     ?V8,?V0
+        MOV     ?V9,?V1
+        MOV     ?V10,?V2
+        MOV     ?V11,?V3
+        MOV     DPTR,#__Constant_ffffffff
+        MOV     R0,#?V0
+        LCALL   ?L_EQ_X
+        JNZ     ??Authlist_find_by_key_3
+//  276         {
+//  277             break;
+//  278         }
+//  279     } while (List_cache_load_next());
+        ; Setup parameters for call to function List_cache_load_next
+        LCALL   `??List_cache_load_next::?relay`; Banked call to: List_cache_load_next
+        MOV     A,R1
+        JNZ     ??Authlist_find_by_key_2
+//  280     return rc;
+??Authlist_find_by_key_3:
+        MOV     R2,?V8
+        MOV     R3,?V9
+        MOV     R4,?V10
+        MOV     R5,?V11
+??Authlist_find_by_key_1:
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+//  281 }
+          CFI EndBlock cfiBlock8
+//  282 
+//  283 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  284 void Node_auth_uart_msg_process(uint8 port, uint8 cmd0, uint8 cmd1, uint8 const* buf, uint8 len)  //chaokw
+Node_auth_uart_msg_process:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function Node_auth_uart_msg_process
+        CODE
+//  285 {
+        FUNCALL Node_auth_uart_msg_process, Mail_uplink_registered_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Authlist_get
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, memcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 37, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Mail_uplink_key
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 37, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 37, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Set_registered_num
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Node_auth_wipe
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Mail_uplink_registered_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Authlist_add
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Mail_uplink_registered_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Authlist_del
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Mail_uplink_registered_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Set_registered_num
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Node_auth_wipe
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Mail_uplink_registered_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Node_auth_uart_msg_process, Onboard_soft_reset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 20)
+        ; Saved register size: 20
+        ; Auto size: 15
+        MOV     A,#-0xf
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     ?V0,R1
+        MOV     ?V11,R2
+        MOV     ?V10,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     A,#0x23
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V8,A
+//  286     if (cmd0 != NODE_AUTH_MSG_DIR_DOWNLINK) return;
+        MOV     A,#0x1
+        XRL     A,?V11
+        JZ      $+5
+        LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+//  287 
+//  288     uint32 idx;
+//  289     uint8 i;
+//  290     uint8 key[AUTH_LIST_KEY_LEN+2] = {0};
+        MOV     DPTR,#`?<Constant {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}>`
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP102_8
+        MOV     A,#0xa
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  291     uint8 keylen = AUTH_LIST_KEY_LEN;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+//  292     nodeList_t *nodeSearch;
+//  293     uint8 deltype;
+//  294 
+//  295 
+//  296     switch (cmd1) 
+        MOV     A,?V10
+        ADD     A,#-0x30
+        JNZ     $+5
+        LJMP    ??Node_auth_uart_msg_process_1 & 0xFFFF
+        DEC     A
+        JZ      ??Node_auth_uart_msg_process_2
+        DEC     A
+        JZ      ??Node_auth_uart_msg_process_3
+        DEC     A
+        JNZ     $+5
+        LJMP    ??Node_auth_uart_msg_process_4 & 0xFFFF
+        ADD     A,#-0x5
+        JNZ     $+5
+        LJMP    ??Node_auth_uart_msg_process_5 & 0xFFFF
+        ADD     A,#-0x8
+        JNZ     $+5
+        LJMP    ??Node_auth_uart_msg_process_6 & 0xFFFF
+        LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+//  297     {
+//  298         case NODE_AUTH_MSG_CMD_COUNT: 
+//  299             Mail_uplink_registered_cnt(port);
+??Node_auth_uart_msg_process_2:
+        ; Setup parameters for call to function Mail_uplink_registered_cnt
+        MOV     R1,?V0
+        LCALL   `??Mail_uplink_registered_cnt::?relay`; Banked call to: Mail_uplink_registered_cnt
+//  300             break;
+        LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+//  301         case NODE_AUTH_MSG_CMD_GET:
+//  302             if (len != 4) break;
+??Node_auth_uart_msg_process_3:
+        MOV     A,#0x4
+        XRL     A,?V8
+        JZ      $+5
+        LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+//  303             for (idx = i = 0; i < sizeof(idx); ++i)
+        MOV     ?V1,#0x0
+        MOV     A,?V1
+        MOV     R2,A
+        CLR     A
+        MOV     R3,A
+        MOV     R4,A
+        MOV     R5,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+??Node_auth_uart_msg_process_7:
+        MOV     A,?V1
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??Node_auth_uart_msg_process_8
+//  304             {
+//  305                 idx <<= 8;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+        MOV     A,#0x8
+        MOV     R0,#?V4
+        LCALL   ?L_SHL
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+//  306                 idx |= buf[i];
+        MOV     R0,?V1
+        MOV     R1,#0x0
+        MOV     A,R6
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V4,A
+        CLR     A
+        MOV     ?V5,A
+        MOV     ?V6,A
+        MOV     ?V7,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R0,#?V4
+        LCALL   ?L_IOR_TO_X
+//  307             }
+        INC     ?V1
+        SJMP    ??Node_auth_uart_msg_process_7
+//  308             if (Authlist_get(idx, key, &keylen) > 0)
+??Node_auth_uart_msg_process_8:
+        ; Setup parameters for call to function Authlist_get
+        MOV     R0,?XSP + 0
+        MOV     R1,?XSP + 1
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP100_8
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 39)
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?XLOAD_R2345
+        LCALL   `??Authlist_get::?relay`; Banked call to: Authlist_get
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     A,R1
+        JNZ     $+5
+        LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+//  309             {
+//  310                 for (nodeSearch = nodeList; (nodeSearch != NULL);nodeSearch = nodeSearch->nextDesc)
+        MOV     DPTR,#nodeList
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     ?V2,R0
+        MOV     ?V3,R1
+??Node_auth_uart_msg_process_9:
+        MOV     A,?V2
+        ORL     A,?V3
+        JZ      ??Node_auth_uart_msg_process_10
+//  311                 {
+//  312                     if (memcmp(key, &nodeSearch->devAddr64, 8) == 0)
+        ; Setup parameters for call to function memcmp
+        MOV     ?V4,#0x8
+        MOV     ?V5,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     A,?V2
+        ADD     A,#0x2
+        MOV     R4,A
+        CLR     A
+        ADDC    A,?V3
+        MOV     R5,A
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   `??memcmp::?relay`   ; Banked call to: memcmp
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     A,?V4
+        ORL     A,?V5
+        JNZ     ??Node_auth_uart_msg_process_11
+//  313                     {
+//  314 				key[AUTH_LIST_KEY_LEN] = BREAK_UINT16(nodeSearch->devAddr16.addr.shortAddr, 1); 
+        MOV     A,?V2
+        ADD     A,#0xe
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,?V3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     A
+        XCH     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0xd
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  315 				key[AUTH_LIST_KEY_LEN+1] = BREAK_UINT16(nodeSearch->devAddr16.addr.shortAddr, 0);
+        MOV     A,?V2
+        ADD     A,#0xe
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,?V3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  316                     }	
+//  317                 }		
+??Node_auth_uart_msg_process_11:
+        MOV     DPL,?V2
+        MOV     DPH,?V3
+        MOVX    A,@DPTR
+        MOV     ?V2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V3,A
+        SJMP    ??Node_auth_uart_msg_process_9
+//  318                 Mail_uplink_key(port, idx, key);
+??Node_auth_uart_msg_process_10:
+        ; Setup parameters for call to function Mail_uplink_key
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP100_8
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        LCALL   ?XLOAD_R2345
+        MOV     R1,?V0
+        LCALL   `??Mail_uplink_key::?relay`; Banked call to: Mail_uplink_key
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+//  319             }				
+//  320             break;
+        SJMP    ??Node_auth_uart_msg_process_0
+//  321         case NODE_AUTH_MSG_CMD_WIPE:
+//  322             Set_registered_num(0);
+??Node_auth_uart_msg_process_5:
+        ; Setup parameters for call to function Set_registered_num
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+//  323             Node_auth_wipe();
+        ; Setup parameters for call to function Node_auth_wipe
+        LCALL   `??Node_auth_wipe::?relay`; Banked call to: Node_auth_wipe
+//  324             Mail_uplink_registered_cnt(port);
+        ; Setup parameters for call to function Mail_uplink_registered_cnt
+        MOV     R1,?V0
+        LCALL   `??Mail_uplink_registered_cnt::?relay`; Banked call to: Mail_uplink_registered_cnt
+//  325             break;
+        SJMP    ??Node_auth_uart_msg_process_0
+//  326         case NODE_AUTH_MSG_CMD_ADD:
+//  327             if (Authlist_add(buf, len, &idx) > 0) {
+??Node_auth_uart_msg_process_1:
+        ; Setup parameters for call to function Authlist_add
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP102_8
+        MOV     R1,?V8
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??Authlist_add::?relay`; Banked call to: Authlist_add
+        MOV     A,R1
+        JZ      ??Node_auth_uart_msg_process_0
+//  328                 Mail_uplink_registered_cnt(port);
+        ; Setup parameters for call to function Mail_uplink_registered_cnt
+        MOV     R1,?V0
+        LCALL   `??Mail_uplink_registered_cnt::?relay`; Banked call to: Mail_uplink_registered_cnt
+//  329             }
+//  330             break;
+        SJMP    ??Node_auth_uart_msg_process_0
+//  331         case NODE_AUTH_MSG_CMD_DEL:
+//  332             deltype = *buf++;
+??Node_auth_uart_msg_process_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V9,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  333 	     if (0x01 == deltype)
+        MOV     A,#0x1
+        XRL     A,?V9
+        JNZ     ??Node_auth_uart_msg_process_12
+//  334 	     {
+//  335 	     	Authlist_del(buf, len-1, &idx);
+        ; Setup parameters for call to function Authlist_del
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP102_8
+        MOV     A,#-0x1
+        ADD     A,?V8
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??Authlist_del::?relay`; Banked call to: Authlist_del
+//  336               Mail_uplink_registered_cnt(port);
+        ; Setup parameters for call to function Mail_uplink_registered_cnt
+        MOV     R1,?V0
+        LCALL   `??Mail_uplink_registered_cnt::?relay`; Banked call to: Mail_uplink_registered_cnt
+        SJMP    ??Node_auth_uart_msg_process_0
+//  337 	     }
+//  338 	     else if (0xff == deltype)
+??Node_auth_uart_msg_process_12:
+        MOV     A,#-0x1
+        XRL     A,?V9
+        JNZ     ??Node_auth_uart_msg_process_0
+//  339 	     {
+//  340 	       Set_registered_num(0);
+        ; Setup parameters for call to function Set_registered_num
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+//  341               Node_auth_wipe();
+        ; Setup parameters for call to function Node_auth_wipe
+        LCALL   `??Node_auth_wipe::?relay`; Banked call to: Node_auth_wipe
+//  342               Mail_uplink_registered_cnt(port);
+        ; Setup parameters for call to function Mail_uplink_registered_cnt
+        MOV     R1,?V0
+        LCALL   `??Mail_uplink_registered_cnt::?relay`; Banked call to: Mail_uplink_registered_cnt
+//  343 	     }
+//  344             break;
+        SJMP    ??Node_auth_uart_msg_process_0
+//  345         case NODE_AUTH_MSG_CMD_RESET_NET:
+//  346             SystemResetSoft();
+??Node_auth_uart_msg_process_6:
+        ; Setup parameters for call to function Onboard_soft_reset
+        LCALL   Onboard_soft_reset & 0xFFFF
+//  347             break;
+//  348         default:
+//  349             break;
+//  350     }
+//  351     return;
+??Node_auth_uart_msg_process_0:
+        MOV     A,#0xf
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+//  352 }
+          CFI EndBlock cfiBlock9
+//  353 
+//  354 /*********************************************************************
+//  355  * LOCAL VARIABLES
+//  356  */
+//  357 
+//  358 /*********************************************************************
+//  359  * LOCAL FUNCTIONS
+//  360  */
+//  361 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  362 static void Set_registered_num(uint32 num)
+Set_registered_num:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function Set_registered_num
+        CODE
+//  363 {
+        FUNCALL Set_registered_num, osal_nv_write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 0
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V2,R4
+        MOV     ?V3,R5
+//  364     gAuthConfig.auth_registered_num = num;
+        MOV     DPTR,#gAuthConfig + 4
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_TO_X
+//  365     osal_nv_write(APP_NV_AUTH_GLOBAL_CONFIG, 0, sizeof(gAuthConfig), (void*)&gAuthConfig);
+        ; Setup parameters for call to function osal_nv_write
+        MOV     ?V4,#gAuthConfig & 0xff
+        MOV     ?V5,#(gAuthConfig >> 8) & 0xff
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     ?V4,#0x8
+        MOV     ?V5,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     A,R1
+//  366 }
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock10
+//  367 
+//  368 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  369 static uint16 Mail_uplink(uint8 port, uint8 cmd, uint8 len, void* buf)
+Mail_uplink:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function Mail_uplink
+        CODE
+//  370 {
+        FUNCALL Mail_uplink, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 41, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 41, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Mail_uplink, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Mail_uplink, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V8
+        REQUIRE ?V9
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 18)
+        ; Saved register size: 18
+        ; Auto size: 20
+        MOV     A,#-0x14
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 38)
+        MOV     ?V2,R1
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V8,R4
+        MOV     ?V9,R5
+//  371     uint8 uartpbuf[20];
+//  372     uint16 rc;
+//  373     
+//  374     if (uartpbuf == NULL || buf == NULL || len == 0)
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ORL     A,DPH
+        JZ      ??Mail_uplink_0
+        MOV     A,?V8
+        ORL     A,?V9
+        JZ      ??Mail_uplink_0
+        MOV     A,?V1
+        JNZ     ??Mail_uplink_1
+//  375         return 0;
+??Mail_uplink_0:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        LJMP    ??Mail_uplink_2 & 0xFFFF
+//  376 
+//  377     uartpbuf[0] = 0xFE;
+??Mail_uplink_1:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  378     uartpbuf[1] = len;
+        MOV     A,?V1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  379     uartpbuf[2] = NODE_AUTH_MSG_DIR_UPLINK;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+//  380     uartpbuf[3] = cmd;
+        MOV     A,?V0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  381     osal_memcpy(&uartpbuf[4], buf, len);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,?V8
+        MOV     ?V5,?V9
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 41)
+        MOV     R4,?V1
+        MOV     R5,#0x0
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 38)
+//  382 
+//  383 #ifdef OPEN_FCS
+//  384     uartpbuf[len+4] = MT_UartCalcFCS(&uartpbuf[1], len+3);
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     A,#0x3
+        ADD     A,?V1
+        MOV     R1,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     R0,?V1
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     DPH,A
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  385 #else
+//  386     uartpbuf[len+4] = DEFAULTFCS;  
+//  387 #endif
+//  388     rc = HalUARTWrite(port, uartpbuf, len+5);    
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R0,?V1
+        MOV     R1,#0x0
+        MOV     A,R0
+        ADD     A,#0x5
+        MOV     R4,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R5,A
+        MOV     R2,?XSP + 0
+        MOV     R3,?XSP + 1
+        MOV     R1,?V2
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     R6,?V4
+        MOV     R7,?V5
+//  389     return rc;
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+??Mail_uplink_2:
+        MOV     A,#0x14
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+//  390 
+//  391 }
+          CFI EndBlock cfiBlock11
+//  392 
+//  393 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  394 static inline uint16 Mail_uplink_registered_cnt(uint8 port)
+Mail_uplink_registered_cnt:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function Mail_uplink_registered_cnt
+        CODE
+//  395 {
+        FUNCALL Mail_uplink_registered_cnt, Authlist_item_cnt
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Mail_uplink_registered_cnt, Mail_uplink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        MOV     A,#-0x14
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 20)
+        ; Saved register size: 20
+        ; Auto size: 4
+        MOV     A,#-0x4
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     A,R1
+        MOV     R6,A
+//  396     uint32 n = Authlist_item_cnt();
+        ; Setup parameters for call to function Authlist_item_cnt
+        LCALL   `??Authlist_item_cnt::?relay`; Banked call to: Authlist_item_cnt
+        MOV     A,R1
+        MOV     ?V8,A
+        CLR     A
+        MOV     ?V9,A
+        MOV     ?V10,A
+        MOV     ?V11,A
+//  397     uint32 n_be =
+//  398         ((n >> 24) & 0xff) |
+//  399         ((n >>  8) & 0xff00) |
+//  400         ((n <<  8) & 0xff0000) |
+//  401         ((n << 24) & 0xff000000);
+        MOV     ?V4,?V8
+        MOV     ?V5,?V9
+        MOV     ?V6,?V10
+        MOV     ?V7,?V11
+        MOV     A,#0x18
+        MOV     R0,#?V4
+        LCALL   ?UL_SHR
+        MOV     ?V0,?V8
+        MOV     ?V1,?V9
+        MOV     ?V2,?V10
+        MOV     ?V3,?V11
+        MOV     A,#0x8
+        MOV     R0,#?V0
+        LCALL   ?UL_SHR
+        MOV     DPTR,#__Constant_ff00
+        MOV     R0,#?V0
+        LCALL   ?L_AND_X
+        MOV     R0,#?V4
+        MOV     R1,#?V0
+        LCALL   ?L_IOR
+        MOV     ?V0,?V8
+        MOV     ?V1,?V9
+        MOV     ?V2,?V10
+        MOV     ?V3,?V11
+        MOV     A,#0x8
+        MOV     R0,#?V0
+        LCALL   ?L_SHL
+        MOV     DPTR,#__Constant_ff0000
+        MOV     R0,#?V0
+        LCALL   ?L_AND_X
+        MOV     R0,#?V4
+        MOV     R1,#?V0
+        LCALL   ?L_IOR
+        MOV     ?V0,?V8
+        MOV     ?V1,?V9
+        MOV     ?V2,?V10
+        MOV     ?V3,?V11
+        MOV     A,#0x18
+        MOV     R0,#?V0
+        LCALL   ?L_SHL
+        MOV     R0,#?V4
+        MOV     R1,#?V0
+        LCALL   ?L_IOR
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_TO_X
+//  402     return Mail_uplink(port, NODE_AUTH_MSG_CMD_COUNT, 4, &n_be);
+        ; Setup parameters for call to function Mail_uplink
+        MOV     R4,?XSP + 0
+        MOV     R5,?XSP + 1
+        MOV     R3,#0x4
+        MOV     R2,#0x31
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   `??Mail_uplink::?relay`; Banked call to: Mail_uplink
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     R7,#0xc
+        LJMP    ?BANKED_LEAVE_XDATA
+//  403 }
+          CFI EndBlock cfiBlock12
+//  404 
+//  405 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  406 static inline uint16 Mail_uplink_key(uint8 port, uint32 index, uint8 const* key)  //chaokw
+Mail_uplink_key:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function Mail_uplink_key
+        CODE
+//  407 {
+        FUNCALL Mail_uplink_key, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Mail_uplink_key, Mail_uplink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 18)
+        ; Saved register size: 18
+        ; Auto size: 14
+        MOV     A,#-0xe
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 32)
+        MOV     A,R1
+        MOV     R7,A
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V2,R4
+        MOV     ?V3,R5
+        MOV     A,#0x20
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V8,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V9,A
+//  408     uint8 buf[sizeof(index) + AUTH_LIST_KEY_LEN+2];
+//  409     uint8 i;
+//  410 
+//  411     for (i = 0; i < sizeof(index); i++) {
+        MOV     R6,#0x0
+??Mail_uplink_key_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x4
+        JNC     ??Mail_uplink_key_1
+//  412         buf[i] = (uint8)((index >> (8 * (sizeof(index) - i - 1))) & 0xff);
+        MOV     ?V4,?V0
+        MOV     ?V5,?V1
+        MOV     ?V6,?V2
+        MOV     ?V7,?V3
+        MOV     B,#0x8
+        MOV     A,#0x3
+        CLR     C
+        SUBB    A,R6
+        MUL     AB
+        MOV     R0,#?V4
+        LCALL   ?UL_SHR
+        MOV     A,?V4
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,R6
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  413     }
+        INC     R6
+        SJMP    ??Mail_uplink_key_0
+//  414 
+//  415     osal_memcpy(&buf[i], key, AUTH_LIST_KEY_LEN+2);
+??Mail_uplink_key_1:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,?V8
+        MOV     ?V5,?V9
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     R4,#0xa
+        MOV     R5,#0x0
+        MOV     A,R6
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     R2,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 32)
+//  416     return Mail_uplink(port, NODE_AUTH_MSG_CMD_GET, sizeof(buf), buf);
+        ; Setup parameters for call to function Mail_uplink
+        MOV     R4,?XSP + 0
+        MOV     R5,?XSP + 1
+        MOV     R3,#0xe
+        MOV     R2,#0x32
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   `??Mail_uplink::?relay`; Banked call to: Mail_uplink
+        MOV     A,#0xe
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+//  417 }
+          CFI EndBlock cfiBlock13
+//  418 
+//  419 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  420 static inline uint16 Mail_uplink_notify(uint8 port, uint8 const* extended_addr)
+Mail_uplink_notify:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function Mail_uplink_notify
+        CODE
+//  421 {
+        FUNCALL Mail_uplink_notify, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 23, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 23, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Mail_uplink_notify, Mail_uplink
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     ?V3,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  422     uint8 buf[8];
+//  423     osal_memcpy(buf, extended_addr, 8);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0,R6
+        MOV     ?V1,R7
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 23)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 20)
+//  424     return Mail_uplink(port, NODE_AUTH_MSG_CMD_REFUSE, sizeof(buf), buf);
+        ; Setup parameters for call to function Mail_uplink
+        MOV     R4,?XSP + 0
+        MOV     R5,?XSP + 1
+        MOV     R3,#0x8
+        MOV     R2,#0x39
+        MOV     R1,?V3
+        LCALL   `??Mail_uplink::?relay`; Banked call to: Mail_uplink
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  425 }
+          CFI EndBlock cfiBlock14
+//  426 
+//  427 
+//  428 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  429 static inline void List_cache_recreate( void ) {
+List_cache_recreate:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function List_cache_recreate
+        CODE
+        FUNCALL List_cache_recreate, osal_memset
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  430     osal_memset(gListCache, 0xff, AUTH_LIST_CACHE_SIZE*sizeof(NodeRegisterEntry));
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#-0x60
+        MOV     R5,#0x0
+        MOV     R1,#-0x1
+        MOV     R2,#gListCache & 0xff
+        MOV     R3,#(gListCache >> 8) & 0xff
+        LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+//  431 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-4
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-3
+        LJMP    ?BRET
+          CFI EndBlock cfiBlock15
+//  432 
+//  433 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  434 static inline void List_cache_load_on_need(uint32 offset) 
+List_cache_load_on_need:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function List_cache_load_on_need
+        CODE
+//  435 {
+        FUNCALL List_cache_load_on_need, List_cache_contain
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL List_cache_load_on_need, List_cache_force_load
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     ?V6,R4
+        MOV     ?V7,R5
+//  436     if (!List_cache_contain(offset))
+        ; Setup parameters for call to function List_cache_contain
+        MOV     R2,?V4
+        MOV     R3,?V5
+        MOV     R4,?V6
+        MOV     R5,?V7
+        LCALL   `??List_cache_contain::?relay`; Banked call to: List_cache_contain
+        MOV     A,R1
+        JNZ     ??List_cache_load_on_need_0
+//  437         List_cache_force_load(AUTH_LIST_CACHE_ALIGN(offset));
+        ; Setup parameters for call to function List_cache_force_load
+        MOV     ?V0,?V4
+        MOV     ?V1,?V5
+        MOV     ?V2,?V6
+        MOV     ?V3,?V7
+        MOV     DPTR,#__Constant_fffffff0
+        MOV     R0,#?V0
+        LCALL   ?L_AND_X
+        MOV     R2,?V0
+        MOV     R3,?V1
+        MOV     R4,?V2
+        MOV     R5,?V3
+        LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+//  438 }
+??List_cache_load_on_need_0:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock16
+//  439 
+//  440 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  441 static uint32 List_cache_write_back()
+List_cache_write_back:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Function List_cache_write_back
+        CODE
+//  442 {
+        FUNCALL List_cache_write_back, osal_nv_write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  443     return osal_nv_write(
+//  444         APP_NV_AUTH_KEY_LIST, 
+//  445         gListOffset * sizeof(NodeRegisterEntry), 
+//  446         gListNum * sizeof(NodeRegisterEntry), 
+//  447         gListCache);
+        ; Setup parameters for call to function osal_nv_write
+        MOV     ?V0,#gListCache & 0xff
+        MOV     ?V1,#(gListCache >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     A,?V0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,?V0
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,?V1
+        MUL     AB
+        ADD     A,R0
+        MOV     ?V1,A
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     R4,?V0
+        MOV     R5,?V1
+        MOV     A,R4
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R4
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,R5
+        MUL     AB
+        ADD     A,R0
+        MOV     R5,A
+        MOV     R2,#0x2
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     ?V0,R1
+        MOV     R2,?V0
+        CLR     A
+        MOV     R3,A
+        MOV     R4,A
+        MOV     R5,A
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  448 }
+          CFI EndBlock cfiBlock17
+//  449 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  450 static inline bool List_cache_contain(uint32 index)
+List_cache_contain:
+          CFI Block cfiBlock18 Using cfiCommon0
+          CFI Function List_cache_contain
+        CODE
+//  451 {
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V2,R4
+        MOV     ?V3,R5
+//  452     return (gListCache != NULL) && 
+//  453             (index >= gListOffset) && 
+//  454             (index < gListOffset + gListNum);
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V0
+        LCALL   ?UL_GE_X
+        JNC     ??List_cache_contain_0
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V4
+        LCALL   ?L_ADD_X
+        MOV     R0,#?V4
+        MOV     R1,#?V0
+        LCALL   ?UL_GT
+        JNC     ??List_cache_contain_0
+        MOV     R1,#0x1
+        SJMP    ??List_cache_contain_1
+??List_cache_contain_0:
+        MOV     R1,#0x0
+??List_cache_contain_1:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+//  455 }
+          CFI EndBlock cfiBlock18
+//  456 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  457 static uint32 List_cache_find_by_key(uint8 const* key, uint8 keylen)
+List_cache_find_by_key:
+          CFI Block cfiBlock19 Using cfiCommon0
+          CFI Function List_cache_find_by_key
+        CODE
+//  458 {
+        FUNCALL List_cache_find_by_key, osal_memcmp
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        REQUIRE ?V8
+        REQUIRE ?V9
+        REQUIRE ?V10
+        REQUIRE ?V11
+        REQUIRE ?V12
+        REQUIRE ?V13
+        MOV     A,#-0x16
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-21)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 22)
+        ; Saved register size: 22
+        ; Auto size: 0
+        MOV     ?V12,R2
+        MOV     ?V13,R3
+        MOV     A,R1
+        MOV     R6,A
+//  459     uint32 idx;
+//  460     uint32 rc = AUTH_LIST_INVALID_INDEX;
+        MOV     ?V8,#-0x1
+        MOV     ?V9,#-0x1
+        MOV     ?V10,#-0x1
+        MOV     ?V11,#-0x1
+//  461     if (gListCache == NULL) return rc;
+//  462     for (idx = 0; 
+        MOV     R0,#0x0
+        MOV     R1,#0x0
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     ?V6,R2
+        MOV     ?V7,R3
+//  463          idx + gListOffset < AUTH_LIST_MAX_LEN && idx < gListNum ;
+??List_cache_find_by_key_0:
+        MOV     DPTR,#__Constant_66
+        PUSH    DPL
+          CFI CFA_SP SP+-1
+        PUSH    DPH
+          CFI CFA_SP SP+-2
+        MOV     ?V0,?V4
+        MOV     ?V1,?V5
+        MOV     ?V2,?V6
+        MOV     ?V3,?V7
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V0
+        LCALL   ?L_ADD_X
+        POP     DPH
+          CFI CFA_SP SP+-1
+        POP     DPL
+          CFI CFA_SP SP+0
+        MOV     R0,#?V0
+        LCALL   ?UL_GE_X
+        JNC     $+5
+        LJMP    ??List_cache_find_by_key_1 & 0xFFFF
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V4
+        LCALL   ?UL_GE_X
+        JNC     $+5
+        LJMP    ??List_cache_find_by_key_1 & 0xFFFF
+//  464          ++idx)
+//  465     {
+//  466         if ( !Is_entry_deleted(&gListCache[idx]) &&
+//  467              osal_memcmp(key, gListCache[idx].key, keylen) 
+//  468            )
+        MOV     R0,?V4
+        MOV     R1,?V5
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     C,0xE0 /* A   */.0
+        JC      ??List_cache_find_by_key_2
+        ; Setup parameters for call to function osal_memcmp
+        MOV     R0,?V4
+        MOV     R1,?V5
+        MOV     A,R0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0xa
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#(gListCache + 2) & 0xff
+        ADD     A,R0
+        MOV     ?V0,A
+        MOV     A,#((gListCache + 2) >> 8) & 0xff
+        ADDC    A,R1
+        MOV     ?V1,A
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 25)
+        MOV     A,R6
+        MOV     R4,A
+        MOV     R5,#0x0
+        MOV     DPL,?V12
+        MOV     DPH,?V13
+        MOV     R1,DPL
+        MOV     R2,DPH
+        MOV     R3,#0x0
+        LCALL   `??osal_memcmp::?relay`; Banked call to: osal_memcmp
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 22)
+        MOV     A,R1
+        JZ      ??List_cache_find_by_key_2
+//  469         {
+//  470             rc = idx + gListOffset;
+        MOV     ?V0,?V4
+        MOV     ?V1,?V5
+        MOV     ?V2,?V6
+        MOV     ?V3,?V7
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V0
+        LCALL   ?L_ADD_X
+        MOV     ?V8,?V0
+        MOV     ?V9,?V1
+        MOV     ?V10,?V2
+        MOV     ?V11,?V3
+//  471             break;
+        SJMP    ??List_cache_find_by_key_1
+//  472         }
+//  473     }
+??List_cache_find_by_key_2:
+        MOV     DPTR,#__Constant_1
+        MOV     R0,#?V4
+        LCALL   ?L_ADD_X
+        LJMP    ??List_cache_find_by_key_0 & 0xFFFF
+//  474     return rc;
+??List_cache_find_by_key_1:
+        MOV     R2,?V8
+        MOV     R3,?V9
+        MOV     R4,?V10
+        MOV     R5,?V11
+        MOV     R7,#0xe
+        LJMP    ?BANKED_LEAVE_XDATA
+//  475 }
+          CFI EndBlock cfiBlock19
+//  476 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  477 static bool List_cache_load_next( void )
+List_cache_load_next:
+          CFI Block cfiBlock20 Using cfiCommon0
+          CFI Function List_cache_load_next
+        CODE
+//  478 {
+        FUNCALL List_cache_load_next, List_cache_force_load
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  479     if (gListOffset + gListNum >= AUTH_LIST_MAX_LEN)
+        MOV     DPTR,#__Constant_66
+        PUSH    DPL
+          CFI CFA_SP SP+-1
+        PUSH    DPH
+          CFI CFA_SP SP+-2
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_ADD_X
+        POP     DPH
+          CFI CFA_SP SP+-1
+        POP     DPL
+          CFI CFA_SP SP+0
+        MOV     R0,#?V0
+        LCALL   ?UL_GE_X
+        JNC     ??List_cache_load_next_0
+//  480         return FALSE;
+        MOV     R1,#0x0
+        SJMP    ??List_cache_load_next_1
+//  481     List_cache_force_load(gListOffset + gListNum);
+??List_cache_load_next_0:
+        ; Setup parameters for call to function List_cache_force_load
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_ADD_X
+        MOV     R2,?V0
+        MOV     R3,?V1
+        MOV     R4,?V2
+        MOV     R5,?V3
+        LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+//  482     return TRUE;
+        MOV     R1,#0x1
+??List_cache_load_next_1:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+//  483 }
+          CFI EndBlock cfiBlock20
+//  484 
+//  485 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  486 static void List_cache_force_load(uint32 index) {
+List_cache_force_load:
+          CFI Block cfiBlock21 Using cfiCommon0
+          CFI Function List_cache_force_load
+        CODE
+        FUNCALL List_cache_force_load, osal_nv_read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 20, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 20, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL List_cache_force_load, List_cache_recreate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL List_cache_force_load, osal_memset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     ?V6,R4
+        MOV     ?V7,R5
+//  487     gListNum = (
+//  488         index + AUTH_LIST_CACHE_SIZE > AUTH_LIST_MAX_LEN ?
+//  489         AUTH_LIST_MAX_LEN - index :
+//  490         AUTH_LIST_CACHE_SIZE
+//  491     );
+        MOV     DPTR,#__Constant_67
+        PUSH    DPL
+          CFI CFA_SP SP+-1
+        PUSH    DPH
+          CFI CFA_SP SP+-2
+        MOV     ?V0,?V4
+        MOV     ?V1,?V5
+        MOV     ?V2,?V6
+        MOV     ?V3,?V7
+        MOV     DPTR,#__Constant_10
+        MOV     R0,#?V0
+        LCALL   ?L_ADD_X
+        POP     DPH
+          CFI CFA_SP SP+-1
+        POP     DPL
+          CFI CFA_SP SP+0
+        MOV     R0,#?V0
+        LCALL   ?UL_GE_X
+        JNC     ??List_cache_force_load_0
+        MOV     ?V0,#0x66
+        MOV     ?V1,#0x0
+        MOV     ?V2,#0x0
+        MOV     ?V3,#0x0
+        MOV     R0,#?V0
+        MOV     R1,#?V4
+        LCALL   ?L_SUB
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_TO_X
+        SJMP    ??List_cache_force_load_1
+??List_cache_force_load_0:
+        MOV     R4,#0x10
+        MOV     R5,#0x0
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        MOV     DPTR,#gListNum
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  492     gListOffset = index;
+??List_cache_force_load_1:
+        MOV     DPTR,#gListOffset
+        MOV     R0,#?V4
+        LCALL   ?L_MOV_TO_X
+//  493     if ( SUCCESS != osal_nv_read(
+//  494             APP_NV_AUTH_KEY_LIST, 
+//  495             index * sizeof(NodeRegisterEntry), 
+//  496             gListNum * sizeof(NodeRegisterEntry),
+//  497             gListCache))
+        ; Setup parameters for call to function osal_nv_read
+        MOV     ?V0,#gListCache & 0xff
+        MOV     ?V1,#(gListCache >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     A,?V0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,?V0
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,?V1
+        MUL     AB
+        ADD     A,R0
+        MOV     ?V1,A
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     R4,?V4
+        MOV     R5,?V5
+        MOV     A,R4
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R4
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,R5
+        MUL     AB
+        ADD     A,R0
+        MOV     R5,A
+        MOV     R2,#0x2
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     A,R1
+        JZ      ??List_cache_force_load_2
+//  498     {
+//  499         List_cache_recreate();
+        ; Setup parameters for call to function List_cache_recreate
+        LCALL   `??List_cache_recreate::?relay`; Banked call to: List_cache_recreate
+//  500         gListNum = 0;
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+        MOV     DPTR,#gListNum
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+//  501         gListOffset = AUTH_LIST_INVALID_INDEX;
+        MOV     R4,#-0x1
+        MOV     R5,#-0x1
+        MOV     R6,#-0x1
+        MOV     R7,#-0x1
+        MOV     DPTR,#gListOffset
+        MOV     A,R4
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R5
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R6
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R7
+        MOVX    @DPTR,A
+        SJMP    ??List_cache_force_load_3
+//  502     }
+//  503     else if ( gListNum != AUTH_LIST_CACHE_SIZE ) {
+??List_cache_force_load_2:
+        MOV     DPTR,#__Constant_10
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_EQ_X
+        JZ      ??List_cache_force_load_3
+//  504         osal_memset(&gListCache[gListNum], 0xff, (AUTH_LIST_CACHE_SIZE - gListNum) * sizeof(gListCache[0]));
+        ; Setup parameters for call to function osal_memset
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     A,#0x10
+        CLR     C
+        SUBB    A,?V0
+        MOV     R4,A
+        MOV     A,#0x0
+        SUBB    A,?V1
+        MOV     R5,A
+        MOV     A,R4
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,R4
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,R5
+        MUL     AB
+        ADD     A,R0
+        MOV     R5,A
+        MOV     R1,#-0x1
+        MOV     DPTR,#gListNum
+        MOV     R0,#?V0
+        LCALL   ?L_MOV_X
+        MOV     A,?V0
+        MOV     B,#0xa
+        MUL     AB
+        XCH     A,?V0
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0xa
+        MOV     A,?V1
+        MUL     AB
+        ADD     A,R0
+        MOV     ?V1,A
+        MOV     A,#gListCache & 0xff
+        ADD     A,?V0
+        MOV     R2,A
+        MOV     A,#(gListCache >> 8) & 0xff
+        ADDC    A,?V1
+        MOV     R3,A
+        LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+//  505     }
+//  506 }
+??List_cache_force_load_3:
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock21
+//  507 
+//  508 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  509 static uint8 Authlist_init( uint8 load )
+Authlist_init:
+          CFI Block cfiBlock22 Using cfiCommon0
+          CFI Function Authlist_init
+        CODE
+//  510 {
+        FUNCALL Authlist_init, List_cache_recreate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_init, List_cache_force_load
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  511     List_cache_recreate();
+        ; Setup parameters for call to function List_cache_recreate
+        LCALL   `??List_cache_recreate::?relay`; Banked call to: List_cache_recreate
+//  512     if (load) List_cache_force_load(0);
+        MOV     A,R6
+        JZ      ??Authlist_init_0
+        ; Setup parameters for call to function List_cache_force_load
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+//  513     return SUCCESS;
+??Authlist_init_0:
+        MOV     R1,#0x0
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+//  514 }
+          CFI EndBlock cfiBlock22
+//  515 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  516 bool Authlist_verify_device(uint16 ShortAddress, uint8 *ExtendedAddress,
+Authlist_verify_device:
+          CFI Block cfiBlock23 Using cfiCommon0
+          CFI Function Authlist_verify_device
+        CODE
+//  517                                 uint8 CapabilityFlags, uint8 type)
+//  518 {
+        FUNCALL Authlist_verify_device, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_verify_device, Authlist_find_by_key
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Authlist_verify_device, Mail_uplink_notify
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V7
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 8
+        MOV     A,#-0x8
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V2,R1
+//  519     uint8 sig[AUTH_LIST_KEY_LEN];
+//  520 	
+//  521     osal_memcpy(sig, ExtendedAddress, AUTH_LIST_KEY_LEN);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,R6
+        MOV     ?V5,R7
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 27)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+//  522     if (AUTH_LIST_INVALID_INDEX != 
+//  523             Authlist_find_by_key(sig, AUTH_LIST_KEY_LEN))
+        MOV     DPTR,#__Constant_ffffffff
+        PUSH    DPL
+          CFI CFA_SP SP+-1
+        PUSH    DPH
+          CFI CFA_SP SP+-2
+        ; Setup parameters for call to function Authlist_find_by_key
+        MOV     DPTR,#__Constant_8
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+          CFI CFA_XSP16 add(XSP16, 28)
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP101_8
+        LCALL   `??Authlist_find_by_key::?relay`; Banked call to: Authlist_find_by_key
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     ?V6,R4
+        MOV     ?V7,R5
+        POP     DPH
+          CFI CFA_SP SP+-1
+        POP     DPL
+          CFI CFA_SP SP+0
+        MOV     R0,#?V4
+        LCALL   ?L_EQ_X
+        JZ      ??Authlist_verify_device_0
+//  524         return TRUE;
+        MOV     R1,#0x1
+        SJMP    ??Authlist_verify_device_1
+//  525 
+//  526     Mail_uplink_notify(0, ExtendedAddress);
+??Authlist_verify_device_0:
+        ; Setup parameters for call to function Mail_uplink_notify
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0x0
+        LCALL   `??Mail_uplink_notify::?relay`; Banked call to: Mail_uplink_notify
+//  527     return FALSE;
+        MOV     R1,#0x0
+??Authlist_verify_device_1:
+        MOV     A,#0x8
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+//  528 }
+          CFI EndBlock cfiBlock23
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for gAuthConfig>`:
+        DATA32
+        DD 1
+        DD 0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Node_auth_init::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Node_auth_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Node_auth_wipe::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Node_auth_wipe
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_should_insert::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_should_insert
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_add::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_add
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_get::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_get
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_delete_entry::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_delete_entry
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_del::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_del
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_item_cnt::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_item_cnt
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_find_by_key::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_find_by_key
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Node_auth_uart_msg_process::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Node_auth_uart_msg_process
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Set_registered_num::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Set_registered_num
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Mail_uplink::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Mail_uplink
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Mail_uplink_registered_cnt::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Mail_uplink_registered_cnt
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Mail_uplink_key::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Mail_uplink_key
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Mail_uplink_notify::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Mail_uplink_notify
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_recreate::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_recreate
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_load_on_need::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_load_on_need
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_write_back::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_write_back
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_contain::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_contain
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_find_by_key::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_find_by_key
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_load_next::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_load_next
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??List_cache_force_load::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    List_cache_force_load
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_init::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Authlist_verify_device::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Authlist_verify_device
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}>`:
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_0:
+        DD 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_66:
+        DD 102
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ffffffff:
+        DD 4294967295
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1:
+        DD 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_8:
+        DD 8
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ff00:
+        DD 65280
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_ff0000:
+        DD 16711680
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_fffffff0:
+        DD 4294967280
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_10:
+        DD 16
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_67:
+        DD 103
+
+        END
+// 
+// 4 150 bytes in segment BANKED_CODE
+//   144 bytes in segment BANK_RELAYS
+//     2 bytes in segment SFR_AN
+//     8 bytes in segment XDATA_I
+//     8 bytes in segment XDATA_ID
+//    50 bytes in segment XDATA_ROM_C
+//   168 bytes in segment XDATA_Z
+// 
+// 4 302 bytes of CODE  memory
+//    10 bytes of CONST memory (+ 40 bytes shared)
+//     0 bytes of DATA  memory (+  2 bytes shared)
+//   176 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

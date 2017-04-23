@@ -1,0 +1,11 @@
+---- zgConfigPANID_Table Matches (6 in 3 files) ----
+ZDObject.c (components\stack\zdo):			//zgConfigPANID = _NIB.nwkPanId = zgConfigPANID_Table[(zgScanNwkCount - 1) / ZG_NWK_DISCOVERY_COUNT];
+ZDObject.c (components\stack\zdo):      _NIB.nwkPanId = zgConfigPANID_Table[(zgScanNwkCount - 1) / ZG_NWK_DISCOVERY_COUNT];
+ZDObject.c (components\stack\zdo):			//zgConfigPANID = _NIB.nwkPanId = zgConfigPANID_Table[0];
+ZDObject.c (components\stack\zdo):      _NIB.nwkPanId = zgConfigPANID_Table[0];
+ZGlobals.c (components\stack\sys):const uint16 zgConfigPANID_Table[] = {ZDAPP_CONFIG_PAN_ID, ZDAPP_CONFIG_PAN_ID + 1, ZDAPP_CONFIG_PAN_ID + 2,
+ZGlobals.h (components\stack\sys):extern const uint16 zgConfigPANID_Table[];  //chaokw
+---- zgConfigPANID_Table Search Errors Encountered (2) ----
+The following 2 files could not be processed:
+C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh 1.0.0\Untitled Project.IAB : File could not be opened.
+C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh 1.0.0\Untitled Project.IMB : File could not be opened.

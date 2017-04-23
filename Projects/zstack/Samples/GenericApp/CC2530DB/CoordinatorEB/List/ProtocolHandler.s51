@@ -1,0 +1,5421 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V9.30.1.3056 for 8051               21/Apr/2017  17:49:21
+// Copyright 2004-2015 IAR Systems AB.
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Application\ProtocolHandler.c
+//    Command line       =  
+//        -f "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+//        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+//        1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x04000000 -DZDAPP_CONFIG_PAN_ID=0x0085
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=5
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+//        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+//        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440) -DCHANNEL_CNT=0x01 "C:\Texas
+//        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Application\ProtocolHandler.c" -D ZTOOL_P1 -D
+//        MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D
+//        NV_RESTORE -D NV_INIT -D NODE_AUTH -D xWIFI_FREQUENCY_SELECT -D
+//        OPEN_FCS -lC "C:\Texas Instruments\Z-Stack Mesh
+//        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+//        1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List"
+//        -lA "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List"
+//        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+//        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+//        1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\Obj"
+//        -e --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+//        --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 16 -I "C:\Texas
+//        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+//        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+//        "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Application\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+//        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+//        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+//        -On --require_prototypes
+//    List file          =  
+//        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+//        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+//        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB\List\ProtocolHandler.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME ProtocolHandler
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?V4
+        EXTERN ?V5
+        EXTERN ?V6
+        EXTERN ?V8
+        EXTERN ?V9
+        EXTERN ?ADD_XSTACK_DISP0_16
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK8_X_FOUR
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_THREE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_16
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTACK_DISP100_8
+        EXTERN ?XSTACK_DISP102_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC `??CustomApp_AF_Broadcast_Data_Process::?relay`
+        FUNCTION `??CustomApp_AF_Broadcast_Data_Process::?relay`,0203H
+        PUBLIC `??CustomApp_AF_Group_Data_Process::?relay`
+        FUNCTION `??CustomApp_AF_Group_Data_Process::?relay`,0203H
+        PUBLIC `??CustomApp_AF_P2P_Data_Process::?relay`
+        FUNCTION `??CustomApp_AF_P2P_Data_Process::?relay`,0203H
+        PUBLIC `??CustomApp_Coordinator_Online::?relay`
+        FUNCTION `??CustomApp_Coordinator_Online::?relay`,0203H
+        PUBLIC `??CustomApp_FW_Update::?relay`
+        FUNCTION `??CustomApp_FW_Update::?relay`,0203H
+        PUBLIC `??CustomApp_Get_Active_Cnt::?relay`
+        FUNCTION `??CustomApp_Get_Active_Cnt::?relay`,0203H
+        PUBLIC `??CustomApp_Get_ExtAddr::?relay`
+        FUNCTION `??CustomApp_Get_ExtAddr::?relay`,0203H
+        PUBLIC `??CustomApp_Get_Flex_Devinfo::?relay`
+        FUNCTION `??CustomApp_Get_Flex_Devinfo::?relay`,0203H
+        PUBLIC `??CustomApp_Get_NWKInfo::?relay`
+        FUNCTION `??CustomApp_Get_NWKInfo::?relay`,0203H
+        PUBLIC `??CustomApp_Get_Version::?relay`
+        FUNCTION `??CustomApp_Get_Version::?relay`,0203H
+        PUBLIC `??CustomApp_Send_BroadCast_Data::?relay`
+        FUNCTION `??CustomApp_Send_BroadCast_Data::?relay`,0203H
+        PUBLIC `??CustomApp_Send_Group_Data::?relay`
+        FUNCTION `??CustomApp_Send_Group_Data::?relay`,0203H
+        PUBLIC `??CustomApp_Send_P2P_Data::?relay`
+        FUNCTION `??CustomApp_Send_P2P_Data::?relay`,0203H
+        PUBLIC `??CustomApp_Set_Multiway::?relay`
+        FUNCTION `??CustomApp_Set_Multiway::?relay`,0203H
+        FUNCTION `??CustomApp_Uart_Send::?relay`,0203H
+        PUBLIC `??CustomApp_coordinator_online_req::?relay`
+        FUNCTION `??CustomApp_coordinator_online_req::?relay`,0203H
+        PUBLIC `??CustomApp_router_offline_req::?relay`
+        FUNCTION `??CustomApp_router_offline_req::?relay`,0203H
+        PUBLIC `??CustomApp_router_online_req::?relay`
+        FUNCTION `??CustomApp_router_online_req::?relay`,0203H
+        PUBLIC `??Nvram_Write_Multiway::?relay`
+        FUNCTION `??Nvram_Write_Multiway::?relay`,0203H
+        PUBLIC `??Register_Group_Multiway::?relay`
+        FUNCTION `??Register_Group_Multiway::?relay`,0203H
+        PUBLIC CustomApp_AF_Broadcast_Data_Process
+        FUNCTION CustomApp_AF_Broadcast_Data_Process,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC CustomApp_AF_Group_Data_Process
+        FUNCTION CustomApp_AF_Group_Data_Process,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC CustomApp_AF_P2P_Data_Process
+        FUNCTION CustomApp_AF_P2P_Data_Process,0a1203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC CustomApp_Coordinator_Online
+        FUNCTION CustomApp_Coordinator_Online,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 22, STACK
+        PUBLIC CustomApp_FW_Update
+        FUNCTION CustomApp_FW_Update,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        PUBLIC CustomApp_Get_Active_Cnt
+        FUNCTION CustomApp_Get_Active_Cnt,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC CustomApp_Get_ExtAddr
+        FUNCTION CustomApp_Get_ExtAddr,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 28, STACK
+        PUBLIC CustomApp_Get_Flex_Devinfo
+        FUNCTION CustomApp_Get_Flex_Devinfo,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC CustomApp_Get_NWKInfo
+        FUNCTION CustomApp_Get_NWKInfo,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 27, STACK
+        PUBLIC CustomApp_Get_Version
+        FUNCTION CustomApp_Get_Version,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC CustomApp_Send_BroadCast_Data
+        FUNCTION CustomApp_Send_BroadCast_Data,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        PUBLIC CustomApp_Send_Group_Data
+        FUNCTION CustomApp_Send_Group_Data,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 44, STACK
+        PUBLIC CustomApp_Send_P2P_Data
+        FUNCTION CustomApp_Send_P2P_Data,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        PUBLIC CustomApp_Set_Multiway
+        FUNCTION CustomApp_Set_Multiway,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 39, STACK
+        FUNCTION CustomApp_Uart_Send,0a1203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 277, STACK
+        PUBLIC CustomApp_coordinator_online_req
+        FUNCTION CustomApp_coordinator_online_req,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 45, STACK
+        PUBLIC CustomApp_router_offline_req
+        FUNCTION CustomApp_router_offline_req,0a1203H
+        ARGFRAME XSTACK, 12, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 24, STACK
+        PUBLIC CustomApp_router_online_req
+        FUNCTION CustomApp_router_online_req,0a1203H
+        ARGFRAME XSTACK, 12, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 24, STACK
+        PUBLIC GenericApp_Group
+        PUBLIC Nvram_Write_Multiway
+        FUNCTION Nvram_Write_Multiway,0a1203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 14, STACK
+        PUBLIC Prot_Group_T
+        PUBLIC Register_Group_Multiway
+        FUNCTION Register_Group_Multiway,0a1203H
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 14, STACK
+        PUBWEAK __Constant_1f4
+        PUBLIC uart_buf
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+AF_DataRequest      SYMBOL "AF_DataRequest"
+`??AF_DataRequest::?relay` SYMBOL "?relay", AF_DataRequest
+CustomApp_get_connected_node_count SYMBOL "CustomApp_get_connected_node_count"
+`??CustomApp_get_connected_node_count::?relay` SYMBOL "?relay", CustomApp_get_connected_node_count
+HalUARTWrite        SYMBOL "HalUARTWrite"
+`??HalUARTWrite::?relay` SYMBOL "?relay", HalUARTWrite
+MT_UartCalcFCS      SYMBOL "MT_UartCalcFCS"
+`??MT_UartCalcFCS::?relay` SYMBOL "?relay", MT_UartCalcFCS
+NLME_GetExtAddr     SYMBOL "NLME_GetExtAddr"
+`??NLME_GetExtAddr::?relay` SYMBOL "?relay", NLME_GetExtAddr
+NLME_GetShortAddr   SYMBOL "NLME_GetShortAddr"
+`??NLME_GetShortAddr::?relay` SYMBOL "?relay", NLME_GetShortAddr
+aps_AddGroup        SYMBOL "aps_AddGroup"
+`??aps_AddGroup::?relay` SYMBOL "?relay", aps_AddGroup
+aps_RemoveGroup     SYMBOL "aps_RemoveGroup"
+`??aps_RemoveGroup::?relay` SYMBOL "?relay", aps_RemoveGroup
+osal_memcpy         SYMBOL "osal_memcpy"
+`??osal_memcpy::?relay` SYMBOL "?relay", osal_memcpy
+osal_msg_allocate   SYMBOL "osal_msg_allocate"
+`??osal_msg_allocate::?relay` SYMBOL "?relay", osal_msg_allocate
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+`??osal_msg_deallocate::?relay` SYMBOL "?relay", osal_msg_deallocate
+osal_nv_read        SYMBOL "osal_nv_read"
+`??osal_nv_read::?relay` SYMBOL "?relay", osal_nv_read
+osal_nv_write       SYMBOL "osal_nv_write"
+`??osal_nv_write::?relay` SYMBOL "?relay", osal_nv_write
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+`??osal_start_timerEx::?relay` SYMBOL "?relay", osal_start_timerEx
+CustomApp_AF_Broadcast_Data_Process SYMBOL "CustomApp_AF_Broadcast_Data_Process"
+`??CustomApp_AF_Broadcast_Data_Process::?relay` SYMBOL "?relay", CustomApp_AF_Broadcast_Data_Process
+CustomApp_AF_Group_Data_Process SYMBOL "CustomApp_AF_Group_Data_Process"
+`??CustomApp_AF_Group_Data_Process::?relay` SYMBOL "?relay", CustomApp_AF_Group_Data_Process
+CustomApp_AF_P2P_Data_Process SYMBOL "CustomApp_AF_P2P_Data_Process"
+`??CustomApp_AF_P2P_Data_Process::?relay` SYMBOL "?relay", CustomApp_AF_P2P_Data_Process
+CustomApp_Coordinator_Online SYMBOL "CustomApp_Coordinator_Online"
+`??CustomApp_Coordinator_Online::?relay` SYMBOL "?relay", CustomApp_Coordinator_Online
+CustomApp_FW_Update SYMBOL "CustomApp_FW_Update"
+`??CustomApp_FW_Update::?relay` SYMBOL "?relay", CustomApp_FW_Update
+CustomApp_Get_Active_Cnt SYMBOL "CustomApp_Get_Active_Cnt"
+`??CustomApp_Get_Active_Cnt::?relay` SYMBOL "?relay", CustomApp_Get_Active_Cnt
+CustomApp_Get_ExtAddr SYMBOL "CustomApp_Get_ExtAddr"
+`??CustomApp_Get_ExtAddr::?relay` SYMBOL "?relay", CustomApp_Get_ExtAddr
+CustomApp_Get_Flex_Devinfo SYMBOL "CustomApp_Get_Flex_Devinfo"
+`??CustomApp_Get_Flex_Devinfo::?relay` SYMBOL "?relay", CustomApp_Get_Flex_Devinfo
+CustomApp_Get_NWKInfo SYMBOL "CustomApp_Get_NWKInfo"
+`??CustomApp_Get_NWKInfo::?relay` SYMBOL "?relay", CustomApp_Get_NWKInfo
+CustomApp_Get_Version SYMBOL "CustomApp_Get_Version"
+`??CustomApp_Get_Version::?relay` SYMBOL "?relay", CustomApp_Get_Version
+CustomApp_Send_BroadCast_Data SYMBOL "CustomApp_Send_BroadCast_Data"
+`??CustomApp_Send_BroadCast_Data::?relay` SYMBOL "?relay", CustomApp_Send_BroadCast_Data
+CustomApp_Send_Group_Data SYMBOL "CustomApp_Send_Group_Data"
+`??CustomApp_Send_Group_Data::?relay` SYMBOL "?relay", CustomApp_Send_Group_Data
+CustomApp_Send_P2P_Data SYMBOL "CustomApp_Send_P2P_Data"
+`??CustomApp_Send_P2P_Data::?relay` SYMBOL "?relay", CustomApp_Send_P2P_Data
+CustomApp_Set_Multiway SYMBOL "CustomApp_Set_Multiway"
+`??CustomApp_Set_Multiway::?relay` SYMBOL "?relay", CustomApp_Set_Multiway
+CustomApp_coordinator_online_req SYMBOL "CustomApp_coordinator_online_req"
+`??CustomApp_coordinator_online_req::?relay` SYMBOL "?relay", CustomApp_coordinator_online_req
+CustomApp_router_offline_req SYMBOL "CustomApp_router_offline_req"
+`??CustomApp_router_offline_req::?relay` SYMBOL "?relay", CustomApp_router_offline_req
+CustomApp_router_online_req SYMBOL "CustomApp_router_online_req"
+`??CustomApp_router_online_req::?relay` SYMBOL "?relay", CustomApp_router_online_req
+Nvram_Write_Multiway SYMBOL "Nvram_Write_Multiway"
+`??Nvram_Write_Multiway::?relay` SYMBOL "?relay", Nvram_Write_Multiway
+Register_Group_Multiway SYMBOL "Register_Group_Multiway"
+`??Register_Group_Multiway::?relay` SYMBOL "?relay", Register_Group_Multiway
+
+        EXTERN `??AF_DataRequest::?relay`
+        FUNCTION `??AF_DataRequest::?relay`,00H
+        EXTERN `??CustomApp_get_connected_node_count::?relay`
+        FUNCTION `??CustomApp_get_connected_node_count::?relay`,00H
+        EXTERN `??HalUARTWrite::?relay`
+        FUNCTION `??HalUARTWrite::?relay`,00H
+        EXTERN `??MT_UartCalcFCS::?relay`
+        FUNCTION `??MT_UartCalcFCS::?relay`,00H
+        EXTERN `??NLME_GetExtAddr::?relay`
+        FUNCTION `??NLME_GetExtAddr::?relay`,00H
+        EXTERN `??NLME_GetShortAddr::?relay`
+        FUNCTION `??NLME_GetShortAddr::?relay`,00H
+        EXTERN `??aps_AddGroup::?relay`
+        FUNCTION `??aps_AddGroup::?relay`,00H
+        EXTERN `??aps_RemoveGroup::?relay`
+        FUNCTION `??aps_RemoveGroup::?relay`,00H
+        EXTERN `??osal_memcpy::?relay`
+        FUNCTION `??osal_memcpy::?relay`,00H
+        EXTERN `??osal_msg_allocate::?relay`
+        FUNCTION `??osal_msg_allocate::?relay`,00H
+        EXTERN `??osal_msg_deallocate::?relay`
+        FUNCTION `??osal_msg_deallocate::?relay`,00H
+        EXTERN `??osal_nv_read::?relay`
+        FUNCTION `??osal_nv_read::?relay`,00H
+        EXTERN `??osal_nv_write::?relay`
+        FUNCTION `??osal_nv_write::?relay`,00H
+        EXTERN `??osal_start_timerEx::?relay`
+        FUNCTION `??osal_start_timerEx::?relay`,00H
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 45, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN CustomApp_get_connected_node_count
+        FUNCTION CustomApp_get_connected_node_count,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN GenericApp_TaskID
+        EXTERN GenericApp_TransID
+        EXTERN GenericApp_epDesc
+        EXTERN HalUARTWrite
+        FUNCTION HalUARTWrite,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 274, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MT_UartCalcFCS
+        FUNCTION MT_UartCalcFCS,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 274, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetExtAddr
+        FUNCTION NLME_GetExtAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetShortAddr
+        FUNCTION NLME_GetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SerialApp_TxAddr_broadcast
+        EXTERN SerialApp_TxAddr_group
+        EXTERN SerialApp_TxAddr_p2p
+        EXTERN _NIB
+        EXTERN aps_AddGroup
+        FUNCTION aps_AddGroup,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN aps_RemoveGroup
+        FUNCTION aps_RemoveGroup,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN fw_version
+        EXTERN macPhyChannel
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 277, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_allocate
+        FUNCTION osal_msg_allocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_nv_read
+        FUNCTION osal_nv_read,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_nv_write
+        FUNCTION osal_nv_write,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+
+// C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh 1.0.0\Projects\zstack\Application\ProtocolHandler.c
+//    1 /**************************************************************************************************
+//    2   Filename:       ProtocolHandler.c
+//    3   Revised:        2017-03-19
+//    4 
+//    5   Description -   Serial Transfer Application node authentication related func.
+//    6 
+//    7 **************************************************************************************************/
+//    8 
+//    9 
+//   10 /*********************************************************************
+//   11  * INCLUDES
+//   12  */
+//   13 #include "MT_UART.h"
+//   14 #include "MT_RPC.h"
+//   15 #include "ZComDef.h"
+//   16 #include "ZDApp.h"
+//   17 #include "hal_uart.h"
+//   18 #include "GenericApp.h"
+//   19 #include "hal_aes.h"
+//   20 #include "hal_ccm.h"
+//   21 #include "osal_nv.h"
+//   22 #include "mac_rx_onoff.h"
+//   23 #include "mac_radio.h"
+//   24 #include "mac_mcu.h"
+//   25 #include "mac_low_level.h"
+//   26 #include "string.h"
+//   27 
+//   28 #include "GenericApp.h"
+//   29 #include "ProtocolHandler.h"
+//   30 #include "Aps_groups.h"
+//   31 
+//   32 
+//   33 /*********************************************************************
+//   34  * LOCAL VARIABLES
+//   35  */
+//   36 #if defined( ZDO_COORDINATOR ) && defined( WIFI_FREQUENCY_SELECT )
+//   37 // For zigbee channel select
+//   38 bool __xdata getWifiChannel = FALSE;
+//   39 bool __xdata zgChannelUpdate = FALSE;
+//   40 // For wifi channel, every bit indicate one channel
+//   41 uint16 __xdata wifiChannel = 0x0000;
+//   42 
+//   43 extern uint32 __xdata zgDefaultChannelMask;
+//   44 #endif
+//   45 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   46 PROT_GROUP_STRUCT Prot_Group_T;
+Prot_Group_T:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   47 aps_Group_t GenericApp_Group;
+GenericApp_Group:
+        DS 18
+        REQUIRE __INIT_XDATA_Z
+//   48 #define GENERICAPP_GROUP 0x0001
+//   49 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   50 uint8 *uart_buf;
+uart_buf:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   51 
+//   52 /*********************************************************************
+//   53  * LOCAL FUNCTIONS
+//   54  */
+//   55 static void CustomApp_Uart_Send( uint8 port, uint16 cmd, uint8 *pbuf, uint8 len, uint8 offset );
+//   56 #if defined( ZDO_COORDINATOR ) && defined( WIFI_FREQUENCY_SELECT )
+//   57 static void CustomApp_ZigbeeChannelMask( uint16 wifiChannel );
+//   58 #endif
+//   59 
+//   60 
+//   61 /*********************************************************************
+//   62  * FUNCTIONS
+//   63  */
+//   64 
+//   65 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   66 uint8 CustomApp_Send_P2P_Data( afIncomingMSGPacket_t *pkt )
+CustomApp_Send_P2P_Data:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function CustomApp_Send_P2P_Data
+        CODE
+//   67 {
+        FUNCALL CustomApp_Send_P2P_Data, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_P2P_Data, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_P2P_Data, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_P2P_Data, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   68     uint8 *msg;	
+//   69     uint8 ret = ZFailure;
+        MOV     ?V0,#0x1
+//   70 	
+//   71     msg = (uint8 *)osal_msg_allocate( pkt->cmd.DataLength);
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     ?V2,?V4
+        MOV     ?V3,?V5
+//   72     if ( msg == NULL )
+        MOV     A,?V2
+        ORL     A,?V3
+        JNZ     ??CustomApp_Send_P2P_Data_0
+//   73     {
+//   74         return ret;
+        MOV     R1,?V0
+        LJMP    ??CustomApp_Send_P2P_Data_1 & 0xFFFF
+//   75     }
+//   76 
+//   77     osal_memcpy(msg, pkt->cmd.Data, pkt->cmd.DataLength);
+??CustomApp_Send_P2P_Data_0:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V5,A
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,?V2
+        MOV     R3,?V3
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+//   78     SerialApp_TxAddr_p2p.addr.shortAddr = (pkt->cmd.Data[5 + MT_UART_HEAD_LEN] << 8) | pkt->cmd.Data[4 + MT_UART_HEAD_LEN];
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        XCH     A,R0
+        ADD     A,#0x8
+        MOV     DPL,A
+        XCH     A,R0
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        XCH     A,R2
+        ADD     A,#0x7
+        MOV     DPL,A
+        XCH     A,R2
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     A,R0
+        ORL     A,R2
+        MOV     R0,A
+        MOV     A,R1
+        ORL     A,R3
+        MOV     R1,A
+        MOV     DPTR,#SerialApp_TxAddr_p2p
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//   79     if ( AF_DataRequest( &SerialApp_TxAddr_p2p, &GenericApp_epDesc,
+//   80                          GENERICAPP_DATA_P2P_CLUSTERID,
+//   81                          (byte) (pkt->cmd.DataLength) ,
+//   82                          (byte *)(msg),
+//   83                          &GenericApp_TransID,
+//   84                          AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V1,#0x1e
+        MOV     R0,#?V1
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     ?V4,#GenericApp_TransID & 0xff
+        MOV     ?V5,#(GenericApp_TransID >> 8) & 0xff
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     ?V4,R0
+        MOV     ?V5,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 22)
+        MOV     ?V4,#0x2
+        MOV     ?V5,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R1,#0x0
+        MOV     R4,#GenericApp_epDesc & 0xff
+        MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+        MOV     R2,#SerialApp_TxAddr_p2p & 0xff
+        MOV     R3,#(SerialApp_TxAddr_p2p >> 8) & 0xff
+        LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     A,R1
+        JNZ     ??CustomApp_Send_P2P_Data_2
+//   85     {
+//   86         ret = ZSuccess;
+        MOV     ?V0,#0x0
+//   87     }
+//   88     osal_msg_deallocate( msg );
+??CustomApp_Send_P2P_Data_2:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V2
+        MOV     R3,?V3
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//   89     return ret;	
+        MOV     R1,?V0
+??CustomApp_Send_P2P_Data_1:
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+//   90 }
+          CFI EndBlock cfiBlock0
+//   91 
+//   92 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   93 uint8 CustomApp_Send_BroadCast_Data( afIncomingMSGPacket_t *pkt )
+CustomApp_Send_BroadCast_Data:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI Function CustomApp_Send_BroadCast_Data
+        CODE
+//   94 {
+        FUNCALL CustomApp_Send_BroadCast_Data, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_BroadCast_Data, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_BroadCast_Data, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_BroadCast_Data, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V8
+        REQUIRE ?V9
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 18)
+        ; Saved register size: 18
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//   95 	uint8 *msg;
+//   96 	uint8 ret = ZFailure;
+        MOV     ?V0,#0x1
+//   97 
+//   98 	msg = (uint8 *)osal_msg_allocate( pkt->cmd.DataLength);
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     ?V8,?V2
+        MOV     ?V9,?V3
+//   99 	if ( msg == NULL )
+        MOV     A,?V8
+        ORL     A,?V9
+        JNZ     ??CustomApp_Send_BroadCast_Data_0
+//  100 	{
+//  101 		return ret;
+        MOV     R1,?V0
+        LJMP    ??CustomApp_Send_BroadCast_Data_1 & 0xFFFF
+//  102 	}
+//  103 
+//  104 	osal_memcpy(msg, pkt->cmd.Data, pkt->cmd.DataLength);
+??CustomApp_Send_BroadCast_Data_0:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V5,A
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 21)
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,?V8
+        MOV     R3,?V9
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+//  105 	SerialApp_TxAddr_broadcast.addr.shortAddr = 0xffff;
+        MOV     DPTR,#SerialApp_TxAddr_broadcast
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  106 
+//  107 	if ( AF_DataRequest( &SerialApp_TxAddr_broadcast, &GenericApp_epDesc,
+//  108 						 GENERICAPP_BROADCAST_CLUSTERID,
+//  109 						 (byte) (pkt->cmd.DataLength) ,
+//  110 						 (byte *)(msg),
+//  111 						 &GenericApp_TransID,
+//  112 						 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V1,#0x1e
+        MOV     R0,#?V1
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 19)
+        MOV     ?V2,#GenericApp_TransID & 0xff
+        MOV     ?V3,#(GenericApp_TransID >> 8) & 0xff
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 21)
+        MOV     R0,#?V8
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 23)
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     ?V2,R0
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 25)
+        MOV     ?V2,#0x5
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 27)
+        MOV     R1,#0x0
+        MOV     R4,#GenericApp_epDesc & 0xff
+        MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+        MOV     R2,#SerialApp_TxAddr_broadcast & 0xff
+        MOV     R3,#(SerialApp_TxAddr_broadcast >> 8) & 0xff
+        LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     A,R1
+        JNZ     ??CustomApp_Send_BroadCast_Data_2
+//  113 	{
+//  114 		ret = ZSuccess;
+        MOV     ?V0,#0x0
+//  115 	}
+//  116        osal_msg_deallocate( msg );
+??CustomApp_Send_BroadCast_Data_2:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V8
+        MOV     R3,?V9
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  117 	return ret;
+        MOV     R1,?V0
+??CustomApp_Send_BroadCast_Data_1:
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+//  118 }
+          CFI EndBlock cfiBlock1
+//  119 
+//  120 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  121 uint8 CustomApp_Send_Group_Data( afIncomingMSGPacket_t *pkt )  //chaokw
+CustomApp_Send_Group_Data:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function CustomApp_Send_Group_Data
+        CODE
+//  122 {
+        FUNCALL CustomApp_Send_Group_Data, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 44, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 44, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Send_Group_Data, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 20
+        MOV     A,#-0x14
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+//  123     uint8 msg[20];
+//  124     uint8 ret = ZFailure;	
+        MOV     ?V0,#0x1
+//  125     uint8 fcs;	
+//  126 	
+//  127     transferpkt_t *lightstate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  2);
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     R2,#0xe
+        MOV     R3,#0x0
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     ?V4,R2
+        MOV     ?V5,R3
+        MOV     R6,?V4
+        MOV     R7,?V5
+//  128     if (lightstate != NULL)
+        MOV     A,R6
+        ORL     A,R7
+        JNZ     $+5
+        LJMP    ??CustomApp_Send_Group_Data_0 & 0xFFFF
+//  129     {
+//  130         lightstate->msgid = GROUP_LIGHT_STATE_MSG; 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x7a
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x20
+        MOVX    @DPTR,A
+//  131         lightstate->msgseq = 0x0001;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  132         lightstate->srcid = NLME_GetShortAddr();
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  133         lightstate->destid = Prot_Group_T.group_id;
+        MOV     DPTR,#Prot_Group_T
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  134         lightstate->datalen = 2;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  135 
+//  136         lightstate->data = (uint8 *)(lightstate + 1);
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     R0,A
+        CLR     A
+        ADDC    A,R7
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  137         osal_memcpy(&lightstate->data, &pkt->cmd.Data[3], 2);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,?V2
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,?V3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x3
+        MOV     ?V4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     ?V5,A
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 38)
+        MOV     R4,#0x2
+        MOV     R5,#0x0
+        MOV     A,R6
+        ADD     A,#0x9
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R7
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+//  138         fcs = MT_UartCalcFCS((uint8 *)lightstate, lightstate->datalen + PKT_HEAD_LEN); 
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x9
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        MOV     ?V1,A
+//  139 
+//  140         msg[0] = MT_CPT_SOP;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  141         msg[1] = lightstate->datalen + PKT_HEAD_LEN + 1;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xa
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  142         msg[2] = MT_DATA_P2P_RSP & 0xff;   
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+//  143         msg[3] = (MT_DATA_P2P_RSP  & 0xff00) >> 8;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x20
+        MOVX    @DPTR,A
+//  144 
+//  145         osal_memcpy(&msg[4], (uint8 *)lightstate, PKT_HEAD_LEN);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,R6
+        MOV     ?V5,R7
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 38)
+        MOV     R4,#0x9
+        MOV     R5,#0x0
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+//  146         osal_memcpy(&msg[4 + PKT_HEAD_LEN], &lightstate->data, lightstate->datalen);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,R6
+        ADD     A,#0x9
+        MOV     ?V4,A
+        CLR     A
+        ADDC    A,R7
+        MOV     ?V5,A
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 38)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     R5,#0x0
+        MOV     A,#0x10
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+//  147         msg[4 + lightstate->datalen + PKT_HEAD_LEN] = fcs;
+        MOV     A,?V1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#0xd
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  148 
+//  149 #ifdef OPEN_FCS 			
+//  150         msg[4 + lightstate->datalen + PKT_HEAD_LEN + 1] = MT_UartCalcFCS(&msg[1], lightstate->datalen + PKT_HEAD_LEN + 1 + 3); //rptmac17 + fcs1 + cmd2 + len1
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xd
+        MOV     R1,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#0xe
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  151 #else  
+//  152         msg[4 + lightstate->datalen + PKT_HEAD_LEN + 1] = DEFAULTFCS;
+//  153 #endif
+//  154 
+//  155         if ( AF_DataRequest( &SerialApp_TxAddr_group, &GenericApp_epDesc,
+//  156                              GENERICAPP_GROUP_CLUSTERID,
+//  157                              (byte) (lightstate->datalen + PKT_HEAD_LEN + 1 + 3 + 2) ,
+//  158                              (byte *)(msg),
+//  159                              &GenericApp_TransID,
+//  160                              AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V4,#0x1e
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 36)
+        MOV     ?V4,#GenericApp_TransID & 0xff
+        MOV     ?V5,#(GenericApp_TransID >> 8) & 0xff
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 38)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP100_8
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 40)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xf
+        MOV     ?V4,A
+        MOV     ?V5,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 42)
+        MOV     ?V4,#0x3
+        MOV     ?V5,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 44)
+        MOV     R1,#0x0
+        MOV     R4,#GenericApp_epDesc & 0xff
+        MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+        MOV     R2,#SerialApp_TxAddr_group & 0xff
+        MOV     R3,#(SerialApp_TxAddr_group >> 8) & 0xff
+        LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     A,R1
+        JNZ     ??CustomApp_Send_Group_Data_1
+//  161         {
+//  162              ret = ZSuccess;
+        MOV     ?V0,#0x0
+//  163         }
+//  164 
+//  165         osal_msg_deallocate( (uint8 *)lightstate );
+??CustomApp_Send_Group_Data_1:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  166     }
+//  167 	
+//  168     return ret;	
+??CustomApp_Send_Group_Data_0:
+        MOV     R1,?V0
+        MOV     A,#0x14
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+//  169 }
+          CFI EndBlock cfiBlock2
+//  170 
+//  171 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  172 void CustomApp_Get_ExtAddr( void )
+CustomApp_Get_ExtAddr:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function CustomApp_Get_ExtAddr
+        CODE
+//  173 {
+        FUNCALL CustomApp_Get_ExtAddr, NLME_GetExtAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Get_ExtAddr, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Get_ExtAddr, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Get_ExtAddr, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 13
+        MOV     A,#-0xd
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 25)
+//  174 	uint8 send_buf[13];
+//  175 	uint16 cmd;
+//  176 
+//  177 	cmd = MT_MAC_RSP_MSG;
+        MOV     R6,#-0x80
+        MOV     R7,#0x35
+//  178 	send_buf[0] = 0xFE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  179 	send_buf[1 + MT_RPC_POS_LEN] = SADDR_EXT_LEN;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x8
+        MOVX    @DPTR,A
+//  180 	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+        MOV     A,R6
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  181 	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        CLR     A
+        XCH     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  182 	osal_memcpy( &send_buf[1 + MT_RPC_POS_DAT0], NLME_GetExtAddr(), SADDR_EXT_LEN );
+        ; Setup parameters for call to function NLME_GetExtAddr
+        LCALL   `??NLME_GetExtAddr::?relay`; Banked call to: NLME_GetExtAddr
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     ?V0,?V2
+        MOV     ?V1,?V3
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 25)
+//  183 	send_buf[1 + MT_RPC_POS_DAT0 + SADDR_EXT_LEN] =
+//  184 	  MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + SADDR_EXT_LEN );
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     R1,#0xb
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  185 
+//  186 	HalUARTWrite( 0, send_buf, MT_UART_HEAD_LEN + SADDR_EXT_LEN + 2 );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R4,#0xd
+        MOV     R5,#0x0
+        MOV     R2,?XSP + 0
+        MOV     R3,?XSP + 1
+        MOV     R1,#0x0
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  187 }
+        MOV     A,#0xd
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock3
+//  188 
+//  189 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  190 void CustomApp_Get_NWKInfo( void )  //chaokw
+CustomApp_Get_NWKInfo:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI Function CustomApp_Get_NWKInfo
+        CODE
+//  191 {
+        FUNCALL CustomApp_Get_NWKInfo, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 27, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 27, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Get_NWKInfo, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Get_NWKInfo, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 13
+        MOV     A,#-0xd
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+//  192 	uint8 send_buf[13];
+//  193 	uint16 cmd;
+//  194 
+//  195 	cmd = MT_NWKINFO_RSP_MSG;
+        MOV     R6,#-0x80
+        MOV     R7,#-0x70
+//  196 	send_buf[0] = 0xFE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  197 	send_buf[1 + MT_RPC_POS_LEN] = 0x03;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x3
+        MOVX    @DPTR,A
+//  198 	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+        MOV     A,R6
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  199 	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        CLR     A
+        XCH     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  200 	
+//  201        osal_memcpy(&send_buf[1 + MT_RPC_POS_DAT0], &_NIB.nwkPanId, 2);   
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0,#(_NIB + 33) & 0xff
+        MOV     ?V1,#((_NIB + 33) >> 8) & 0xff
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 27)
+        MOV     R4,#0x2
+        MOV     R5,#0x0
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 24)
+//  202        send_buf[1 + MT_RPC_POS_DAT0 + 2] = macPhyChannel;
+        MOV     DPTR,#macPhyChannel
+        MOVX    A,@DPTR
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  203 	
+//  204 	send_buf[1 + MT_RPC_POS_DAT0 + 3] =
+//  205 	  MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + 3 );
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     R1,#0x6
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  206 
+//  207 	HalUARTWrite( 0, send_buf, MT_UART_HEAD_LEN + 3 + 2 );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     R2,?XSP + 0
+        MOV     R3,?XSP + 1
+        MOV     R1,#0x0
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  208 }
+        MOV     A,#0xd
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock4
+//  209 
+//  210 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  211 void CustomApp_Get_Active_Cnt( void )
+CustomApp_Get_Active_Cnt:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function CustomApp_Get_Active_Cnt
+        CODE
+//  212 {
+        FUNCALL CustomApp_Get_Active_Cnt, CustomApp_get_connected_node_count
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Get_Active_Cnt, CustomApp_Uart_Send
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+//  213        uint8 activeCount = 0;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  214        activeCount = CustomApp_get_connected_node_count();
+        ; Setup parameters for call to function CustomApp_get_connected_node_count
+        LCALL   `??CustomApp_get_connected_node_count::?relay`; Banked call to: CustomApp_get_connected_node_count
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  215 	CustomApp_Uart_Send( 0, (uint16)MT_ACTIVE_CNT_RSP_MSG, (uint8 *)&activeCount, 1 , 0 );
+        ; Setup parameters for call to function CustomApp_Uart_Send
+        MOV     ?V0,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     ?V0,#0x1
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP102_8
+        MOV     R2,#-0x80
+        MOV     R3,#0x41
+        MOV     R1,#0x0
+        LCALL   `??CustomApp_Uart_Send::?relay`; Banked call to: CustomApp_Uart_Send
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+//  216 }
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock5
+//  217 
+//  218 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  219 void CustomApp_Get_Version( void )
+CustomApp_Get_Version:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function CustomApp_Get_Version
+        CODE
+//  220 {
+        FUNCALL CustomApp_Get_Version, CustomApp_Uart_Send
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  221 	CustomApp_Uart_Send( 0, (uint16)MT_FW_VERSION_RSP_MSG, (uint8 *)fw_version, (uint8)ZIGBEE_FW_VERSION_LEN , 0 );
+        ; Setup parameters for call to function CustomApp_Uart_Send
+        MOV     ?V0,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV     ?V0,#0xa
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     DPTR,#fw_version
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     R2,#-0x80
+        MOV     R3,#0x36
+        MOV     R1,#0x0
+        LCALL   `??CustomApp_Uart_Send::?relay`; Banked call to: CustomApp_Uart_Send
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+//  222 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock6
+//  223 
+//  224 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  225 void CustomApp_FW_Update( void )
+CustomApp_FW_Update:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function CustomApp_FW_Update
+        CODE
+//  226 {
+        FUNCALL CustomApp_FW_Update, CustomApp_Uart_Send
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_FW_Update, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  227 	CustomApp_Uart_Send( 0, (uint16)MT_FW_UPDATE_RSP_MSG, NULL, 0 , 0 );
+        ; Setup parameters for call to function CustomApp_Uart_Send
+        MOV     ?V0,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV     ?V0,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 11)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#-0x80
+        MOV     R3,#0x37
+        MOV     R1,#0x0
+        LCALL   `??CustomApp_Uart_Send::?relay`; Banked call to: CustomApp_Uart_Send
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+//  228 	osal_start_timerEx( GenericApp_TaskID, GENERICAPP_RESET_SB_MSG_EVT, 500);
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     DPTR,#__Constant_1f4
+        LCALL   ?PUSH_XSTACK8_X_FOUR
+          CFI CFA_XSP16 add(XSP16, 13)
+        MOV     R2,#0x20
+        MOV     R3,#0x0
+        MOV     DPTR,#GenericApp_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+        MOV     A,R1
+//  229 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock7
+//  230 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  231 static void CustomApp_Uart_Send( uint8 port, uint16 cmd, uint8 *pbuf, uint8 len, uint8 offset )
+CustomApp_Uart_Send:
+          CFI Block cfiBlock8 Using cfiCommon0
+          CFI Function CustomApp_Uart_Send
+        CODE
+//  232 {
+        FUNCALL CustomApp_Uart_Send, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 277, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 277, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Uart_Send, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 274, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 274, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Uart_Send, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 274, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 274, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        REQUIRE ?V8
+        REQUIRE ?V9
+        MOV     A,#-0x12
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-17)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 18)
+        ; Saved register size: 18
+        ; Auto size: 256
+        MOV     DPL,#0x0
+        MOV     DPH,#-0x1
+        LCALL   ?ADD_XSTACK_DISP0_16
+          CFI CFA_XSP16 add(XSP16, 274)
+        MOV     ?V1,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V8,R4
+        MOV     ?V9,R5
+        MOV     DPTR,#0x112
+        LCALL   ?XSTACK_DISP0_16
+        MOVX    A,@DPTR
+        MOV     ?V0,A
+        MOV     DPTR,#0x113
+        LCALL   ?XSTACK_DISP0_16
+        MOVX    A,@DPTR
+        MOV     ?V2,A
+//  233 	uint8 send_buf[256];
+//  234 
+//  235 	send_buf[0] = 0xFE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  236 	send_buf[1 + MT_RPC_POS_LEN] = len;
+        MOV     A,?V0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  237 	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+        MOV     A,R6
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  238 	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        CLR     A
+        XCH     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  239 	if ( len )
+        MOV     A,?V0
+        JZ      ??CustomApp_Uart_Send_0
+//  240 	{
+//  241 		osal_memcpy( &send_buf[1 + MT_RPC_POS_DAT0], &pbuf[offset], len );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,?V2
+        MOV     R1,#0x0
+        MOV     A,?V8
+        ADD     A,R0
+        MOV     ?V4,A
+        MOV     A,?V9
+        ADDC    A,R1
+        MOV     ?V5,A
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 277)
+        MOV     R4,?V0
+        MOV     R5,#0x0
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 274)
+//  242 	}
+//  243 	send_buf[1 + MT_RPC_POS_DAT0 + len] =
+//  244 		MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + len );
+??CustomApp_Uart_Send_0:
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     A,#0x3
+        ADD     A,?V0
+        MOV     R1,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     R0,?V0
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     DPH,A
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  245 	HalUARTWrite( port, send_buf, MT_UART_HEAD_LEN + len + 2 );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R0,?V0
+        MOV     R1,#0x0
+        MOV     A,R0
+        ADD     A,#0x5
+        MOV     R4,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R5,A
+        MOV     R2,?XSP + 0
+        MOV     R3,?XSP + 1
+        MOV     R1,?V1
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  246 }
+        MOV     B.0,C
+        MOV     DPL,#0x0
+        MOV     DPH,#0x1
+        LCALL   ?ADD_XSTACK_DISP0_16
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     C,B.0
+        MOV     R7,#0xa
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock8
+//  247 
+//  248 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  249 void CustomApp_AF_P2P_Data_Process(afIncomingMSGPacket_t *pkt)
+CustomApp_AF_P2P_Data_Process:
+          CFI Block cfiBlock9 Using cfiCommon0
+          CFI Function CustomApp_AF_P2P_Data_Process
+        CODE
+//  250 {
+        FUNCALL CustomApp_AF_P2P_Data_Process, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_P2P_Data_Process, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_P2P_Data_Process, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_P2P_Data_Process, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_P2P_Data_Process, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  251     // | SOP | Data Length |   CMD0   |CMD1   |   Data   |  FCS  |
+//  252     // | 1     |  1                |     1        |    1     |  0-Len   |   1   |  
+//  253     uart_buf = (uint8 *)osal_msg_allocate(pkt->cmd.DataLength + 2);
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     DPTR,#uart_buf
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  254     if ( uart_buf == NULL )
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     $+5
+        LJMP    ??CustomApp_AF_P2P_Data_Process_0 & 0xFFFF
+//  255     {
+//  256         return;
+//  257     } 		
+//  258     uart_buf[0] = MT_UART_SOF;	      
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  259     osal_memcpy(&uart_buf[1], pkt->cmd.Data, pkt->cmd.DataLength);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V1,A
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 11)
+//  260     uart_buf[pkt->cmd.DataLength + 1]  = MT_UartCalcFCS(&uart_buf[1], pkt->cmd.DataLength);              
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R1,A
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        ADD     A,R0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,R1
+        MOV     DPL,R2
+        MOV     DPH,A
+        INC     DPTR
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  261     HalUARTWrite(0, uart_buf, pkt->cmd.DataLength + 2);   
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R5,A
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     R1,#0x0
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  262 	
+//  263     osal_msg_deallocate ((uint8 *)uart_buf); 
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  264 }
+??CustomApp_AF_P2P_Data_Process_0:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock9
+//  265 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  266 void CustomApp_AF_Broadcast_Data_Process(afIncomingMSGPacket_t *pkt)
+CustomApp_AF_Broadcast_Data_Process:
+          CFI Block cfiBlock10 Using cfiCommon0
+          CFI Function CustomApp_AF_Broadcast_Data_Process
+        CODE
+//  267 {
+        FUNCALL CustomApp_AF_Broadcast_Data_Process, CustomApp_AF_P2P_Data_Process
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  268     CustomApp_AF_P2P_Data_Process(pkt);
+        ; Setup parameters for call to function CustomApp_AF_P2P_Data_Process
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??CustomApp_AF_P2P_Data_Process::?relay`; Banked call to: CustomApp_AF_P2P_Data_Process
+//  269 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock10
+//  270 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  271 void CustomApp_AF_Group_Data_Process(afIncomingMSGPacket_t *pkt)
+CustomApp_AF_Group_Data_Process:
+          CFI Block cfiBlock11 Using cfiCommon0
+          CFI Function CustomApp_AF_Group_Data_Process
+        CODE
+//  272 {
+        FUNCALL CustomApp_AF_Group_Data_Process, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_Group_Data_Process, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_Group_Data_Process, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_AF_Group_Data_Process, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  273     uart_buf = (uint8 *)osal_msg_allocate(pkt->cmd.DataLength);
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     DPTR,#uart_buf
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  274     if ( uart_buf == NULL )
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??CustomApp_AF_Group_Data_Process_0
+//  275     {
+//  276         return;
+//  277     } 		
+//  278     osal_memcpy(uart_buf, pkt->cmd.Data, pkt->cmd.DataLength);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V1,A
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 11)
+//  279     HalUARTWrite(0, uart_buf, pkt->cmd.DataLength);   
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     A,R6
+        ADD     A,#0x20
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     R1,#0x0
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  280     osal_msg_deallocate ((uint8 *)uart_buf); 
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     DPTR,#uart_buf
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  281 }
+??CustomApp_AF_Group_Data_Process_0:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock11
+//  282 
+//  283 
+//  284 #if defined( ZDO_COORDINATOR ) && defined( WIFI_FREQUENCY_SELECT )
+//  285 void CustomApp_WifiChannelReq( void )
+//  286 {
+//  287 	uint16 cmd;
+//  288 	uint8 buf[6] = {0};
+//  289 
+//  290 	if ( !getWifiChannel )
+//  291 	{
+//  292 		cmd = MT_WIFI_CHANNEL_REQ;
+//  293 		buf[0] = MT_UART_SOF;
+//  294 		buf[1 + MT_RPC_POS_LEN] = 0x00;
+//  295 		buf[1 + MT_RPC_POS_CMD0] = cmd & 0xFF;
+//  296 		buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xFF;
+//  297 		buf[1 + MT_RPC_POS_DAT0] = MT_UartCalcFCS( &buf[1], MT_UART_HEAD_LEN);
+//  298 		HalUARTWrite( 0, buf, MT_RPC_POS_DAT0 + 2 );
+//  299 		osal_start_timerEx( GenericApp_TaskID,
+//  300 						GENERICAPP_CHANNEL_MSG_EVT,
+//  301 						5000 );
+//  302 	}
+//  303 }
+//  304 
+//  305 void CustomApp_ChannelSelect(afIncomingMSGPacket_t *MSGpkt)
+//  306 {
+//  307 	uint16 wifi_channel;
+//  308 	wifi_channel = (uint16)(*(MSGpkt->cmd.Data));
+//  309 	if ( (wifi_channel < 1) || (wifi_channel > 13) )
+//  310 	{
+//  311 		HalUARTWrite( 0, "wifi channel error", 19 );
+//  312 		return;
+//  313 	}
+//  314 	CustomApp_ZigbeeChannelMask( wifi_channel );
+//  315 	if ( zgChannelUpdate )
+//  316 	{
+//  317 		HAL_SYSTEM_RESET();
+//  318 	}
+//  319 	getWifiChannel = TRUE;
+//  320 }
+//  321 
+//  322 static void CustomApp_ZigbeeChannelMask( uint16 wifiChannel )
+//  323 {
+//  324 	// CH1 frequency  - 11
+//  325 	uint32 wifiChannelMin = 2401;
+//  326 	// CH13 frequency + 11
+//  327 	uint32 wifiChannleMax = 2495;
+//  328 	uint32 wifiFrequency;
+//  329 	uint32 zgFrequency;
+//  330 	uint32 zgChannelMask;
+//  331 	uint8 tryCount;
+//  332 	// The BW of wifi is 22MHz
+//  333 	wifiFrequency = 2412 + 6 * (wifiChannel - 1);
+//  334 	if ( wifiFrequency -11 > wifiChannelMin )
+//  335 	{
+//  336 		wifiChannelMin = wifiFrequency -11;
+//  337 	}
+//  338 	if ( wifiFrequency + 11 < wifiChannleMax )
+//  339 	{
+//  340 		wifiChannleMax = wifiFrequency + 11;
+//  341 	}
+//  342 	// Calculate for the zigbee frequency in the gateway wifi
+//  343 	zgChannelMask = 0;
+//  344 	for ( uint8 i = 11; i <= 26; i++ )
+//  345 	{
+//  346 		zgFrequency = 2405 + 5 * (i - 11);
+//  347 		if ( (zgFrequency >= wifiChannelMin) && (zgFrequency <= wifiChannleMax) )
+//  348 		{
+//  349 			zgChannelMask |= ((uint32)1 << i);
+//  350 			if ( i == macPhyChannel )
+//  351 			{
+//  352 				zgChannelUpdate = TRUE;
+//  353 			}
+//  354 		}
+//  355 	}
+//  356 	zgChannelMask = MAX_CHANNELS_24GHZ & (~zgChannelMask);
+//  357 	if ( zgChannelMask != zgDefaultChannelMask )
+//  358 	{
+//  359 		zgDefaultChannelMask = zgChannelMask;
+//  360 	}
+//  361 	macRxOff();
+//  362 	tryCount = 3;
+//  363 	while ( tryCount --)
+//  364 	{
+//  365 		if ( osal_nv_write( ZCD_NV_CHANNEL_MASK,
+//  366 				  0,
+//  367 				  sizeof( zgDefaultChannelMask ),
+//  368 				  &zgDefaultChannelMask ) != SUCCESS )
+//  369 		{
+//  370 			HalUARTWrite( 0, "Write ZCD_NV_CHANNEL_MASK failed !", 35 );
+//  371 		}
+//  372 	}
+//  373 	macRxOn();
+//  374 }
+//  375 #endif
+//  376 
+//  377 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  378 void CustomApp_Set_Multiway(afIncomingMSGPacket_t *pkt)
+CustomApp_Set_Multiway:
+          CFI Block cfiBlock12 Using cfiCommon0
+          CFI Function CustomApp_Set_Multiway
+        CODE
+//  379 {
+        FUNCALL CustomApp_Set_Multiway, Register_Group_Multiway
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Set_Multiway, aps_RemoveGroup
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Set_Multiway, Nvram_Write_Multiway
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Set_Multiway, osal_nv_read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Set_Multiway, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Set_Multiway, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Set_Multiway, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 35, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 35, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 20
+        MOV     A,#-0x14
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  380     /*
+//  381     B1-B0	  B3-B2  B5-B4  B7-B6	 B8    B10-B9			B11		B12			B13			B14				B14
+//  382                                                         GROUP ID	GROUP Type	Mem Struct	Master loc	GROUP Master      CSUM
+//  383     */      
+//  384     uint8 msg[20];
+//  385     uint8 len;
+//  386     // nv restore and set mutliway
+//  387     Prot_Group_T.group_type = pkt->cmd.Data[2];
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#Prot_Group_T + 2
+        MOVX    @DPTR,A
+//  388     Prot_Group_T.mem_struct = pkt->cmd.Data[3];
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#Prot_Group_T + 3
+        MOVX    @DPTR,A
+//  389     Prot_Group_T.master_location = pkt->cmd.Data[4];
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#Prot_Group_T + 4
+        MOVX    @DPTR,A
+//  390     Prot_Group_T.group_master = pkt->cmd.Data[5];
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#Prot_Group_T + 5
+        MOVX    @DPTR,A
+//  391     if(Prot_Group_T.group_type == 1)//add to group
+        MOV     DPTR,#Prot_Group_T + 2
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??CustomApp_Set_Multiway_0
+//  392     {
+//  393         Prot_Group_T.group_id = pkt->cmd.Data[0] | (pkt->cmd.Data[1] << 8);
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     A,R6
+        ADD     A,#0x22
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R7
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ORL     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ORL     A,R1
+        MOV     R1,A
+        MOV     DPTR,#Prot_Group_T
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  394         Register_Group_Multiway();
+        ; Setup parameters for call to function Register_Group_Multiway
+        LCALL   `??Register_Group_Multiway::?relay`; Banked call to: Register_Group_Multiway
+        SJMP    ??CustomApp_Set_Multiway_1
+//  395     }
+//  396     else if(Prot_Group_T.group_type == 2)//remove from group
+??CustomApp_Set_Multiway_0:
+        MOV     DPTR,#Prot_Group_T + 2
+        MOVX    A,@DPTR
+        XRL     A,#0x2
+        JNZ     ??CustomApp_Set_Multiway_1
+//  397     {
+//  398         aps_RemoveGroup( GENERICAPP_ENDPOINT, GenericApp_Group.ID);
+        ; Setup parameters for call to function aps_RemoveGroup
+        MOV     DPTR,#GenericApp_Group
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     R1,#0xa
+        LCALL   `??aps_RemoveGroup::?relay`; Banked call to: aps_RemoveGroup
+        MOV     A,R1
+//  399     }
+//  400     Nvram_Write_Multiway();
+??CustomApp_Set_Multiway_1:
+        ; Setup parameters for call to function Nvram_Write_Multiway
+        LCALL   `??Nvram_Write_Multiway::?relay`; Banked call to: Nvram_Write_Multiway
+        MOV     A,R1
+//  401 
+//  402     osal_nv_read(ZCD_NV_MULTIWAY, 0, sizeof(PROT_GROUP_STRUCT), &Prot_Group_T);
+        ; Setup parameters for call to function osal_nv_read
+        MOV     ?V2,#Prot_Group_T & 0xff
+        MOV     ?V3,#(Prot_Group_T >> 8) & 0xff
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     ?V2,#0x6
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 39)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#0x4
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+        MOV     A,R1
+//  403 
+//  404     //send multiway resp to flex mcu
+//  405     len = sizeof(Prot_Group_T);
+        MOV     ?V0,#0x6
+//  406     msg[0] = MT_CPT_SOP;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  407     msg[1] = len;	
+        MOV     A,?V0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  408     msg[2] = MT_MULTIWAY_SET_RSP_MSG & 0xff;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+//  409     msg[3] = (MT_MULTIWAY_SET_RSP_MSG & 0xff00) >> 8;
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x42
+        MOVX    @DPTR,A
+//  410     osal_memcpy(&msg[4], &Prot_Group_T, len);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,#Prot_Group_T & 0xff
+        MOV     ?V5,#(Prot_Group_T >> 8) & 0xff
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 38)
+        MOV     R4,?V0
+        MOV     R5,#0x0
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 35)
+//  411 
+//  412     msg[4] = Prot_Group_T.group_id & 0xff;
+        MOV     DPTR,#Prot_Group_T
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  413     msg[5] = (Prot_Group_T.group_id & 0xff00) >> 8;
+        MOV     DPTR,#Prot_Group_T
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     A
+        XCH     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  414 
+//  415 #ifdef OPEN_FCS 			
+//  416     msg[4 + len] = MT_UartCalcFCS(&msg[1], len + 3); 
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     A,#0x3
+        ADD     A,?V0
+        MOV     R1,A
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     R0,?V0
+        MOV     R1,#0x0
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     DPH,A
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  417 #else  
+//  418     msg[4 + len] = DEFAULTFCS;
+//  419 #endif
+//  420     HalUARTWrite( 0, msg, len + 5 );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R0,?V0
+        MOV     R1,#0x0
+        MOV     A,R0
+        ADD     A,#0x5
+        MOV     R4,A
+        CLR     A
+        ADDC    A,R1
+        MOV     R5,A
+        MOV     R2,?XSP + 0
+        MOV     R3,?XSP + 1
+        MOV     R1,#0x0
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  421 }
+        MOV     A,#0x14
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock12
+//  422 
+//  423 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  424 uint8 CustomApp_coordinator_online_req ( void )
+CustomApp_coordinator_online_req:
+          CFI Block cfiBlock13 Using cfiCommon0
+          CFI Function CustomApp_coordinator_online_req
+        CODE
+//  425 {
+        FUNCALL CustomApp_coordinator_online_req, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 36, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 36, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 36, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 36, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 45, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 45, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_coordinator_online_req, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 36, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 36, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        REQUIRE ?V4
+        REQUIRE ?V5
+        REQUIRE ?V6
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 21
+        MOV     A,#-0x15
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 36)
+//  426     uint8 msg[20];
+//  427     uint8 ret = ZFailure;	
+        MOV     ?V0,#0x1
+//  428     uint8 data = 0xff;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  429     uint8 fcs;	
+//  430 	
+//  431     transferpkt_t *onlinestate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  1);   // len=1
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     R2,#0xd
+        MOV     R3,#0x0
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     ?V2,R2
+        MOV     ?V3,R3
+        MOV     R6,?V2
+        MOV     R7,?V3
+//  432     if (onlinestate != NULL)
+        MOV     A,R6
+        ORL     A,R7
+        JNZ     $+5
+        LJMP    ??CustomApp_coordinator_online_req_0 & 0xFFFF
+//  433     {
+//  434         onlinestate->msgid = COORDINATOR_ONLINE_REQ; 
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x1a
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x21
+        MOVX    @DPTR,A
+//  435         onlinestate->msgseq = 0x0001;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  436         onlinestate->srcid = NLME_GetShortAddr();
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  437         onlinestate->destid = 0xffff;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  438         onlinestate->datalen = 1;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  439 
+//  440         onlinestate->data = (uint8 *)(onlinestate + 1);
+        MOV     A,R6
+        ADD     A,#0xc
+        MOV     R0,A
+        CLR     A
+        ADDC    A,R7
+        MOV     R1,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  441         osal_memcpy(&onlinestate->data, &data, 1);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,?XSP + 0
+        MOV     R1,?XSP + 1
+        MOV     ?V4,R0
+        MOV     ?V5,R1
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 39)
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     A,R6
+        ADD     A,#0x9
+        MOV     R2,A
+        CLR     A
+        ADDC    A,R7
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 36)
+//  442         fcs = MT_UartCalcFCS((uint8 *)onlinestate, onlinestate->datalen + PKT_HEAD_LEN); 
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x9
+        MOV     R1,A
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        MOV     ?V1,A
+//  443 
+//  444         msg[0] = MT_CPT_SOP;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  445         msg[1] = onlinestate->datalen + PKT_HEAD_LEN + 1;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xa
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  446         msg[2] = MT_BROADCAST_REQ & 0xff;   
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  447         msg[3] = (MT_BROADCAST_REQ  & 0xff00) >> 8;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x23
+        MOVX    @DPTR,A
+//  448 
+//  449         osal_memcpy(&msg[4], (uint8 *)onlinestate, PKT_HEAD_LEN);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V4,R6
+        MOV     ?V5,R7
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 39)
+        MOV     R4,#0x9
+        MOV     R5,#0x0
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 36)
+//  450         osal_memcpy(&msg[4 + PKT_HEAD_LEN], &onlinestate->data, onlinestate->datalen);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,R6
+        ADD     A,#0x9
+        MOV     ?V4,A
+        CLR     A
+        ADDC    A,R7
+        MOV     ?V5,A
+        MOV     ?V6,#0x0
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 39)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R4,A
+        MOV     R5,#0x0
+        MOV     A,#0x11
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 36)
+//  451         msg[4 + onlinestate->datalen + PKT_HEAD_LEN] = fcs;
+        MOV     A,?V1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#0xd
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  452 		
+//  453 #ifdef OPEN_FCS 			
+//  454         msg[4 + onlinestate->datalen + PKT_HEAD_LEN + 1] = MT_UartCalcFCS(&msg[1], onlinestate->datalen + PKT_HEAD_LEN + 1 + 3); //rptmac17 + fcs1 + cmd2 + len1
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xd
+        MOV     R1,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,DPL
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,DPH
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#0xe
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,R1
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  455 #else  
+//  456         msg[4 + onlinestate->datalen + PKT_HEAD_LEN + 1] = DEFAULTFCS;
+//  457 #endif
+//  458 
+//  459         if ( AF_DataRequest( &SerialApp_TxAddr_broadcast, &GenericApp_epDesc,
+//  460                              GENERICAPP_BROADCAST_CLUSTERID,
+//  461                              (byte) (onlinestate->datalen + PKT_HEAD_LEN + 1 + 3 + 2) ,
+//  462                              (byte *)(msg),
+//  463                              &GenericApp_TransID,
+//  464                              AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V2,#0x1e
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 37)
+        MOV     ?V2,#GenericApp_TransID & 0xff
+        MOV     ?V3,#(GenericApp_TransID >> 8) & 0xff
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 39)
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP100_8
+        MOV     ?V2,R0
+        MOV     ?V3,R1
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 41)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xf
+        MOV     ?V2,A
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 43)
+        MOV     ?V2,#0x5
+        MOV     ?V3,#0x0
+        MOV     R0,#?V2
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 45)
+        MOV     R1,#0x0
+        MOV     R4,#GenericApp_epDesc & 0xff
+        MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+        MOV     R2,#SerialApp_TxAddr_broadcast & 0xff
+        MOV     R3,#(SerialApp_TxAddr_broadcast >> 8) & 0xff
+        LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 36)
+        MOV     A,R1
+        JNZ     ??CustomApp_coordinator_online_req_1
+//  465         {
+//  466              ret = ZSuccess;
+        MOV     ?V0,#0x0
+//  467         }
+//  468 
+//  469         osal_msg_deallocate( (uint8 *)onlinestate );
+??CustomApp_coordinator_online_req_1:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  470     }
+//  471     return ret;	
+??CustomApp_coordinator_online_req_0:
+        MOV     R1,?V0
+        MOV     A,#0x15
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+//  472 }
+          CFI EndBlock cfiBlock13
+//  473 
+//  474 
+//  475 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  476 uint8 CustomApp_router_online_req ( afAddrType_t addr16 )
+CustomApp_router_online_req:
+          CFI Block cfiBlock14 Using cfiCommon0
+          CFI Function CustomApp_router_online_req
+        CODE
+//  477 {
+        FUNCALL CustomApp_router_online_req, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_online_req, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_online_req, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_online_req, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_online_req, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_online_req, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V4
+        REQUIRE ?V5
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+//  478     uint8 ret = ZFailure;	
+        MOV     R6,#0x1
+//  479     uint8 data = 0xff;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  480 	
+//  481     transferpkt_t *onlinestate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  1);  
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     R2,#0xd
+        MOV     R3,#0x0
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V4,?V0
+        MOV     ?V5,?V1
+//  482     {
+//  483         onlinestate->msgid = ROUTER_ONLINE_REQ; 
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        MOV     A,#0x1a
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x21
+        MOVX    @DPTR,A
+//  484         onlinestate->msgseq = 0x0001;
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  485         onlinestate->srcid = NLME_GetShortAddr();
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  486         onlinestate->destid = addr16.addr.shortAddr;
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  487         onlinestate->datalen = 1;
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  488 
+//  489         onlinestate->data = (uint8 *)(onlinestate + 1);
+        MOV     A,?V4
+        ADD     A,#0xc
+        MOV     R0,A
+        CLR     A
+        ADDC    A,?V5
+        MOV     R1,A
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  490         osal_memcpy(&onlinestate->data, &data, 1);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,?XSP + 0
+        MOV     R1,?XSP + 1
+        MOV     ?V0,R0
+        MOV     ?V1,R1
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     A,?V4
+        ADD     A,#0x9
+        MOV     R2,A
+        CLR     A
+        ADDC    A,?V5
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+//  491         onlinestate->fcs = MT_UartCalcFCS((uint8 *)onlinestate, onlinestate->datalen + PKT_HEAD_LEN); 
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x9
+        MOV     R1,A
+        MOV     R2,?V4
+        MOV     R3,?V5
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,?V4
+        ADD     A,#0xb
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,?V5
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  492 
+//  493         SerialApp_TxAddr_p2p.addr.shortAddr = addr16.addr.shortAddr;
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#SerialApp_TxAddr_p2p
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  494         if ( AF_DataRequest( &SerialApp_TxAddr_p2p, &GenericApp_epDesc,
+//  495                              GENERICAPP_CMD_P2P_CLUSTERID,
+//  496                              (byte) (onlinestate->datalen + PKT_HEAD_LEN + 1) ,
+//  497                              (byte *)(onlinestate),
+//  498                              &GenericApp_TransID,
+//  499                              AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0,#0x1e
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     ?V0,#GenericApp_TransID & 0xff
+        MOV     ?V1,#(GenericApp_TransID >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xa
+        MOV     ?V0,A
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 22)
+        MOV     ?V0,#0x4
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R1,#0x0
+        MOV     R4,#GenericApp_epDesc & 0xff
+        MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+        MOV     R2,#SerialApp_TxAddr_p2p & 0xff
+        MOV     R3,#(SerialApp_TxAddr_p2p >> 8) & 0xff
+        LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     A,R1
+        JNZ     ??CustomApp_router_online_req_0
+//  500         {
+//  501              ret = ZSuccess;
+        MOV     R6,#0x0
+//  502         }
+//  503         osal_msg_deallocate( (uint8 *)onlinestate );
+??CustomApp_router_online_req_0:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V4
+        MOV     R3,?V5
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  504     }
+//  505     return ret;	
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  506 }
+          CFI EndBlock cfiBlock14
+//  507 
+//  508 
+//  509 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  510 uint8 CustomApp_router_offline_req ( afAddrType_t addr16 )
+CustomApp_router_offline_req:
+          CFI Block cfiBlock15 Using cfiCommon0
+          CFI Function CustomApp_router_offline_req
+        CODE
+//  511 {
+        FUNCALL CustomApp_router_offline_req, osal_msg_allocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_offline_req, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_offline_req, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 18, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 18, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_offline_req, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_offline_req, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 24, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 24, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_router_offline_req, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V4
+        REQUIRE ?V5
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+//  512     uint8 ret = ZFailure;	
+        MOV     R6,#0x1
+//  513     uint8 data = 0xff;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  514 	
+//  515     transferpkt_t *onlinestate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  1);  
+        ; Setup parameters for call to function osal_msg_allocate
+        MOV     R2,#0xd
+        MOV     R3,#0x0
+        LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+        MOV     ?V0,R2
+        MOV     ?V1,R3
+        MOV     ?V4,?V0
+        MOV     ?V5,?V1
+//  516     {
+//  517         onlinestate->msgid = ROUTER_ONFFLINE_REQ; 
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        MOV     A,#0x1f
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x21
+        MOVX    @DPTR,A
+//  518         onlinestate->msgseq = 0x0001;
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  519         onlinestate->srcid = NLME_GetShortAddr();
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  520         onlinestate->destid = addr16.addr.shortAddr;
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  521         onlinestate->datalen = 1;
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  522 
+//  523         onlinestate->data = (uint8 *)(onlinestate + 1);
+        MOV     A,?V4
+        ADD     A,#0xc
+        MOV     R0,A
+        CLR     A
+        ADDC    A,?V5
+        MOV     R1,A
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  524         osal_memcpy(&onlinestate->data, &data, 1);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     R0,?XSP + 0
+        MOV     R1,?XSP + 1
+        MOV     ?V0,R0
+        MOV     ?V1,R1
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R4,#0x1
+        MOV     R5,#0x0
+        MOV     A,?V4
+        ADD     A,#0x9
+        MOV     R2,A
+        CLR     A
+        ADDC    A,?V5
+        MOV     R3,A
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+//  525         onlinestate->fcs = MT_UartCalcFCS((uint8 *)onlinestate, onlinestate->datalen + PKT_HEAD_LEN); 
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0x9
+        MOV     R1,A
+        MOV     R2,?V4
+        MOV     R3,?V5
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,?V4
+        ADD     A,#0xb
+        MOV     DPL,A
+        CLR     A
+        ADDC    A,?V5
+        MOV     DPH,A
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  526 
+//  527         SerialApp_TxAddr_p2p.addr.shortAddr = addr16.addr.shortAddr;
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#SerialApp_TxAddr_p2p
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  528         if ( AF_DataRequest( &SerialApp_TxAddr_p2p, &GenericApp_epDesc,
+//  529                              GENERICAPP_CMD_P2P_CLUSTERID,
+//  530                              (byte) (onlinestate->datalen + PKT_HEAD_LEN + 1) ,
+//  531                              (byte *)(onlinestate),
+//  532                              &GenericApp_TransID,
+//  533                              AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0,#0x1e
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_ONE
+          CFI CFA_XSP16 add(XSP16, 16)
+        MOV     ?V0,#GenericApp_TransID & 0xff
+        MOV     ?V1,#(GenericApp_TransID >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 18)
+        MOV     R0,#?V4
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 20)
+        MOV     DPL,?V4
+        MOV     DPH,?V5
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#0xa
+        MOV     ?V0,A
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 22)
+        MOV     ?V0,#0x4
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R1,#0x0
+        MOV     R4,#GenericApp_epDesc & 0xff
+        MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+        MOV     R2,#SerialApp_TxAddr_p2p & 0xff
+        MOV     R3,#(SerialApp_TxAddr_p2p >> 8) & 0xff
+        LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 15)
+        MOV     A,R1
+        JNZ     ??CustomApp_router_offline_req_0
+//  534         {
+//  535              ret = ZSuccess;
+        MOV     R6,#0x0
+//  536         }
+//  537         osal_msg_deallocate( (uint8 *)onlinestate );
+??CustomApp_router_offline_req_0:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V4
+        MOV     R3,?V5
+        LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+        MOV     A,R1
+//  538     }
+//  539     return ret;	
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+//  540 }
+          CFI EndBlock cfiBlock15
+//  541 
+//  542 
+//  543 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  544 void CustomApp_Coordinator_Online( void )
+CustomApp_Coordinator_Online:
+          CFI Block cfiBlock16 Using cfiCommon0
+          CFI Function CustomApp_Coordinator_Online
+        CODE
+//  545 {
+        FUNCALL CustomApp_Coordinator_Online, MT_UartCalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL CustomApp_Coordinator_Online, HalUARTWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 13
+        MOV     A,#-0xd
+        LCALL   ?ALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 22)
+//  546 	uint8 send_buf[13];
+//  547 	uint16 cmd;
+//  548 	
+//  549 	cmd = MT_COORDINATOR_ONLINE_REQ_MSG;
+        MOV     R6,#0x1
+        MOV     R7,#0x44
+//  550 	send_buf[0] = 0xFE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  551 	send_buf[1 + MT_RPC_POS_LEN] = 0x01;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  552 	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+        MOV     A,R6
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  553 	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        CLR     A
+        XCH     A,R1
+        MOV     R0,A
+        MOV     A,R0
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  554 	send_buf[1 + MT_RPC_POS_DAT0] = 0xff;
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x1
+        MOVX    @DPTR,A
+//  555 	send_buf[1 + MT_RPC_POS_DAT0 + 1] =
+//  556 	  MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + 1 );
+        ; Setup parameters for call to function MT_UartCalcFCS
+        MOV     R1,#0x4
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+        MOV     A,R1
+        PUSH    A
+          CFI CFA_SP SP+-1
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+          CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  557 
+//  558 	HalUARTWrite( 0, send_buf, MT_UART_HEAD_LEN + 1 + 2 );
+        ; Setup parameters for call to function HalUARTWrite
+        MOV     R4,#0x6
+        MOV     R5,#0x0
+        MOV     R2,?XSP + 0
+        MOV     R3,?XSP + 1
+        MOV     R1,#0x0
+        LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+//  559 }
+        MOV     A,#0xd
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock16
+//  560 
+//  561 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  562 void CustomApp_Get_Flex_Devinfo( void )
+CustomApp_Get_Flex_Devinfo:
+          CFI Block cfiBlock17 Using cfiCommon0
+          CFI Function CustomApp_Get_Flex_Devinfo
+        CODE
+//  563 {
+        FUNCALL CustomApp_Get_Flex_Devinfo, CustomApp_Coordinator_Online
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH    DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  564         CustomApp_Coordinator_Online();
+        ; Setup parameters for call to function CustomApp_Coordinator_Online
+        LCALL   `??CustomApp_Coordinator_Online::?relay`; Banked call to: CustomApp_Coordinator_Online
+//  565 }
+        POP     DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-4
+        POP     DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-3
+        LJMP    ?BRET
+          CFI EndBlock cfiBlock17
+//  566 
+//  567 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  568 uint8 Nvram_Write_Multiway( void )
+Nvram_Write_Multiway:
+          CFI Block cfiBlock18 Using cfiCommon0
+          CFI Function Nvram_Write_Multiway
+        CODE
+//  569 {
+        FUNCALL Nvram_Write_Multiway, osal_nv_write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  570 	uint8 ret;
+//  571 	ret = osal_nv_write( ZCD_NV_MULTIWAY, 0, sizeof( PROT_GROUP_STRUCT ), &Prot_Group_T );
+        ; Setup parameters for call to function osal_nv_write
+        MOV     ?V0,#Prot_Group_T & 0xff
+        MOV     ?V1,#(Prot_Group_T >> 8) & 0xff
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 12)
+        MOV     ?V0,#0x6
+        MOV     ?V1,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_TWO
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R4,#0x0
+        MOV     R5,#0x0
+        MOV     R2,#0x4
+        MOV     R3,#0x4
+        LCALL   `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+        MOV     A,#0x4
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 10)
+        MOV     A,R1
+        MOV     R6,A
+//  572 	return ret;
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+//  573 }
+          CFI EndBlock cfiBlock18
+//  574 
+//  575 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  576 void Register_Group_Multiway( void )
+Register_Group_Multiway:
+          CFI Block cfiBlock19 Using cfiCommon0
+          CFI Function Register_Group_Multiway
+        CODE
+//  577 {
+        FUNCALL Register_Group_Multiway, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 14, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 14, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Register_Group_Multiway, aps_AddGroup
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+//  578     if(Prot_Group_T.group_type == 1)//add to group
+        MOV     DPTR,#Prot_Group_T + 2
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??Register_Group_Multiway_0
+//  579     {
+//  580         SerialApp_TxAddr_group.addrMode = (afAddrMode_t)AddrGroup;
+        MOV     DPTR,#SerialApp_TxAddr_group + 8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  581         SerialApp_TxAddr_group.endPoint = GENERICAPP_ENDPOINT;
+        MOV     DPTR,#SerialApp_TxAddr_group + 9
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  582         SerialApp_TxAddr_group.addr.shortAddr = GENERICAPP_GROUP;
+        MOV     DPTR,#SerialApp_TxAddr_group
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  583 
+//  584         SerialApp_TxAddr_group.addr.shortAddr = Prot_Group_T.group_id;//set group id to global variables
+        MOV     DPTR,#Prot_Group_T
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#SerialApp_TxAddr_group
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  585         GenericApp_Group.ID = Prot_Group_T.group_id;
+        MOV     DPTR,#Prot_Group_T
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#GenericApp_Group
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  586         osal_memcpy( GenericApp_Group.name, "Group 1", 7 );
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0,#`?<Constant "Group 1">` & 0xff
+        MOV     ?V1,#(`?<Constant "Group 1">` >> 8) & 0xff
+        MOV     ?V2,#0x0
+        MOV     R0,#?V0
+        LCALL   ?PUSH_XSTACK_I_THREE
+          CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R4,#0x7
+        MOV     R5,#0x0
+        MOV     R2,#(GenericApp_Group + 2) & 0xff
+        MOV     R3,#((GenericApp_Group + 2) >> 8) & 0xff
+        LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+          CFI CFA_XSP16 add(XSP16, 11)
+//  587         aps_AddGroup( GENERICAPP_ENDPOINT, &GenericApp_Group );
+        ; Setup parameters for call to function aps_AddGroup
+        MOV     R2,#GenericApp_Group & 0xff
+        MOV     R3,#(GenericApp_Group >> 8) & 0xff
+        MOV     R1,#0xa
+        LCALL   `??aps_AddGroup::?relay`; Banked call to: aps_AddGroup
+        MOV     A,R1
+//  588     }
+//  589 }
+??Register_Group_Multiway_0:
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock19
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Send_P2P_Data::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Send_P2P_Data
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Send_BroadCast_Data::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Send_BroadCast_Data
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Send_Group_Data::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Send_Group_Data
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Get_ExtAddr::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Get_ExtAddr
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Get_NWKInfo::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Get_NWKInfo
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Get_Active_Cnt::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Get_Active_Cnt
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Get_Version::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Get_Version
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_FW_Update::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_FW_Update
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Uart_Send::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Uart_Send
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_AF_P2P_Data_Process::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_AF_P2P_Data_Process
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_AF_Broadcast_Data_Process::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_AF_Broadcast_Data_Process
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_AF_Group_Data_Process::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_AF_Group_Data_Process
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Set_Multiway::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Set_Multiway
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_coordinator_online_req::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_coordinator_online_req
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_router_online_req::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_router_online_req
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_router_offline_req::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_router_offline_req
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Coordinator_Online::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Coordinator_Online
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??CustomApp_Get_Flex_Devinfo::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    CustomApp_Get_Flex_Devinfo
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Nvram_Write_Multiway::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Nvram_Write_Multiway
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??Register_Group_Multiway::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    Register_Group_Multiway
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant "Group 1">`:
+        DB "Group 1"
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1f4:
+        DD 500
+
+        END
+//  590 
+//  591 
+// 
+// 4 211 bytes in segment BANKED_CODE
+//   120 bytes in segment BANK_RELAYS
+//    12 bytes in segment XDATA_ROM_C
+//    26 bytes in segment XDATA_Z
+// 
+// 4 331 bytes of CODE  memory
+//     8 bytes of CONST memory (+ 4 bytes shared)
+//    26 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

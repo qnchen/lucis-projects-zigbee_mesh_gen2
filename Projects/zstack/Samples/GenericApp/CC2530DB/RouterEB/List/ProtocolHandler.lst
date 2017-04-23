@@ -1,0 +1,3684 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.30.1.3056 for 8051                21/Apr/2017  17:48:50
+# Copyright 2004-2015 IAR Systems AB.
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Application\ProtocolHandler.c
+#    Command line       =  
+#        -f "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x04000000 -DZDAPP_CONFIG_PAN_ID=0x0085
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=5
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) -DCHANNEL_CNT=0x01 "C:\Texas
+#        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Application\ProtocolHandler.c" -D ZTOOL_P1 -D
+#        MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D
+#        xNV_RESTORE -D NV_INIT -D OPEN_FCS -D PANID_INCREASE -lC "C:\Texas
+#        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\List" -lA
+#        "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\Obj" -e
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Application\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -On --require_prototypes
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\List\ProtocolHandler.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\RouterEB\Obj\ProtocolHandler.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh 1.0.0\Projects\zstack\Application\ProtocolHandler.c
+      1          /**************************************************************************************************
+      2            Filename:       ProtocolHandler.c
+      3            Revised:        2017-03-19
+      4          
+      5            Description -   Serial Transfer Application node authentication related func.
+      6          
+      7          **************************************************************************************************/
+      8          
+      9          
+     10          /*********************************************************************
+     11           * INCLUDES
+     12           */
+     13          #include "MT_UART.h"
+     14          #include "MT_RPC.h"
+     15          #include "ZComDef.h"
+     16          #include "ZDApp.h"
+     17          #include "hal_uart.h"
+     18          #include "GenericApp.h"
+     19          #include "hal_aes.h"
+     20          #include "hal_ccm.h"
+     21          #include "osal_nv.h"
+     22          #include "mac_rx_onoff.h"
+     23          #include "mac_radio.h"
+     24          #include "mac_mcu.h"
+     25          #include "mac_low_level.h"
+     26          #include "string.h"
+     27          
+     28          #include "GenericApp.h"
+     29          #include "ProtocolHandler.h"
+     30          #include "Aps_groups.h"
+     31          
+     32          
+     33          /*********************************************************************
+     34           * LOCAL VARIABLES
+     35           */
+     36          #if defined( ZDO_COORDINATOR ) && defined( WIFI_FREQUENCY_SELECT )
+     37          // For zigbee channel select
+     38          bool __xdata getWifiChannel = FALSE;
+     39          bool __xdata zgChannelUpdate = FALSE;
+     40          // For wifi channel, every bit indicate one channel
+     41          uint16 __xdata wifiChannel = 0x0000;
+     42          
+     43          extern uint32 __xdata zgDefaultChannelMask;
+     44          #endif
+     45          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     46          PROT_GROUP_STRUCT Prot_Group_T;
+   \                     Prot_Group_T:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     47          aps_Group_t GenericApp_Group;
+   \                     GenericApp_Group:
+   \   000000                DS 18
+   \   000012                REQUIRE __INIT_XDATA_Z
+     48          #define GENERICAPP_GROUP 0x0001
+     49          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     50          uint8 *uart_buf;
+   \                     uart_buf:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     51          
+     52          /*********************************************************************
+     53           * LOCAL FUNCTIONS
+     54           */
+     55          static void CustomApp_Uart_Send( uint8 port, uint16 cmd, uint8 *pbuf, uint8 len, uint8 offset );
+     56          #if defined( ZDO_COORDINATOR ) && defined( WIFI_FREQUENCY_SELECT )
+     57          static void CustomApp_ZigbeeChannelMask( uint16 wifiChannel );
+     58          #endif
+     59          
+     60          
+     61          /*********************************************************************
+     62           * FUNCTIONS
+     63           */
+     64          
+     65          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     66          uint8 CustomApp_Send_P2P_Data( afIncomingMSGPacket_t *pkt )
+   \                     CustomApp_Send_P2P_Data:
+     67          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     68              uint8 *msg;	
+     69              uint8 ret = ZFailure;
+   \   000009   75..01       MOV     ?V0,#0x1
+     70          	
+     71              msg = (uint8 *)osal_msg_allocate( pkt->cmd.DataLength);
+   \   00000C                ; Setup parameters for call to function osal_msg_allocate
+   \   00000C   EE           MOV     A,R6
+   \   00000D   2420         ADD     A,#0x20
+   \   00000F   F582         MOV     DPL,A
+   \   000011   E4           CLR     A
+   \   000012   3F           ADDC    A,R7
+   \   000013   F583         MOV     DPH,A
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   FA           MOV     R2,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   FB           MOV     R3,A
+   \   00001A   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001D   8A..         MOV     ?V4,R2
+   \   00001F   8B..         MOV     ?V5,R3
+   \   000021   85....       MOV     ?V2,?V4
+   \   000024   85....       MOV     ?V3,?V5
+     72              if ( msg == NULL )
+   \   000027   E5..         MOV     A,?V2
+   \   000029   45..         ORL     A,?V3
+   \   00002B   7005         JNZ     ??CustomApp_Send_P2P_Data_0
+     73              {
+     74                  return ret;
+   \   00002D   A9..         MOV     R1,?V0
+   \   00002F   02....       LJMP    ??CustomApp_Send_P2P_Data_1 & 0xFFFF
+     75              }
+     76          
+     77              osal_memcpy(msg, pkt->cmd.Data, pkt->cmd.DataLength);
+   \                     ??CustomApp_Send_P2P_Data_0:
+   \   000032                ; Setup parameters for call to function osal_memcpy
+   \   000032   EE           MOV     A,R6
+   \   000033   2422         ADD     A,#0x22
+   \   000035   F582         MOV     DPL,A
+   \   000037   E4           CLR     A
+   \   000038   3F           ADDC    A,R7
+   \   000039   F583         MOV     DPH,A
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F5..         MOV     ?V4,A
+   \   00003E   A3           INC     DPTR
+   \   00003F   E0           MOVX    A,@DPTR
+   \   000040   F5..         MOV     ?V5,A
+   \   000042   75..00       MOV     ?V6,#0x0
+   \   000045   78..         MOV     R0,#?V4
+   \   000047   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00004A   EE           MOV     A,R6
+   \   00004B   2420         ADD     A,#0x20
+   \   00004D   F582         MOV     DPL,A
+   \   00004F   E4           CLR     A
+   \   000050   3F           ADDC    A,R7
+   \   000051   F583         MOV     DPH,A
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   FC           MOV     R4,A
+   \   000055   A3           INC     DPTR
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   FD           MOV     R5,A
+   \   000058   AA..         MOV     R2,?V2
+   \   00005A   AB..         MOV     R3,?V3
+   \   00005C   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00005F   7403         MOV     A,#0x3
+   \   000061   12....       LCALL   ?DEALLOC_XSTACK8
+     78              SerialApp_TxAddr_p2p.addr.shortAddr = (pkt->cmd.Data[5 + MT_UART_HEAD_LEN] << 8) | pkt->cmd.Data[4 + MT_UART_HEAD_LEN];
+   \   000064   EE           MOV     A,R6
+   \   000065   2422         ADD     A,#0x22
+   \   000067   F582         MOV     DPL,A
+   \   000069   E4           CLR     A
+   \   00006A   3F           ADDC    A,R7
+   \   00006B   F583         MOV     DPH,A
+   \   00006D   E0           MOVX    A,@DPTR
+   \   00006E   F8           MOV     R0,A
+   \   00006F   A3           INC     DPTR
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   C8           XCH     A,R0
+   \   000072   2408         ADD     A,#0x8
+   \   000074   F582         MOV     DPL,A
+   \   000076   C8           XCH     A,R0
+   \   000077   3400         ADDC    A,#0x0
+   \   000079   F583         MOV     DPH,A
+   \   00007B   E0           MOVX    A,@DPTR
+   \   00007C   F8           MOV     R0,A
+   \   00007D   7900         MOV     R1,#0x0
+   \   00007F   E4           CLR     A
+   \   000080   C8           XCH     A,R0
+   \   000081   F9           MOV     R1,A
+   \   000082   EE           MOV     A,R6
+   \   000083   2422         ADD     A,#0x22
+   \   000085   F582         MOV     DPL,A
+   \   000087   E4           CLR     A
+   \   000088   3F           ADDC    A,R7
+   \   000089   F583         MOV     DPH,A
+   \   00008B   E0           MOVX    A,@DPTR
+   \   00008C   FA           MOV     R2,A
+   \   00008D   A3           INC     DPTR
+   \   00008E   E0           MOVX    A,@DPTR
+   \   00008F   CA           XCH     A,R2
+   \   000090   2407         ADD     A,#0x7
+   \   000092   F582         MOV     DPL,A
+   \   000094   CA           XCH     A,R2
+   \   000095   3400         ADDC    A,#0x0
+   \   000097   F583         MOV     DPH,A
+   \   000099   E0           MOVX    A,@DPTR
+   \   00009A   FA           MOV     R2,A
+   \   00009B   7B00         MOV     R3,#0x0
+   \   00009D   E8           MOV     A,R0
+   \   00009E   4A           ORL     A,R2
+   \   00009F   F8           MOV     R0,A
+   \   0000A0   E9           MOV     A,R1
+   \   0000A1   4B           ORL     A,R3
+   \   0000A2   F9           MOV     R1,A
+   \   0000A3   90....       MOV     DPTR,#SerialApp_TxAddr_p2p
+   \   0000A6   E8           MOV     A,R0
+   \   0000A7   F0           MOVX    @DPTR,A
+   \   0000A8   A3           INC     DPTR
+   \   0000A9   E9           MOV     A,R1
+   \   0000AA   F0           MOVX    @DPTR,A
+     79              if ( AF_DataRequest( &SerialApp_TxAddr_p2p, &GenericApp_epDesc,
+     80                                   GENERICAPP_DATA_P2P_CLUSTERID,
+     81                                   (byte) (pkt->cmd.DataLength) ,
+     82                                   (byte *)(msg),
+     83                                   &GenericApp_TransID,
+     84                                   AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   0000AB                ; Setup parameters for call to function AF_DataRequest
+   \   0000AB   75..1E       MOV     ?V1,#0x1e
+   \   0000AE   78..         MOV     R0,#?V1
+   \   0000B0   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000B3   75....       MOV     ?V4,#GenericApp_TransID & 0xff
+   \   0000B6   75....       MOV     ?V5,#(GenericApp_TransID >> 8) & 0xff
+   \   0000B9   78..         MOV     R0,#?V4
+   \   0000BB   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000BE   78..         MOV     R0,#?V2
+   \   0000C0   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C3   EE           MOV     A,R6
+   \   0000C4   2420         ADD     A,#0x20
+   \   0000C6   F582         MOV     DPL,A
+   \   0000C8   E4           CLR     A
+   \   0000C9   3F           ADDC    A,R7
+   \   0000CA   F583         MOV     DPH,A
+   \   0000CC   E0           MOVX    A,@DPTR
+   \   0000CD   F8           MOV     R0,A
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   E0           MOVX    A,@DPTR
+   \   0000D0   F9           MOV     R1,A
+   \   0000D1   88..         MOV     ?V4,R0
+   \   0000D3   75..00       MOV     ?V5,#0x0
+   \   0000D6   78..         MOV     R0,#?V4
+   \   0000D8   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000DB   75..02       MOV     ?V4,#0x2
+   \   0000DE   75..00       MOV     ?V5,#0x0
+   \   0000E1   78..         MOV     R0,#?V4
+   \   0000E3   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000E6   7900         MOV     R1,#0x0
+   \   0000E8   7C..         MOV     R4,#GenericApp_epDesc & 0xff
+   \   0000EA   7D..         MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+   \   0000EC   7A..         MOV     R2,#SerialApp_TxAddr_p2p & 0xff
+   \   0000EE   7B..         MOV     R3,#(SerialApp_TxAddr_p2p >> 8) & 0xff
+   \   0000F0   12....       LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   0000F3   7409         MOV     A,#0x9
+   \   0000F5   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000F8   E9           MOV     A,R1
+   \   0000F9   7003         JNZ     ??CustomApp_Send_P2P_Data_2
+     85              {
+     86                  ret = ZSuccess;
+   \   0000FB   75..00       MOV     ?V0,#0x0
+     87              }
+     88              osal_msg_deallocate( msg );
+   \                     ??CustomApp_Send_P2P_Data_2:
+   \   0000FE                ; Setup parameters for call to function osal_msg_deallocate
+   \   0000FE   AA..         MOV     R2,?V2
+   \   000100   AB..         MOV     R3,?V3
+   \   000102   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   000105   E9           MOV     A,R1
+     89              return ret;	
+   \   000106   A9..         MOV     R1,?V0
+   \                     ??CustomApp_Send_P2P_Data_1:
+   \   000108   7F07         MOV     R7,#0x7
+   \   00010A   02....       LJMP    ?BANKED_LEAVE_XDATA
+     90          }
+     91          
+     92          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     93          uint8 CustomApp_Send_BroadCast_Data( afIncomingMSGPacket_t *pkt )
+   \                     CustomApp_Send_BroadCast_Data:
+     94          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     95          	uint8 *msg;
+     96          	uint8 ret = ZFailure;
+   \   000009   75..01       MOV     ?V0,#0x1
+     97          
+     98          	msg = (uint8 *)osal_msg_allocate( pkt->cmd.DataLength);
+   \   00000C                ; Setup parameters for call to function osal_msg_allocate
+   \   00000C   EE           MOV     A,R6
+   \   00000D   2420         ADD     A,#0x20
+   \   00000F   F582         MOV     DPL,A
+   \   000011   E4           CLR     A
+   \   000012   3F           ADDC    A,R7
+   \   000013   F583         MOV     DPH,A
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   FA           MOV     R2,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   FB           MOV     R3,A
+   \   00001A   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001D   8A..         MOV     ?V2,R2
+   \   00001F   8B..         MOV     ?V3,R3
+   \   000021   85....       MOV     ?V8,?V2
+   \   000024   85....       MOV     ?V9,?V3
+     99          	if ( msg == NULL )
+   \   000027   E5..         MOV     A,?V8
+   \   000029   45..         ORL     A,?V9
+   \   00002B   7005         JNZ     ??CustomApp_Send_BroadCast_Data_0
+    100          	{
+    101          		return ret;
+   \   00002D   A9..         MOV     R1,?V0
+   \   00002F   02....       LJMP    ??CustomApp_Send_BroadCast_Data_1 & 0xFFFF
+    102          	}
+    103          
+    104          	osal_memcpy(msg, pkt->cmd.Data, pkt->cmd.DataLength);
+   \                     ??CustomApp_Send_BroadCast_Data_0:
+   \   000032                ; Setup parameters for call to function osal_memcpy
+   \   000032   EE           MOV     A,R6
+   \   000033   2422         ADD     A,#0x22
+   \   000035   F582         MOV     DPL,A
+   \   000037   E4           CLR     A
+   \   000038   3F           ADDC    A,R7
+   \   000039   F583         MOV     DPH,A
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F5..         MOV     ?V4,A
+   \   00003E   A3           INC     DPTR
+   \   00003F   E0           MOVX    A,@DPTR
+   \   000040   F5..         MOV     ?V5,A
+   \   000042   75..00       MOV     ?V6,#0x0
+   \   000045   78..         MOV     R0,#?V4
+   \   000047   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00004A   EE           MOV     A,R6
+   \   00004B   2420         ADD     A,#0x20
+   \   00004D   F582         MOV     DPL,A
+   \   00004F   E4           CLR     A
+   \   000050   3F           ADDC    A,R7
+   \   000051   F583         MOV     DPH,A
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   FC           MOV     R4,A
+   \   000055   A3           INC     DPTR
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   FD           MOV     R5,A
+   \   000058   AA..         MOV     R2,?V8
+   \   00005A   AB..         MOV     R3,?V9
+   \   00005C   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00005F   7403         MOV     A,#0x3
+   \   000061   12....       LCALL   ?DEALLOC_XSTACK8
+    105          	SerialApp_TxAddr_broadcast.addr.shortAddr = 0xffff;
+   \   000064   90....       MOV     DPTR,#SerialApp_TxAddr_broadcast
+   \   000067   74FF         MOV     A,#-0x1
+   \   000069   F0           MOVX    @DPTR,A
+   \   00006A   A3           INC     DPTR
+   \   00006B   74FF         MOV     A,#-0x1
+   \   00006D   F0           MOVX    @DPTR,A
+    106          
+    107          	if ( AF_DataRequest( &SerialApp_TxAddr_broadcast, &GenericApp_epDesc,
+    108          						 GENERICAPP_BROADCAST_CLUSTERID,
+    109          						 (byte) (pkt->cmd.DataLength) ,
+    110          						 (byte *)(msg),
+    111          						 &GenericApp_TransID,
+    112          						 AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   00006E                ; Setup parameters for call to function AF_DataRequest
+   \   00006E   75..1E       MOV     ?V1,#0x1e
+   \   000071   78..         MOV     R0,#?V1
+   \   000073   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000076   75....       MOV     ?V2,#GenericApp_TransID & 0xff
+   \   000079   75....       MOV     ?V3,#(GenericApp_TransID >> 8) & 0xff
+   \   00007C   78..         MOV     R0,#?V2
+   \   00007E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000081   78..         MOV     R0,#?V8
+   \   000083   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000086   EE           MOV     A,R6
+   \   000087   2420         ADD     A,#0x20
+   \   000089   F582         MOV     DPL,A
+   \   00008B   E4           CLR     A
+   \   00008C   3F           ADDC    A,R7
+   \   00008D   F583         MOV     DPH,A
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   F8           MOV     R0,A
+   \   000091   A3           INC     DPTR
+   \   000092   E0           MOVX    A,@DPTR
+   \   000093   F9           MOV     R1,A
+   \   000094   88..         MOV     ?V2,R0
+   \   000096   75..00       MOV     ?V3,#0x0
+   \   000099   78..         MOV     R0,#?V2
+   \   00009B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00009E   75..05       MOV     ?V2,#0x5
+   \   0000A1   75..00       MOV     ?V3,#0x0
+   \   0000A4   78..         MOV     R0,#?V2
+   \   0000A6   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000A9   7900         MOV     R1,#0x0
+   \   0000AB   7C..         MOV     R4,#GenericApp_epDesc & 0xff
+   \   0000AD   7D..         MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+   \   0000AF   7A..         MOV     R2,#SerialApp_TxAddr_broadcast & 0xff
+   \   0000B1   7B..         MOV     R3,#(SerialApp_TxAddr_broadcast >> 8) & 0xff
+   \   0000B3   12....       LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   0000B6   7409         MOV     A,#0x9
+   \   0000B8   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000BB   E9           MOV     A,R1
+   \   0000BC   7003         JNZ     ??CustomApp_Send_BroadCast_Data_2
+    113          	{
+    114          		ret = ZSuccess;
+   \   0000BE   75..00       MOV     ?V0,#0x0
+    115          	}
+    116                 osal_msg_deallocate( msg );
+   \                     ??CustomApp_Send_BroadCast_Data_2:
+   \   0000C1                ; Setup parameters for call to function osal_msg_deallocate
+   \   0000C1   AA..         MOV     R2,?V8
+   \   0000C3   AB..         MOV     R3,?V9
+   \   0000C5   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   0000C8   E9           MOV     A,R1
+    117          	return ret;
+   \   0000C9   A9..         MOV     R1,?V0
+   \                     ??CustomApp_Send_BroadCast_Data_1:
+   \   0000CB   7F0A         MOV     R7,#0xa
+   \   0000CD   02....       LJMP    ?BANKED_LEAVE_XDATA
+    118          }
+    119          
+    120          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    121          uint8 CustomApp_Send_Group_Data( afIncomingMSGPacket_t *pkt )  //chaokw
+   \                     CustomApp_Send_Group_Data:
+    122          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 20
+   \   000005   74EC         MOV     A,#-0x14
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V2,R2
+   \   00000C   8B..         MOV     ?V3,R3
+    123              uint8 msg[20];
+    124              uint8 ret = ZFailure;	
+   \   00000E   75..01       MOV     ?V0,#0x1
+    125              uint8 fcs;	
+    126          	
+    127              transferpkt_t *lightstate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  2);
+   \   000011                ; Setup parameters for call to function osal_msg_allocate
+   \   000011   7A0E         MOV     R2,#0xe
+   \   000013   7B00         MOV     R3,#0x0
+   \   000015   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   000018   8A..         MOV     ?V4,R2
+   \   00001A   8B..         MOV     ?V5,R3
+   \   00001C   AE..         MOV     R6,?V4
+   \   00001E   AF..         MOV     R7,?V5
+    128              if (lightstate != NULL)
+   \   000020   EE           MOV     A,R6
+   \   000021   4F           ORL     A,R7
+   \   000022   7003         JNZ     $+5
+   \   000024   02....       LJMP    ??CustomApp_Send_Group_Data_0 & 0xFFFF
+    129              {
+    130                  lightstate->msgid = GROUP_LIGHT_STATE_MSG; 
+   \   000027   8E82         MOV     DPL,R6
+   \   000029   8F83         MOV     DPH,R7
+   \   00002B   747A         MOV     A,#0x7a
+   \   00002D   F0           MOVX    @DPTR,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   7420         MOV     A,#0x20
+   \   000031   F0           MOVX    @DPTR,A
+    131                  lightstate->msgseq = 0x0001;
+   \   000032   8E82         MOV     DPL,R6
+   \   000034   8F83         MOV     DPH,R7
+   \   000036   A3           INC     DPTR
+   \   000037   A3           INC     DPTR
+   \   000038   7401         MOV     A,#0x1
+   \   00003A   F0           MOVX    @DPTR,A
+   \   00003B   A3           INC     DPTR
+   \   00003C   7400         MOV     A,#0x0
+   \   00003E   F0           MOVX    @DPTR,A
+    132                  lightstate->srcid = NLME_GetShortAddr();
+   \   00003F                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00003F   12....       LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+   \   000042   8E82         MOV     DPL,R6
+   \   000044   8F83         MOV     DPH,R7
+   \   000046   A3           INC     DPTR
+   \   000047   A3           INC     DPTR
+   \   000048   A3           INC     DPTR
+   \   000049   A3           INC     DPTR
+   \   00004A   A3           INC     DPTR
+   \   00004B   A3           INC     DPTR
+   \   00004C   EA           MOV     A,R2
+   \   00004D   F0           MOVX    @DPTR,A
+   \   00004E   A3           INC     DPTR
+   \   00004F   EB           MOV     A,R3
+   \   000050   F0           MOVX    @DPTR,A
+    133                  lightstate->destid = Prot_Group_T.group_id;
+   \   000051   90....       MOV     DPTR,#Prot_Group_T
+   \   000054   E0           MOVX    A,@DPTR
+   \   000055   F8           MOV     R0,A
+   \   000056   A3           INC     DPTR
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   F9           MOV     R1,A
+   \   000059   8E82         MOV     DPL,R6
+   \   00005B   8F83         MOV     DPH,R7
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   A3           INC     DPTR
+   \   000060   A3           INC     DPTR
+   \   000061   E8           MOV     A,R0
+   \   000062   F0           MOVX    @DPTR,A
+   \   000063   A3           INC     DPTR
+   \   000064   E9           MOV     A,R1
+   \   000065   F0           MOVX    @DPTR,A
+    134                  lightstate->datalen = 2;
+   \   000066   8E82         MOV     DPL,R6
+   \   000068   8F83         MOV     DPH,R7
+   \   00006A   A3           INC     DPTR
+   \   00006B   A3           INC     DPTR
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   A3           INC     DPTR
+   \   000070   A3           INC     DPTR
+   \   000071   A3           INC     DPTR
+   \   000072   7402         MOV     A,#0x2
+   \   000074   F0           MOVX    @DPTR,A
+    135          
+    136                  lightstate->data = (uint8 *)(lightstate + 1);
+   \   000075   EE           MOV     A,R6
+   \   000076   240C         ADD     A,#0xc
+   \   000078   F8           MOV     R0,A
+   \   000079   E4           CLR     A
+   \   00007A   3F           ADDC    A,R7
+   \   00007B   F9           MOV     R1,A
+   \   00007C   8E82         MOV     DPL,R6
+   \   00007E   8F83         MOV     DPH,R7
+   \   000080   A3           INC     DPTR
+   \   000081   A3           INC     DPTR
+   \   000082   A3           INC     DPTR
+   \   000083   A3           INC     DPTR
+   \   000084   A3           INC     DPTR
+   \   000085   A3           INC     DPTR
+   \   000086   A3           INC     DPTR
+   \   000087   A3           INC     DPTR
+   \   000088   A3           INC     DPTR
+   \   000089   E8           MOV     A,R0
+   \   00008A   F0           MOVX    @DPTR,A
+   \   00008B   A3           INC     DPTR
+   \   00008C   E9           MOV     A,R1
+   \   00008D   F0           MOVX    @DPTR,A
+    137                  osal_memcpy(&lightstate->data, &pkt->cmd.Data[3], 2);
+   \   00008E                ; Setup parameters for call to function osal_memcpy
+   \   00008E   E5..         MOV     A,?V2
+   \   000090   2422         ADD     A,#0x22
+   \   000092   F582         MOV     DPL,A
+   \   000094   E4           CLR     A
+   \   000095   35..         ADDC    A,?V3
+   \   000097   F583         MOV     DPH,A
+   \   000099   E0           MOVX    A,@DPTR
+   \   00009A   2403         ADD     A,#0x3
+   \   00009C   F5..         MOV     ?V4,A
+   \   00009E   A3           INC     DPTR
+   \   00009F   E0           MOVX    A,@DPTR
+   \   0000A0   3400         ADDC    A,#0x0
+   \   0000A2   F5..         MOV     ?V5,A
+   \   0000A4   75..00       MOV     ?V6,#0x0
+   \   0000A7   78..         MOV     R0,#?V4
+   \   0000A9   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000AC   7C02         MOV     R4,#0x2
+   \   0000AE   7D00         MOV     R5,#0x0
+   \   0000B0   EE           MOV     A,R6
+   \   0000B1   2409         ADD     A,#0x9
+   \   0000B3   FA           MOV     R2,A
+   \   0000B4   E4           CLR     A
+   \   0000B5   3F           ADDC    A,R7
+   \   0000B6   FB           MOV     R3,A
+   \   0000B7   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000BA   7403         MOV     A,#0x3
+   \   0000BC   12....       LCALL   ?DEALLOC_XSTACK8
+    138                  fcs = MT_UartCalcFCS((uint8 *)lightstate, lightstate->datalen + PKT_HEAD_LEN); 
+   \   0000BF                ; Setup parameters for call to function MT_UartCalcFCS
+   \   0000BF   8E82         MOV     DPL,R6
+   \   0000C1   8F83         MOV     DPH,R7
+   \   0000C3   A3           INC     DPTR
+   \   0000C4   A3           INC     DPTR
+   \   0000C5   A3           INC     DPTR
+   \   0000C6   A3           INC     DPTR
+   \   0000C7   A3           INC     DPTR
+   \   0000C8   A3           INC     DPTR
+   \   0000C9   A3           INC     DPTR
+   \   0000CA   A3           INC     DPTR
+   \   0000CB   E0           MOVX    A,@DPTR
+   \   0000CC   2409         ADD     A,#0x9
+   \   0000CE   F9           MOV     R1,A
+   \   0000CF   EE           MOV     A,R6
+   \   0000D0   FA           MOV     R2,A
+   \   0000D1   EF           MOV     A,R7
+   \   0000D2   FB           MOV     R3,A
+   \   0000D3   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   0000D6   E9           MOV     A,R1
+   \   0000D7   F5..         MOV     ?V1,A
+    139          
+    140                  msg[0] = MT_CPT_SOP;
+   \   0000D9   85..82       MOV     DPL,?XSP + 0
+   \   0000DC   85..83       MOV     DPH,?XSP + 1
+   \   0000DF   74FE         MOV     A,#-0x2
+   \   0000E1   F0           MOVX    @DPTR,A
+    141                  msg[1] = lightstate->datalen + PKT_HEAD_LEN + 1;
+   \   0000E2   8E82         MOV     DPL,R6
+   \   0000E4   8F83         MOV     DPH,R7
+   \   0000E6   A3           INC     DPTR
+   \   0000E7   A3           INC     DPTR
+   \   0000E8   A3           INC     DPTR
+   \   0000E9   A3           INC     DPTR
+   \   0000EA   A3           INC     DPTR
+   \   0000EB   A3           INC     DPTR
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   A3           INC     DPTR
+   \   0000EE   E0           MOVX    A,@DPTR
+   \   0000EF   240A         ADD     A,#0xa
+   \   0000F1   C0E0         PUSH    A
+   \   0000F3   7401         MOV     A,#0x1
+   \   0000F5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F8   D0E0         POP     A
+   \   0000FA   F0           MOVX    @DPTR,A
+    142                  msg[2] = MT_DATA_P2P_RSP & 0xff;   
+   \   0000FB   7402         MOV     A,#0x2
+   \   0000FD   12....       LCALL   ?XSTACK_DISP0_8
+   \   000100   7480         MOV     A,#-0x80
+   \   000102   F0           MOVX    @DPTR,A
+    143                  msg[3] = (MT_DATA_P2P_RSP  & 0xff00) >> 8;
+   \   000103   7403         MOV     A,#0x3
+   \   000105   12....       LCALL   ?XSTACK_DISP0_8
+   \   000108   7420         MOV     A,#0x20
+   \   00010A   F0           MOVX    @DPTR,A
+    144          
+    145                  osal_memcpy(&msg[4], (uint8 *)lightstate, PKT_HEAD_LEN);
+   \   00010B                ; Setup parameters for call to function osal_memcpy
+   \   00010B   8E..         MOV     ?V4,R6
+   \   00010D   8F..         MOV     ?V5,R7
+   \   00010F   75..00       MOV     ?V6,#0x0
+   \   000112   78..         MOV     R0,#?V4
+   \   000114   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000117   7C09         MOV     R4,#0x9
+   \   000119   7D00         MOV     R5,#0x0
+   \   00011B   7407         MOV     A,#0x7
+   \   00011D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000120   AA82         MOV     R2,DPL
+   \   000122   AB83         MOV     R3,DPH
+   \   000124   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000127   7403         MOV     A,#0x3
+   \   000129   12....       LCALL   ?DEALLOC_XSTACK8
+    146                  osal_memcpy(&msg[4 + PKT_HEAD_LEN], &lightstate->data, lightstate->datalen);
+   \   00012C                ; Setup parameters for call to function osal_memcpy
+   \   00012C   EE           MOV     A,R6
+   \   00012D   2409         ADD     A,#0x9
+   \   00012F   F5..         MOV     ?V4,A
+   \   000131   E4           CLR     A
+   \   000132   3F           ADDC    A,R7
+   \   000133   F5..         MOV     ?V5,A
+   \   000135   75..00       MOV     ?V6,#0x0
+   \   000138   78..         MOV     R0,#?V4
+   \   00013A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00013D   8E82         MOV     DPL,R6
+   \   00013F   8F83         MOV     DPH,R7
+   \   000141   A3           INC     DPTR
+   \   000142   A3           INC     DPTR
+   \   000143   A3           INC     DPTR
+   \   000144   A3           INC     DPTR
+   \   000145   A3           INC     DPTR
+   \   000146   A3           INC     DPTR
+   \   000147   A3           INC     DPTR
+   \   000148   A3           INC     DPTR
+   \   000149   E0           MOVX    A,@DPTR
+   \   00014A   FC           MOV     R4,A
+   \   00014B   7D00         MOV     R5,#0x0
+   \   00014D   7410         MOV     A,#0x10
+   \   00014F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000152   AA82         MOV     R2,DPL
+   \   000154   AB83         MOV     R3,DPH
+   \   000156   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000159   7403         MOV     A,#0x3
+   \   00015B   12....       LCALL   ?DEALLOC_XSTACK8
+    147                  msg[4 + lightstate->datalen + PKT_HEAD_LEN] = fcs;
+   \   00015E   E5..         MOV     A,?V1
+   \   000160   C0E0         PUSH    A
+   \   000162   8E82         MOV     DPL,R6
+   \   000164   8F83         MOV     DPH,R7
+   \   000166   A3           INC     DPTR
+   \   000167   A3           INC     DPTR
+   \   000168   A3           INC     DPTR
+   \   000169   A3           INC     DPTR
+   \   00016A   A3           INC     DPTR
+   \   00016B   A3           INC     DPTR
+   \   00016C   A3           INC     DPTR
+   \   00016D   A3           INC     DPTR
+   \   00016E   E0           MOVX    A,@DPTR
+   \   00016F   F8           MOV     R0,A
+   \   000170   7900         MOV     R1,#0x0
+   \   000172   85..82       MOV     DPL,?XSP + 0
+   \   000175   85..83       MOV     DPH,?XSP + 1
+   \   000178   E582         MOV     A,DPL
+   \   00017A   28           ADD     A,R0
+   \   00017B   F8           MOV     R0,A
+   \   00017C   E583         MOV     A,DPH
+   \   00017E   39           ADDC    A,R1
+   \   00017F   F9           MOV     R1,A
+   \   000180   E8           MOV     A,R0
+   \   000181   240D         ADD     A,#0xd
+   \   000183   F582         MOV     DPL,A
+   \   000185   E4           CLR     A
+   \   000186   39           ADDC    A,R1
+   \   000187   F583         MOV     DPH,A
+   \   000189   D0E0         POP     A
+   \   00018B   F0           MOVX    @DPTR,A
+    148          
+    149          #ifdef OPEN_FCS 			
+    150                  msg[4 + lightstate->datalen + PKT_HEAD_LEN + 1] = MT_UartCalcFCS(&msg[1], lightstate->datalen + PKT_HEAD_LEN + 1 + 3); //rptmac17 + fcs1 + cmd2 + len1
+   \   00018C                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00018C   8E82         MOV     DPL,R6
+   \   00018E   8F83         MOV     DPH,R7
+   \   000190   A3           INC     DPTR
+   \   000191   A3           INC     DPTR
+   \   000192   A3           INC     DPTR
+   \   000193   A3           INC     DPTR
+   \   000194   A3           INC     DPTR
+   \   000195   A3           INC     DPTR
+   \   000196   A3           INC     DPTR
+   \   000197   A3           INC     DPTR
+   \   000198   E0           MOVX    A,@DPTR
+   \   000199   240D         ADD     A,#0xd
+   \   00019B   F9           MOV     R1,A
+   \   00019C   7401         MOV     A,#0x1
+   \   00019E   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A1   AA82         MOV     R2,DPL
+   \   0001A3   AB83         MOV     R3,DPH
+   \   0001A5   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   0001A8   E9           MOV     A,R1
+   \   0001A9   C0E0         PUSH    A
+   \   0001AB   8E82         MOV     DPL,R6
+   \   0001AD   8F83         MOV     DPH,R7
+   \   0001AF   A3           INC     DPTR
+   \   0001B0   A3           INC     DPTR
+   \   0001B1   A3           INC     DPTR
+   \   0001B2   A3           INC     DPTR
+   \   0001B3   A3           INC     DPTR
+   \   0001B4   A3           INC     DPTR
+   \   0001B5   A3           INC     DPTR
+   \   0001B6   A3           INC     DPTR
+   \   0001B7   E0           MOVX    A,@DPTR
+   \   0001B8   F8           MOV     R0,A
+   \   0001B9   7900         MOV     R1,#0x0
+   \   0001BB   85..82       MOV     DPL,?XSP + 0
+   \   0001BE   85..83       MOV     DPH,?XSP + 1
+   \   0001C1   E582         MOV     A,DPL
+   \   0001C3   28           ADD     A,R0
+   \   0001C4   F8           MOV     R0,A
+   \   0001C5   E583         MOV     A,DPH
+   \   0001C7   39           ADDC    A,R1
+   \   0001C8   F9           MOV     R1,A
+   \   0001C9   E8           MOV     A,R0
+   \   0001CA   240E         ADD     A,#0xe
+   \   0001CC   F582         MOV     DPL,A
+   \   0001CE   E4           CLR     A
+   \   0001CF   39           ADDC    A,R1
+   \   0001D0   F583         MOV     DPH,A
+   \   0001D2   D0E0         POP     A
+   \   0001D4   F0           MOVX    @DPTR,A
+    151          #else  
+    152                  msg[4 + lightstate->datalen + PKT_HEAD_LEN + 1] = DEFAULTFCS;
+    153          #endif
+    154          
+    155                  if ( AF_DataRequest( &SerialApp_TxAddr_group, &GenericApp_epDesc,
+    156                                       GENERICAPP_GROUP_CLUSTERID,
+    157                                       (byte) (lightstate->datalen + PKT_HEAD_LEN + 1 + 3 + 2) ,
+    158                                       (byte *)(msg),
+    159                                       &GenericApp_TransID,
+    160                                       AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   0001D5                ; Setup parameters for call to function AF_DataRequest
+   \   0001D5   75..1E       MOV     ?V4,#0x1e
+   \   0001D8   78..         MOV     R0,#?V4
+   \   0001DA   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001DD   75....       MOV     ?V4,#GenericApp_TransID & 0xff
+   \   0001E0   75....       MOV     ?V5,#(GenericApp_TransID >> 8) & 0xff
+   \   0001E3   78..         MOV     R0,#?V4
+   \   0001E5   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001E8   7403         MOV     A,#0x3
+   \   0001EA   12....       LCALL   ?XSTACK_DISP100_8
+   \   0001ED   88..         MOV     ?V4,R0
+   \   0001EF   89..         MOV     ?V5,R1
+   \   0001F1   78..         MOV     R0,#?V4
+   \   0001F3   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001F6   8E82         MOV     DPL,R6
+   \   0001F8   8F83         MOV     DPH,R7
+   \   0001FA   A3           INC     DPTR
+   \   0001FB   A3           INC     DPTR
+   \   0001FC   A3           INC     DPTR
+   \   0001FD   A3           INC     DPTR
+   \   0001FE   A3           INC     DPTR
+   \   0001FF   A3           INC     DPTR
+   \   000200   A3           INC     DPTR
+   \   000201   A3           INC     DPTR
+   \   000202   E0           MOVX    A,@DPTR
+   \   000203   240F         ADD     A,#0xf
+   \   000205   F5..         MOV     ?V4,A
+   \   000207   75..00       MOV     ?V5,#0x0
+   \   00020A   78..         MOV     R0,#?V4
+   \   00020C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00020F   75..03       MOV     ?V4,#0x3
+   \   000212   75..00       MOV     ?V5,#0x0
+   \   000215   78..         MOV     R0,#?V4
+   \   000217   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00021A   7900         MOV     R1,#0x0
+   \   00021C   7C..         MOV     R4,#GenericApp_epDesc & 0xff
+   \   00021E   7D..         MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+   \   000220   7A..         MOV     R2,#SerialApp_TxAddr_group & 0xff
+   \   000222   7B..         MOV     R3,#(SerialApp_TxAddr_group >> 8) & 0xff
+   \   000224   12....       LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000227   7409         MOV     A,#0x9
+   \   000229   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00022C   E9           MOV     A,R1
+   \   00022D   7003         JNZ     ??CustomApp_Send_Group_Data_1
+    161                  {
+    162                       ret = ZSuccess;
+   \   00022F   75..00       MOV     ?V0,#0x0
+    163                  }
+    164          
+    165                  osal_msg_deallocate( (uint8 *)lightstate );
+   \                     ??CustomApp_Send_Group_Data_1:
+   \   000232                ; Setup parameters for call to function osal_msg_deallocate
+   \   000232   EE           MOV     A,R6
+   \   000233   FA           MOV     R2,A
+   \   000234   EF           MOV     A,R7
+   \   000235   FB           MOV     R3,A
+   \   000236   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   000239   E9           MOV     A,R1
+    166              }
+    167          	
+    168              return ret;	
+   \                     ??CustomApp_Send_Group_Data_0:
+   \   00023A   A9..         MOV     R1,?V0
+   \   00023C   7414         MOV     A,#0x14
+   \   00023E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000241   7F07         MOV     R7,#0x7
+   \   000243   02....       LJMP    ?BANKED_LEAVE_XDATA
+    169          }
+    170          
+    171          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    172          void CustomApp_Get_ExtAddr( void )
+   \                     CustomApp_Get_ExtAddr:
+    173          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 13
+   \   000005   74F3         MOV     A,#-0xd
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    174          	uint8 send_buf[13];
+    175          	uint16 cmd;
+    176          
+    177          	cmd = MT_MAC_RSP_MSG;
+   \   00000A   7E80         MOV     R6,#-0x80
+   \   00000C   7F35         MOV     R7,#0x35
+    178          	send_buf[0] = 0xFE;
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   74FE         MOV     A,#-0x2
+   \   000016   F0           MOVX    @DPTR,A
+    179          	send_buf[1 + MT_RPC_POS_LEN] = SADDR_EXT_LEN;
+   \   000017   7401         MOV     A,#0x1
+   \   000019   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001C   7408         MOV     A,#0x8
+   \   00001E   F0           MOVX    @DPTR,A
+    180          	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+   \   00001F   EE           MOV     A,R6
+   \   000020   C0E0         PUSH    A
+   \   000022   7402         MOV     A,#0x2
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   D0E0         POP     A
+   \   000029   F0           MOVX    @DPTR,A
+    181          	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+   \   00002A   EE           MOV     A,R6
+   \   00002B   F8           MOV     R0,A
+   \   00002C   EF           MOV     A,R7
+   \   00002D   F9           MOV     R1,A
+   \   00002E   E4           CLR     A
+   \   00002F   C9           XCH     A,R1
+   \   000030   F8           MOV     R0,A
+   \   000031   E8           MOV     A,R0
+   \   000032   C0E0         PUSH    A
+   \   000034   7403         MOV     A,#0x3
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   D0E0         POP     A
+   \   00003B   F0           MOVX    @DPTR,A
+    182          	osal_memcpy( &send_buf[1 + MT_RPC_POS_DAT0], NLME_GetExtAddr(), SADDR_EXT_LEN );
+   \   00003C                ; Setup parameters for call to function NLME_GetExtAddr
+   \   00003C   12....       LCALL   `??NLME_GetExtAddr::?relay`; Banked call to: NLME_GetExtAddr
+   \   00003F   8A..         MOV     ?V2,R2
+   \   000041   8B..         MOV     ?V3,R3
+   \   000043   85....       MOV     ?V0,?V2
+   \   000046   85....       MOV     ?V1,?V3
+   \   000049                ; Setup parameters for call to function osal_memcpy
+   \   000049   75..00       MOV     ?V2,#0x0
+   \   00004C   78..         MOV     R0,#?V0
+   \   00004E   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000051   7C08         MOV     R4,#0x8
+   \   000053   7D00         MOV     R5,#0x0
+   \   000055   7407         MOV     A,#0x7
+   \   000057   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005A   AA82         MOV     R2,DPL
+   \   00005C   AB83         MOV     R3,DPH
+   \   00005E   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000061   7403         MOV     A,#0x3
+   \   000063   12....       LCALL   ?DEALLOC_XSTACK8
+    183          	send_buf[1 + MT_RPC_POS_DAT0 + SADDR_EXT_LEN] =
+    184          	  MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + SADDR_EXT_LEN );
+   \   000066                ; Setup parameters for call to function MT_UartCalcFCS
+   \   000066   790B         MOV     R1,#0xb
+   \   000068   7401         MOV     A,#0x1
+   \   00006A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006D   AA82         MOV     R2,DPL
+   \   00006F   AB83         MOV     R3,DPH
+   \   000071   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   000074   E9           MOV     A,R1
+   \   000075   C0E0         PUSH    A
+   \   000077   740C         MOV     A,#0xc
+   \   000079   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007C   D0E0         POP     A
+   \   00007E   F0           MOVX    @DPTR,A
+    185          
+    186          	HalUARTWrite( 0, send_buf, MT_UART_HEAD_LEN + SADDR_EXT_LEN + 2 );
+   \   00007F                ; Setup parameters for call to function HalUARTWrite
+   \   00007F   7C0D         MOV     R4,#0xd
+   \   000081   7D00         MOV     R5,#0x0
+   \   000083   AA..         MOV     R2,?XSP + 0
+   \   000085   AB..         MOV     R3,?XSP + 1
+   \   000087   7900         MOV     R1,#0x0
+   \   000089   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    187          }
+   \   00008C   740D         MOV     A,#0xd
+   \   00008E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000091   7F04         MOV     R7,#0x4
+   \   000093   02....       LJMP    ?BANKED_LEAVE_XDATA
+    188          
+    189          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    190          void CustomApp_Get_NWKInfo( void )  //chaokw
+   \                     CustomApp_Get_NWKInfo:
+    191          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 13
+   \   000005   74F3         MOV     A,#-0xd
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    192          	uint8 send_buf[13];
+    193          	uint16 cmd;
+    194          
+    195          	cmd = MT_NWKINFO_RSP_MSG;
+   \   00000A   7E80         MOV     R6,#-0x80
+   \   00000C   7F90         MOV     R7,#-0x70
+    196          	send_buf[0] = 0xFE;
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   74FE         MOV     A,#-0x2
+   \   000016   F0           MOVX    @DPTR,A
+    197          	send_buf[1 + MT_RPC_POS_LEN] = 0x03;
+   \   000017   7401         MOV     A,#0x1
+   \   000019   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001C   7403         MOV     A,#0x3
+   \   00001E   F0           MOVX    @DPTR,A
+    198          	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+   \   00001F   EE           MOV     A,R6
+   \   000020   C0E0         PUSH    A
+   \   000022   7402         MOV     A,#0x2
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   D0E0         POP     A
+   \   000029   F0           MOVX    @DPTR,A
+    199          	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+   \   00002A   EE           MOV     A,R6
+   \   00002B   F8           MOV     R0,A
+   \   00002C   EF           MOV     A,R7
+   \   00002D   F9           MOV     R1,A
+   \   00002E   E4           CLR     A
+   \   00002F   C9           XCH     A,R1
+   \   000030   F8           MOV     R0,A
+   \   000031   E8           MOV     A,R0
+   \   000032   C0E0         PUSH    A
+   \   000034   7403         MOV     A,#0x3
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   D0E0         POP     A
+   \   00003B   F0           MOVX    @DPTR,A
+    200          	
+    201                 osal_memcpy(&send_buf[1 + MT_RPC_POS_DAT0], &_NIB.nwkPanId, 2);   
+   \   00003C                ; Setup parameters for call to function osal_memcpy
+   \   00003C   75....       MOV     ?V0,#(_NIB + 33) & 0xff
+   \   00003F   75....       MOV     ?V1,#((_NIB + 33) >> 8) & 0xff
+   \   000042   75..00       MOV     ?V2,#0x0
+   \   000045   78..         MOV     R0,#?V0
+   \   000047   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00004A   7C02         MOV     R4,#0x2
+   \   00004C   7D00         MOV     R5,#0x0
+   \   00004E   7407         MOV     A,#0x7
+   \   000050   12....       LCALL   ?XSTACK_DISP0_8
+   \   000053   AA82         MOV     R2,DPL
+   \   000055   AB83         MOV     R3,DPH
+   \   000057   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00005A   7403         MOV     A,#0x3
+   \   00005C   12....       LCALL   ?DEALLOC_XSTACK8
+    202                 send_buf[1 + MT_RPC_POS_DAT0 + 2] = macPhyChannel;
+   \   00005F   90....       MOV     DPTR,#macPhyChannel
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   C0E0         PUSH    A
+   \   000065   7406         MOV     A,#0x6
+   \   000067   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006A   D0E0         POP     A
+   \   00006C   F0           MOVX    @DPTR,A
+    203          	
+    204          	send_buf[1 + MT_RPC_POS_DAT0 + 3] =
+    205          	  MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + 3 );
+   \   00006D                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00006D   7906         MOV     R1,#0x6
+   \   00006F   7401         MOV     A,#0x1
+   \   000071   12....       LCALL   ?XSTACK_DISP0_8
+   \   000074   AA82         MOV     R2,DPL
+   \   000076   AB83         MOV     R3,DPH
+   \   000078   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   00007B   E9           MOV     A,R1
+   \   00007C   C0E0         PUSH    A
+   \   00007E   7407         MOV     A,#0x7
+   \   000080   12....       LCALL   ?XSTACK_DISP0_8
+   \   000083   D0E0         POP     A
+   \   000085   F0           MOVX    @DPTR,A
+    206          
+    207          	HalUARTWrite( 0, send_buf, MT_UART_HEAD_LEN + 3 + 2 );
+   \   000086                ; Setup parameters for call to function HalUARTWrite
+   \   000086   7C08         MOV     R4,#0x8
+   \   000088   7D00         MOV     R5,#0x0
+   \   00008A   AA..         MOV     R2,?XSP + 0
+   \   00008C   AB..         MOV     R3,?XSP + 1
+   \   00008E   7900         MOV     R1,#0x0
+   \   000090   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    208          }
+   \   000093   740D         MOV     A,#0xd
+   \   000095   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000098   7F03         MOV     R7,#0x3
+   \   00009A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    209          
+    210          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    211          void CustomApp_Get_Active_Cnt( void )
+   \                     CustomApp_Get_Active_Cnt:
+    212          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    213                 uint8 activeCount = 0;
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   7400         MOV     A,#0x0
+   \   000012   F0           MOVX    @DPTR,A
+    214                 activeCount = CustomApp_get_connected_node_count();
+   \   000013                ; Setup parameters for call to function CustomApp_get_connected_node_count
+   \   000013   12....       LCALL   `??CustomApp_get_connected_node_count::?relay`; Banked call to: CustomApp_get_connected_node_count
+   \   000016   E9           MOV     A,R1
+   \   000017   C0E0         PUSH    A
+   \   000019   85..82       MOV     DPL,?XSP + 0
+   \   00001C   85..83       MOV     DPH,?XSP + 1
+   \   00001F   D0E0         POP     A
+   \   000021   F0           MOVX    @DPTR,A
+    215          	CustomApp_Uart_Send( 0, (uint16)MT_ACTIVE_CNT_RSP_MSG, (uint8 *)&activeCount, 1 , 0 );
+   \   000022                ; Setup parameters for call to function CustomApp_Uart_Send
+   \   000022   75..00       MOV     ?V0,#0x0
+   \   000025   78..         MOV     R0,#?V0
+   \   000027   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00002A   75..01       MOV     ?V0,#0x1
+   \   00002D   78..         MOV     R0,#?V0
+   \   00002F   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000032   7402         MOV     A,#0x2
+   \   000034   12....       LCALL   ?XSTACK_DISP102_8
+   \   000037   7A80         MOV     R2,#-0x80
+   \   000039   7B41         MOV     R3,#0x41
+   \   00003B   7900         MOV     R1,#0x0
+   \   00003D   12....       LCALL   `??CustomApp_Uart_Send::?relay`; Banked call to: CustomApp_Uart_Send
+   \   000040   7402         MOV     A,#0x2
+   \   000042   12....       LCALL   ?DEALLOC_XSTACK8
+    216          }
+   \   000045   7401         MOV     A,#0x1
+   \   000047   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00004A   7F01         MOV     R7,#0x1
+   \   00004C   02....       LJMP    ?BANKED_LEAVE_XDATA
+    217          
+    218          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    219          void CustomApp_Get_Version( void )
+   \                     CustomApp_Get_Version:
+    220          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    221          	CustomApp_Uart_Send( 0, (uint16)MT_FW_VERSION_RSP_MSG, (uint8 *)fw_version, (uint8)ZIGBEE_FW_VERSION_LEN , 0 );
+   \   000005                ; Setup parameters for call to function CustomApp_Uart_Send
+   \   000005   75..00       MOV     ?V0,#0x0
+   \   000008   78..         MOV     R0,#?V0
+   \   00000A   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00000D   75..0A       MOV     ?V0,#0xa
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000015   90....       MOV     DPTR,#fw_version
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   FC           MOV     R4,A
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   FD           MOV     R5,A
+   \   00001D   7A80         MOV     R2,#-0x80
+   \   00001F   7B36         MOV     R3,#0x36
+   \   000021   7900         MOV     R1,#0x0
+   \   000023   12....       LCALL   `??CustomApp_Uart_Send::?relay`; Banked call to: CustomApp_Uart_Send
+   \   000026   7402         MOV     A,#0x2
+   \   000028   12....       LCALL   ?DEALLOC_XSTACK8
+    222          }
+   \   00002B   7F01         MOV     R7,#0x1
+   \   00002D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    223          
+    224          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    225          void CustomApp_FW_Update( void )
+   \                     CustomApp_FW_Update:
+    226          {
+   \   000000                REQUIRE ?V0
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    227          	CustomApp_Uart_Send( 0, (uint16)MT_FW_UPDATE_RSP_MSG, NULL, 0 , 0 );
+   \   000005                ; Setup parameters for call to function CustomApp_Uart_Send
+   \   000005   75..00       MOV     ?V0,#0x0
+   \   000008   78..         MOV     R0,#?V0
+   \   00000A   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00000D   75..00       MOV     ?V0,#0x0
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000015   7C00         MOV     R4,#0x0
+   \   000017   7D00         MOV     R5,#0x0
+   \   000019   7A80         MOV     R2,#-0x80
+   \   00001B   7B37         MOV     R3,#0x37
+   \   00001D   7900         MOV     R1,#0x0
+   \   00001F   12....       LCALL   `??CustomApp_Uart_Send::?relay`; Banked call to: CustomApp_Uart_Send
+   \   000022   7402         MOV     A,#0x2
+   \   000024   12....       LCALL   ?DEALLOC_XSTACK8
+    228          	osal_start_timerEx( GenericApp_TaskID, GENERICAPP_RESET_SB_MSG_EVT, 500);
+   \   000027                ; Setup parameters for call to function osal_start_timerEx
+   \   000027   90....       MOV     DPTR,#__Constant_1f4
+   \   00002A   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   00002D   7A20         MOV     R2,#0x20
+   \   00002F   7B00         MOV     R3,#0x0
+   \   000031   90....       MOV     DPTR,#GenericApp_TaskID
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F9           MOV     R1,A
+   \   000036   12....       LCALL   `??osal_start_timerEx::?relay`; Banked call to: osal_start_timerEx
+   \   000039   7404         MOV     A,#0x4
+   \   00003B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00003E   E9           MOV     A,R1
+    229          }
+   \   00003F   7F01         MOV     R7,#0x1
+   \   000041   02....       LJMP    ?BANKED_LEAVE_XDATA
+    230          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    231          static void CustomApp_Uart_Send( uint8 port, uint16 cmd, uint8 *pbuf, uint8 len, uint8 offset )
+   \                     CustomApp_Uart_Send:
+    232          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 256
+   \   000005   758200       MOV     DPL,#0x0
+   \   000008   7583FF       MOV     DPH,#-0x1
+   \   00000B   12....       LCALL   ?ADD_XSTACK_DISP0_16
+   \   00000E   89..         MOV     ?V1,R1
+   \   000010   EA           MOV     A,R2
+   \   000011   FE           MOV     R6,A
+   \   000012   EB           MOV     A,R3
+   \   000013   FF           MOV     R7,A
+   \   000014   8C..         MOV     ?V8,R4
+   \   000016   8D..         MOV     ?V9,R5
+   \   000018   900112       MOV     DPTR,#0x112
+   \   00001B   12....       LCALL   ?XSTACK_DISP0_16
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F5..         MOV     ?V0,A
+   \   000021   900113       MOV     DPTR,#0x113
+   \   000024   12....       LCALL   ?XSTACK_DISP0_16
+   \   000027   E0           MOVX    A,@DPTR
+   \   000028   F5..         MOV     ?V2,A
+    233          	uint8 send_buf[256];
+    234          
+    235          	send_buf[0] = 0xFE;
+   \   00002A   85..82       MOV     DPL,?XSP + 0
+   \   00002D   85..83       MOV     DPH,?XSP + 1
+   \   000030   74FE         MOV     A,#-0x2
+   \   000032   F0           MOVX    @DPTR,A
+    236          	send_buf[1 + MT_RPC_POS_LEN] = len;
+   \   000033   E5..         MOV     A,?V0
+   \   000035   C0E0         PUSH    A
+   \   000037   7401         MOV     A,#0x1
+   \   000039   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003C   D0E0         POP     A
+   \   00003E   F0           MOVX    @DPTR,A
+    237          	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+   \   00003F   EE           MOV     A,R6
+   \   000040   C0E0         PUSH    A
+   \   000042   7402         MOV     A,#0x2
+   \   000044   12....       LCALL   ?XSTACK_DISP0_8
+   \   000047   D0E0         POP     A
+   \   000049   F0           MOVX    @DPTR,A
+    238          	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+   \   00004A   EE           MOV     A,R6
+   \   00004B   F8           MOV     R0,A
+   \   00004C   EF           MOV     A,R7
+   \   00004D   F9           MOV     R1,A
+   \   00004E   E4           CLR     A
+   \   00004F   C9           XCH     A,R1
+   \   000050   F8           MOV     R0,A
+   \   000051   E8           MOV     A,R0
+   \   000052   C0E0         PUSH    A
+   \   000054   7403         MOV     A,#0x3
+   \   000056   12....       LCALL   ?XSTACK_DISP0_8
+   \   000059   D0E0         POP     A
+   \   00005B   F0           MOVX    @DPTR,A
+    239          	if ( len )
+   \   00005C   E5..         MOV     A,?V0
+   \   00005E   602B         JZ      ??CustomApp_Uart_Send_0
+    240          	{
+    241          		osal_memcpy( &send_buf[1 + MT_RPC_POS_DAT0], &pbuf[offset], len );
+   \   000060                ; Setup parameters for call to function osal_memcpy
+   \   000060   A8..         MOV     R0,?V2
+   \   000062   7900         MOV     R1,#0x0
+   \   000064   E5..         MOV     A,?V8
+   \   000066   28           ADD     A,R0
+   \   000067   F5..         MOV     ?V4,A
+   \   000069   E5..         MOV     A,?V9
+   \   00006B   39           ADDC    A,R1
+   \   00006C   F5..         MOV     ?V5,A
+   \   00006E   75..00       MOV     ?V6,#0x0
+   \   000071   78..         MOV     R0,#?V4
+   \   000073   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000076   AC..         MOV     R4,?V0
+   \   000078   7D00         MOV     R5,#0x0
+   \   00007A   7407         MOV     A,#0x7
+   \   00007C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007F   AA82         MOV     R2,DPL
+   \   000081   AB83         MOV     R3,DPH
+   \   000083   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000086   7403         MOV     A,#0x3
+   \   000088   12....       LCALL   ?DEALLOC_XSTACK8
+    242          	}
+    243          	send_buf[1 + MT_RPC_POS_DAT0 + len] =
+    244          		MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + len );
+   \                     ??CustomApp_Uart_Send_0:
+   \   00008B                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00008B   7403         MOV     A,#0x3
+   \   00008D   25..         ADD     A,?V0
+   \   00008F   F9           MOV     R1,A
+   \   000090   7401         MOV     A,#0x1
+   \   000092   12....       LCALL   ?XSTACK_DISP0_8
+   \   000095   AA82         MOV     R2,DPL
+   \   000097   AB83         MOV     R3,DPH
+   \   000099   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   00009C   E9           MOV     A,R1
+   \   00009D   C0E0         PUSH    A
+   \   00009F   A8..         MOV     R0,?V0
+   \   0000A1   7900         MOV     R1,#0x0
+   \   0000A3   85..82       MOV     DPL,?XSP + 0
+   \   0000A6   85..83       MOV     DPH,?XSP + 1
+   \   0000A9   E582         MOV     A,DPL
+   \   0000AB   28           ADD     A,R0
+   \   0000AC   F582         MOV     DPL,A
+   \   0000AE   E583         MOV     A,DPH
+   \   0000B0   39           ADDC    A,R1
+   \   0000B1   F583         MOV     DPH,A
+   \   0000B3   A3           INC     DPTR
+   \   0000B4   A3           INC     DPTR
+   \   0000B5   A3           INC     DPTR
+   \   0000B6   A3           INC     DPTR
+   \   0000B7   D0E0         POP     A
+   \   0000B9   F0           MOVX    @DPTR,A
+    245          	HalUARTWrite( port, send_buf, MT_UART_HEAD_LEN + len + 2 );
+   \   0000BA                ; Setup parameters for call to function HalUARTWrite
+   \   0000BA   A8..         MOV     R0,?V0
+   \   0000BC   7900         MOV     R1,#0x0
+   \   0000BE   E8           MOV     A,R0
+   \   0000BF   2405         ADD     A,#0x5
+   \   0000C1   FC           MOV     R4,A
+   \   0000C2   E4           CLR     A
+   \   0000C3   39           ADDC    A,R1
+   \   0000C4   FD           MOV     R5,A
+   \   0000C5   AA..         MOV     R2,?XSP + 0
+   \   0000C7   AB..         MOV     R3,?XSP + 1
+   \   0000C9   A9..         MOV     R1,?V1
+   \   0000CB   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    246          }
+   \   0000CE   92F0         MOV     B.0,C
+   \   0000D0   758200       MOV     DPL,#0x0
+   \   0000D3   758301       MOV     DPH,#0x1
+   \   0000D6   12....       LCALL   ?ADD_XSTACK_DISP0_16
+   \   0000D9   A2F0         MOV     C,B.0
+   \   0000DB   7F0A         MOV     R7,#0xa
+   \   0000DD   02....       LJMP    ?BANKED_LEAVE_XDATA
+    247          
+    248          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    249          void CustomApp_AF_P2P_Data_Process(afIncomingMSGPacket_t *pkt)
+   \                     CustomApp_AF_P2P_Data_Process:
+    250          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    251              // | SOP | Data Length |   CMD0   |CMD1   |   Data   |  FCS  |
+    252              // | 1     |  1                |     1        |    1     |  0-Len   |   1   |  
+    253              uart_buf = (uint8 *)osal_msg_allocate(pkt->cmd.DataLength + 2);
+   \   000009                ; Setup parameters for call to function osal_msg_allocate
+   \   000009   EE           MOV     A,R6
+   \   00000A   2420         ADD     A,#0x20
+   \   00000C   F582         MOV     DPL,A
+   \   00000E   E4           CLR     A
+   \   00000F   3F           ADDC    A,R7
+   \   000010   F583         MOV     DPH,A
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   2402         ADD     A,#0x2
+   \   000015   FA           MOV     R2,A
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   3400         ADDC    A,#0x0
+   \   00001A   FB           MOV     R3,A
+   \   00001B   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001E   90....       MOV     DPTR,#uart_buf
+   \   000021   EA           MOV     A,R2
+   \   000022   F0           MOVX    @DPTR,A
+   \   000023   A3           INC     DPTR
+   \   000024   EB           MOV     A,R3
+   \   000025   F0           MOVX    @DPTR,A
+    254              if ( uart_buf == NULL )
+   \   000026   90....       MOV     DPTR,#uart_buf
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   F8           MOV     R0,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   F9           MOV     R1,A
+   \   00002E   E8           MOV     A,R0
+   \   00002F   49           ORL     A,R1
+   \   000030   7003         JNZ     $+5
+   \   000032   02....       LJMP    ??CustomApp_AF_P2P_Data_Process_0 & 0xFFFF
+    255              {
+    256                  return;
+    257              } 		
+    258              uart_buf[0] = MT_UART_SOF;	      
+   \   000035   90....       MOV     DPTR,#uart_buf
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F8           MOV     R0,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F583         MOV     DPH,A
+   \   00003E   8882         MOV     DPL,R0
+   \   000040   74FE         MOV     A,#-0x2
+   \   000042   F0           MOVX    @DPTR,A
+    259              osal_memcpy(&uart_buf[1], pkt->cmd.Data, pkt->cmd.DataLength);
+   \   000043                ; Setup parameters for call to function osal_memcpy
+   \   000043   EE           MOV     A,R6
+   \   000044   2422         ADD     A,#0x22
+   \   000046   F582         MOV     DPL,A
+   \   000048   E4           CLR     A
+   \   000049   3F           ADDC    A,R7
+   \   00004A   F583         MOV     DPH,A
+   \   00004C   E0           MOVX    A,@DPTR
+   \   00004D   F5..         MOV     ?V0,A
+   \   00004F   A3           INC     DPTR
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   F5..         MOV     ?V1,A
+   \   000053   75..00       MOV     ?V2,#0x0
+   \   000056   78..         MOV     R0,#?V0
+   \   000058   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00005B   EE           MOV     A,R6
+   \   00005C   2420         ADD     A,#0x20
+   \   00005E   F582         MOV     DPL,A
+   \   000060   E4           CLR     A
+   \   000061   3F           ADDC    A,R7
+   \   000062   F583         MOV     DPH,A
+   \   000064   E0           MOVX    A,@DPTR
+   \   000065   FC           MOV     R4,A
+   \   000066   A3           INC     DPTR
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   FD           MOV     R5,A
+   \   000069   90....       MOV     DPTR,#uart_buf
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   2401         ADD     A,#0x1
+   \   00006F   FA           MOV     R2,A
+   \   000070   A3           INC     DPTR
+   \   000071   E0           MOVX    A,@DPTR
+   \   000072   3400         ADDC    A,#0x0
+   \   000074   FB           MOV     R3,A
+   \   000075   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000078   7403         MOV     A,#0x3
+   \   00007A   12....       LCALL   ?DEALLOC_XSTACK8
+    260              uart_buf[pkt->cmd.DataLength + 1]  = MT_UartCalcFCS(&uart_buf[1], pkt->cmd.DataLength);              
+   \   00007D                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00007D   EE           MOV     A,R6
+   \   00007E   2420         ADD     A,#0x20
+   \   000080   F582         MOV     DPL,A
+   \   000082   E4           CLR     A
+   \   000083   3F           ADDC    A,R7
+   \   000084   F583         MOV     DPH,A
+   \   000086   E0           MOVX    A,@DPTR
+   \   000087   F8           MOV     R0,A
+   \   000088   A3           INC     DPTR
+   \   000089   E0           MOVX    A,@DPTR
+   \   00008A   F9           MOV     R1,A
+   \   00008B   E8           MOV     A,R0
+   \   00008C   F9           MOV     R1,A
+   \   00008D   90....       MOV     DPTR,#uart_buf
+   \   000090   E0           MOVX    A,@DPTR
+   \   000091   2401         ADD     A,#0x1
+   \   000093   FA           MOV     R2,A
+   \   000094   A3           INC     DPTR
+   \   000095   E0           MOVX    A,@DPTR
+   \   000096   3400         ADDC    A,#0x0
+   \   000098   FB           MOV     R3,A
+   \   000099   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   00009C   E9           MOV     A,R1
+   \   00009D   C0E0         PUSH    A
+   \   00009F   EE           MOV     A,R6
+   \   0000A0   2420         ADD     A,#0x20
+   \   0000A2   F582         MOV     DPL,A
+   \   0000A4   E4           CLR     A
+   \   0000A5   3F           ADDC    A,R7
+   \   0000A6   F583         MOV     DPH,A
+   \   0000A8   E0           MOVX    A,@DPTR
+   \   0000A9   F8           MOV     R0,A
+   \   0000AA   A3           INC     DPTR
+   \   0000AB   E0           MOVX    A,@DPTR
+   \   0000AC   F9           MOV     R1,A
+   \   0000AD   90....       MOV     DPTR,#uart_buf
+   \   0000B0   E0           MOVX    A,@DPTR
+   \   0000B1   28           ADD     A,R0
+   \   0000B2   FA           MOV     R2,A
+   \   0000B3   A3           INC     DPTR
+   \   0000B4   E0           MOVX    A,@DPTR
+   \   0000B5   39           ADDC    A,R1
+   \   0000B6   8A82         MOV     DPL,R2
+   \   0000B8   F583         MOV     DPH,A
+   \   0000BA   A3           INC     DPTR
+   \   0000BB   D0E0         POP     A
+   \   0000BD   F0           MOVX    @DPTR,A
+    261              HalUARTWrite(0, uart_buf, pkt->cmd.DataLength + 2);   
+   \   0000BE                ; Setup parameters for call to function HalUARTWrite
+   \   0000BE   EE           MOV     A,R6
+   \   0000BF   2420         ADD     A,#0x20
+   \   0000C1   F582         MOV     DPL,A
+   \   0000C3   E4           CLR     A
+   \   0000C4   3F           ADDC    A,R7
+   \   0000C5   F583         MOV     DPH,A
+   \   0000C7   E0           MOVX    A,@DPTR
+   \   0000C8   2402         ADD     A,#0x2
+   \   0000CA   FC           MOV     R4,A
+   \   0000CB   A3           INC     DPTR
+   \   0000CC   E0           MOVX    A,@DPTR
+   \   0000CD   3400         ADDC    A,#0x0
+   \   0000CF   FD           MOV     R5,A
+   \   0000D0   90....       MOV     DPTR,#uart_buf
+   \   0000D3   E0           MOVX    A,@DPTR
+   \   0000D4   FA           MOV     R2,A
+   \   0000D5   A3           INC     DPTR
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   FB           MOV     R3,A
+   \   0000D8   7900         MOV     R1,#0x0
+   \   0000DA   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    262          	
+    263              osal_msg_deallocate ((uint8 *)uart_buf); 
+   \   0000DD                ; Setup parameters for call to function osal_msg_deallocate
+   \   0000DD   90....       MOV     DPTR,#uart_buf
+   \   0000E0   E0           MOVX    A,@DPTR
+   \   0000E1   FA           MOV     R2,A
+   \   0000E2   A3           INC     DPTR
+   \   0000E3   E0           MOVX    A,@DPTR
+   \   0000E4   FB           MOV     R3,A
+   \   0000E5   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   0000E8   E9           MOV     A,R1
+    264          }
+   \                     ??CustomApp_AF_P2P_Data_Process_0:
+   \   0000E9   7F03         MOV     R7,#0x3
+   \   0000EB   02....       LJMP    ?BANKED_LEAVE_XDATA
+    265          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    266          void CustomApp_AF_Broadcast_Data_Process(afIncomingMSGPacket_t *pkt)
+   \                     CustomApp_AF_Broadcast_Data_Process:
+    267          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    268              CustomApp_AF_P2P_Data_Process(pkt);
+   \   000009                ; Setup parameters for call to function CustomApp_AF_P2P_Data_Process
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   `??CustomApp_AF_P2P_Data_Process::?relay`; Banked call to: CustomApp_AF_P2P_Data_Process
+    269          }
+   \   000010   7F01         MOV     R7,#0x1
+   \   000012   02....       LJMP    ?BANKED_LEAVE_XDATA
+    270          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    271          void CustomApp_AF_Group_Data_Process(afIncomingMSGPacket_t *pkt)
+   \                     CustomApp_AF_Group_Data_Process:
+    272          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    273              uart_buf = (uint8 *)osal_msg_allocate(pkt->cmd.DataLength);
+   \   000009                ; Setup parameters for call to function osal_msg_allocate
+   \   000009   EE           MOV     A,R6
+   \   00000A   2420         ADD     A,#0x20
+   \   00000C   F582         MOV     DPL,A
+   \   00000E   E4           CLR     A
+   \   00000F   3F           ADDC    A,R7
+   \   000010   F583         MOV     DPH,A
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   FA           MOV     R2,A
+   \   000014   A3           INC     DPTR
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   FB           MOV     R3,A
+   \   000017   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001A   90....       MOV     DPTR,#uart_buf
+   \   00001D   EA           MOV     A,R2
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   EB           MOV     A,R3
+   \   000021   F0           MOVX    @DPTR,A
+    274              if ( uart_buf == NULL )
+   \   000022   90....       MOV     DPTR,#uart_buf
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   F8           MOV     R0,A
+   \   000027   A3           INC     DPTR
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   F9           MOV     R1,A
+   \   00002A   E8           MOV     A,R0
+   \   00002B   49           ORL     A,R1
+   \   00002C   605D         JZ      ??CustomApp_AF_Group_Data_Process_0
+    275              {
+    276                  return;
+    277              } 		
+    278              osal_memcpy(uart_buf, pkt->cmd.Data, pkt->cmd.DataLength);
+   \   00002E                ; Setup parameters for call to function osal_memcpy
+   \   00002E   EE           MOV     A,R6
+   \   00002F   2422         ADD     A,#0x22
+   \   000031   F582         MOV     DPL,A
+   \   000033   E4           CLR     A
+   \   000034   3F           ADDC    A,R7
+   \   000035   F583         MOV     DPH,A
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F5..         MOV     ?V0,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F5..         MOV     ?V1,A
+   \   00003E   75..00       MOV     ?V2,#0x0
+   \   000041   78..         MOV     R0,#?V0
+   \   000043   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000046   EE           MOV     A,R6
+   \   000047   2420         ADD     A,#0x20
+   \   000049   F582         MOV     DPL,A
+   \   00004B   E4           CLR     A
+   \   00004C   3F           ADDC    A,R7
+   \   00004D   F583         MOV     DPH,A
+   \   00004F   E0           MOVX    A,@DPTR
+   \   000050   FC           MOV     R4,A
+   \   000051   A3           INC     DPTR
+   \   000052   E0           MOVX    A,@DPTR
+   \   000053   FD           MOV     R5,A
+   \   000054   90....       MOV     DPTR,#uart_buf
+   \   000057   E0           MOVX    A,@DPTR
+   \   000058   FA           MOV     R2,A
+   \   000059   A3           INC     DPTR
+   \   00005A   E0           MOVX    A,@DPTR
+   \   00005B   FB           MOV     R3,A
+   \   00005C   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00005F   7403         MOV     A,#0x3
+   \   000061   12....       LCALL   ?DEALLOC_XSTACK8
+    279              HalUARTWrite(0, uart_buf, pkt->cmd.DataLength);   
+   \   000064                ; Setup parameters for call to function HalUARTWrite
+   \   000064   EE           MOV     A,R6
+   \   000065   2420         ADD     A,#0x20
+   \   000067   F582         MOV     DPL,A
+   \   000069   E4           CLR     A
+   \   00006A   3F           ADDC    A,R7
+   \   00006B   F583         MOV     DPH,A
+   \   00006D   E0           MOVX    A,@DPTR
+   \   00006E   FC           MOV     R4,A
+   \   00006F   A3           INC     DPTR
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   FD           MOV     R5,A
+   \   000072   90....       MOV     DPTR,#uart_buf
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   FA           MOV     R2,A
+   \   000077   A3           INC     DPTR
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   FB           MOV     R3,A
+   \   00007A   7900         MOV     R1,#0x0
+   \   00007C   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    280              osal_msg_deallocate ((uint8 *)uart_buf); 
+   \   00007F                ; Setup parameters for call to function osal_msg_deallocate
+   \   00007F   90....       MOV     DPTR,#uart_buf
+   \   000082   E0           MOVX    A,@DPTR
+   \   000083   FA           MOV     R2,A
+   \   000084   A3           INC     DPTR
+   \   000085   E0           MOVX    A,@DPTR
+   \   000086   FB           MOV     R3,A
+   \   000087   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   00008A   E9           MOV     A,R1
+    281          }
+   \                     ??CustomApp_AF_Group_Data_Process_0:
+   \   00008B   7F03         MOV     R7,#0x3
+   \   00008D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    282          
+    283          
+    284          #if defined( ZDO_COORDINATOR ) && defined( WIFI_FREQUENCY_SELECT )
+    285          void CustomApp_WifiChannelReq( void )
+    286          {
+    287          	uint16 cmd;
+    288          	uint8 buf[6] = {0};
+    289          
+    290          	if ( !getWifiChannel )
+    291          	{
+    292          		cmd = MT_WIFI_CHANNEL_REQ;
+    293          		buf[0] = MT_UART_SOF;
+    294          		buf[1 + MT_RPC_POS_LEN] = 0x00;
+    295          		buf[1 + MT_RPC_POS_CMD0] = cmd & 0xFF;
+    296          		buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xFF;
+    297          		buf[1 + MT_RPC_POS_DAT0] = MT_UartCalcFCS( &buf[1], MT_UART_HEAD_LEN);
+    298          		HalUARTWrite( 0, buf, MT_RPC_POS_DAT0 + 2 );
+    299          		osal_start_timerEx( GenericApp_TaskID,
+    300          						GENERICAPP_CHANNEL_MSG_EVT,
+    301          						5000 );
+    302          	}
+    303          }
+    304          
+    305          void CustomApp_ChannelSelect(afIncomingMSGPacket_t *MSGpkt)
+    306          {
+    307          	uint16 wifi_channel;
+    308          	wifi_channel = (uint16)(*(MSGpkt->cmd.Data));
+    309          	if ( (wifi_channel < 1) || (wifi_channel > 13) )
+    310          	{
+    311          		HalUARTWrite( 0, "wifi channel error", 19 );
+    312          		return;
+    313          	}
+    314          	CustomApp_ZigbeeChannelMask( wifi_channel );
+    315          	if ( zgChannelUpdate )
+    316          	{
+    317          		HAL_SYSTEM_RESET();
+    318          	}
+    319          	getWifiChannel = TRUE;
+    320          }
+    321          
+    322          static void CustomApp_ZigbeeChannelMask( uint16 wifiChannel )
+    323          {
+    324          	// CH1 frequency  - 11
+    325          	uint32 wifiChannelMin = 2401;
+    326          	// CH13 frequency + 11
+    327          	uint32 wifiChannleMax = 2495;
+    328          	uint32 wifiFrequency;
+    329          	uint32 zgFrequency;
+    330          	uint32 zgChannelMask;
+    331          	uint8 tryCount;
+    332          	// The BW of wifi is 22MHz
+    333          	wifiFrequency = 2412 + 6 * (wifiChannel - 1);
+    334          	if ( wifiFrequency -11 > wifiChannelMin )
+    335          	{
+    336          		wifiChannelMin = wifiFrequency -11;
+    337          	}
+    338          	if ( wifiFrequency + 11 < wifiChannleMax )
+    339          	{
+    340          		wifiChannleMax = wifiFrequency + 11;
+    341          	}
+    342          	// Calculate for the zigbee frequency in the gateway wifi
+    343          	zgChannelMask = 0;
+    344          	for ( uint8 i = 11; i <= 26; i++ )
+    345          	{
+    346          		zgFrequency = 2405 + 5 * (i - 11);
+    347          		if ( (zgFrequency >= wifiChannelMin) && (zgFrequency <= wifiChannleMax) )
+    348          		{
+    349          			zgChannelMask |= ((uint32)1 << i);
+    350          			if ( i == macPhyChannel )
+    351          			{
+    352          				zgChannelUpdate = TRUE;
+    353          			}
+    354          		}
+    355          	}
+    356          	zgChannelMask = MAX_CHANNELS_24GHZ & (~zgChannelMask);
+    357          	if ( zgChannelMask != zgDefaultChannelMask )
+    358          	{
+    359          		zgDefaultChannelMask = zgChannelMask;
+    360          	}
+    361          	macRxOff();
+    362          	tryCount = 3;
+    363          	while ( tryCount --)
+    364          	{
+    365          		if ( osal_nv_write( ZCD_NV_CHANNEL_MASK,
+    366          				  0,
+    367          				  sizeof( zgDefaultChannelMask ),
+    368          				  &zgDefaultChannelMask ) != SUCCESS )
+    369          		{
+    370          			HalUARTWrite( 0, "Write ZCD_NV_CHANNEL_MASK failed !", 35 );
+    371          		}
+    372          	}
+    373          	macRxOn();
+    374          }
+    375          #endif
+    376          
+    377          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    378          void CustomApp_Set_Multiway(afIncomingMSGPacket_t *pkt)
+   \                     CustomApp_Set_Multiway:
+    379          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 20
+   \   000005   74EC         MOV     A,#-0x14
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    380              /*
+    381              B1-B0	  B3-B2  B5-B4  B7-B6	 B8    B10-B9			B11		B12			B13			B14				B14
+    382                                                                  GROUP ID	GROUP Type	Mem Struct	Master loc	GROUP Master      CSUM
+    383              */      
+    384              uint8 msg[20];
+    385              uint8 len;
+    386              // nv restore and set mutliway
+    387              Prot_Group_T.group_type = pkt->cmd.Data[2];
+   \   00000E   EE           MOV     A,R6
+   \   00000F   2422         ADD     A,#0x22
+   \   000011   F582         MOV     DPL,A
+   \   000013   E4           CLR     A
+   \   000014   3F           ADDC    A,R7
+   \   000015   F583         MOV     DPH,A
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   F8           MOV     R0,A
+   \   000019   A3           INC     DPTR
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   F583         MOV     DPH,A
+   \   00001D   8882         MOV     DPL,R0
+   \   00001F   A3           INC     DPTR
+   \   000020   A3           INC     DPTR
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   90....       MOV     DPTR,#Prot_Group_T + 2
+   \   000025   F0           MOVX    @DPTR,A
+    388              Prot_Group_T.mem_struct = pkt->cmd.Data[3];
+   \   000026   EE           MOV     A,R6
+   \   000027   2422         ADD     A,#0x22
+   \   000029   F582         MOV     DPL,A
+   \   00002B   E4           CLR     A
+   \   00002C   3F           ADDC    A,R7
+   \   00002D   F583         MOV     DPH,A
+   \   00002F   E0           MOVX    A,@DPTR
+   \   000030   F8           MOV     R0,A
+   \   000031   A3           INC     DPTR
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   F583         MOV     DPH,A
+   \   000035   8882         MOV     DPL,R0
+   \   000037   A3           INC     DPTR
+   \   000038   A3           INC     DPTR
+   \   000039   A3           INC     DPTR
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   90....       MOV     DPTR,#Prot_Group_T + 3
+   \   00003E   F0           MOVX    @DPTR,A
+    389              Prot_Group_T.master_location = pkt->cmd.Data[4];
+   \   00003F   EE           MOV     A,R6
+   \   000040   2422         ADD     A,#0x22
+   \   000042   F582         MOV     DPL,A
+   \   000044   E4           CLR     A
+   \   000045   3F           ADDC    A,R7
+   \   000046   F583         MOV     DPH,A
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   F8           MOV     R0,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   E0           MOVX    A,@DPTR
+   \   00004C   F583         MOV     DPH,A
+   \   00004E   8882         MOV     DPL,R0
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   E0           MOVX    A,@DPTR
+   \   000055   90....       MOV     DPTR,#Prot_Group_T + 4
+   \   000058   F0           MOVX    @DPTR,A
+    390              Prot_Group_T.group_master = pkt->cmd.Data[5];
+   \   000059   EE           MOV     A,R6
+   \   00005A   2422         ADD     A,#0x22
+   \   00005C   F582         MOV     DPL,A
+   \   00005E   E4           CLR     A
+   \   00005F   3F           ADDC    A,R7
+   \   000060   F583         MOV     DPH,A
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   F8           MOV     R0,A
+   \   000064   A3           INC     DPTR
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   F583         MOV     DPH,A
+   \   000068   8882         MOV     DPL,R0
+   \   00006A   A3           INC     DPTR
+   \   00006B   A3           INC     DPTR
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   90....       MOV     DPTR,#Prot_Group_T + 5
+   \   000073   F0           MOVX    @DPTR,A
+    391              if(Prot_Group_T.group_type == 1)//add to group
+   \   000074   90....       MOV     DPTR,#Prot_Group_T + 2
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   6401         XRL     A,#0x1
+   \   00007A   7041         JNZ     ??CustomApp_Set_Multiway_0
+    392              {
+    393                  Prot_Group_T.group_id = pkt->cmd.Data[0] | (pkt->cmd.Data[1] << 8);
+   \   00007C   EE           MOV     A,R6
+   \   00007D   2422         ADD     A,#0x22
+   \   00007F   F582         MOV     DPL,A
+   \   000081   E4           CLR     A
+   \   000082   3F           ADDC    A,R7
+   \   000083   F583         MOV     DPH,A
+   \   000085   E0           MOVX    A,@DPTR
+   \   000086   F8           MOV     R0,A
+   \   000087   A3           INC     DPTR
+   \   000088   E0           MOVX    A,@DPTR
+   \   000089   F583         MOV     DPH,A
+   \   00008B   8882         MOV     DPL,R0
+   \   00008D   E0           MOVX    A,@DPTR
+   \   00008E   FA           MOV     R2,A
+   \   00008F   7B00         MOV     R3,#0x0
+   \   000091   EE           MOV     A,R6
+   \   000092   2422         ADD     A,#0x22
+   \   000094   F582         MOV     DPL,A
+   \   000096   E4           CLR     A
+   \   000097   3F           ADDC    A,R7
+   \   000098   F583         MOV     DPH,A
+   \   00009A   E0           MOVX    A,@DPTR
+   \   00009B   F8           MOV     R0,A
+   \   00009C   A3           INC     DPTR
+   \   00009D   E0           MOVX    A,@DPTR
+   \   00009E   F583         MOV     DPH,A
+   \   0000A0   8882         MOV     DPL,R0
+   \   0000A2   A3           INC     DPTR
+   \   0000A3   E0           MOVX    A,@DPTR
+   \   0000A4   F8           MOV     R0,A
+   \   0000A5   7900         MOV     R1,#0x0
+   \   0000A7   E4           CLR     A
+   \   0000A8   C8           XCH     A,R0
+   \   0000A9   F9           MOV     R1,A
+   \   0000AA   EA           MOV     A,R2
+   \   0000AB   48           ORL     A,R0
+   \   0000AC   F8           MOV     R0,A
+   \   0000AD   EB           MOV     A,R3
+   \   0000AE   49           ORL     A,R1
+   \   0000AF   F9           MOV     R1,A
+   \   0000B0   90....       MOV     DPTR,#Prot_Group_T
+   \   0000B3   E8           MOV     A,R0
+   \   0000B4   F0           MOVX    @DPTR,A
+   \   0000B5   A3           INC     DPTR
+   \   0000B6   E9           MOV     A,R1
+   \   0000B7   F0           MOVX    @DPTR,A
+    394                  Register_Group_Multiway();
+   \   0000B8                ; Setup parameters for call to function Register_Group_Multiway
+   \   0000B8   12....       LCALL   `??Register_Group_Multiway::?relay`; Banked call to: Register_Group_Multiway
+   \   0000BB   8016         SJMP    ??CustomApp_Set_Multiway_1
+    395              }
+    396              else if(Prot_Group_T.group_type == 2)//remove from group
+   \                     ??CustomApp_Set_Multiway_0:
+   \   0000BD   90....       MOV     DPTR,#Prot_Group_T + 2
+   \   0000C0   E0           MOVX    A,@DPTR
+   \   0000C1   6402         XRL     A,#0x2
+   \   0000C3   700E         JNZ     ??CustomApp_Set_Multiway_1
+    397              {
+    398                  aps_RemoveGroup( GENERICAPP_ENDPOINT, GenericApp_Group.ID);
+   \   0000C5                ; Setup parameters for call to function aps_RemoveGroup
+   \   0000C5   90....       MOV     DPTR,#GenericApp_Group
+   \   0000C8   E0           MOVX    A,@DPTR
+   \   0000C9   FA           MOV     R2,A
+   \   0000CA   A3           INC     DPTR
+   \   0000CB   E0           MOVX    A,@DPTR
+   \   0000CC   FB           MOV     R3,A
+   \   0000CD   790A         MOV     R1,#0xa
+   \   0000CF   12....       LCALL   `??aps_RemoveGroup::?relay`; Banked call to: aps_RemoveGroup
+   \   0000D2   E9           MOV     A,R1
+    399              }
+    400              Nvram_Write_Multiway();
+   \                     ??CustomApp_Set_Multiway_1:
+   \   0000D3                ; Setup parameters for call to function Nvram_Write_Multiway
+   \   0000D3   12....       LCALL   `??Nvram_Write_Multiway::?relay`; Banked call to: Nvram_Write_Multiway
+   \   0000D6   E9           MOV     A,R1
+    401          
+    402              osal_nv_read(ZCD_NV_MULTIWAY, 0, sizeof(PROT_GROUP_STRUCT), &Prot_Group_T);
+   \   0000D7                ; Setup parameters for call to function osal_nv_read
+   \   0000D7   75....       MOV     ?V2,#Prot_Group_T & 0xff
+   \   0000DA   75....       MOV     ?V3,#(Prot_Group_T >> 8) & 0xff
+   \   0000DD   78..         MOV     R0,#?V2
+   \   0000DF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000E2   75..06       MOV     ?V2,#0x6
+   \   0000E5   75..00       MOV     ?V3,#0x0
+   \   0000E8   78..         MOV     R0,#?V2
+   \   0000EA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000ED   7C00         MOV     R4,#0x0
+   \   0000EF   7D00         MOV     R5,#0x0
+   \   0000F1   7A04         MOV     R2,#0x4
+   \   0000F3   7B04         MOV     R3,#0x4
+   \   0000F5   12....       LCALL   `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+   \   0000F8   7404         MOV     A,#0x4
+   \   0000FA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000FD   E9           MOV     A,R1
+    403          
+    404              //send multiway resp to flex mcu
+    405              len = sizeof(Prot_Group_T);
+   \   0000FE   75..06       MOV     ?V0,#0x6
+    406              msg[0] = MT_CPT_SOP;
+   \   000101   85..82       MOV     DPL,?XSP + 0
+   \   000104   85..83       MOV     DPH,?XSP + 1
+   \   000107   74FE         MOV     A,#-0x2
+   \   000109   F0           MOVX    @DPTR,A
+    407              msg[1] = len;	
+   \   00010A   E5..         MOV     A,?V0
+   \   00010C   C0E0         PUSH    A
+   \   00010E   7401         MOV     A,#0x1
+   \   000110   12....       LCALL   ?XSTACK_DISP0_8
+   \   000113   D0E0         POP     A
+   \   000115   F0           MOVX    @DPTR,A
+    408              msg[2] = MT_MULTIWAY_SET_RSP_MSG & 0xff;
+   \   000116   7402         MOV     A,#0x2
+   \   000118   12....       LCALL   ?XSTACK_DISP0_8
+   \   00011B   7480         MOV     A,#-0x80
+   \   00011D   F0           MOVX    @DPTR,A
+    409              msg[3] = (MT_MULTIWAY_SET_RSP_MSG & 0xff00) >> 8;
+   \   00011E   7403         MOV     A,#0x3
+   \   000120   12....       LCALL   ?XSTACK_DISP0_8
+   \   000123   7442         MOV     A,#0x42
+   \   000125   F0           MOVX    @DPTR,A
+    410              osal_memcpy(&msg[4], &Prot_Group_T, len);
+   \   000126                ; Setup parameters for call to function osal_memcpy
+   \   000126   75....       MOV     ?V4,#Prot_Group_T & 0xff
+   \   000129   75....       MOV     ?V5,#(Prot_Group_T >> 8) & 0xff
+   \   00012C   75..00       MOV     ?V6,#0x0
+   \   00012F   78..         MOV     R0,#?V4
+   \   000131   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000134   AC..         MOV     R4,?V0
+   \   000136   7D00         MOV     R5,#0x0
+   \   000138   7407         MOV     A,#0x7
+   \   00013A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013D   AA82         MOV     R2,DPL
+   \   00013F   AB83         MOV     R3,DPH
+   \   000141   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000144   7403         MOV     A,#0x3
+   \   000146   12....       LCALL   ?DEALLOC_XSTACK8
+    411          
+    412              msg[4] = Prot_Group_T.group_id & 0xff;
+   \   000149   90....       MOV     DPTR,#Prot_Group_T
+   \   00014C   E0           MOVX    A,@DPTR
+   \   00014D   F8           MOV     R0,A
+   \   00014E   A3           INC     DPTR
+   \   00014F   E0           MOVX    A,@DPTR
+   \   000150   F9           MOV     R1,A
+   \   000151   E8           MOV     A,R0
+   \   000152   C0E0         PUSH    A
+   \   000154   7404         MOV     A,#0x4
+   \   000156   12....       LCALL   ?XSTACK_DISP0_8
+   \   000159   D0E0         POP     A
+   \   00015B   F0           MOVX    @DPTR,A
+    413              msg[5] = (Prot_Group_T.group_id & 0xff00) >> 8;
+   \   00015C   90....       MOV     DPTR,#Prot_Group_T
+   \   00015F   E0           MOVX    A,@DPTR
+   \   000160   F8           MOV     R0,A
+   \   000161   A3           INC     DPTR
+   \   000162   E0           MOVX    A,@DPTR
+   \   000163   F9           MOV     R1,A
+   \   000164   E4           CLR     A
+   \   000165   C9           XCH     A,R1
+   \   000166   F8           MOV     R0,A
+   \   000167   E8           MOV     A,R0
+   \   000168   C0E0         PUSH    A
+   \   00016A   7405         MOV     A,#0x5
+   \   00016C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00016F   D0E0         POP     A
+   \   000171   F0           MOVX    @DPTR,A
+    414          
+    415          #ifdef OPEN_FCS 			
+    416              msg[4 + len] = MT_UartCalcFCS(&msg[1], len + 3); 
+   \   000172                ; Setup parameters for call to function MT_UartCalcFCS
+   \   000172   7403         MOV     A,#0x3
+   \   000174   25..         ADD     A,?V0
+   \   000176   F9           MOV     R1,A
+   \   000177   7401         MOV     A,#0x1
+   \   000179   12....       LCALL   ?XSTACK_DISP0_8
+   \   00017C   AA82         MOV     R2,DPL
+   \   00017E   AB83         MOV     R3,DPH
+   \   000180   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   000183   E9           MOV     A,R1
+   \   000184   C0E0         PUSH    A
+   \   000186   A8..         MOV     R0,?V0
+   \   000188   7900         MOV     R1,#0x0
+   \   00018A   85..82       MOV     DPL,?XSP + 0
+   \   00018D   85..83       MOV     DPH,?XSP + 1
+   \   000190   E582         MOV     A,DPL
+   \   000192   28           ADD     A,R0
+   \   000193   F582         MOV     DPL,A
+   \   000195   E583         MOV     A,DPH
+   \   000197   39           ADDC    A,R1
+   \   000198   F583         MOV     DPH,A
+   \   00019A   A3           INC     DPTR
+   \   00019B   A3           INC     DPTR
+   \   00019C   A3           INC     DPTR
+   \   00019D   A3           INC     DPTR
+   \   00019E   D0E0         POP     A
+   \   0001A0   F0           MOVX    @DPTR,A
+    417          #else  
+    418              msg[4 + len] = DEFAULTFCS;
+    419          #endif
+    420              HalUARTWrite( 0, msg, len + 5 );
+   \   0001A1                ; Setup parameters for call to function HalUARTWrite
+   \   0001A1   A8..         MOV     R0,?V0
+   \   0001A3   7900         MOV     R1,#0x0
+   \   0001A5   E8           MOV     A,R0
+   \   0001A6   2405         ADD     A,#0x5
+   \   0001A8   FC           MOV     R4,A
+   \   0001A9   E4           CLR     A
+   \   0001AA   39           ADDC    A,R1
+   \   0001AB   FD           MOV     R5,A
+   \   0001AC   AA..         MOV     R2,?XSP + 0
+   \   0001AE   AB..         MOV     R3,?XSP + 1
+   \   0001B0   7900         MOV     R1,#0x0
+   \   0001B2   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    421          }
+   \   0001B5   7414         MOV     A,#0x14
+   \   0001B7   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001BA   7F07         MOV     R7,#0x7
+   \   0001BC   02....       LJMP    ?BANKED_LEAVE_XDATA
+    422          
+    423          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    424          uint8 CustomApp_coordinator_online_req ( void )
+   \                     CustomApp_coordinator_online_req:
+    425          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 21
+   \   000005   74EB         MOV     A,#-0x15
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    426              uint8 msg[20];
+    427              uint8 ret = ZFailure;	
+   \   00000A   75..01       MOV     ?V0,#0x1
+    428              uint8 data = 0xff;
+   \   00000D   85..82       MOV     DPL,?XSP + 0
+   \   000010   85..83       MOV     DPH,?XSP + 1
+   \   000013   74FF         MOV     A,#-0x1
+   \   000015   F0           MOVX    @DPTR,A
+    429              uint8 fcs;	
+    430          	
+    431              transferpkt_t *onlinestate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  1);   // len=1
+   \   000016                ; Setup parameters for call to function osal_msg_allocate
+   \   000016   7A0D         MOV     R2,#0xd
+   \   000018   7B00         MOV     R3,#0x0
+   \   00001A   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001D   8A..         MOV     ?V2,R2
+   \   00001F   8B..         MOV     ?V3,R3
+   \   000021   AE..         MOV     R6,?V2
+   \   000023   AF..         MOV     R7,?V3
+    432              if (onlinestate != NULL)
+   \   000025   EE           MOV     A,R6
+   \   000026   4F           ORL     A,R7
+   \   000027   7003         JNZ     $+5
+   \   000029   02....       LJMP    ??CustomApp_coordinator_online_req_0 & 0xFFFF
+    433              {
+    434                  onlinestate->msgid = COORDINATOR_ONLINE_REQ; 
+   \   00002C   8E82         MOV     DPL,R6
+   \   00002E   8F83         MOV     DPH,R7
+   \   000030   741A         MOV     A,#0x1a
+   \   000032   F0           MOVX    @DPTR,A
+   \   000033   A3           INC     DPTR
+   \   000034   7421         MOV     A,#0x21
+   \   000036   F0           MOVX    @DPTR,A
+    435                  onlinestate->msgseq = 0x0001;
+   \   000037   8E82         MOV     DPL,R6
+   \   000039   8F83         MOV     DPH,R7
+   \   00003B   A3           INC     DPTR
+   \   00003C   A3           INC     DPTR
+   \   00003D   7401         MOV     A,#0x1
+   \   00003F   F0           MOVX    @DPTR,A
+   \   000040   A3           INC     DPTR
+   \   000041   7400         MOV     A,#0x0
+   \   000043   F0           MOVX    @DPTR,A
+    436                  onlinestate->srcid = NLME_GetShortAddr();
+   \   000044                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000044   12....       LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+   \   000047   8E82         MOV     DPL,R6
+   \   000049   8F83         MOV     DPH,R7
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   EA           MOV     A,R2
+   \   000052   F0           MOVX    @DPTR,A
+   \   000053   A3           INC     DPTR
+   \   000054   EB           MOV     A,R3
+   \   000055   F0           MOVX    @DPTR,A
+    437                  onlinestate->destid = 0xffff;
+   \   000056   8E82         MOV     DPL,R6
+   \   000058   8F83         MOV     DPH,R7
+   \   00005A   A3           INC     DPTR
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   74FF         MOV     A,#-0x1
+   \   000060   F0           MOVX    @DPTR,A
+   \   000061   A3           INC     DPTR
+   \   000062   74FF         MOV     A,#-0x1
+   \   000064   F0           MOVX    @DPTR,A
+    438                  onlinestate->datalen = 1;
+   \   000065   8E82         MOV     DPL,R6
+   \   000067   8F83         MOV     DPH,R7
+   \   000069   A3           INC     DPTR
+   \   00006A   A3           INC     DPTR
+   \   00006B   A3           INC     DPTR
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   A3           INC     DPTR
+   \   000070   A3           INC     DPTR
+   \   000071   7401         MOV     A,#0x1
+   \   000073   F0           MOVX    @DPTR,A
+    439          
+    440                  onlinestate->data = (uint8 *)(onlinestate + 1);
+   \   000074   EE           MOV     A,R6
+   \   000075   240C         ADD     A,#0xc
+   \   000077   F8           MOV     R0,A
+   \   000078   E4           CLR     A
+   \   000079   3F           ADDC    A,R7
+   \   00007A   F9           MOV     R1,A
+   \   00007B   8E82         MOV     DPL,R6
+   \   00007D   8F83         MOV     DPH,R7
+   \   00007F   A3           INC     DPTR
+   \   000080   A3           INC     DPTR
+   \   000081   A3           INC     DPTR
+   \   000082   A3           INC     DPTR
+   \   000083   A3           INC     DPTR
+   \   000084   A3           INC     DPTR
+   \   000085   A3           INC     DPTR
+   \   000086   A3           INC     DPTR
+   \   000087   A3           INC     DPTR
+   \   000088   E8           MOV     A,R0
+   \   000089   F0           MOVX    @DPTR,A
+   \   00008A   A3           INC     DPTR
+   \   00008B   E9           MOV     A,R1
+   \   00008C   F0           MOVX    @DPTR,A
+    441                  osal_memcpy(&onlinestate->data, &data, 1);
+   \   00008D                ; Setup parameters for call to function osal_memcpy
+   \   00008D   A8..         MOV     R0,?XSP + 0
+   \   00008F   A9..         MOV     R1,?XSP + 1
+   \   000091   88..         MOV     ?V4,R0
+   \   000093   89..         MOV     ?V5,R1
+   \   000095   75..00       MOV     ?V6,#0x0
+   \   000098   78..         MOV     R0,#?V4
+   \   00009A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00009D   7C01         MOV     R4,#0x1
+   \   00009F   7D00         MOV     R5,#0x0
+   \   0000A1   EE           MOV     A,R6
+   \   0000A2   2409         ADD     A,#0x9
+   \   0000A4   FA           MOV     R2,A
+   \   0000A5   E4           CLR     A
+   \   0000A6   3F           ADDC    A,R7
+   \   0000A7   FB           MOV     R3,A
+   \   0000A8   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000AB   7403         MOV     A,#0x3
+   \   0000AD   12....       LCALL   ?DEALLOC_XSTACK8
+    442                  fcs = MT_UartCalcFCS((uint8 *)onlinestate, onlinestate->datalen + PKT_HEAD_LEN); 
+   \   0000B0                ; Setup parameters for call to function MT_UartCalcFCS
+   \   0000B0   8E82         MOV     DPL,R6
+   \   0000B2   8F83         MOV     DPH,R7
+   \   0000B4   A3           INC     DPTR
+   \   0000B5   A3           INC     DPTR
+   \   0000B6   A3           INC     DPTR
+   \   0000B7   A3           INC     DPTR
+   \   0000B8   A3           INC     DPTR
+   \   0000B9   A3           INC     DPTR
+   \   0000BA   A3           INC     DPTR
+   \   0000BB   A3           INC     DPTR
+   \   0000BC   E0           MOVX    A,@DPTR
+   \   0000BD   2409         ADD     A,#0x9
+   \   0000BF   F9           MOV     R1,A
+   \   0000C0   EE           MOV     A,R6
+   \   0000C1   FA           MOV     R2,A
+   \   0000C2   EF           MOV     A,R7
+   \   0000C3   FB           MOV     R3,A
+   \   0000C4   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   0000C7   E9           MOV     A,R1
+   \   0000C8   F5..         MOV     ?V1,A
+    443          
+    444                  msg[0] = MT_CPT_SOP;
+   \   0000CA   7401         MOV     A,#0x1
+   \   0000CC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CF   74FE         MOV     A,#-0x2
+   \   0000D1   F0           MOVX    @DPTR,A
+    445                  msg[1] = onlinestate->datalen + PKT_HEAD_LEN + 1;
+   \   0000D2   8E82         MOV     DPL,R6
+   \   0000D4   8F83         MOV     DPH,R7
+   \   0000D6   A3           INC     DPTR
+   \   0000D7   A3           INC     DPTR
+   \   0000D8   A3           INC     DPTR
+   \   0000D9   A3           INC     DPTR
+   \   0000DA   A3           INC     DPTR
+   \   0000DB   A3           INC     DPTR
+   \   0000DC   A3           INC     DPTR
+   \   0000DD   A3           INC     DPTR
+   \   0000DE   E0           MOVX    A,@DPTR
+   \   0000DF   240A         ADD     A,#0xa
+   \   0000E1   C0E0         PUSH    A
+   \   0000E3   7402         MOV     A,#0x2
+   \   0000E5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E8   D0E0         POP     A
+   \   0000EA   F0           MOVX    @DPTR,A
+    446                  msg[2] = MT_BROADCAST_REQ & 0xff;   
+   \   0000EB   7403         MOV     A,#0x3
+   \   0000ED   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F0   7401         MOV     A,#0x1
+   \   0000F2   F0           MOVX    @DPTR,A
+    447                  msg[3] = (MT_BROADCAST_REQ  & 0xff00) >> 8;
+   \   0000F3   7404         MOV     A,#0x4
+   \   0000F5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F8   7423         MOV     A,#0x23
+   \   0000FA   F0           MOVX    @DPTR,A
+    448          
+    449                  osal_memcpy(&msg[4], (uint8 *)onlinestate, PKT_HEAD_LEN);
+   \   0000FB                ; Setup parameters for call to function osal_memcpy
+   \   0000FB   8E..         MOV     ?V4,R6
+   \   0000FD   8F..         MOV     ?V5,R7
+   \   0000FF   75..00       MOV     ?V6,#0x0
+   \   000102   78..         MOV     R0,#?V4
+   \   000104   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000107   7C09         MOV     R4,#0x9
+   \   000109   7D00         MOV     R5,#0x0
+   \   00010B   7408         MOV     A,#0x8
+   \   00010D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000110   AA82         MOV     R2,DPL
+   \   000112   AB83         MOV     R3,DPH
+   \   000114   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000117   7403         MOV     A,#0x3
+   \   000119   12....       LCALL   ?DEALLOC_XSTACK8
+    450                  osal_memcpy(&msg[4 + PKT_HEAD_LEN], &onlinestate->data, onlinestate->datalen);
+   \   00011C                ; Setup parameters for call to function osal_memcpy
+   \   00011C   EE           MOV     A,R6
+   \   00011D   2409         ADD     A,#0x9
+   \   00011F   F5..         MOV     ?V4,A
+   \   000121   E4           CLR     A
+   \   000122   3F           ADDC    A,R7
+   \   000123   F5..         MOV     ?V5,A
+   \   000125   75..00       MOV     ?V6,#0x0
+   \   000128   78..         MOV     R0,#?V4
+   \   00012A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00012D   8E82         MOV     DPL,R6
+   \   00012F   8F83         MOV     DPH,R7
+   \   000131   A3           INC     DPTR
+   \   000132   A3           INC     DPTR
+   \   000133   A3           INC     DPTR
+   \   000134   A3           INC     DPTR
+   \   000135   A3           INC     DPTR
+   \   000136   A3           INC     DPTR
+   \   000137   A3           INC     DPTR
+   \   000138   A3           INC     DPTR
+   \   000139   E0           MOVX    A,@DPTR
+   \   00013A   FC           MOV     R4,A
+   \   00013B   7D00         MOV     R5,#0x0
+   \   00013D   7411         MOV     A,#0x11
+   \   00013F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000142   AA82         MOV     R2,DPL
+   \   000144   AB83         MOV     R3,DPH
+   \   000146   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000149   7403         MOV     A,#0x3
+   \   00014B   12....       LCALL   ?DEALLOC_XSTACK8
+    451                  msg[4 + onlinestate->datalen + PKT_HEAD_LEN] = fcs;
+   \   00014E   E5..         MOV     A,?V1
+   \   000150   C0E0         PUSH    A
+   \   000152   8E82         MOV     DPL,R6
+   \   000154   8F83         MOV     DPH,R7
+   \   000156   A3           INC     DPTR
+   \   000157   A3           INC     DPTR
+   \   000158   A3           INC     DPTR
+   \   000159   A3           INC     DPTR
+   \   00015A   A3           INC     DPTR
+   \   00015B   A3           INC     DPTR
+   \   00015C   A3           INC     DPTR
+   \   00015D   A3           INC     DPTR
+   \   00015E   E0           MOVX    A,@DPTR
+   \   00015F   F8           MOV     R0,A
+   \   000160   7900         MOV     R1,#0x0
+   \   000162   7401         MOV     A,#0x1
+   \   000164   12....       LCALL   ?XSTACK_DISP0_8
+   \   000167   E582         MOV     A,DPL
+   \   000169   28           ADD     A,R0
+   \   00016A   F8           MOV     R0,A
+   \   00016B   E583         MOV     A,DPH
+   \   00016D   39           ADDC    A,R1
+   \   00016E   F9           MOV     R1,A
+   \   00016F   E8           MOV     A,R0
+   \   000170   240D         ADD     A,#0xd
+   \   000172   F582         MOV     DPL,A
+   \   000174   E4           CLR     A
+   \   000175   39           ADDC    A,R1
+   \   000176   F583         MOV     DPH,A
+   \   000178   D0E0         POP     A
+   \   00017A   F0           MOVX    @DPTR,A
+    452          		
+    453          #ifdef OPEN_FCS 			
+    454                  msg[4 + onlinestate->datalen + PKT_HEAD_LEN + 1] = MT_UartCalcFCS(&msg[1], onlinestate->datalen + PKT_HEAD_LEN + 1 + 3); //rptmac17 + fcs1 + cmd2 + len1
+   \   00017B                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00017B   8E82         MOV     DPL,R6
+   \   00017D   8F83         MOV     DPH,R7
+   \   00017F   A3           INC     DPTR
+   \   000180   A3           INC     DPTR
+   \   000181   A3           INC     DPTR
+   \   000182   A3           INC     DPTR
+   \   000183   A3           INC     DPTR
+   \   000184   A3           INC     DPTR
+   \   000185   A3           INC     DPTR
+   \   000186   A3           INC     DPTR
+   \   000187   E0           MOVX    A,@DPTR
+   \   000188   240D         ADD     A,#0xd
+   \   00018A   F9           MOV     R1,A
+   \   00018B   7402         MOV     A,#0x2
+   \   00018D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000190   AA82         MOV     R2,DPL
+   \   000192   AB83         MOV     R3,DPH
+   \   000194   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   000197   E9           MOV     A,R1
+   \   000198   C0E0         PUSH    A
+   \   00019A   8E82         MOV     DPL,R6
+   \   00019C   8F83         MOV     DPH,R7
+   \   00019E   A3           INC     DPTR
+   \   00019F   A3           INC     DPTR
+   \   0001A0   A3           INC     DPTR
+   \   0001A1   A3           INC     DPTR
+   \   0001A2   A3           INC     DPTR
+   \   0001A3   A3           INC     DPTR
+   \   0001A4   A3           INC     DPTR
+   \   0001A5   A3           INC     DPTR
+   \   0001A6   E0           MOVX    A,@DPTR
+   \   0001A7   F8           MOV     R0,A
+   \   0001A8   7900         MOV     R1,#0x0
+   \   0001AA   7401         MOV     A,#0x1
+   \   0001AC   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001AF   E582         MOV     A,DPL
+   \   0001B1   28           ADD     A,R0
+   \   0001B2   F8           MOV     R0,A
+   \   0001B3   E583         MOV     A,DPH
+   \   0001B5   39           ADDC    A,R1
+   \   0001B6   F9           MOV     R1,A
+   \   0001B7   E8           MOV     A,R0
+   \   0001B8   240E         ADD     A,#0xe
+   \   0001BA   F582         MOV     DPL,A
+   \   0001BC   E4           CLR     A
+   \   0001BD   39           ADDC    A,R1
+   \   0001BE   F583         MOV     DPH,A
+   \   0001C0   D0E0         POP     A
+   \   0001C2   F0           MOVX    @DPTR,A
+    455          #else  
+    456                  msg[4 + onlinestate->datalen + PKT_HEAD_LEN + 1] = DEFAULTFCS;
+    457          #endif
+    458          
+    459                  if ( AF_DataRequest( &SerialApp_TxAddr_broadcast, &GenericApp_epDesc,
+    460                                       GENERICAPP_BROADCAST_CLUSTERID,
+    461                                       (byte) (onlinestate->datalen + PKT_HEAD_LEN + 1 + 3 + 2) ,
+    462                                       (byte *)(msg),
+    463                                       &GenericApp_TransID,
+    464                                       AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   0001C3                ; Setup parameters for call to function AF_DataRequest
+   \   0001C3   75..1E       MOV     ?V2,#0x1e
+   \   0001C6   78..         MOV     R0,#?V2
+   \   0001C8   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0001CB   75....       MOV     ?V2,#GenericApp_TransID & 0xff
+   \   0001CE   75....       MOV     ?V3,#(GenericApp_TransID >> 8) & 0xff
+   \   0001D1   78..         MOV     R0,#?V2
+   \   0001D3   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001D6   7404         MOV     A,#0x4
+   \   0001D8   12....       LCALL   ?XSTACK_DISP100_8
+   \   0001DB   88..         MOV     ?V2,R0
+   \   0001DD   89..         MOV     ?V3,R1
+   \   0001DF   78..         MOV     R0,#?V2
+   \   0001E1   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001E4   8E82         MOV     DPL,R6
+   \   0001E6   8F83         MOV     DPH,R7
+   \   0001E8   A3           INC     DPTR
+   \   0001E9   A3           INC     DPTR
+   \   0001EA   A3           INC     DPTR
+   \   0001EB   A3           INC     DPTR
+   \   0001EC   A3           INC     DPTR
+   \   0001ED   A3           INC     DPTR
+   \   0001EE   A3           INC     DPTR
+   \   0001EF   A3           INC     DPTR
+   \   0001F0   E0           MOVX    A,@DPTR
+   \   0001F1   240F         ADD     A,#0xf
+   \   0001F3   F5..         MOV     ?V2,A
+   \   0001F5   75..00       MOV     ?V3,#0x0
+   \   0001F8   78..         MOV     R0,#?V2
+   \   0001FA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001FD   75..05       MOV     ?V2,#0x5
+   \   000200   75..00       MOV     ?V3,#0x0
+   \   000203   78..         MOV     R0,#?V2
+   \   000205   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000208   7900         MOV     R1,#0x0
+   \   00020A   7C..         MOV     R4,#GenericApp_epDesc & 0xff
+   \   00020C   7D..         MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+   \   00020E   7A..         MOV     R2,#SerialApp_TxAddr_broadcast & 0xff
+   \   000210   7B..         MOV     R3,#(SerialApp_TxAddr_broadcast >> 8) & 0xff
+   \   000212   12....       LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000215   7409         MOV     A,#0x9
+   \   000217   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00021A   E9           MOV     A,R1
+   \   00021B   7003         JNZ     ??CustomApp_coordinator_online_req_1
+    465                  {
+    466                       ret = ZSuccess;
+   \   00021D   75..00       MOV     ?V0,#0x0
+    467                  }
+    468          
+    469                  osal_msg_deallocate( (uint8 *)onlinestate );
+   \                     ??CustomApp_coordinator_online_req_1:
+   \   000220                ; Setup parameters for call to function osal_msg_deallocate
+   \   000220   EE           MOV     A,R6
+   \   000221   FA           MOV     R2,A
+   \   000222   EF           MOV     A,R7
+   \   000223   FB           MOV     R3,A
+   \   000224   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   000227   E9           MOV     A,R1
+    470              }
+    471              return ret;	
+   \                     ??CustomApp_coordinator_online_req_0:
+   \   000228   A9..         MOV     R1,?V0
+   \   00022A   7415         MOV     A,#0x15
+   \   00022C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00022F   7F07         MOV     R7,#0x7
+   \   000231   02....       LJMP    ?BANKED_LEAVE_XDATA
+    472          }
+    473          
+    474          
+    475          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    476          uint8 CustomApp_router_online_req ( afAddrType_t addr16 )
+   \                     CustomApp_router_online_req:
+    477          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    478              uint8 ret = ZFailure;	
+   \   00000A   7E01         MOV     R6,#0x1
+    479              uint8 data = 0xff;
+   \   00000C   85..82       MOV     DPL,?XSP + 0
+   \   00000F   85..83       MOV     DPH,?XSP + 1
+   \   000012   74FF         MOV     A,#-0x1
+   \   000014   F0           MOVX    @DPTR,A
+    480          	
+    481              transferpkt_t *onlinestate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  1);  
+   \   000015                ; Setup parameters for call to function osal_msg_allocate
+   \   000015   7A0D         MOV     R2,#0xd
+   \   000017   7B00         MOV     R3,#0x0
+   \   000019   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001C   8A..         MOV     ?V0,R2
+   \   00001E   8B..         MOV     ?V1,R3
+   \   000020   85....       MOV     ?V4,?V0
+   \   000023   85....       MOV     ?V5,?V1
+    482              {
+    483                  onlinestate->msgid = ROUTER_ONLINE_REQ; 
+   \   000026   85..82       MOV     DPL,?V4
+   \   000029   85..83       MOV     DPH,?V5
+   \   00002C   741A         MOV     A,#0x1a
+   \   00002E   F0           MOVX    @DPTR,A
+   \   00002F   A3           INC     DPTR
+   \   000030   7421         MOV     A,#0x21
+   \   000032   F0           MOVX    @DPTR,A
+    484                  onlinestate->msgseq = 0x0001;
+   \   000033   85..82       MOV     DPL,?V4
+   \   000036   85..83       MOV     DPH,?V5
+   \   000039   A3           INC     DPTR
+   \   00003A   A3           INC     DPTR
+   \   00003B   7401         MOV     A,#0x1
+   \   00003D   F0           MOVX    @DPTR,A
+   \   00003E   A3           INC     DPTR
+   \   00003F   7400         MOV     A,#0x0
+   \   000041   F0           MOVX    @DPTR,A
+    485                  onlinestate->srcid = NLME_GetShortAddr();
+   \   000042                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000042   12....       LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+   \   000045   85..82       MOV     DPL,?V4
+   \   000048   85..83       MOV     DPH,?V5
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   EA           MOV     A,R2
+   \   000052   F0           MOVX    @DPTR,A
+   \   000053   A3           INC     DPTR
+   \   000054   EB           MOV     A,R3
+   \   000055   F0           MOVX    @DPTR,A
+    486                  onlinestate->destid = addr16.addr.shortAddr;
+   \   000056   740F         MOV     A,#0xf
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F8           MOV     R0,A
+   \   00005D   A3           INC     DPTR
+   \   00005E   E0           MOVX    A,@DPTR
+   \   00005F   F9           MOV     R1,A
+   \   000060   85..82       MOV     DPL,?V4
+   \   000063   85..83       MOV     DPH,?V5
+   \   000066   A3           INC     DPTR
+   \   000067   A3           INC     DPTR
+   \   000068   A3           INC     DPTR
+   \   000069   A3           INC     DPTR
+   \   00006A   E8           MOV     A,R0
+   \   00006B   F0           MOVX    @DPTR,A
+   \   00006C   A3           INC     DPTR
+   \   00006D   E9           MOV     A,R1
+   \   00006E   F0           MOVX    @DPTR,A
+    487                  onlinestate->datalen = 1;
+   \   00006F   85..82       MOV     DPL,?V4
+   \   000072   85..83       MOV     DPH,?V5
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   A3           INC     DPTR
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   A3           INC     DPTR
+   \   00007D   7401         MOV     A,#0x1
+   \   00007F   F0           MOVX    @DPTR,A
+    488          
+    489                  onlinestate->data = (uint8 *)(onlinestate + 1);
+   \   000080   E5..         MOV     A,?V4
+   \   000082   240C         ADD     A,#0xc
+   \   000084   F8           MOV     R0,A
+   \   000085   E4           CLR     A
+   \   000086   35..         ADDC    A,?V5
+   \   000088   F9           MOV     R1,A
+   \   000089   85..82       MOV     DPL,?V4
+   \   00008C   85..83       MOV     DPH,?V5
+   \   00008F   A3           INC     DPTR
+   \   000090   A3           INC     DPTR
+   \   000091   A3           INC     DPTR
+   \   000092   A3           INC     DPTR
+   \   000093   A3           INC     DPTR
+   \   000094   A3           INC     DPTR
+   \   000095   A3           INC     DPTR
+   \   000096   A3           INC     DPTR
+   \   000097   A3           INC     DPTR
+   \   000098   E8           MOV     A,R0
+   \   000099   F0           MOVX    @DPTR,A
+   \   00009A   A3           INC     DPTR
+   \   00009B   E9           MOV     A,R1
+   \   00009C   F0           MOVX    @DPTR,A
+    490                  osal_memcpy(&onlinestate->data, &data, 1);
+   \   00009D                ; Setup parameters for call to function osal_memcpy
+   \   00009D   A8..         MOV     R0,?XSP + 0
+   \   00009F   A9..         MOV     R1,?XSP + 1
+   \   0000A1   88..         MOV     ?V0,R0
+   \   0000A3   89..         MOV     ?V1,R1
+   \   0000A5   75..00       MOV     ?V2,#0x0
+   \   0000A8   78..         MOV     R0,#?V0
+   \   0000AA   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000AD   7C01         MOV     R4,#0x1
+   \   0000AF   7D00         MOV     R5,#0x0
+   \   0000B1   E5..         MOV     A,?V4
+   \   0000B3   2409         ADD     A,#0x9
+   \   0000B5   FA           MOV     R2,A
+   \   0000B6   E4           CLR     A
+   \   0000B7   35..         ADDC    A,?V5
+   \   0000B9   FB           MOV     R3,A
+   \   0000BA   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000BD   7403         MOV     A,#0x3
+   \   0000BF   12....       LCALL   ?DEALLOC_XSTACK8
+    491                  onlinestate->fcs = MT_UartCalcFCS((uint8 *)onlinestate, onlinestate->datalen + PKT_HEAD_LEN); 
+   \   0000C2                ; Setup parameters for call to function MT_UartCalcFCS
+   \   0000C2   85..82       MOV     DPL,?V4
+   \   0000C5   85..83       MOV     DPH,?V5
+   \   0000C8   A3           INC     DPTR
+   \   0000C9   A3           INC     DPTR
+   \   0000CA   A3           INC     DPTR
+   \   0000CB   A3           INC     DPTR
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   A3           INC     DPTR
+   \   0000D0   E0           MOVX    A,@DPTR
+   \   0000D1   2409         ADD     A,#0x9
+   \   0000D3   F9           MOV     R1,A
+   \   0000D4   AA..         MOV     R2,?V4
+   \   0000D6   AB..         MOV     R3,?V5
+   \   0000D8   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   0000DB   E9           MOV     A,R1
+   \   0000DC   C0E0         PUSH    A
+   \   0000DE   E5..         MOV     A,?V4
+   \   0000E0   240B         ADD     A,#0xb
+   \   0000E2   F582         MOV     DPL,A
+   \   0000E4   E4           CLR     A
+   \   0000E5   35..         ADDC    A,?V5
+   \   0000E7   F583         MOV     DPH,A
+   \   0000E9   D0E0         POP     A
+   \   0000EB   F0           MOVX    @DPTR,A
+    492          
+    493                  SerialApp_TxAddr_p2p.addr.shortAddr = addr16.addr.shortAddr;
+   \   0000EC   740F         MOV     A,#0xf
+   \   0000EE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F1   E0           MOVX    A,@DPTR
+   \   0000F2   F8           MOV     R0,A
+   \   0000F3   A3           INC     DPTR
+   \   0000F4   E0           MOVX    A,@DPTR
+   \   0000F5   F9           MOV     R1,A
+   \   0000F6   90....       MOV     DPTR,#SerialApp_TxAddr_p2p
+   \   0000F9   E8           MOV     A,R0
+   \   0000FA   F0           MOVX    @DPTR,A
+   \   0000FB   A3           INC     DPTR
+   \   0000FC   E9           MOV     A,R1
+   \   0000FD   F0           MOVX    @DPTR,A
+    494                  if ( AF_DataRequest( &SerialApp_TxAddr_p2p, &GenericApp_epDesc,
+    495                                       GENERICAPP_CMD_P2P_CLUSTERID,
+    496                                       (byte) (onlinestate->datalen + PKT_HEAD_LEN + 1) ,
+    497                                       (byte *)(onlinestate),
+    498                                       &GenericApp_TransID,
+    499                                       AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   0000FE                ; Setup parameters for call to function AF_DataRequest
+   \   0000FE   75..1E       MOV     ?V0,#0x1e
+   \   000101   78..         MOV     R0,#?V0
+   \   000103   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000106   75....       MOV     ?V0,#GenericApp_TransID & 0xff
+   \   000109   75....       MOV     ?V1,#(GenericApp_TransID >> 8) & 0xff
+   \   00010C   78..         MOV     R0,#?V0
+   \   00010E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000111   78..         MOV     R0,#?V4
+   \   000113   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000116   85..82       MOV     DPL,?V4
+   \   000119   85..83       MOV     DPH,?V5
+   \   00011C   A3           INC     DPTR
+   \   00011D   A3           INC     DPTR
+   \   00011E   A3           INC     DPTR
+   \   00011F   A3           INC     DPTR
+   \   000120   A3           INC     DPTR
+   \   000121   A3           INC     DPTR
+   \   000122   A3           INC     DPTR
+   \   000123   A3           INC     DPTR
+   \   000124   E0           MOVX    A,@DPTR
+   \   000125   240A         ADD     A,#0xa
+   \   000127   F5..         MOV     ?V0,A
+   \   000129   75..00       MOV     ?V1,#0x0
+   \   00012C   78..         MOV     R0,#?V0
+   \   00012E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000131   75..04       MOV     ?V0,#0x4
+   \   000134   75..00       MOV     ?V1,#0x0
+   \   000137   78..         MOV     R0,#?V0
+   \   000139   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00013C   7900         MOV     R1,#0x0
+   \   00013E   7C..         MOV     R4,#GenericApp_epDesc & 0xff
+   \   000140   7D..         MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+   \   000142   7A..         MOV     R2,#SerialApp_TxAddr_p2p & 0xff
+   \   000144   7B..         MOV     R3,#(SerialApp_TxAddr_p2p >> 8) & 0xff
+   \   000146   12....       LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000149   7409         MOV     A,#0x9
+   \   00014B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00014E   E9           MOV     A,R1
+   \   00014F   7002         JNZ     ??CustomApp_router_online_req_0
+    500                  {
+    501                       ret = ZSuccess;
+   \   000151   7E00         MOV     R6,#0x0
+    502                  }
+    503                  osal_msg_deallocate( (uint8 *)onlinestate );
+   \                     ??CustomApp_router_online_req_0:
+   \   000153                ; Setup parameters for call to function osal_msg_deallocate
+   \   000153   AA..         MOV     R2,?V4
+   \   000155   AB..         MOV     R3,?V5
+   \   000157   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   00015A   E9           MOV     A,R1
+    504              }
+    505              return ret;	
+   \   00015B   EE           MOV     A,R6
+   \   00015C   F9           MOV     R1,A
+   \   00015D   7401         MOV     A,#0x1
+   \   00015F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000162   7F06         MOV     R7,#0x6
+   \   000164   02....       LJMP    ?BANKED_LEAVE_XDATA
+    506          }
+    507          
+    508          
+    509          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    510          uint8 CustomApp_router_offline_req ( afAddrType_t addr16 )
+   \                     CustomApp_router_offline_req:
+    511          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    512              uint8 ret = ZFailure;	
+   \   00000A   7E01         MOV     R6,#0x1
+    513              uint8 data = 0xff;
+   \   00000C   85..82       MOV     DPL,?XSP + 0
+   \   00000F   85..83       MOV     DPH,?XSP + 1
+   \   000012   74FF         MOV     A,#-0x1
+   \   000014   F0           MOVX    @DPTR,A
+    514          	
+    515              transferpkt_t *onlinestate = (transferpkt_t *)osal_msg_allocate(sizeof (transferpkt_t) +  1);  
+   \   000015                ; Setup parameters for call to function osal_msg_allocate
+   \   000015   7A0D         MOV     R2,#0xd
+   \   000017   7B00         MOV     R3,#0x0
+   \   000019   12....       LCALL   `??osal_msg_allocate::?relay`; Banked call to: osal_msg_allocate
+   \   00001C   8A..         MOV     ?V0,R2
+   \   00001E   8B..         MOV     ?V1,R3
+   \   000020   85....       MOV     ?V4,?V0
+   \   000023   85....       MOV     ?V5,?V1
+    516              {
+    517                  onlinestate->msgid = ROUTER_ONFFLINE_REQ; 
+   \   000026   85..82       MOV     DPL,?V4
+   \   000029   85..83       MOV     DPH,?V5
+   \   00002C   741F         MOV     A,#0x1f
+   \   00002E   F0           MOVX    @DPTR,A
+   \   00002F   A3           INC     DPTR
+   \   000030   7421         MOV     A,#0x21
+   \   000032   F0           MOVX    @DPTR,A
+    518                  onlinestate->msgseq = 0x0001;
+   \   000033   85..82       MOV     DPL,?V4
+   \   000036   85..83       MOV     DPH,?V5
+   \   000039   A3           INC     DPTR
+   \   00003A   A3           INC     DPTR
+   \   00003B   7401         MOV     A,#0x1
+   \   00003D   F0           MOVX    @DPTR,A
+   \   00003E   A3           INC     DPTR
+   \   00003F   7400         MOV     A,#0x0
+   \   000041   F0           MOVX    @DPTR,A
+    519                  onlinestate->srcid = NLME_GetShortAddr();
+   \   000042                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000042   12....       LCALL   `??NLME_GetShortAddr::?relay`; Banked call to: NLME_GetShortAddr
+   \   000045   85..82       MOV     DPL,?V4
+   \   000048   85..83       MOV     DPH,?V5
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   EA           MOV     A,R2
+   \   000052   F0           MOVX    @DPTR,A
+   \   000053   A3           INC     DPTR
+   \   000054   EB           MOV     A,R3
+   \   000055   F0           MOVX    @DPTR,A
+    520                  onlinestate->destid = addr16.addr.shortAddr;
+   \   000056   740F         MOV     A,#0xf
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F8           MOV     R0,A
+   \   00005D   A3           INC     DPTR
+   \   00005E   E0           MOVX    A,@DPTR
+   \   00005F   F9           MOV     R1,A
+   \   000060   85..82       MOV     DPL,?V4
+   \   000063   85..83       MOV     DPH,?V5
+   \   000066   A3           INC     DPTR
+   \   000067   A3           INC     DPTR
+   \   000068   A3           INC     DPTR
+   \   000069   A3           INC     DPTR
+   \   00006A   E8           MOV     A,R0
+   \   00006B   F0           MOVX    @DPTR,A
+   \   00006C   A3           INC     DPTR
+   \   00006D   E9           MOV     A,R1
+   \   00006E   F0           MOVX    @DPTR,A
+    521                  onlinestate->datalen = 1;
+   \   00006F   85..82       MOV     DPL,?V4
+   \   000072   85..83       MOV     DPH,?V5
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   A3           INC     DPTR
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   A3           INC     DPTR
+   \   00007D   7401         MOV     A,#0x1
+   \   00007F   F0           MOVX    @DPTR,A
+    522          
+    523                  onlinestate->data = (uint8 *)(onlinestate + 1);
+   \   000080   E5..         MOV     A,?V4
+   \   000082   240C         ADD     A,#0xc
+   \   000084   F8           MOV     R0,A
+   \   000085   E4           CLR     A
+   \   000086   35..         ADDC    A,?V5
+   \   000088   F9           MOV     R1,A
+   \   000089   85..82       MOV     DPL,?V4
+   \   00008C   85..83       MOV     DPH,?V5
+   \   00008F   A3           INC     DPTR
+   \   000090   A3           INC     DPTR
+   \   000091   A3           INC     DPTR
+   \   000092   A3           INC     DPTR
+   \   000093   A3           INC     DPTR
+   \   000094   A3           INC     DPTR
+   \   000095   A3           INC     DPTR
+   \   000096   A3           INC     DPTR
+   \   000097   A3           INC     DPTR
+   \   000098   E8           MOV     A,R0
+   \   000099   F0           MOVX    @DPTR,A
+   \   00009A   A3           INC     DPTR
+   \   00009B   E9           MOV     A,R1
+   \   00009C   F0           MOVX    @DPTR,A
+    524                  osal_memcpy(&onlinestate->data, &data, 1);
+   \   00009D                ; Setup parameters for call to function osal_memcpy
+   \   00009D   A8..         MOV     R0,?XSP + 0
+   \   00009F   A9..         MOV     R1,?XSP + 1
+   \   0000A1   88..         MOV     ?V0,R0
+   \   0000A3   89..         MOV     ?V1,R1
+   \   0000A5   75..00       MOV     ?V2,#0x0
+   \   0000A8   78..         MOV     R0,#?V0
+   \   0000AA   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000AD   7C01         MOV     R4,#0x1
+   \   0000AF   7D00         MOV     R5,#0x0
+   \   0000B1   E5..         MOV     A,?V4
+   \   0000B3   2409         ADD     A,#0x9
+   \   0000B5   FA           MOV     R2,A
+   \   0000B6   E4           CLR     A
+   \   0000B7   35..         ADDC    A,?V5
+   \   0000B9   FB           MOV     R3,A
+   \   0000BA   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000BD   7403         MOV     A,#0x3
+   \   0000BF   12....       LCALL   ?DEALLOC_XSTACK8
+    525                  onlinestate->fcs = MT_UartCalcFCS((uint8 *)onlinestate, onlinestate->datalen + PKT_HEAD_LEN); 
+   \   0000C2                ; Setup parameters for call to function MT_UartCalcFCS
+   \   0000C2   85..82       MOV     DPL,?V4
+   \   0000C5   85..83       MOV     DPH,?V5
+   \   0000C8   A3           INC     DPTR
+   \   0000C9   A3           INC     DPTR
+   \   0000CA   A3           INC     DPTR
+   \   0000CB   A3           INC     DPTR
+   \   0000CC   A3           INC     DPTR
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   A3           INC     DPTR
+   \   0000D0   E0           MOVX    A,@DPTR
+   \   0000D1   2409         ADD     A,#0x9
+   \   0000D3   F9           MOV     R1,A
+   \   0000D4   AA..         MOV     R2,?V4
+   \   0000D6   AB..         MOV     R3,?V5
+   \   0000D8   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   0000DB   E9           MOV     A,R1
+   \   0000DC   C0E0         PUSH    A
+   \   0000DE   E5..         MOV     A,?V4
+   \   0000E0   240B         ADD     A,#0xb
+   \   0000E2   F582         MOV     DPL,A
+   \   0000E4   E4           CLR     A
+   \   0000E5   35..         ADDC    A,?V5
+   \   0000E7   F583         MOV     DPH,A
+   \   0000E9   D0E0         POP     A
+   \   0000EB   F0           MOVX    @DPTR,A
+    526          
+    527                  SerialApp_TxAddr_p2p.addr.shortAddr = addr16.addr.shortAddr;
+   \   0000EC   740F         MOV     A,#0xf
+   \   0000EE   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F1   E0           MOVX    A,@DPTR
+   \   0000F2   F8           MOV     R0,A
+   \   0000F3   A3           INC     DPTR
+   \   0000F4   E0           MOVX    A,@DPTR
+   \   0000F5   F9           MOV     R1,A
+   \   0000F6   90....       MOV     DPTR,#SerialApp_TxAddr_p2p
+   \   0000F9   E8           MOV     A,R0
+   \   0000FA   F0           MOVX    @DPTR,A
+   \   0000FB   A3           INC     DPTR
+   \   0000FC   E9           MOV     A,R1
+   \   0000FD   F0           MOVX    @DPTR,A
+    528                  if ( AF_DataRequest( &SerialApp_TxAddr_p2p, &GenericApp_epDesc,
+    529                                       GENERICAPP_CMD_P2P_CLUSTERID,
+    530                                       (byte) (onlinestate->datalen + PKT_HEAD_LEN + 1) ,
+    531                                       (byte *)(onlinestate),
+    532                                       &GenericApp_TransID,
+    533                                       AF_DISCV_ROUTE, AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   0000FE                ; Setup parameters for call to function AF_DataRequest
+   \   0000FE   75..1E       MOV     ?V0,#0x1e
+   \   000101   78..         MOV     R0,#?V0
+   \   000103   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000106   75....       MOV     ?V0,#GenericApp_TransID & 0xff
+   \   000109   75....       MOV     ?V1,#(GenericApp_TransID >> 8) & 0xff
+   \   00010C   78..         MOV     R0,#?V0
+   \   00010E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000111   78..         MOV     R0,#?V4
+   \   000113   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000116   85..82       MOV     DPL,?V4
+   \   000119   85..83       MOV     DPH,?V5
+   \   00011C   A3           INC     DPTR
+   \   00011D   A3           INC     DPTR
+   \   00011E   A3           INC     DPTR
+   \   00011F   A3           INC     DPTR
+   \   000120   A3           INC     DPTR
+   \   000121   A3           INC     DPTR
+   \   000122   A3           INC     DPTR
+   \   000123   A3           INC     DPTR
+   \   000124   E0           MOVX    A,@DPTR
+   \   000125   240A         ADD     A,#0xa
+   \   000127   F5..         MOV     ?V0,A
+   \   000129   75..00       MOV     ?V1,#0x0
+   \   00012C   78..         MOV     R0,#?V0
+   \   00012E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000131   75..04       MOV     ?V0,#0x4
+   \   000134   75..00       MOV     ?V1,#0x0
+   \   000137   78..         MOV     R0,#?V0
+   \   000139   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00013C   7900         MOV     R1,#0x0
+   \   00013E   7C..         MOV     R4,#GenericApp_epDesc & 0xff
+   \   000140   7D..         MOV     R5,#(GenericApp_epDesc >> 8) & 0xff
+   \   000142   7A..         MOV     R2,#SerialApp_TxAddr_p2p & 0xff
+   \   000144   7B..         MOV     R3,#(SerialApp_TxAddr_p2p >> 8) & 0xff
+   \   000146   12....       LCALL   `??AF_DataRequest::?relay`; Banked call to: AF_DataRequest
+   \   000149   7409         MOV     A,#0x9
+   \   00014B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00014E   E9           MOV     A,R1
+   \   00014F   7002         JNZ     ??CustomApp_router_offline_req_0
+    534                  {
+    535                       ret = ZSuccess;
+   \   000151   7E00         MOV     R6,#0x0
+    536                  }
+    537                  osal_msg_deallocate( (uint8 *)onlinestate );
+   \                     ??CustomApp_router_offline_req_0:
+   \   000153                ; Setup parameters for call to function osal_msg_deallocate
+   \   000153   AA..         MOV     R2,?V4
+   \   000155   AB..         MOV     R3,?V5
+   \   000157   12....       LCALL   `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \   00015A   E9           MOV     A,R1
+    538              }
+    539              return ret;	
+   \   00015B   EE           MOV     A,R6
+   \   00015C   F9           MOV     R1,A
+   \   00015D   7401         MOV     A,#0x1
+   \   00015F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000162   7F06         MOV     R7,#0x6
+   \   000164   02....       LJMP    ?BANKED_LEAVE_XDATA
+    540          }
+    541          
+    542          
+    543          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    544          void CustomApp_Coordinator_Online( void )
+   \                     CustomApp_Coordinator_Online:
+    545          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 13
+   \   000005   74F3         MOV     A,#-0xd
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    546          	uint8 send_buf[13];
+    547          	uint16 cmd;
+    548          	
+    549          	cmd = MT_COORDINATOR_ONLINE_REQ_MSG;
+   \   00000A   7E01         MOV     R6,#0x1
+   \   00000C   7F44         MOV     R7,#0x44
+    550          	send_buf[0] = 0xFE;
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   74FE         MOV     A,#-0x2
+   \   000016   F0           MOVX    @DPTR,A
+    551          	send_buf[1 + MT_RPC_POS_LEN] = 0x01;
+   \   000017   7401         MOV     A,#0x1
+   \   000019   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001C   7401         MOV     A,#0x1
+   \   00001E   F0           MOVX    @DPTR,A
+    552          	send_buf[1 + MT_RPC_POS_CMD0] = cmd & 0xff;
+   \   00001F   EE           MOV     A,R6
+   \   000020   C0E0         PUSH    A
+   \   000022   7402         MOV     A,#0x2
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   D0E0         POP     A
+   \   000029   F0           MOVX    @DPTR,A
+    553          	send_buf[1 + MT_RPC_POS_CMD1] = (cmd >> 8) & 0xff;
+   \   00002A   EE           MOV     A,R6
+   \   00002B   F8           MOV     R0,A
+   \   00002C   EF           MOV     A,R7
+   \   00002D   F9           MOV     R1,A
+   \   00002E   E4           CLR     A
+   \   00002F   C9           XCH     A,R1
+   \   000030   F8           MOV     R0,A
+   \   000031   E8           MOV     A,R0
+   \   000032   C0E0         PUSH    A
+   \   000034   7403         MOV     A,#0x3
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   D0E0         POP     A
+   \   00003B   F0           MOVX    @DPTR,A
+    554          	send_buf[1 + MT_RPC_POS_DAT0] = 0xff;
+   \   00003C   7404         MOV     A,#0x4
+   \   00003E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000041   74FF         MOV     A,#-0x1
+   \   000043   F0           MOVX    @DPTR,A
+    555          	send_buf[1 + MT_RPC_POS_DAT0 + 1] =
+    556          	  MT_UartCalcFCS( &send_buf[1 + MT_RPC_POS_LEN], MT_UART_HEAD_LEN + 1 );
+   \   000044                ; Setup parameters for call to function MT_UartCalcFCS
+   \   000044   7904         MOV     R1,#0x4
+   \   000046   7401         MOV     A,#0x1
+   \   000048   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004B   AA82         MOV     R2,DPL
+   \   00004D   AB83         MOV     R3,DPH
+   \   00004F   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   000052   E9           MOV     A,R1
+   \   000053   C0E0         PUSH    A
+   \   000055   7405         MOV     A,#0x5
+   \   000057   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005A   D0E0         POP     A
+   \   00005C   F0           MOVX    @DPTR,A
+    557          
+    558          	HalUARTWrite( 0, send_buf, MT_UART_HEAD_LEN + 1 + 2 );
+   \   00005D                ; Setup parameters for call to function HalUARTWrite
+   \   00005D   7C06         MOV     R4,#0x6
+   \   00005F   7D00         MOV     R5,#0x0
+   \   000061   AA..         MOV     R2,?XSP + 0
+   \   000063   AB..         MOV     R3,?XSP + 1
+   \   000065   7900         MOV     R1,#0x0
+   \   000067   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+    559          }
+   \   00006A   740D         MOV     A,#0xd
+   \   00006C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00006F   7F01         MOV     R7,#0x1
+   \   000071   02....       LJMP    ?BANKED_LEAVE_XDATA
+    560          
+    561          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    562          void CustomApp_Get_Flex_Devinfo( void )
+   \                     CustomApp_Get_Flex_Devinfo:
+    563          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    564                  CustomApp_Coordinator_Online();
+   \   000004                ; Setup parameters for call to function CustomApp_Coordinator_Online
+   \   000004   12....       LCALL   `??CustomApp_Coordinator_Online::?relay`; Banked call to: CustomApp_Coordinator_Online
+    565          }
+   \   000007   D083         POP     DPH
+   \   000009   D082         POP     DPL
+   \   00000B   02....       LJMP    ?BRET
+    566          
+    567          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    568          uint8 Nvram_Write_Multiway( void )
+   \                     Nvram_Write_Multiway:
+    569          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    570          	uint8 ret;
+    571          	ret = osal_nv_write( ZCD_NV_MULTIWAY, 0, sizeof( PROT_GROUP_STRUCT ), &Prot_Group_T );
+   \   000005                ; Setup parameters for call to function osal_nv_write
+   \   000005   75....       MOV     ?V0,#Prot_Group_T & 0xff
+   \   000008   75....       MOV     ?V1,#(Prot_Group_T >> 8) & 0xff
+   \   00000B   78..         MOV     R0,#?V0
+   \   00000D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000010   75..06       MOV     ?V0,#0x6
+   \   000013   75..00       MOV     ?V1,#0x0
+   \   000016   78..         MOV     R0,#?V0
+   \   000018   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001B   7C00         MOV     R4,#0x0
+   \   00001D   7D00         MOV     R5,#0x0
+   \   00001F   7A04         MOV     R2,#0x4
+   \   000021   7B04         MOV     R3,#0x4
+   \   000023   12....       LCALL   `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000026   7404         MOV     A,#0x4
+   \   000028   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00002B   E9           MOV     A,R1
+   \   00002C   FE           MOV     R6,A
+    572          	return ret;
+   \   00002D   EE           MOV     A,R6
+   \   00002E   F9           MOV     R1,A
+   \   00002F   7F02         MOV     R7,#0x2
+   \   000031   02....       LJMP    ?BANKED_LEAVE_XDATA
+    573          }
+    574          
+    575          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    576          void Register_Group_Multiway( void )
+   \                     Register_Group_Multiway:
+    577          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+    578              if(Prot_Group_T.group_type == 1)//add to group
+   \   000005   90....       MOV     DPTR,#Prot_Group_T + 2
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   6401         XRL     A,#0x1
+   \   00000B   705E         JNZ     ??Register_Group_Multiway_0
+    579              {
+    580                  SerialApp_TxAddr_group.addrMode = (afAddrMode_t)AddrGroup;
+   \   00000D   90....       MOV     DPTR,#SerialApp_TxAddr_group + 8
+   \   000010   7401         MOV     A,#0x1
+   \   000012   F0           MOVX    @DPTR,A
+    581                  SerialApp_TxAddr_group.endPoint = GENERICAPP_ENDPOINT;
+   \   000013   90....       MOV     DPTR,#SerialApp_TxAddr_group + 9
+   \   000016   740A         MOV     A,#0xa
+   \   000018   F0           MOVX    @DPTR,A
+    582                  SerialApp_TxAddr_group.addr.shortAddr = GENERICAPP_GROUP;
+   \   000019   90....       MOV     DPTR,#SerialApp_TxAddr_group
+   \   00001C   7401         MOV     A,#0x1
+   \   00001E   F0           MOVX    @DPTR,A
+   \   00001F   A3           INC     DPTR
+   \   000020   7400         MOV     A,#0x0
+   \   000022   F0           MOVX    @DPTR,A
+    583          
+    584                  SerialApp_TxAddr_group.addr.shortAddr = Prot_Group_T.group_id;//set group id to global variables
+   \   000023   90....       MOV     DPTR,#Prot_Group_T
+   \   000026   E0           MOVX    A,@DPTR
+   \   000027   F8           MOV     R0,A
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   F9           MOV     R1,A
+   \   00002B   90....       MOV     DPTR,#SerialApp_TxAddr_group
+   \   00002E   E8           MOV     A,R0
+   \   00002F   F0           MOVX    @DPTR,A
+   \   000030   A3           INC     DPTR
+   \   000031   E9           MOV     A,R1
+   \   000032   F0           MOVX    @DPTR,A
+    585                  GenericApp_Group.ID = Prot_Group_T.group_id;
+   \   000033   90....       MOV     DPTR,#Prot_Group_T
+   \   000036   E0           MOVX    A,@DPTR
+   \   000037   F8           MOV     R0,A
+   \   000038   A3           INC     DPTR
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   F9           MOV     R1,A
+   \   00003B   90....       MOV     DPTR,#GenericApp_Group
+   \   00003E   E8           MOV     A,R0
+   \   00003F   F0           MOVX    @DPTR,A
+   \   000040   A3           INC     DPTR
+   \   000041   E9           MOV     A,R1
+   \   000042   F0           MOVX    @DPTR,A
+    586                  osal_memcpy( GenericApp_Group.name, "Group 1", 7 );
+   \   000043                ; Setup parameters for call to function osal_memcpy
+   \   000043   75....       MOV     ?V0,#`?<Constant "Group 1">` & 0xff
+   \   000046   75....       MOV     ?V1,#(`?<Constant "Group 1">` >> 8) & 0xff
+   \   000049   75..00       MOV     ?V2,#0x0
+   \   00004C   78..         MOV     R0,#?V0
+   \   00004E   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000051   7C07         MOV     R4,#0x7
+   \   000053   7D00         MOV     R5,#0x0
+   \   000055   7A..         MOV     R2,#(GenericApp_Group + 2) & 0xff
+   \   000057   7B..         MOV     R3,#((GenericApp_Group + 2) >> 8) & 0xff
+   \   000059   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   00005C   7403         MOV     A,#0x3
+   \   00005E   12....       LCALL   ?DEALLOC_XSTACK8
+    587                  aps_AddGroup( GENERICAPP_ENDPOINT, &GenericApp_Group );
+   \   000061                ; Setup parameters for call to function aps_AddGroup
+   \   000061   7A..         MOV     R2,#GenericApp_Group & 0xff
+   \   000063   7B..         MOV     R3,#(GenericApp_Group >> 8) & 0xff
+   \   000065   790A         MOV     R1,#0xa
+   \   000067   12....       LCALL   `??aps_AddGroup::?relay`; Banked call to: aps_AddGroup
+   \   00006A   E9           MOV     A,R1
+    588              }
+    589          }
+   \                     ??Register_Group_Multiway_0:
+   \   00006B   7F03         MOV     R7,#0x3
+   \   00006D   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Send_P2P_Data::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Send_P2P_Data
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Send_BroadCast_Data::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Send_BroadCast_Data
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Send_Group_Data::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Send_Group_Data
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Get_ExtAddr::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Get_ExtAddr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Get_NWKInfo::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Get_NWKInfo
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Get_Active_Cnt::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Get_Active_Cnt
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Get_Version::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Get_Version
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_FW_Update::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_FW_Update
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Uart_Send::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Uart_Send
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_AF_P2P_Data_Process::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_AF_P2P_Data_Process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_AF_Broadcast_Data_Process::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_AF_Broadcast_Data_Process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_AF_Group_Data_Process::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_AF_Group_Data_Process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Set_Multiway::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Set_Multiway
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_coordinator_online_req::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_coordinator_online_req
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_router_online_req::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_router_online_req
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_router_offline_req::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_router_offline_req
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Coordinator_Online::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Coordinator_Online
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??CustomApp_Get_Flex_Devinfo::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CustomApp_Get_Flex_Devinfo
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Nvram_Write_Multiway::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Nvram_Write_Multiway
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Register_Group_Multiway::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Register_Group_Multiway
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Group 1">`:
+   \   000000   47726F75     DB "Group 1"
+   \            70203100
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1f4:
+   \   000000   F4010000     DD 500
+    590          
+    591          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0      9   CustomApp_AF_Broadcast_Data_Process
+        0      9   -> CustomApp_AF_P2P_Data_Process
+      0     14   CustomApp_AF_Group_Data_Process
+        0     11   -> HalUARTWrite
+        0     14   -> osal_memcpy
+        0     11   -> osal_msg_allocate
+        0     11   -> osal_msg_deallocate
+      1     23   CustomApp_AF_P2P_Data_Process
+        0     11   -> HalUARTWrite
+        0     11   -> MT_UartCalcFCS
+        0     14   -> osal_memcpy
+        0     11   -> osal_msg_allocate
+        0     11   -> osal_msg_deallocate
+      1     22   CustomApp_Coordinator_Online
+        0     22   -> HalUARTWrite
+        0     22   -> MT_UartCalcFCS
+      0     13   CustomApp_FW_Update
+        0     11   -> CustomApp_Uart_Send
+        0     13   -> osal_start_timerEx
+      1     12   CustomApp_Get_Active_Cnt
+        0     12   -> CustomApp_Uart_Send
+        0     10   -> CustomApp_get_connected_node_count
+      1     28   CustomApp_Get_ExtAddr
+        0     25   -> HalUARTWrite
+        0     25   -> MT_UartCalcFCS
+        0     25   -> NLME_GetExtAddr
+        0     28   -> osal_memcpy
+      2      0   CustomApp_Get_Flex_Devinfo
+        2      0   -> CustomApp_Coordinator_Online
+      1     27   CustomApp_Get_NWKInfo
+        0     24   -> HalUARTWrite
+        0     24   -> MT_UartCalcFCS
+        0     27   -> osal_memcpy
+      0     11   CustomApp_Get_Version
+        0     11   -> CustomApp_Uart_Send
+      0     27   CustomApp_Send_BroadCast_Data
+        0     27   -> AF_DataRequest
+        0     21   -> osal_memcpy
+        0     18   -> osal_msg_allocate
+        0     18   -> osal_msg_deallocate
+      1     44   CustomApp_Send_Group_Data
+        0     44   -> AF_DataRequest
+        0     35   -> MT_UartCalcFCS
+        0     35   -> NLME_GetShortAddr
+        0     38   -> osal_memcpy
+        0     35   -> osal_msg_allocate
+        0     35   -> osal_msg_deallocate
+      0     24   CustomApp_Send_P2P_Data
+        0     24   -> AF_DataRequest
+        0     18   -> osal_memcpy
+        0     15   -> osal_msg_allocate
+        0     15   -> osal_msg_deallocate
+      1     39   CustomApp_Set_Multiway
+        0     35   -> HalUARTWrite
+        0     35   -> MT_UartCalcFCS
+        0     35   -> Nvram_Write_Multiway
+        0     35   -> Register_Group_Multiway
+        0     35   -> aps_RemoveGroup
+        0     38   -> osal_memcpy
+        0     39   -> osal_nv_read
+      1    289   CustomApp_Uart_Send
+        0    274   -> HalUARTWrite
+        0    274   -> MT_UartCalcFCS
+        0    277   -> osal_memcpy
+      1     45   CustomApp_coordinator_online_req
+        0     45   -> AF_DataRequest
+        0     36   -> MT_UartCalcFCS
+        0     36   -> NLME_GetShortAddr
+        0     39   -> osal_memcpy
+        0     36   -> osal_msg_allocate
+        0     36   -> osal_msg_deallocate
+      1     36   CustomApp_router_offline_req
+        0     24   -> AF_DataRequest
+        0     15   -> MT_UartCalcFCS
+        0     15   -> NLME_GetShortAddr
+        0     18   -> osal_memcpy
+        0     15   -> osal_msg_allocate
+        0     15   -> osal_msg_deallocate
+      1     36   CustomApp_router_online_req
+        0     24   -> AF_DataRequest
+        0     15   -> MT_UartCalcFCS
+        0     15   -> NLME_GetShortAddr
+        0     18   -> osal_memcpy
+        0     15   -> osal_msg_allocate
+        0     15   -> osal_msg_deallocate
+      0     49   Nvram_Write_Multiway
+        0     14   -> osal_nv_write
+      0     49   Register_Group_Multiway
+        0     11   -> aps_AddGroup
+        0     14   -> osal_memcpy
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ?<Constant "Group 1">
+      21  CustomApp_AF_Broadcast_Data_Process
+       6  CustomApp_AF_Broadcast_Data_Process::?relay
+     144  CustomApp_AF_Group_Data_Process
+       6  CustomApp_AF_Group_Data_Process::?relay
+     238  CustomApp_AF_P2P_Data_Process
+       6  CustomApp_AF_P2P_Data_Process::?relay
+     116  CustomApp_Coordinator_Online
+       6  CustomApp_Coordinator_Online::?relay
+      68  CustomApp_FW_Update
+       6  CustomApp_FW_Update::?relay
+      79  CustomApp_Get_Active_Cnt
+       6  CustomApp_Get_Active_Cnt::?relay
+     150  CustomApp_Get_ExtAddr
+       6  CustomApp_Get_ExtAddr::?relay
+      14  CustomApp_Get_Flex_Devinfo
+       6  CustomApp_Get_Flex_Devinfo::?relay
+     157  CustomApp_Get_NWKInfo
+       6  CustomApp_Get_NWKInfo::?relay
+      48  CustomApp_Get_Version
+       6  CustomApp_Get_Version::?relay
+     208  CustomApp_Send_BroadCast_Data
+       6  CustomApp_Send_BroadCast_Data::?relay
+     582  CustomApp_Send_Group_Data
+       6  CustomApp_Send_Group_Data::?relay
+     269  CustomApp_Send_P2P_Data
+       6  CustomApp_Send_P2P_Data::?relay
+     447  CustomApp_Set_Multiway
+       6  CustomApp_Set_Multiway::?relay
+     224  CustomApp_Uart_Send
+       6  CustomApp_Uart_Send::?relay
+     564  CustomApp_coordinator_online_req
+       6  CustomApp_coordinator_online_req::?relay
+     359  CustomApp_router_offline_req
+       6  CustomApp_router_offline_req::?relay
+     359  CustomApp_router_online_req
+       6  CustomApp_router_online_req::?relay
+      18  GenericApp_Group
+      52  Nvram_Write_Multiway
+       6  Nvram_Write_Multiway::?relay
+       6  Prot_Group_T
+     112  Register_Group_Multiway
+       6  Register_Group_Multiway::?relay
+       4  __Constant_1f4
+       2  uart_buf
+
+ 
+ 4 211 bytes in segment BANKED_CODE
+   120 bytes in segment BANK_RELAYS
+    12 bytes in segment XDATA_ROM_C
+    26 bytes in segment XDATA_Z
+ 
+ 4 331 bytes of CODE  memory
+     8 bytes of CONST memory (+ 4 bytes shared)
+    26 bytes of XDATA memory
+
+Errors: none
+Warnings: none

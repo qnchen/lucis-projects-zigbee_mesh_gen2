@@ -1,0 +1,2856 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V9.30.1.3056 for 8051                21/Apr/2017  15:51:42
+# Copyright 2004-2015 IAR Systems AB.
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Application\NodeAuth.c
+#    Command line       =  
+#        -f "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x04000000 -DZDAPP_CONFIG_PAN_ID=0x0001
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=5
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440) -DCHANNEL_CNT=0x01 "C:\Texas
+#        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Application\NodeAuth.c" -D ZTOOL_P1 -D MT_TASK
+#        -D MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE -D
+#        NV_INIT -D NODE_AUTH -D xWIFI_FREQUENCY_SELECT -D OPEN_FCS -D
+#        MAKE_CRC_SHDW -lC "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB-SBL\List"
+#        -lA "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB-SBL\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB-SBL\Obj"
+#        -e --no_code_motion --debug --core=plain --dptr=16,1
+#        --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -I "C:\Texas Instruments\Z-Stack Mesh
+#        1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh
+#        1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\Source\" -I
+#        "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\Application\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack
+#        Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB-SBL\List\NodeAuth.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh
+#        1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh
+#        1.0.0\Projects\zstack\Samples\GenericApp\CC2530DB\CoordinatorEB-SBL\Obj\NodeAuth.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Mesh 1.0.0_chaokw_20160317\Z-Stack Mesh 1.0.0_chaokw_20160316\Z-Stack Mesh 1.0.0_LCDOK\Z-Stack Mesh 1.0.0\Projects\zstack\Application\NodeAuth.c
+      1          /**************************************************************************************************
+      2            Filename:       NodeAuth.c
+      3            Revised:        2017-03-19
+      4          
+      5            Description -   Serial Transfer Application node authentication related func.
+      6          
+      7          **************************************************************************************************/
+      8          
+      9          
+     10          /*********************************************************************
+     11           * INCLUDES
+     12           */
+     13          #include "NodeAuth.h"
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+     14          #include "OSAL_Nv.h"
+     15          #include "hal_aes.h"
+     16          #include "hal_dma.h"
+     17          
+     18          #include "GenericApp.h"
+     19          #include <string.h>  
+     20          
+     21          /*********************************************************************
+     22           * MACROS
+     23           */
+     24          #define AUTH_LIST_CACHE_SIZE           (1<<4)
+     25          #define AUTH_LIST_CACHE_ALIGN(_offset) (_offset & ~(AUTH_LIST_CACHE_SIZE -1))
+     26          
+     27          /*********************************************************************
+     28           * CONSTANTS
+     29           */
+     30          
+     31          /*********************************************************************
+     32           * TYPEDEFS
+     33           */
+     34          
+     35          /*********************************************************************
+     36           * GLOBAL VARIABLES
+     37           */
+     38          
+     39          struct
+     40          {
+     41              uint32 version;
+     42              uint32 auth_registered_num;
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     43          } gAuthConfig = {
+   \                     gAuthConfig:
+   \   000000                DS 8
+   \   000008                REQUIRE `?<Initializer for gAuthConfig>`
+   \   000008                REQUIRE __INIT_XDATA_I
+     44              .version = 1, // increase this and handle database upgrade if new items added!
+     45              .auth_registered_num = 0
+     46          };
+     47          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     48          static NodeRegisterEntry gListCache[AUTH_LIST_CACHE_SIZE];
+   \                     gListCache:
+   \   000000                DS 160
+   \   0000A0                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     49          static uint32 gListOffset = 0;
+   \                     gListOffset:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     50          static uint32 gListNum = 0;
+   \                     gListNum:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     51          
+     52          //static const uint8 DEFAULT_AES_NONCE[13] = NODE_AUTH_DEFAULT_NONCE;
+     53          //static const char  DEFAULT_AES_KEY[STATE_BLENGTH] = NODE_AUTH_DEFAULT_KEY;
+     54          
+     55          
+     56          /*********************************************************************
+     57           * EXTERNAL VARIABLES
+     58           */
+     59           extern nodeList_t *nodeList;  
+     60          
+     61          /*********************************************************************
+     62           * LOCAL FUNCTION PROTOTYPE
+     63           */
+     64          #define List_cache_get(_o) (List_cache_load_on_need(_o), &gListCache[(_o)-gListOffset])
+     65          #define Is_entry_deleted(_e) (0 != ((_e)->flag & NODE_REG_ENTRY_DELETED))
+     66          #define Increase_registered_num() do { Set_registered_num(gAuthConfig.auth_registered_num + 1); } while(0)
+     67          #define Decrease_registered_num() do { Set_registered_num(gAuthConfig.auth_registered_num - 1); } while(0)
+     68          
+     69          static uint8 Authlist_init( uint8 load );
+     70          static void Authlist_delete_entry(uint32 index);
+     71          static bool Authlist_should_insert(uint8 const* key, uint8 len, uint32 *index);
+     72          
+     73          static inline void List_cache_recreate( void );
+     74          static void List_cache_force_load(uint32 offset);
+     75          static bool List_cache_load_next( void );
+     76          static uint32 List_cache_find_by_key(uint8 const* key, uint8 len);
+     77          static uint32 List_cache_write_back( void );
+     78          static inline bool List_cache_contain(uint32 offset);
+     79          static inline void List_cache_load_on_need(uint32 offset);
+     80          
+     81          static void Set_registered_num(uint32 num);
+     82          
+     83          static uint16 Mail_uplink(uint8 port, uint8 cmd, uint8 len, void* buf);
+     84          static inline uint16 Mail_uplink_registered_cnt(uint8 port);
+     85          static inline uint16 Mail_uplink_key(uint8 port, uint32 index, uint8 const* key);
+     86          static inline uint16 Mail_uplink_notify(uint8 port, uint8 const* extended_addr);
+     87          
+     88          /*********************************************************************
+     89           * EXTERNAL FUNCTIONS
+     90           */
+     91           
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     92          uint8 Node_auth_init( void )
+   \                     Node_auth_init:
+     93          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     94              uint8 rc;
+     95              if ( SUCCESS == (rc = osal_nv_item_init(APP_NV_AUTH_GLOBAL_CONFIG, sizeof(gAuthConfig), &gAuthConfig)) ) 
+   \   000005                ; Setup parameters for call to function osal_nv_item_init
+   \   000005   75....       MOV     ?V0,#gAuthConfig & 0xff
+   \   000008   75....       MOV     ?V1,#(gAuthConfig >> 8) & 0xff
+   \   00000B   78..         MOV     R0,#?V0
+   \   00000D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000010   7C08         MOV     R4,#0x8
+   \   000012   7D00         MOV     R5,#0x0
+   \   000014   7A01         MOV     R2,#0x1
+   \   000016   7B04         MOV     R3,#0x4
+   \   000018   12....       LCALL   `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+   \   00001B   7402         MOV     A,#0x2
+   \   00001D   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000020   E9           MOV     A,R1
+   \   000021   F8           MOV     R0,A
+   \   000022   704A         JNZ     ??Node_auth_init_0
+     96              {
+     97                  osal_nv_read(APP_NV_AUTH_GLOBAL_CONFIG, 0, sizeof(gAuthConfig), &gAuthConfig);
+   \   000024                ; Setup parameters for call to function osal_nv_read
+   \   000024   78..         MOV     R0,#?V0
+   \   000026   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000029   75..08       MOV     ?V0,#0x8
+   \   00002C   75..00       MOV     ?V1,#0x0
+   \   00002F   78..         MOV     R0,#?V0
+   \   000031   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000034   7C00         MOV     R4,#0x0
+   \   000036   7D00         MOV     R5,#0x0
+   \   000038   7A01         MOV     R2,#0x1
+   \   00003A   7B04         MOV     R3,#0x4
+   \   00003C   12....       LCALL   `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+   \   00003F   7404         MOV     A,#0x4
+   \   000041   12....       LCALL   ?DEALLOC_XSTACK8
+     98              }
+     99              else if ( NV_ITEM_UNINIT == rc )
+    100              {
+    101              }
+    102              else
+    103              {
+    104                  SystemReset();
+    105              }
+    106              if ( SUCCESS == (rc = osal_nv_item_init(
+    107                      APP_NV_AUTH_KEY_LIST, 
+    108                      sizeof(NodeRegisterEntry) * AUTH_LIST_MAX_LEN, 
+    109                      NULL))) 
+   \                     ??Node_auth_init_1:
+   \   000044                ; Setup parameters for call to function osal_nv_item_init
+   \   000044   E4           CLR     A
+   \   000045   F5..         MOV     ?V0,A
+   \   000047   F5..         MOV     ?V1,A
+   \   000049   78..         MOV     R0,#?V0
+   \   00004B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004E   7CFC         MOV     R4,#-0x4
+   \   000050   7D03         MOV     R5,#0x3
+   \   000052   7A02         MOV     R2,#0x2
+   \   000054   7B04         MOV     R3,#0x4
+   \   000056   12....       LCALL   `??osal_nv_item_init::?relay`; Banked call to: osal_nv_item_init
+   \   000059   7402         MOV     A,#0x2
+   \   00005B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00005E   E9           MOV     A,R1
+   \   00005F   F8           MOV     R0,A
+   \   000060   701D         JNZ     ??Node_auth_init_2
+    110              {
+    111                  Authlist_init(TRUE);
+   \   000062                ; Setup parameters for call to function Authlist_init
+   \   000062   7901         MOV     R1,#0x1
+   \                     ??Node_auth_init_3:
+   \   000064   12....       LCALL   `??Authlist_init::?relay`; Banked call to: Authlist_init
+    112              }
+    113              else if ( NV_ITEM_UNINIT == rc )
+    114              {
+    115                  Authlist_init(FALSE);
+    116              }
+    117              else
+    118              {
+    119                  SystemReset();
+    120              }
+    121              return SUCCESS;
+   \   000067   7900         MOV     R1,#0x0
+   \   000069   7F02         MOV     R7,#0x2
+   \   00006B   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \                     ??Node_auth_init_0:
+   \   00006E   7409         MOV     A,#0x9
+   \   000070   68           XRL     A,R0
+   \   000071   60D1         JZ      ??Node_auth_init_1
+   \   000073   C2AF         CLR     0xa8.7
+   \   000075   C2AF         CLR     0xa8.7
+   \   000077   75C9AB       MOV     0xc9,#-0x55
+   \   00007A   75C95B       MOV     0xc9,#0x5b
+   \                     ??Node_auth_init_4:
+   \   00007D   80FE         SJMP    ??Node_auth_init_4
+   \                     ??Node_auth_init_2:
+   \   00007F   7409         MOV     A,#0x9
+   \   000081   68           XRL     A,R0
+   \   000082   7004         JNZ     ??Node_auth_init_5
+   \   000084                ; Setup parameters for call to function Authlist_init
+   \   000084   7900         MOV     R1,#0x0
+   \   000086   80DC         SJMP    ??Node_auth_init_3
+   \                     ??Node_auth_init_5:
+   \   000088   C2AF         CLR     0xa8.7
+   \   00008A   C2AF         CLR     0xa8.7
+   \   00008C   75C9AB       MOV     0xc9,#-0x55
+   \   00008F   75C95B       MOV     0xc9,#0x5b
+   \                     ??Node_auth_init_6:
+   \   000092   80FE         SJMP    ??Node_auth_init_6
+   \   000094                REQUIRE _A_IEN0
+   \   000094                REQUIRE WDCTL
+    122          }
+    123          
+    124          
+    125          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    126          void Node_auth_wipe( void )
+   \                     Node_auth_wipe:
+    127          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    128              osal_nv_delete(APP_NV_AUTH_GLOBAL_CONFIG, sizeof(gAuthConfig));
+   \   000004                ; Setup parameters for call to function osal_nv_delete
+   \   000004   7C08         MOV     R4,#0x8
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A01         MOV     R2,#0x1
+   \   00000A   7B04         MOV     R3,#0x4
+   \   00000C   12....       LCALL   `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
+    129              osal_nv_delete(APP_NV_AUTH_KEY_LIST, sizeof(NodeRegisterEntry) * AUTH_LIST_MAX_LEN);
+   \   00000F                ; Setup parameters for call to function osal_nv_delete
+   \   00000F   7CFC         MOV     R4,#-0x4
+   \   000011   7D03         MOV     R5,#0x3
+   \   000013   7A02         MOV     R2,#0x2
+   \   000015   7B04         MOV     R3,#0x4
+   \   000017   12....       LCALL   `??osal_nv_delete::?relay`; Banked call to: osal_nv_delete
+    130              Node_auth_init();
+   \   00001A                ; Setup parameters for call to function Node_auth_init
+   \   00001A   12....       LCALL   `??Node_auth_init::?relay`; Banked call to: Node_auth_init
+    131          }
+   \   00001D   D083         POP     DPH
+   \   00001F   D082         POP     DPL
+   \   000021   02....       LJMP    ?BRET
+    132          
+    133          
+    134          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    135          static bool Authlist_should_insert(uint8 const* key, uint8 keylen, uint32 *index)
+   \                     Authlist_should_insert:
+    136          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000                REQUIRE ?V12
+   \   000000                REQUIRE ?V14
+   \   000000                REQUIRE ?V15
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V14,R2
+   \   000007   8B..         MOV     ?V15,R3
+   \   000009   89..         MOV     ?V12,R1
+   \   00000B   EC           MOV     A,R4
+   \   00000C   FE           MOV     R6,A
+   \   00000D   ED           MOV     A,R5
+   \   00000E   FF           MOV     R7,A
+    137              if (keylen != AUTH_LIST_KEY_LEN) {
+   \   00000F   7408         MOV     A,#0x8
+   \   000011   65..         XRL     A,?V12
+   \   000013   600A         JZ      ??Authlist_should_insert_0
+    138                  *index = AUTH_LIST_INVALID_INDEX;
+   \   000015   8E82         MOV     DPL,R6
+   \   000017   8F83         MOV     DPH,R7
+   \   000019   12....       LCALL   ?Subroutine5 & 0xFFFF
+    139                  return 0;
+   \                     ??CrossCallReturnLabel_11:
+   \   00001C   02....       LJMP    ??Authlist_should_insert_1 & 0xFFFF
+    140              }
+    141              uint32 avail = AUTH_LIST_INVALID_INDEX;
+   \                     ??Authlist_should_insert_0:
+   \   00001F   75..FF       MOV     ?V0,#-0x1
+   \   000022   75..FF       MOV     ?V1,#-0x1
+   \   000025   75..FF       MOV     ?V2,#-0x1
+   \   000028   75..FF       MOV     ?V3,#-0x1
+    142              uint32 idx;
+    143              List_cache_force_load(0);
+   \   00002B                ; Setup parameters for call to function List_cache_force_load
+   \   00002B   90....       MOV     DPTR,#__Constant_0
+   \   00002E   12....       LCALL   ?XLOAD_R2345
+   \   000031   12....       LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+    144              do {
+    145                  for (idx = 0; 
+   \                     ??Authlist_should_insert_2:
+   \   000034   75..00       MOV     ?V4,#0x0
+   \   000037   75..00       MOV     ?V5,#0x0
+   \   00003A   75..00       MOV     ?V6,#0x0
+   \   00003D   75..00       MOV     ?V7,#0x0
+   \   000040   8021         SJMP    ??Authlist_should_insert_3
+    146                       idx + gListOffset < AUTH_LIST_MAX_LEN && idx < gListNum ;
+    147                       ++idx)
+    148                  {
+    149                      if (avail == AUTH_LIST_INVALID_INDEX && 
+    150                          Is_entry_deleted(&gListCache[idx]))
+   \                     ??Authlist_should_insert_4:
+   \   000042   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000045   5056         JNC     ??Authlist_should_insert_5
+    151                      {
+    152                          avail = idx + gListOffset;
+   \   000047   85....       MOV     ?V0,?V4
+   \   00004A   85....       MOV     ?V1,?V5
+   \   00004D   85....       MOV     ?V2,?V6
+   \   000050   85....       MOV     ?V3,?V7
+   \   000053   90....       MOV     DPTR,#gListOffset
+   \   000056   78..         MOV     R0,#?V0
+   \   000058   12....       LCALL   ?L_ADD_X
+    153                      }
+   \                     ??Authlist_should_insert_6:
+   \   00005B   90....       MOV     DPTR,#__Constant_1
+   \   00005E   78..         MOV     R0,#?V4
+   \   000060   12....       LCALL   ?L_ADD_X
+   \                     ??Authlist_should_insert_3:
+   \   000063   85....       MOV     ?V8,?V4
+   \   000066   85....       MOV     ?V9,?V5
+   \   000069   85....       MOV     ?V10,?V6
+   \   00006C   85....       MOV     ?V11,?V7
+   \   00006F   90....       MOV     DPTR,#gListOffset
+   \   000072   78..         MOV     R0,#?V8
+   \   000074   12....       LCALL   ?L_ADD_X
+   \   000077   7583..       MOV     DPH,#(__Constant_66 >> 8) & 0xff
+   \   00007A   7582..       MOV     DPL,#__Constant_66 & 0xff
+   \   00007D   78..         MOV     R0,#?V8
+   \   00007F   12....       LCALL   ?UL_GE_X
+   \   000082   4059         JC      ??Authlist_should_insert_7
+   \   000084   90....       MOV     DPTR,#gListNum
+   \   000087   78..         MOV     R0,#?V4
+   \   000089   12....       LCALL   ?UL_GE_X
+   \   00008C   404F         JC      ??Authlist_should_insert_7
+   \   00008E   90....       MOV     DPTR,#__Constant_ffffffff
+   \   000091   78..         MOV     R0,#?V0
+   \   000093   12....       LCALL   ?L_EQ_X
+   \   000096   60AA         JZ      ??Authlist_should_insert_4
+    154                      else if (!Is_entry_deleted(&gListCache[idx]) &&
+    155                                  osal_memcmp(key, gListCache[idx].key, keylen) )
+   \   000098   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   00009B   40BE         JC      ??Authlist_should_insert_6
+   \                     ??Authlist_should_insert_5:
+   \   00009D                ; Setup parameters for call to function osal_memcmp
+   \   00009D   74..         MOV     A,#(gListCache + 2) & 0xff
+   \   00009F   28           ADD     A,R0
+   \   0000A0   F5..         MOV     ?V8,A
+   \   0000A2   74..         MOV     A,#((gListCache + 2) >> 8) & 0xff
+   \   0000A4   39           ADDC    A,R1
+   \   0000A5   F5..         MOV     ?V9,A
+   \   0000A7   75..00       MOV     ?V10,#0x0
+   \   0000AA   78..         MOV     R0,#?V8
+   \   0000AC   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000AF   7C08         MOV     R4,#0x8
+   \   0000B1   7D00         MOV     R5,#0x0
+   \   0000B3   85..82       MOV     DPL,?V14
+   \   0000B6   85..83       MOV     DPH,?V15
+   \   0000B9   A982         MOV     R1,DPL
+   \   0000BB   AA83         MOV     R2,DPH
+   \   0000BD   7B00         MOV     R3,#0x0
+   \   0000BF   12....       LCALL   `??osal_memcmp::?relay`; Banked call to: osal_memcmp
+   \   0000C2   7403         MOV     A,#0x3
+   \   0000C4   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000C7   E9           MOV     A,R1
+   \   0000C8   6091         JZ      ??Authlist_should_insert_6
+    156                      {
+    157                          *index = idx + gListOffset;;
+   \   0000CA   90....       MOV     DPTR,#gListOffset
+   \   0000CD   78..         MOV     R0,#?V4
+   \   0000CF   12....       LCALL   ?L_ADD_X
+   \   0000D2   8E82         MOV     DPL,R6
+   \   0000D4   8F83         MOV     DPH,R7
+   \   0000D6   78..         MOV     R0,#?V4
+   \   0000D8   12....       LCALL   ?L_MOV_TO_X
+    158                          return FALSE;
+   \   0000DB   8020         SJMP    ??Authlist_should_insert_1
+    159                      }
+    160                  }
+    161              } while (List_cache_load_next());
+   \                     ??Authlist_should_insert_7:
+   \   0000DD                ; Setup parameters for call to function List_cache_load_next
+   \   0000DD   12....       LCALL   `??List_cache_load_next::?relay`; Banked call to: List_cache_load_next
+   \   0000E0   E9           MOV     A,R1
+   \   0000E1   6003         JZ      $+5
+   \   0000E3   02....       LJMP    ??Authlist_should_insert_2 & 0xFFFF
+    162          
+    163              *index = avail;
+   \   0000E6   8E82         MOV     DPL,R6
+   \   0000E8   8F83         MOV     DPH,R7
+   \   0000EA   78..         MOV     R0,#?V0
+   \   0000EC   12....       LCALL   ?L_MOV_TO_X
+    164              return avail != AUTH_LIST_INVALID_INDEX;
+   \   0000EF   90....       MOV     DPTR,#__Constant_ffffffff
+   \   0000F2   78..         MOV     R0,#?V0
+   \   0000F4   12....       LCALL   ?L_EQ_X
+   \   0000F7   6004         JZ      ??Authlist_should_insert_1
+   \   0000F9   7901         MOV     R1,#0x1
+   \   0000FB   8002         SJMP    ??Authlist_should_insert_8
+   \                     ??Authlist_should_insert_1:
+   \   0000FD   7900         MOV     R1,#0x0
+   \                     ??Authlist_should_insert_8:
+   \   0000FF   7F10         MOV     R7,#0x10
+   \   000101   02....       LJMP    ?BANKED_LEAVE_XDATA
+    165          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E5..         MOV     A,?V4
+   \   000002   75F00A       MOV     B,#0xa
+   \   000005   A4           MUL     AB
+   \   000006   F8           MOV     R0,A
+   \   000007   AAF0         MOV     R2,B
+   \   000009   75F00A       MOV     B,#0xa
+   \   00000C   E5..         MOV     A,?V5
+   \   00000E                REQUIRE ??Subroutine8_0
+   \   00000E                ; // Fall through to label ??Subroutine8_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine8_0:
+   \   000000   A4           MUL     AB
+   \   000001   2A           ADD     A,R2
+   \   000002   F9           MOV     R1,A
+   \   000003   74..         MOV     A,#gListCache & 0xff
+   \   000005   28           ADD     A,R0
+   \   000006   F582         MOV     DPL,A
+   \   000008   74..         MOV     A,#(gListCache >> 8) & 0xff
+   \   00000A   39           ADDC    A,R1
+   \   00000B   F583         MOV     DPH,A
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   74FF         MOV     A,#-0x1
+   \   000002                REQUIRE ??Subroutine12_0
+   \   000002                ; // Fall through to label ??Subroutine12_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine12_0:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   F0           MOVX    @DPTR,A
+   \   000003   A3           INC     DPTR
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   A3           INC     DPTR
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   22           RET
+    166          
+    167          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    168          uint8 Authlist_add(uint8 const* buf, uint8 len, uint32 *index)
+   \                     Authlist_add:
+    169          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V0,R2
+   \   00000C   8B..         MOV     ?V1,R3
+   \   00000E   E9           MOV     A,R1
+   \   00000F   FE           MOV     R6,A
+   \   000010   8C..         MOV     ?V2,R4
+   \   000012   8D..         MOV     ?V3,R5
+    170              uint32 avail;
+    171              NodeRegisterEntry* e;
+    172          
+    173              if (len != AUTH_LIST_KEY_LEN) return 0;
+   \   000014   7408         MOV     A,#0x8
+   \   000016   6E           XRL     A,R6
+   \   000017   6003         JZ      $+5
+   \   000019   02....       LJMP    ??Authlist_add_0 & 0xFFFF
+    174          
+    175              List_cache_force_load(0);
+   \   00001C                ; Setup parameters for call to function List_cache_force_load
+   \   00001C   90....       MOV     DPTR,#__Constant_0
+   \   00001F   12....       LCALL   ?XLOAD_R2345
+   \   000022   12....       LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+    176          
+    177              if (Authlist_should_insert(buf, len, &avail))
+   \   000025                ; Setup parameters for call to function Authlist_should_insert
+   \   000025   AC..         MOV     R4,?XSP + 0
+   \   000027   AD..         MOV     R5,?XSP + 1
+   \   000029   7908         MOV     R1,#0x8
+   \   00002B   AA..         MOV     R2,?V0
+   \   00002D   AB..         MOV     R3,?V1
+   \   00002F   12....       LCALL   `??Authlist_should_insert::?relay`; Banked call to: Authlist_should_insert
+   \   000032   E9           MOV     A,R1
+   \   000033   7003         JNZ     $+5
+   \   000035   02....       LJMP    ??Authlist_add_1 & 0xFFFF
+    178              {
+    179                  e = List_cache_get(avail);
+   \   000038                ; Setup parameters for call to function List_cache_load_on_need
+   \   000038   85..82       MOV     DPL,?XSP + 0
+   \   00003B   85..83       MOV     DPH,?XSP + 1
+   \   00003E   12....       LCALL   ?XLOAD_R2345
+   \   000041   12....       LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+   \   000044   85..82       MOV     DPL,?XSP + 0
+   \   000047   85..83       MOV     DPH,?XSP + 1
+   \   00004A   78..         MOV     R0,#?V4
+   \   00004C   12....       LCALL   ?L_MOV_X
+   \   00004F   85....       MOV     ?V8,?V4
+   \   000052   85....       MOV     ?V9,?V5
+   \   000055   90....       MOV     DPTR,#gListOffset
+   \   000058   78..         MOV     R0,#?V4
+   \   00005A   12....       LCALL   ?L_MOV_X
+   \   00005D   E5..         MOV     A,?V8
+   \   00005F   C3           CLR     C
+   \   000060   95..         SUBB    A,?V4
+   \   000062   F8           MOV     R0,A
+   \   000063   E5..         MOV     A,?V9
+   \   000065   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000068   E8           MOV     A,R0
+   \   000069   FA           MOV     R2,A
+   \   00006A   E9           MOV     A,R1
+   \   00006B   FB           MOV     R3,A
+    180                  e->flag &= ~NODE_REG_ENTRY_DELETED;
+   \   00006C   8A82         MOV     DPL,R2
+   \   00006E   8B83         MOV     DPH,R3
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   54FE         ANL     A,#0xfe
+   \   000073   F0           MOVX    @DPTR,A
+    181                  osal_memcpy(e->key, buf, len);
+   \   000074                ; Setup parameters for call to function osal_memcpy
+   \   000074   85....       MOV     ?V4,?V0
+   \   000077   85....       MOV     ?V5,?V1
+   \   00007A   75..00       MOV     ?V6,#0x0
+   \   00007D   78..         MOV     R0,#?V4
+   \   00007F   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000082   7C08         MOV     R4,#0x8
+   \   000084   7D00         MOV     R5,#0x0
+   \   000086   EA           MOV     A,R2
+   \   000087   2402         ADD     A,#0x2
+   \   000089   FA           MOV     R2,A
+   \   00008A   5001         JNC     ??Authlist_add_2
+   \   00008C   0B           INC     R3
+   \                     ??Authlist_add_2:
+   \   00008D   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000090   7403         MOV     A,#0x3
+   \   000092   12....       LCALL   ?DEALLOC_XSTACK8
+    182                  
+    183                  Increase_registered_num();
+   \   000095                ; Setup parameters for call to function Set_registered_num
+   \   000095   90....       MOV     DPTR,#gAuthConfig + 4
+   \   000098   78..         MOV     R0,#?V4
+   \   00009A   12....       LCALL   ?L_MOV_X
+   \   00009D   90....       MOV     DPTR,#__Constant_1
+   \   0000A0   78..         MOV     R0,#?V4
+   \   0000A2   12....       LCALL   ?L_ADD_X
+   \   0000A5   AA..         MOV     R2,?V4
+   \   0000A7   AB..         MOV     R3,?V5
+   \   0000A9   AC..         MOV     R4,?V6
+   \   0000AB   AD..         MOV     R5,?V7
+   \   0000AD   12....       LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+    184                  List_cache_write_back();
+   \   0000B0                ; Setup parameters for call to function List_cache_write_back
+   \   0000B0   12....       LCALL   `??List_cache_write_back::?relay`; Banked call to: List_cache_write_back
+    185                  if(index) *index = avail;
+   \   0000B3   E5..         MOV     A,?V2
+   \   0000B5   45..         ORL     A,?V3
+   \   0000B7   602D         JZ      ??Authlist_add_3
+   \   0000B9   85..82       MOV     DPL,?XSP + 0
+   \   0000BC   85..83       MOV     DPH,?XSP + 1
+   \   0000BF   12....       LCALL   ?XLOAD_R0123
+   \   0000C2   85..82       MOV     DPL,?V2
+   \   0000C5   85..83       MOV     DPH,?V3
+   \   0000C8   12....       LCALL   ?XSTORE_R0123
+    186                  return Authlist_item_cnt();
+    187              }
+   \   0000CB   8019         SJMP    ??Authlist_add_3
+    188              else if (avail == AUTH_LIST_INVALID_INDEX)
+   \                     ??Authlist_add_1:
+   \   0000CD   90....       MOV     DPTR,#__Constant_ffffffff
+   \   0000D0   78..         MOV     R0,#?V0
+   \   0000D2   12....       LCALL   ?L_MOV_X
+   \   0000D5   85..82       MOV     DPL,?XSP + 0
+   \   0000D8   85..83       MOV     DPH,?XSP + 1
+   \   0000DB   78..         MOV     R0,#?V0
+   \   0000DD   12....       LCALL   ?L_EQ_X
+   \   0000E0   7004         JNZ     ??Authlist_add_3
+    189              {    
+    190                  return 0;
+   \                     ??Authlist_add_0:
+   \   0000E2   7900         MOV     R1,#0x0
+   \   0000E4   800A         SJMP    ??Authlist_add_4
+    191              }
+    192              else
+    193              {
+    194                  return Authlist_item_cnt(); 
+   \                     ??Authlist_add_3:
+   \   0000E6   90....       MOV     DPTR,#gAuthConfig + 4
+   \   0000E9   78..         MOV     R0,#?V0
+   \   0000EB   12....       LCALL   ?L_MOV_X
+   \   0000EE   A9..         MOV     R1,?V0
+   \                     ??Authlist_add_4:
+   \   0000F0   7404         MOV     A,#0x4
+   \   0000F2   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000F5   7F0A         MOV     R7,#0xa
+   \   0000F7   02....       LJMP    ?BANKED_LEAVE_XDATA
+    195              }
+    196          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   95..         SUBB    A,?V5
+   \   000002   F9           MOV     R1,A
+   \   000003   E8           MOV     A,R0
+   \   000004   75F00A       MOV     B,#0xa
+   \   000007   A4           MUL     AB
+   \   000008   F8           MOV     R0,A
+   \   000009   AAF0         MOV     R2,B
+   \   00000B   75F00A       MOV     B,#0xa
+   \   00000E   E9           MOV     A,R1
+   \   00000F   A4           MUL     AB
+   \   000010   2A           ADD     A,R2
+   \   000011   F9           MOV     R1,A
+   \   000012   74..         MOV     A,#gListCache & 0xff
+   \   000014   28           ADD     A,R0
+   \   000015   F8           MOV     R0,A
+   \   000016   74..         MOV     A,#(gListCache >> 8) & 0xff
+   \   000018   39           ADDC    A,R1
+   \   000019   F9           MOV     R1,A
+   \   00001A   22           RET
+    197          
+    198          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    199          uint8 Authlist_get(uint32 index, uint8* buf, uint8* len)
+   \                     Authlist_get:
+    200          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0,R2
+   \   000007   8B..         MOV     ?V1,R3
+   \   000009   8C..         MOV     ?V2,R4
+   \   00000B   8D..         MOV     ?V3,R5
+   \   00000D   7412         MOV     A,#0x12
+   \   00000F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F8           MOV     R0,A
+   \   000014   A3           INC     DPTR
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F9           MOV     R1,A
+   \   000017   8882         MOV     DPL,R0
+   \   000019   8983         MOV     DPH,R1
+    201              NodeRegisterEntry const* e;
+    202          
+    203              if (*len < AUTH_LIST_KEY_LEN) return 0;
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   C3           CLR     C
+   \   00001D   9408         SUBB    A,#0x8
+   \   00001F   402D         JC      ??Authlist_get_0
+    204              else *len = AUTH_LIST_KEY_LEN;
+   \   000021   7408         MOV     A,#0x8
+   \   000023   F0           MOVX    @DPTR,A
+    205          
+    206              List_cache_load_on_need(index);
+   \   000024                ; Setup parameters for call to function List_cache_load_on_need
+   \   000024   12....       LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+    207          
+    208              e = List_cache_get(index);
+   \   000027                ; Setup parameters for call to function List_cache_load_on_need
+   \   000027   AA..         MOV     R2,?V0
+   \   000029   AB..         MOV     R3,?V1
+   \   00002B   AC..         MOV     R4,?V2
+   \   00002D   AD..         MOV     R5,?V3
+   \   00002F   12....       LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+   \   000032   90....       MOV     DPTR,#gListOffset
+   \   000035   78..         MOV     R0,#?V4
+   \   000037   12....       LCALL   ?L_MOV_X
+   \   00003A   E5..         MOV     A,?V0
+   \   00003C   C3           CLR     C
+   \   00003D   95..         SUBB    A,?V4
+   \   00003F   F8           MOV     R0,A
+   \   000040   E5..         MOV     A,?V1
+   \   000042   12....       LCALL   ?Subroutine4 & 0xFFFF
+    209              if (NULL == e || Is_entry_deleted(e))
+   \                     ??CrossCallReturnLabel_1:
+   \   000045   8882         MOV     DPL,R0
+   \   000047   8983         MOV     DPH,R1
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00004C   5004         JNC     ??Authlist_get_1
+    210              {
+    211                  return 0;
+   \                     ??Authlist_get_0:
+   \   00004E   7900         MOV     R1,#0x0
+   \   000050   8032         SJMP    ??Authlist_get_2
+    212              }
+    213              
+    214              osal_memcpy(buf, e->key, AUTH_LIST_KEY_LEN);
+   \                     ??Authlist_get_1:
+   \   000052                ; Setup parameters for call to function osal_memcpy
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A982         MOV     R1,DPL
+   \   000056   AA83         MOV     R2,DPH
+   \   000058   89..         MOV     ?V0,R1
+   \   00005A   8A..         MOV     ?V1,R2
+   \   00005C   75..00       MOV     ?V2,#0x0
+   \   00005F   78..         MOV     R0,#?V0
+   \   000061   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000064   7C08         MOV     R4,#0x8
+   \   000066   7D00         MOV     R5,#0x0
+   \   000068   7413         MOV     A,#0x13
+   \   00006A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006D   E0           MOVX    A,@DPTR
+   \   00006E   FA           MOV     R2,A
+   \   00006F   A3           INC     DPTR
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   FB           MOV     R3,A
+   \   000072   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000075   7403         MOV     A,#0x3
+   \   000077   12....       LCALL   ?DEALLOC_XSTACK8
+    215              return Authlist_item_cnt();
+   \   00007A   90....       MOV     DPTR,#gAuthConfig + 4
+   \   00007D   78..         MOV     R0,#?V0
+   \   00007F   12....       LCALL   ?L_MOV_X
+   \   000082   A9..         MOV     R1,?V0
+   \                     ??Authlist_get_2:
+   \   000084                REQUIRE ?Subroutine0
+   \   000084                ; // Fall through to label ?Subroutine0
+    216          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F08         MOV     R7,#0x8
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    217          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    218          static void Authlist_delete_entry(uint32 index)
+   \                     Authlist_delete_entry:
+    219          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 10
+   \   000005   74F6         MOV     A,#-0xa
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   8A..         MOV     ?V4,R2
+   \   00000C   8B..         MOV     ?V5,R3
+   \   00000E   8C..         MOV     ?V6,R4
+   \   000010   8D..         MOV     ?V7,R5
+    220              NodeRegisterEntry *last_entry_p, *to_del;
+    221              NodeRegisterEntry last_entry_copy;
+    222              uint32 last_index = Authlist_item_cnt() - 1;
+   \   000012   90....       MOV     DPTR,#gAuthConfig + 4
+   \   000015   78..         MOV     R0,#?V8
+   \   000017   12....       LCALL   ?L_MOV_X
+   \   00001A   85....       MOV     ?V0,?V8
+   \   00001D   E5..         MOV     A,?V0
+   \   00001F   24FF         ADD     A,#-0x1
+   \   000021   F5..         MOV     ?V0,A
+   \   000023   E4           CLR     A
+   \   000024   34FF         ADDC    A,#-0x1
+   \   000026   F5..         MOV     ?V1,A
+   \   000028   33           RLC     A
+   \   000029   95E0         SUBB    A,0xE0 /* A   */
+   \   00002B   F5..         MOV     ?V2,A
+   \   00002D   F5..         MOV     ?V3,A
+    223          
+    224              if (index >= Authlist_item_cnt() || 
+    225                  index >= AUTH_LIST_MAX_LEN)
+   \   00002F   E4           CLR     A
+   \   000030   F5..         MOV     ?V9,A
+   \   000032   F5..         MOV     ?V10,A
+   \   000034   F5..         MOV     ?V11,A
+   \   000036   78..         MOV     R0,#?V8
+   \   000038   79..         MOV     R1,#?V4
+   \   00003A   12....       LCALL   ?UL_GT
+   \   00003D   500A         JNC     ??Authlist_delete_entry_0
+   \   00003F   90....       MOV     DPTR,#__Constant_66
+   \   000042   78..         MOV     R0,#?V4
+   \   000044   12....       LCALL   ?UL_GE_X
+   \   000047   5003         JNC     ??Authlist_delete_entry_1
+    226              {
+    227                  return;
+   \                     ??Authlist_delete_entry_0:
+   \   000049   02....       LJMP    ??Authlist_delete_entry_2 & 0xFFFF
+    228              }
+    229              if (index != last_index) {
+   \                     ??Authlist_delete_entry_1:
+   \   00004C   78..         MOV     R0,#?V4
+   \   00004E   79..         MOV     R1,#?V0
+   \   000050   12....       LCALL   ?L_EQ
+   \   000053   605D         JZ      ??Authlist_delete_entry_3
+    230                  // not last entry, need to fill the blank
+    231                  last_entry_p = List_cache_get(last_index);
+   \   000055                ; Setup parameters for call to function List_cache_load_on_need
+   \   000055   AA..         MOV     R2,?V0
+   \   000057   AB..         MOV     R3,?V1
+   \   000059   AC..         MOV     R4,?V2
+   \   00005B   AD..         MOV     R5,?V3
+   \   00005D   12....       LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+   \   000060   90....       MOV     DPTR,#gListOffset
+   \   000063   78..         MOV     R0,#?V8
+   \   000065   12....       LCALL   ?L_MOV_X
+   \   000068   E5..         MOV     A,?V0
+   \   00006A   C3           CLR     C
+   \   00006B   95..         SUBB    A,?V8
+   \   00006D   F8           MOV     R0,A
+   \   00006E   E5..         MOV     A,?V1
+   \   000070   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000073   F5..         MOV     ?V0,A
+   \   000075   74..         MOV     A,#(gListCache >> 8) & 0xff
+   \   000077   39           ADDC    A,R1
+   \   000078   F5..         MOV     ?V1,A
+    232                  osal_memcpy(&last_entry_copy, last_entry_p, sizeof(NodeRegisterEntry));
+   \   00007A                ; Setup parameters for call to function osal_memcpy
+   \   00007A   85....       MOV     ?V8,?V0
+   \   00007D   F5..         MOV     ?V9,A
+   \   00007F   75..00       MOV     ?V10,#0x0
+   \   000082   78..         MOV     R0,#?V8
+   \   000084   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000087   7C0A         MOV     R4,#0xa
+   \   000089   7D00         MOV     R5,#0x0
+   \   00008B   7403         MOV     A,#0x3
+   \   00008D   12....       LCALL   ?XSTACK_DISP101_8
+   \   000090   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000093   7403         MOV     A,#0x3
+   \   000095   12....       LCALL   ?DEALLOC_XSTACK8
+    233                  last_entry_p->flag |= NODE_REG_ENTRY_DELETED;
+   \   000098   85..82       MOV     DPL,?V0
+   \   00009B   85..83       MOV     DPH,?V1
+   \   00009E   12....       LCALL   ?Subroutine6 & 0xFFFF
+    234                  osal_memset(last_entry_p->key, 0xff, AUTH_LIST_KEY_LEN);
+   \                     ??CrossCallReturnLabel_2:
+   \   0000A1   E5..         MOV     A,?V0
+   \   0000A3   2402         ADD     A,#0x2
+   \   0000A5   FA           MOV     R2,A
+   \   0000A6   E4           CLR     A
+   \   0000A7   35..         ADDC    A,?V1
+   \   0000A9   FB           MOV     R3,A
+   \   0000AA   12....       LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+    235                  List_cache_write_back();
+   \   0000AD                ; Setup parameters for call to function List_cache_write_back
+   \   0000AD   12....       LCALL   `??List_cache_write_back::?relay`; Banked call to: List_cache_write_back
+   \   0000B0   8006         SJMP    ??Authlist_delete_entry_4
+    236              } else {
+    237                  last_entry_p = NULL;
+   \                     ??Authlist_delete_entry_3:
+   \   0000B2   75..00       MOV     ?V0,#0x0
+   \   0000B5   75..00       MOV     ?V1,#0x0
+    238              }
+    239          
+    240              to_del = List_cache_get(index);
+   \                     ??Authlist_delete_entry_4:
+   \   0000B8                ; Setup parameters for call to function List_cache_load_on_need
+   \   0000B8   AA..         MOV     R2,?V4
+   \   0000BA   AB..         MOV     R3,?V5
+   \   0000BC   AC..         MOV     R4,?V6
+   \   0000BE   AD..         MOV     R5,?V7
+   \   0000C0   12....       LCALL   `??List_cache_load_on_need::?relay`; Banked call to: List_cache_load_on_need
+   \   0000C3   90....       MOV     DPTR,#gListOffset
+   \   0000C6   78..         MOV     R0,#?V8
+   \   0000C8   12....       LCALL   ?L_MOV_X
+   \   0000CB   E5..         MOV     A,?V4
+   \   0000CD   C3           CLR     C
+   \   0000CE   95..         SUBB    A,?V8
+   \   0000D0   F8           MOV     R0,A
+   \   0000D1   E5..         MOV     A,?V5
+   \   0000D3   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   0000D6   FA           MOV     R2,A
+   \   0000D7   74..         MOV     A,#(gListCache >> 8) & 0xff
+   \   0000D9   39           ADDC    A,R1
+   \   0000DA   FB           MOV     R3,A
+    241              if (last_entry_p != NULL) {
+   \   0000DB   E5..         MOV     A,?V0
+   \   0000DD   45..         ORL     A,?V1
+   \   0000DF   601E         JZ      ??Authlist_delete_entry_5
+    242                  osal_memcpy(to_del, &last_entry_copy, sizeof(NodeRegisterEntry));
+   \   0000E1                ; Setup parameters for call to function osal_memcpy
+   \   0000E1   A8..         MOV     R0,?XSP + 0
+   \   0000E3   A9..         MOV     R1,?XSP + 1
+   \   0000E5   88..         MOV     ?V0,R0
+   \   0000E7   89..         MOV     ?V1,R1
+   \   0000E9   75..00       MOV     ?V2,#0x0
+   \   0000EC   78..         MOV     R0,#?V0
+   \   0000EE   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000F1   7C0A         MOV     R4,#0xa
+   \   0000F3   7D00         MOV     R5,#0x0
+   \   0000F5   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0000F8   7403         MOV     A,#0x3
+   \   0000FA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000FD   8011         SJMP    ??Authlist_delete_entry_6
+    243              } else {
+    244                  to_del->flag |= NODE_REG_ENTRY_DELETED;
+   \                     ??Authlist_delete_entry_5:
+   \   0000FF   8A82         MOV     DPL,R2
+   \   000101   8B83         MOV     DPH,R3
+   \   000103   12....       LCALL   ?Subroutine6 & 0xFFFF
+    245                  osal_memset(to_del->key, 0xff, AUTH_LIST_KEY_LEN);
+    246              }
+   \                     ??CrossCallReturnLabel_3:
+   \   000106   EA           MOV     A,R2
+   \   000107   2402         ADD     A,#0x2
+   \   000109   FA           MOV     R2,A
+   \   00010A   5001         JNC     ??Authlist_delete_entry_7
+   \   00010C   0B           INC     R3
+   \                     ??Authlist_delete_entry_7:
+   \   00010D   12....       LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+    247              Decrease_registered_num();
+   \                     ??Authlist_delete_entry_6:
+   \   000110                ; Setup parameters for call to function Set_registered_num
+   \   000110   90....       MOV     DPTR,#gAuthConfig + 4
+   \   000113   78..         MOV     R0,#?V0
+   \   000115   12....       LCALL   ?L_MOV_X
+   \   000118   90....       MOV     DPTR,#__Constant_ffffffff
+   \   00011B   78..         MOV     R0,#?V0
+   \   00011D   12....       LCALL   ?L_ADD_X
+   \   000120   AA..         MOV     R2,?V0
+   \   000122   AB..         MOV     R3,?V1
+   \   000124   AC..         MOV     R4,?V2
+   \   000126   AD..         MOV     R5,?V3
+   \   000128   12....       LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+    248              List_cache_write_back();
+   \   00012B                ; Setup parameters for call to function List_cache_write_back
+   \   00012B   12....       LCALL   `??List_cache_write_back::?relay`; Banked call to: List_cache_write_back
+    249          }
+   \                     ??Authlist_delete_entry_2:
+   \   00012E   740A         MOV     A,#0xa
+   \   000130                REQUIRE ?Subroutine1
+   \   000130                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine9_0
+   \   000003                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   7F0C         MOV     R7,#0xc
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   95..         SUBB    A,?V9
+   \   000002   F9           MOV     R1,A
+   \   000003   E8           MOV     A,R0
+   \   000004   75F00A       MOV     B,#0xa
+   \   000007   A4           MUL     AB
+   \   000008   F8           MOV     R0,A
+   \   000009   AAF0         MOV     R2,B
+   \   00000B   75F00A       MOV     B,#0xa
+   \   00000E   E9           MOV     A,R1
+   \   00000F   A4           MUL     AB
+   \   000010   2A           ADD     A,R2
+   \   000011   F9           MOV     R1,A
+   \   000012   74..         MOV     A,#gListCache & 0xff
+   \   000014   28           ADD     A,R0
+   \   000015   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   4401         ORL     A,#0x1
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004                ; Setup parameters for call to function osal_memset
+   \   000004                ; Setup parameters for call to function osal_memset
+   \   000004   7C08         MOV     R4,#0x8
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   79FF         MOV     R1,#-0x1
+   \   00000A   22           RET
+    250          
+    251          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    252          void Authlist_del(uint8 const* key, uint8 keylen, uint32* index)
+   \                     Authlist_del:
+    253          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    254              uint32 to_del;
+    255              if(AUTH_LIST_INVALID_INDEX != (to_del = Authlist_find_by_key(key, keylen)))
+   \   000007                ; Setup parameters for call to function Authlist_find_by_key
+   \   000007   8E..         MOV     ?V0,R6
+   \   000009   E4           CLR     A
+   \   00000A   F5..         MOV     ?V1,A
+   \   00000C   F5..         MOV     ?V2,A
+   \   00000E   F5..         MOV     ?V3,A
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   000015   12....       LCALL   `??Authlist_find_by_key::?relay`; Banked call to: Authlist_find_by_key
+   \   000018   7404         MOV     A,#0x4
+   \   00001A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00001D   8A..         MOV     ?V0,R2
+   \   00001F   8B..         MOV     ?V1,R3
+   \   000021   8C..         MOV     ?V2,R4
+   \   000023   8D..         MOV     ?V3,R5
+   \   000025   90....       MOV     DPTR,#__Constant_ffffffff
+   \   000028   78..         MOV     R0,#?V0
+   \   00002A   12....       LCALL   ?L_EQ_X
+   \   00002D   6003         JZ      ??Authlist_del_0
+    256              {
+    257                  Authlist_delete_entry(to_del);
+   \   00002F                ; Setup parameters for call to function Authlist_delete_entry
+   \   00002F   12....       LCALL   `??Authlist_delete_entry::?relay`; Banked call to: Authlist_delete_entry
+    258              }
+    259          }
+   \                     ??Authlist_del_0:
+   \   000032   80..         SJMP    ??Subroutine11_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine11_0:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    260          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    261          uint8 Authlist_item_cnt( void )
+   \                     Authlist_item_cnt:
+    262          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    263              return gAuthConfig.auth_registered_num;
+   \   000005   90....       MOV     DPTR,#gAuthConfig + 4
+   \   000008   78..         MOV     R0,#?V0
+   \   00000A   12....       LCALL   ?L_MOV_X
+   \   00000D   A9..         MOV     R1,?V0
+   \   00000F   80..         SJMP    ??Subroutine11_0
+    264          }
+    265          
+    266          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    267          uint32 Authlist_find_by_key(uint8 const * key, uint32 keylen)
+   \                     Authlist_find_by_key:
+    268          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    269              uint32 rc = AUTH_LIST_INVALID_INDEX;
+    270              if (keylen != AUTH_LIST_KEY_LEN) return rc;
+   \   000009   90....       MOV     DPTR,#__Constant_8
+   \   00000C   78..         MOV     R0,#?V0
+   \   00000E   12....       LCALL   ?L_MOV_X
+   \   000011   7414         MOV     A,#0x14
+   \   000013   12....       LCALL   ?XSTACK_DISP0_8
+   \   000016   78..         MOV     R0,#?V0
+   \   000018   12....       LCALL   ?L_EQ_X
+   \   00001B   600B         JZ      ??Authlist_find_by_key_0
+   \   00001D   7AFF         MOV     R2,#-0x1
+   \   00001F   7BFF         MOV     R3,#-0x1
+   \   000021   7CFF         MOV     R4,#-0x1
+   \   000023   7DFF         MOV     R5,#-0x1
+   \   000025   02....       LJMP    ??Authlist_find_by_key_1 & 0xFFFF
+    271              
+    272              List_cache_force_load(0);
+   \                     ??Authlist_find_by_key_0:
+   \   000028                ; Setup parameters for call to function List_cache_force_load
+   \   000028   90....       MOV     DPTR,#__Constant_0
+   \   00002B   12....       LCALL   ?XLOAD_R2345
+   \   00002E   12....       LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+    273              
+    274              do {
+    275                  if(AUTH_LIST_INVALID_INDEX != (rc = List_cache_find_by_key(key, keylen)))
+   \                     ??Authlist_find_by_key_2:
+   \   000031   75..FF       MOV     ?V4,#-0x1
+   \   000034   75..FF       MOV     ?V5,#-0x1
+   \   000037   75..FF       MOV     ?V6,#-0x1
+   \   00003A   75..FF       MOV     ?V7,#-0x1
+   \   00003D   75..00       MOV     ?V8,#0x0
+   \   000040   75..00       MOV     ?V9,#0x0
+   \   000043   75..00       MOV     ?V10,#0x0
+   \   000046   75..00       MOV     ?V11,#0x0
+   \   000049   8008         SJMP    ??Authlist_find_by_key_3
+   \                     ??Authlist_find_by_key_4:
+   \   00004B   90....       MOV     DPTR,#__Constant_1
+   \   00004E   78..         MOV     R0,#?V8
+   \   000050   12....       LCALL   ?L_ADD_X
+   \                     ??Authlist_find_by_key_3:
+   \   000053   85....       MOV     ?V0,?V8
+   \   000056   85....       MOV     ?V1,?V9
+   \   000059   85....       MOV     ?V2,?V10
+   \   00005C   85....       MOV     ?V3,?V11
+   \   00005F   90....       MOV     DPTR,#gListOffset
+   \   000062   78..         MOV     R0,#?V0
+   \   000064   12....       LCALL   ?L_ADD_X
+   \   000067   7583..       MOV     DPH,#(__Constant_66 >> 8) & 0xff
+   \   00006A   7582..       MOV     DPL,#__Constant_66 & 0xff
+   \   00006D   78..         MOV     R0,#?V0
+   \   00006F   12....       LCALL   ?UL_GE_X
+   \   000072   4073         JC      ??Authlist_find_by_key_5
+   \   000074   90....       MOV     DPTR,#gListNum
+   \   000077   78..         MOV     R0,#?V8
+   \   000079   12....       LCALL   ?UL_GE_X
+   \   00007C   4069         JC      ??Authlist_find_by_key_5
+   \   00007E   E5..         MOV     A,?V8
+   \   000080   75F00A       MOV     B,#0xa
+   \   000083   A4           MUL     AB
+   \   000084   F8           MOV     R0,A
+   \   000085   AAF0         MOV     R2,B
+   \   000087   75F00A       MOV     B,#0xa
+   \   00008A   E5..         MOV     A,?V9
+   \   00008C   12....       LCALL   ??Subroutine8_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00008F   40BA         JC      ??Authlist_find_by_key_4
+   \   000091                ; Setup parameters for call to function osal_memcmp
+   \   000091   85....       MOV     ?V1,?V9
+   \   000094   75F00A       MOV     B,#0xa
+   \   000097   E5..         MOV     A,?V1
+   \   000099   A4           MUL     AB
+   \   00009A   2A           ADD     A,R2
+   \   00009B   F5..         MOV     ?V1,A
+   \   00009D   74..         MOV     A,#(gListCache + 2) & 0xff
+   \   00009F   28           ADD     A,R0
+   \   0000A0   F5..         MOV     ?V0,A
+   \   0000A2   74..         MOV     A,#((gListCache + 2) >> 8) & 0xff
+   \   0000A4   35..         ADDC    A,?V1
+   \   0000A6   F5..         MOV     ?V1,A
+   \   0000A8   75..00       MOV     ?V2,#0x0
+   \   0000AB   78..         MOV     R0,#?V0
+   \   0000AD   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000B0   7C08         MOV     R4,#0x8
+   \   0000B2   7D00         MOV     R5,#0x0
+   \   0000B4   8E82         MOV     DPL,R6
+   \   0000B6   8F83         MOV     DPH,R7
+   \   0000B8   A982         MOV     R1,DPL
+   \   0000BA   AA83         MOV     R2,DPH
+   \   0000BC   7B00         MOV     R3,#0x0
+   \   0000BE   12....       LCALL   `??osal_memcmp::?relay`; Banked call to: osal_memcmp
+   \   0000C1   7403         MOV     A,#0x3
+   \   0000C3   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000C6   E9           MOV     A,R1
+   \   0000C7   6082         JZ      ??Authlist_find_by_key_4
+   \   0000C9   85....       MOV     ?V4,?V8
+   \   0000CC   85....       MOV     ?V5,?V9
+   \   0000CF   85....       MOV     ?V6,?V10
+   \   0000D2   85....       MOV     ?V7,?V11
+   \   0000D5   90....       MOV     DPTR,#gListOffset
+   \   0000D8   78..         MOV     R0,#?V4
+   \   0000DA   12....       LCALL   ?L_ADD_X
+    276                  {
+    277                      break;
+    278                  }
+    279              } while (List_cache_load_next());
+   \   0000DD   90....       MOV     DPTR,#__Constant_ffffffff
+   \   0000E0   78..         MOV     R0,#?V4
+   \   0000E2   12....       LCALL   ?L_EQ_X
+   \   0000E5   7009         JNZ     ??Authlist_find_by_key_6
+   \                     ??Authlist_find_by_key_5:
+   \   0000E7                ; Setup parameters for call to function List_cache_load_next
+   \   0000E7   12....       LCALL   `??List_cache_load_next::?relay`; Banked call to: List_cache_load_next
+   \   0000EA   E9           MOV     A,R1
+   \   0000EB   6003         JZ      $+5
+   \   0000ED   02....       LJMP    ??Authlist_find_by_key_2 & 0xFFFF
+    280              return rc;
+   \                     ??Authlist_find_by_key_6:
+   \   0000F0   AA..         MOV     R2,?V4
+   \   0000F2   AB..         MOV     R3,?V5
+   \   0000F4   AC..         MOV     R4,?V6
+   \   0000F6   AD..         MOV     R5,?V7
+   \                     ??Authlist_find_by_key_1:
+   \   0000F8   02....       LJMP    ??Subroutine9_0 & 0xFFFF
+    281          }
+    282          
+    283          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    284          void Node_auth_uart_msg_process(uint8 port, uint8 cmd0, uint8 cmd1, uint8 const* buf, uint8 len)  //chaokw
+   \                     Node_auth_uart_msg_process:
+    285          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V8
+   \   000000                REQUIRE ?V9
+   \   000000                REQUIRE ?V10
+   \   000000                REQUIRE ?V11
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 29
+   \   000005   74E3         MOV     A,#-0x1d
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   89..         MOV     ?V4,R1
+   \   00000C   8A..         MOV     ?V6,R2
+   \   00000E   8B..         MOV     ?V5,R3
+   \   000010   EC           MOV     A,R4
+   \   000011   FA           MOV     R2,A
+   \   000012   ED           MOV     A,R5
+   \   000013   FB           MOV     R3,A
+    286              if (cmd0 != NODE_AUTH_MSG_DIR_DOWNLINK) return;
+   \   000014   7401         MOV     A,#0x1
+   \   000016   65..         XRL     A,?V6
+   \   000018   6003         JZ      $+5
+   \   00001A   02....       LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+    287          
+    288              uint32 idx;
+    289              uint8 i;
+    290              uint8 key[AUTH_LIST_KEY_LEN+2] = {0};
+   \   00001D   90....       MOV     DPTR,#`?<Constant {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}>`
+   \   000020   7405         MOV     A,#0x5
+   \   000022   12....       LCALL   ?XSTACK_DISP102_8
+   \   000025   740A         MOV     A,#0xa
+   \   000027   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    291              uint8 keylen = AUTH_LIST_KEY_LEN;
+   \   00002A   7404         MOV     A,#0x4
+   \   00002C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002F   7408         MOV     A,#0x8
+   \   000031   F0           MOVX    @DPTR,A
+   \   000032   7431         MOV     A,#0x31
+   \   000034   12....       LCALL   ?XSTACK_DISP0_8
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F9           MOV     R1,A
+    292              nodeList_t *nodeSearch;
+    293              uint8 deltype;
+    294          
+    295          
+    296              switch (cmd1) 
+   \   000039   E5..         MOV     A,?V5
+   \   00003B   24D0         ADD     A,#-0x30
+   \   00003D   7003         JNZ     $+5
+   \   00003F   02....       LJMP    ??Node_auth_uart_msg_process_1 & 0xFFFF
+   \   000042   14           DEC     A
+   \   000043   601A         JZ      ??Node_auth_uart_msg_process_2
+   \   000045   14           DEC     A
+   \   000046   601A         JZ      ??Node_auth_uart_msg_process_3
+   \   000048   14           DEC     A
+   \   000049   7003         JNZ     $+5
+   \   00004B   02....       LJMP    ??Node_auth_uart_msg_process_4 & 0xFFFF
+   \   00004E   24FB         ADD     A,#-0x5
+   \   000050   7003         JNZ     $+5
+   \   000052   02....       LJMP    ??Node_auth_uart_msg_process_5 & 0xFFFF
+   \   000055   24F8         ADD     A,#-0x8
+   \   000057   7003         JNZ     $+5
+   \   000059   02....       LJMP    ??Node_auth_uart_msg_process_6 & 0xFFFF
+   \   00005C   02....       LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+    297              {
+    298                  case NODE_AUTH_MSG_CMD_COUNT: 
+    299                      Mail_uplink_registered_cnt(port);
+   \                     ??Node_auth_uart_msg_process_2:
+   \   00005F                ; Setup parameters for call to function Mail_uplink_registered_cnt
+   \   00005F   02....       LJMP    ??Node_auth_uart_msg_process_7 & 0xFFFF
+    300                      break;
+    301                  case NODE_AUTH_MSG_CMD_GET:
+    302                      if (len != 4) break;
+   \                     ??Node_auth_uart_msg_process_3:
+   \   000062   7404         MOV     A,#0x4
+   \   000064   69           XRL     A,R1
+   \   000065   6003         JZ      $+5
+   \   000067   02....       LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+    303                      for (idx = i = 0; i < sizeof(idx); ++i)
+   \   00006A   7900         MOV     R1,#0x0
+   \   00006C   85..82       MOV     DPL,?XSP + 0
+   \   00006F   85..83       MOV     DPH,?XSP + 1
+   \   000072   E4           CLR     A
+   \   000073   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    304                      {
+    305                          idx <<= 8;
+   \                     ??CrossCallReturnLabel_9:
+   \   000076   85..82       MOV     DPL,?XSP + 0
+   \   000079   85..83       MOV     DPH,?XSP + 1
+   \   00007C   78..         MOV     R0,#?V0
+   \   00007E   12....       LCALL   ?L_MOV_X
+   \   000081   7408         MOV     A,#0x8
+   \   000083   78..         MOV     R0,#?V0
+   \   000085   12....       LCALL   ?L_SHL
+   \   000088   85..82       MOV     DPL,?XSP + 0
+   \   00008B   85..83       MOV     DPH,?XSP + 1
+   \   00008E   78..         MOV     R0,#?V0
+   \   000090   12....       LCALL   ?L_MOV_TO_X
+    306                          idx |= buf[i];
+   \   000093   E9           MOV     A,R1
+   \   000094   FC           MOV     R4,A
+   \   000095   EA           MOV     A,R2
+   \   000096   2C           ADD     A,R4
+   \   000097   F582         MOV     DPL,A
+   \   000099   E4           CLR     A
+   \   00009A   3B           ADDC    A,R3
+   \   00009B   F583         MOV     DPH,A
+   \   00009D   E0           MOVX    A,@DPTR
+   \   00009E   F5..         MOV     ?V0,A
+   \   0000A0   E4           CLR     A
+   \   0000A1   F5..         MOV     ?V1,A
+   \   0000A3   F5..         MOV     ?V2,A
+   \   0000A5   F5..         MOV     ?V3,A
+   \   0000A7   85..82       MOV     DPL,?XSP + 0
+   \   0000AA   85..83       MOV     DPH,?XSP + 1
+   \   0000AD   78..         MOV     R0,#?V0
+   \   0000AF   12....       LCALL   ?L_IOR_TO_X
+    307                      }
+   \   0000B2   09           INC     R1
+   \   0000B3   E9           MOV     A,R1
+   \   0000B4   C3           CLR     C
+   \   0000B5   9404         SUBB    A,#0x4
+   \   0000B7   40BD         JC      ??CrossCallReturnLabel_9
+    308                      if (Authlist_get(idx, key, &keylen) > 0)
+   \   0000B9                ; Setup parameters for call to function Authlist_get
+   \   0000B9   7404         MOV     A,#0x4
+   \   0000BB   12....       LCALL   ?XSTACK_DISP100_8
+   \   0000BE   88..         MOV     ?V0,R0
+   \   0000C0   89..         MOV     ?V1,R1
+   \   0000C2   78..         MOV     R0,#?V0
+   \   0000C4   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C7   7407         MOV     A,#0x7
+   \   0000C9   12....       LCALL   ?XSTACK_DISP100_8
+   \   0000CC   88..         MOV     ?V0,R0
+   \   0000CE   89..         MOV     ?V1,R1
+   \   0000D0   78..         MOV     R0,#?V0
+   \   0000D2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D5   7404         MOV     A,#0x4
+   \   0000D7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DA   12....       LCALL   ?XLOAD_R2345
+   \   0000DD   12....       LCALL   `??Authlist_get::?relay`; Banked call to: Authlist_get
+   \   0000E0   7404         MOV     A,#0x4
+   \   0000E2   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000E5   E9           MOV     A,R1
+   \   0000E6   7003         JNZ     $+5
+   \   0000E8   02....       LJMP    ??Node_auth_uart_msg_process_0 & 0xFFFF
+    309                      {
+    310                          for (nodeSearch = nodeList; (nodeSearch != NULL);nodeSearch = nodeSearch->nextDesc)
+   \   0000EB   90....       MOV     DPTR,#nodeList
+   \   0000EE   8050         SJMP    ??Node_auth_uart_msg_process_8
+    311                          {
+    312                              if (memcmp(key, &nodeSearch->devAddr64, 8) == 0)
+   \                     ??Node_auth_uart_msg_process_9:
+   \   0000F0                ; Setup parameters for call to function memcmp
+   \   0000F0   75..08       MOV     ?V0,#0x8
+   \   0000F3   75..00       MOV     ?V1,#0x0
+   \   0000F6   78..         MOV     R0,#?V0
+   \   0000F8   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000FB   EE           MOV     A,R6
+   \   0000FC   2402         ADD     A,#0x2
+   \   0000FE   FC           MOV     R4,A
+   \   0000FF   E4           CLR     A
+   \   000100   3F           ADDC    A,R7
+   \   000101   FD           MOV     R5,A
+   \   000102   7407         MOV     A,#0x7
+   \   000104   12....       LCALL   ?XSTACK_DISP101_8
+   \   000107   12....       LCALL   `??memcmp::?relay`   ; Banked call to: memcmp
+   \   00010A   7402         MOV     A,#0x2
+   \   00010C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00010F   8B..         MOV     ?V1,R3
+   \   000111   EA           MOV     A,R2
+   \   000112   45..         ORL     A,?V1
+   \   000114   7026         JNZ     ??Node_auth_uart_msg_process_10
+    313                              {
+    314          				key[AUTH_LIST_KEY_LEN] = BREAK_UINT16(nodeSearch->devAddr16.addr.shortAddr, 1); 
+   \   000116   EE           MOV     A,R6
+   \   000117   240E         ADD     A,#0xe
+   \   000119   F8           MOV     R0,A
+   \   00011A   E4           CLR     A
+   \   00011B   3F           ADDC    A,R7
+   \   00011C   F9           MOV     R1,A
+   \   00011D   8882         MOV     DPL,R0
+   \   00011F   8983         MOV     DPH,R1
+   \   000121   A3           INC     DPTR
+   \   000122   E0           MOVX    A,@DPTR
+   \   000123   C0E0         PUSH    A
+   \   000125   740D         MOV     A,#0xd
+   \   000127   12....       LCALL   ?XSTACK_DISP0_8
+   \   00012A   D0E0         POP     A
+   \   00012C   F0           MOVX    @DPTR,A
+    315          				key[AUTH_LIST_KEY_LEN+1] = BREAK_UINT16(nodeSearch->devAddr16.addr.shortAddr, 0);
+   \   00012D   8882         MOV     DPL,R0
+   \   00012F   8983         MOV     DPH,R1
+   \   000131   E0           MOVX    A,@DPTR
+   \   000132   C0E0         PUSH    A
+   \   000134   740E         MOV     A,#0xe
+   \   000136   12....       LCALL   ?XSTACK_DISP0_8
+   \   000139   D0E0         POP     A
+   \   00013B   F0           MOVX    @DPTR,A
+    316                              }	
+    317                          }		
+   \                     ??Node_auth_uart_msg_process_10:
+   \   00013C   8E82         MOV     DPL,R6
+   \   00013E   8F83         MOV     DPH,R7
+   \                     ??Node_auth_uart_msg_process_8:
+   \   000140   E0           MOVX    A,@DPTR
+   \   000141   FE           MOV     R6,A
+   \   000142   A3           INC     DPTR
+   \   000143   E0           MOVX    A,@DPTR
+   \   000144   FF           MOV     R7,A
+   \   000145   EE           MOV     A,R6
+   \   000146   4F           ORL     A,R7
+   \   000147   70A7         JNZ     ??Node_auth_uart_msg_process_9
+    318                          Mail_uplink_key(port, idx, key);
+   \   000149   85..82       MOV     DPL,?XSP + 0
+   \   00014C   85..83       MOV     DPH,?XSP + 1
+   \   00014F   78..         MOV     R0,#?V0
+   \   000151   12....       LCALL   ?L_MOV_X
+   \   000154   7A00         MOV     R2,#0x0
+   \                     ??Node_auth_uart_msg_process_11:
+   \   000156   85....       MOV     ?V8,?V0
+   \   000159   85....       MOV     ?V9,?V1
+   \   00015C   85....       MOV     ?V10,?V2
+   \   00015F   85....       MOV     ?V11,?V3
+   \   000162   7403         MOV     A,#0x3
+   \   000164   C3           CLR     C
+   \   000165   9A           SUBB    A,R2
+   \   000166   33           RLC     A
+   \   000167   33           RLC     A
+   \   000168   33           RLC     A
+   \   000169   54F8         ANL     A,#0xf8
+   \   00016B   78..         MOV     R0,#?V8
+   \   00016D   12....       LCALL   ?UL_SHR
+   \   000170   EA           MOV     A,R2
+   \   000171   F8           MOV     R0,A
+   \   000172   740F         MOV     A,#0xf
+   \   000174   12....       LCALL   ?XSTACK_DISP0_8
+   \   000177   E582         MOV     A,DPL
+   \   000179   28           ADD     A,R0
+   \   00017A   F582         MOV     DPL,A
+   \   00017C   E4           CLR     A
+   \   00017D   3583         ADDC    A,DPH
+   \   00017F   F583         MOV     DPH,A
+   \   000181   E5..         MOV     A,?V8
+   \   000183   F0           MOVX    @DPTR,A
+   \   000184   0A           INC     R2
+   \   000185   EA           MOV     A,R2
+   \   000186   C3           CLR     C
+   \   000187   9404         SUBB    A,#0x4
+   \   000189   40CB         JC      ??Node_auth_uart_msg_process_11
+   \   00018B                ; Setup parameters for call to function osal_memcpy
+   \   00018B   7405         MOV     A,#0x5
+   \   00018D   12....       LCALL   ?XSTACK_DISP100_8
+   \   000190   88..         MOV     ?V0,R0
+   \   000192   89..         MOV     ?V1,R1
+   \   000194   75..00       MOV     ?V2,#0x0
+   \   000197   78..         MOV     R0,#?V0
+   \   000199   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00019C   7C0A         MOV     R4,#0xa
+   \   00019E   7D00         MOV     R5,#0x0
+   \   0001A0   7412         MOV     A,#0x12
+   \   0001A2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A5   E582         MOV     A,DPL
+   \   0001A7   2A           ADD     A,R2
+   \   0001A8   FA           MOV     R2,A
+   \   0001A9   E4           CLR     A
+   \   0001AA   3583         ADDC    A,DPH
+   \   0001AC   FB           MOV     R3,A
+   \   0001AD   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   0001B0   7403         MOV     A,#0x3
+   \   0001B2   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001B5                ; Setup parameters for call to function Mail_uplink
+   \   0001B5   740F         MOV     A,#0xf
+   \   0001B7   12....       LCALL   ?XSTACK_DISP102_8
+   \   0001BA   7B0E         MOV     R3,#0xe
+   \   0001BC   7A32         MOV     R2,#0x32
+   \   0001BE   A9..         MOV     R1,?V4
+   \   0001C0   12....       LCALL   `??Mail_uplink::?relay`; Banked call to: Mail_uplink
+    319                      }				
+   \   0001C3   8041         SJMP    ??Node_auth_uart_msg_process_0
+    320                      break;
+    321                  case NODE_AUTH_MSG_CMD_WIPE:
+    322                      Set_registered_num(0);
+    323                      Node_auth_wipe();
+    324                      Mail_uplink_registered_cnt(port);
+    325                      break;
+    326                  case NODE_AUTH_MSG_CMD_ADD:
+    327                      if (Authlist_add(buf, len, &idx) > 0) {
+   \                     ??Node_auth_uart_msg_process_1:
+   \   0001C5                ; Setup parameters for call to function Authlist_add
+   \   0001C5   AC..         MOV     R4,?XSP + 0
+   \   0001C7   AD..         MOV     R5,?XSP + 1
+   \   0001C9   12....       LCALL   `??Authlist_add::?relay`; Banked call to: Authlist_add
+   \   0001CC   E9           MOV     A,R1
+   \   0001CD   6037         JZ      ??Node_auth_uart_msg_process_0
+    328                          Mail_uplink_registered_cnt(port);
+   \   0001CF                ; Setup parameters for call to function Mail_uplink_registered_cnt
+   \   0001CF   802B         SJMP    ??Node_auth_uart_msg_process_7
+    329                      }
+    330                      break;
+    331                  case NODE_AUTH_MSG_CMD_DEL:
+    332                      deltype = *buf++;
+   \                     ??Node_auth_uart_msg_process_4:
+   \   0001D1   8A82         MOV     DPL,R2
+   \   0001D3   8B83         MOV     DPH,R3
+   \   0001D5   E0           MOVX    A,@DPTR
+   \   0001D6   F8           MOV     R0,A
+   \   0001D7   A3           INC     DPTR
+   \   0001D8   AA82         MOV     R2,DPL
+   \   0001DA   AB83         MOV     R3,DPH
+    333          	     if (0x01 == deltype)
+   \   0001DC   7401         MOV     A,#0x1
+   \   0001DE   68           XRL     A,R0
+   \   0001DF   700A         JNZ     ??Node_auth_uart_msg_process_12
+    334          	     {
+    335          	     	Authlist_del(buf, len-1, &idx);
+   \   0001E1                ; Setup parameters for call to function Authlist_del
+   \   0001E1   AC..         MOV     R4,?XSP + 0
+   \   0001E3   AD..         MOV     R5,?XSP + 1
+   \   0001E5   19           DEC     R1
+   \   0001E6   12....       LCALL   `??Authlist_del::?relay`; Banked call to: Authlist_del
+    336                        Mail_uplink_registered_cnt(port);
+   \   0001E9                ; Setup parameters for call to function Mail_uplink_registered_cnt
+   \   0001E9   8011         SJMP    ??Node_auth_uart_msg_process_7
+    337          	     }
+    338          	     else if (0xff == deltype)
+   \                     ??Node_auth_uart_msg_process_12:
+   \   0001EB   74FF         MOV     A,#-0x1
+   \   0001ED   68           XRL     A,R0
+   \   0001EE   7016         JNZ     ??Node_auth_uart_msg_process_0
+    339          	     {
+    340          	       Set_registered_num(0);
+   \   0001F0                ; Setup parameters for call to function Set_registered_num
+   \                     ??Node_auth_uart_msg_process_5:
+   \   0001F0   90....       MOV     DPTR,#__Constant_0
+   \   0001F3   12....       LCALL   ?XLOAD_R2345
+   \   0001F6   12....       LCALL   `??Set_registered_num::?relay`; Banked call to: Set_registered_num
+    341                        Node_auth_wipe();
+   \   0001F9                ; Setup parameters for call to function Node_auth_wipe
+   \   0001F9   12....       LCALL   `??Node_auth_wipe::?relay`; Banked call to: Node_auth_wipe
+    342                        Mail_uplink_registered_cnt(port);
+   \   0001FC                ; Setup parameters for call to function Mail_uplink_registered_cnt
+   \                     ??Node_auth_uart_msg_process_7:
+   \   0001FC   A9..         MOV     R1,?V4
+   \   0001FE   12....       LCALL   `??Mail_uplink_registered_cnt::?relay`; Banked call to: Mail_uplink_registered_cnt
+   \   000201   8003         SJMP    ??Node_auth_uart_msg_process_0
+    343          	     }
+    344                      break;
+    345                  case NODE_AUTH_MSG_CMD_RESET_NET:
+    346                      SystemResetSoft();
+   \                     ??Node_auth_uart_msg_process_6:
+   \   000203                ; Setup parameters for call to function Onboard_soft_reset
+   \   000203   12....       LCALL   Onboard_soft_reset & 0xFFFF
+    347                      break;
+    348                  default:
+    349                      break;
+    350              }
+    351              return;
+   \                     ??Node_auth_uart_msg_process_0:
+   \   000206   741D         MOV     A,#0x1d
+   \   000208   02....       LJMP    ?Subroutine1 & 0xFFFF
+    352          }
+    353          
+    354          /*********************************************************************
+    355           * LOCAL VARIABLES
+    356           */
+    357          
+    358          /*********************************************************************
+    359           * LOCAL FUNCTIONS
+    360           */
+    361          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7404         MOV     A,#0x4
+   \   000002                REQUIRE ??Subroutine10_0
+   \   000002                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine11_0
+   \   000003                ; // Fall through to label ??Subroutine11_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    362          static void Set_registered_num(uint32 num)
+   \                     Set_registered_num:
+    363          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0,R2
+   \   000007   8B..         MOV     ?V1,R3
+   \   000009   8C..         MOV     ?V2,R4
+   \   00000B   8D..         MOV     ?V3,R5
+    364              gAuthConfig.auth_registered_num = num;
+   \   00000D   90....       MOV     DPTR,#gAuthConfig + 4
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?L_MOV_TO_X
+    365              osal_nv_write(APP_NV_AUTH_GLOBAL_CONFIG, 0, sizeof(gAuthConfig), (void*)&gAuthConfig);
+   \   000015                ; Setup parameters for call to function osal_nv_write
+   \   000015   75....       MOV     ?V0,#gAuthConfig & 0xff
+   \   000018   75....       MOV     ?V1,#(gAuthConfig >> 8) & 0xff
+   \   00001B   78..         MOV     R0,#?V0
+   \   00001D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000020   75..08       MOV     ?V0,#0x8
+   \   000023   75..00       MOV     ?V1,#0x0
+   \   000026   78..         MOV     R0,#?V0
+   \   000028   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002B   7C00         MOV     R4,#0x0
+   \   00002D   7D00         MOV     R5,#0x0
+   \   00002F   7A01         MOV     R2,#0x1
+   \   000031   7B04         MOV     R3,#0x4
+   \   000033   12....       LCALL   `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000036   02....       LJMP    ?Subroutine2 & 0xFFFF
+    366          }
+    367          
+    368          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    369          static uint16 Mail_uplink(uint8 port, uint8 cmd, uint8 len, void* buf)
+   \                     Mail_uplink:
+    370          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 20
+   \   000005   74EC         MOV     A,#-0x14
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   89..         MOV     ?V3,R1
+   \   00000C   8B..         MOV     ?V5,R3
+    371              uint8 uartpbuf[20];
+    372              uint16 rc;
+    373              
+    374              if (uartpbuf == NULL || buf == NULL || len == 0)
+   \   00000E   EC           MOV     A,R4
+   \   00000F   4D           ORL     A,R5
+   \   000010   6003         JZ      ??Mail_uplink_0
+   \   000012   EB           MOV     A,R3
+   \   000013   7006         JNZ     ??Mail_uplink_1
+    375                  return 0;
+   \                     ??Mail_uplink_0:
+   \   000015   7A00         MOV     R2,#0x0
+   \   000017   7B00         MOV     R3,#0x0
+   \   000019   8079         SJMP    ??Mail_uplink_2
+    376          
+    377              uartpbuf[0] = 0xFE;
+   \                     ??Mail_uplink_1:
+   \   00001B   85..82       MOV     DPL,?XSP + 0
+   \   00001E   85..83       MOV     DPH,?XSP + 1
+   \   000021   74FE         MOV     A,#-0x2
+   \   000023   F0           MOVX    @DPTR,A
+    378              uartpbuf[1] = len;
+   \   000024   7401         MOV     A,#0x1
+   \   000026   12....       LCALL   ?XSTACK_DISP0_8
+   \   000029   EB           MOV     A,R3
+   \   00002A   F0           MOVX    @DPTR,A
+    379              uartpbuf[2] = NODE_AUTH_MSG_DIR_UPLINK;
+   \   00002B   7402         MOV     A,#0x2
+   \   00002D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000030   7480         MOV     A,#-0x80
+   \   000032   F0           MOVX    @DPTR,A
+    380              uartpbuf[3] = cmd;
+   \   000033   7403         MOV     A,#0x3
+   \   000035   12....       LCALL   ?XSTACK_DISP0_8
+   \   000038   EA           MOV     A,R2
+   \   000039   F0           MOVX    @DPTR,A
+    381              osal_memcpy(&uartpbuf[4], buf, len);
+   \   00003A                ; Setup parameters for call to function osal_memcpy
+   \   00003A   8C..         MOV     ?V0,R4
+   \   00003C   8D..         MOV     ?V1,R5
+   \   00003E   75..00       MOV     ?V2,#0x0
+   \   000041   78..         MOV     R0,#?V0
+   \   000043   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000046   AC..         MOV     R4,?V5
+   \   000048   7D00         MOV     R5,#0x0
+   \   00004A   7407         MOV     A,#0x7
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   AA82         MOV     R2,DPL
+   \   000051   AB83         MOV     R3,DPH
+   \   000053   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000056   7403         MOV     A,#0x3
+   \   000058   12....       LCALL   ?DEALLOC_XSTACK8
+    382          
+    383          #ifdef OPEN_FCS
+    384              uartpbuf[len+4] = MT_UartCalcFCS(&uartpbuf[1], len+3);
+   \   00005B   AE..         MOV     R6,?V5
+   \   00005D                ; Setup parameters for call to function MT_UartCalcFCS
+   \   00005D   7403         MOV     A,#0x3
+   \   00005F   2E           ADD     A,R6
+   \   000060   F9           MOV     R1,A
+   \   000061   7401         MOV     A,#0x1
+   \   000063   12....       LCALL   ?XSTACK_DISP0_8
+   \   000066   AA82         MOV     R2,DPL
+   \   000068   AB83         MOV     R3,DPH
+   \   00006A   12....       LCALL   `??MT_UartCalcFCS::?relay`; Banked call to: MT_UartCalcFCS
+   \   00006D   85..82       MOV     DPL,?XSP + 0
+   \   000070   85..83       MOV     DPH,?XSP + 1
+   \   000073   E582         MOV     A,DPL
+   \   000075   2E           ADD     A,R6
+   \   000076   F582         MOV     DPL,A
+   \   000078   E4           CLR     A
+   \   000079   3583         ADDC    A,DPH
+   \   00007B   F583         MOV     DPH,A
+   \   00007D   A3           INC     DPTR
+   \   00007E   A3           INC     DPTR
+   \   00007F   A3           INC     DPTR
+   \   000080   A3           INC     DPTR
+   \   000081   E9           MOV     A,R1
+   \   000082   F0           MOVX    @DPTR,A
+    385          #else
+    386              uartpbuf[len+4] = DEFAULTFCS;  
+    387          #endif
+    388              rc = HalUARTWrite(port, uartpbuf, len+5);    
+    389              return rc;
+   \   000083                ; Setup parameters for call to function HalUARTWrite
+   \   000083   EE           MOV     A,R6
+   \   000084   2405         ADD     A,#0x5
+   \   000086   FC           MOV     R4,A
+   \   000087   E4           CLR     A
+   \   000088   3400         ADDC    A,#0x0
+   \   00008A   FD           MOV     R5,A
+   \   00008B   AA..         MOV     R2,?XSP + 0
+   \   00008D   AB..         MOV     R3,?XSP + 1
+   \   00008F   A9..         MOV     R1,?V3
+   \   000091   12....       LCALL   `??HalUARTWrite::?relay`; Banked call to: HalUARTWrite
+   \                     ??Mail_uplink_2:
+   \   000094   7414         MOV     A,#0x14
+   \   000096   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000099   7F06         MOV     R7,#0x6
+   \   00009B   02....       LJMP    ?BANKED_LEAVE_XDATA
+    390          
+    391          }
+    392          
+    393          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    394          static inline uint16 Mail_uplink_registered_cnt(uint8 port)
+   \                     Mail_uplink_registered_cnt:
+    395          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    396              uint32 n = Authlist_item_cnt();
+    397              uint32 n_be =
+    398                  ((n >> 24) & 0xff) |
+    399                  ((n >>  8) & 0xff00) |
+    400                  ((n <<  8) & 0xff0000) |
+    401                  ((n << 24) & 0xff000000);
+   \   00000A   90....       MOV     DPTR,#gAuthConfig + 4
+   \   00000D   78..         MOV     R0,#?V0
+   \   00000F   12....       LCALL   ?L_MOV_X
+   \   000012   E4           CLR     A
+   \   000013   F5..         MOV     ?V1,A
+   \   000015   F5..         MOV     ?V2,A
+   \   000017   F5..         MOV     ?V3,A
+   \   000019   7418         MOV     A,#0x18
+   \   00001B   78..         MOV     R0,#?V0
+   \   00001D   12....       LCALL   ?L_SHL
+   \   000020   85..82       MOV     DPL,?XSP + 0
+   \   000023   85..83       MOV     DPH,?XSP + 1
+   \   000026   78..         MOV     R0,#?V0
+   \   000028   12....       LCALL   ?L_MOV_TO_X
+    402              return Mail_uplink(port, NODE_AUTH_MSG_CMD_COUNT, 4, &n_be);
+   \   00002B                ; Setup parameters for call to function Mail_uplink
+   \   00002B   AC..         MOV     R4,?XSP + 0
+   \   00002D   AD..         MOV     R5,?XSP + 1
+   \   00002F   7B04         MOV     R3,#0x4
+   \   000031   7A31         MOV     R2,#0x31
+   \   000033   12....       LCALL   `??Mail_uplink::?relay`; Banked call to: Mail_uplink
+   \   000036   02....       LJMP    ?Subroutine2 & 0xFFFF
+    403          }
+    404          
+    405          
+    406          static inline uint16 Mail_uplink_key(uint8 port, uint32 index, uint8 const* key)  //chaokw
+    407          {
+    408              uint8 buf[sizeof(index) + AUTH_LIST_KEY_LEN+2];
+    409              uint8 i;
+    410          
+    411              for (i = 0; i < sizeof(index); i++) {
+    412                  buf[i] = (uint8)((index >> (8 * (sizeof(index) - i - 1))) & 0xff);
+    413              }
+    414          
+    415              osal_memcpy(&buf[i], key, AUTH_LIST_KEY_LEN+2);
+    416              return Mail_uplink(port, NODE_AUTH_MSG_CMD_GET, sizeof(buf), buf);
+    417          }
+    418          
+    419          
+    420          static inline uint16 Mail_uplink_notify(uint8 port, uint8 const* extended_addr)
+    421          {
+    422              uint8 buf[8];
+    423              osal_memcpy(buf, extended_addr, 8);
+    424              return Mail_uplink(port, NODE_AUTH_MSG_CMD_REFUSE, sizeof(buf), buf);
+    425          }
+    426          
+    427          
+    428          
+    429          static inline void List_cache_recreate( void ) {
+    430              osal_memset(gListCache, 0xff, AUTH_LIST_CACHE_SIZE*sizeof(NodeRegisterEntry));
+    431          }
+    432          
+    433          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    434          static inline void List_cache_load_on_need(uint32 offset) 
+   \                     List_cache_load_on_need:
+    435          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0,R2
+   \   000007   8B..         MOV     ?V1,R3
+   \   000009   8C..         MOV     ?V2,R4
+   \   00000B   8D..         MOV     ?V3,R5
+    436              if (!List_cache_contain(offset))
+   \   00000D   90....       MOV     DPTR,#gListOffset
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?UL_GE_X
+   \   000015   5019         JNC     ??List_cache_load_on_need_0
+   \   000017   90....       MOV     DPTR,#gListOffset
+   \   00001A   78..         MOV     R0,#?V4
+   \   00001C   12....       LCALL   ?L_MOV_X
+   \   00001F   90....       MOV     DPTR,#gListNum
+   \   000022   78..         MOV     R0,#?V4
+   \   000024   12....       LCALL   ?L_ADD_X
+   \   000027   78..         MOV     R0,#?V4
+   \   000029   79..         MOV     R1,#?V0
+   \   00002B   12....       LCALL   ?UL_GT
+   \   00002E   4013         JC      ??List_cache_load_on_need_1
+    437                  List_cache_force_load(AUTH_LIST_CACHE_ALIGN(offset));
+   \                     ??List_cache_load_on_need_0:
+   \   000030                ; Setup parameters for call to function List_cache_force_load
+   \   000030   90....       MOV     DPTR,#__Constant_fffffff0
+   \   000033   78..         MOV     R0,#?V0
+   \   000035   12....       LCALL   ?L_AND_X
+   \   000038   AA..         MOV     R2,?V0
+   \   00003A   AB..         MOV     R3,?V1
+   \   00003C   AC..         MOV     R4,?V2
+   \   00003E   AD..         MOV     R5,?V3
+   \   000040   12....       LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+    438          }
+   \                     ??List_cache_load_on_need_1:
+   \   000043   02....       LJMP    ?Subroutine0 & 0xFFFF
+    439          
+    440          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    441          static uint32 List_cache_write_back()
+   \                     List_cache_write_back:
+    442          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    443              return osal_nv_write(
+    444                  APP_NV_AUTH_KEY_LIST, 
+    445                  gListOffset * sizeof(NodeRegisterEntry), 
+    446                  gListNum * sizeof(NodeRegisterEntry), 
+    447                  gListCache);
+   \   000005                ; Setup parameters for call to function osal_nv_write
+   \   000005   75....       MOV     ?V0,#gListCache & 0xff
+   \   000008   75....       MOV     ?V1,#(gListCache >> 8) & 0xff
+   \   00000B   78..         MOV     R0,#?V0
+   \   00000D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000010   90....       MOV     DPTR,#gListNum
+   \   000013   78..         MOV     R0,#?V0
+   \   000015   12....       LCALL   ?L_MOV_X
+   \   000018   E5..         MOV     A,?V0
+   \   00001A   75F00A       MOV     B,#0xa
+   \   00001D   A4           MUL     AB
+   \   00001E   F5..         MOV     ?V0,A
+   \   000020   A8F0         MOV     R0,B
+   \   000022   75F00A       MOV     B,#0xa
+   \   000025   E5..         MOV     A,?V1
+   \   000027   A4           MUL     AB
+   \   000028   28           ADD     A,R0
+   \   000029   F5..         MOV     ?V1,A
+   \   00002B   78..         MOV     R0,#?V0
+   \   00002D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000030   90....       MOV     DPTR,#gListOffset
+   \   000033   78..         MOV     R0,#?V0
+   \   000035   12....       LCALL   ?L_MOV_X
+   \   000038   E5..         MOV     A,?V0
+   \   00003A   75F00A       MOV     B,#0xa
+   \   00003D   A4           MUL     AB
+   \   00003E   FC           MOV     R4,A
+   \   00003F   A8F0         MOV     R0,B
+   \   000041   75F00A       MOV     B,#0xa
+   \   000044   E5..         MOV     A,?V1
+   \   000046   A4           MUL     AB
+   \   000047   28           ADD     A,R0
+   \   000048   FD           MOV     R5,A
+   \   000049   7A02         MOV     R2,#0x2
+   \   00004B   7B04         MOV     R3,#0x4
+   \   00004D   12....       LCALL   `??osal_nv_write::?relay`; Banked call to: osal_nv_write
+   \   000050   7404         MOV     A,#0x4
+   \   000052   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000055   89..         MOV     ?V0,R1
+   \   000057   AA..         MOV     R2,?V0
+   \   000059   E4           CLR     A
+   \   00005A   FB           MOV     R3,A
+   \   00005B   FC           MOV     R4,A
+   \   00005C   FD           MOV     R5,A
+   \   00005D   02....       LJMP    ??Subroutine11_0 & 0xFFFF
+    448          }
+    449          
+    450          static inline bool List_cache_contain(uint32 index)
+    451          {
+    452              return (gListCache != NULL) && 
+    453                      (index >= gListOffset) && 
+    454                      (index < gListOffset + gListNum);
+    455          }
+    456          
+    457          static uint32 List_cache_find_by_key(uint8 const* key, uint8 keylen)
+    458          {
+    459              uint32 idx;
+    460              uint32 rc = AUTH_LIST_INVALID_INDEX;
+    461              if (gListCache == NULL) return rc;
+    462              for (idx = 0; 
+    463                   idx + gListOffset < AUTH_LIST_MAX_LEN && idx < gListNum ;
+    464                   ++idx)
+    465              {
+    466                  if ( !Is_entry_deleted(&gListCache[idx]) &&
+    467                       osal_memcmp(key, gListCache[idx].key, keylen) 
+    468                     )
+    469                  {
+    470                      rc = idx + gListOffset;
+    471                      break;
+    472                  }
+    473              }
+    474              return rc;
+    475          }
+    476          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    477          static bool List_cache_load_next( void )
+   \                     List_cache_load_next:
+    478          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    479              if (gListOffset + gListNum >= AUTH_LIST_MAX_LEN)
+   \   000005   90....       MOV     DPTR,#gListOffset
+   \   000008   78..         MOV     R0,#?V0
+   \   00000A   12....       LCALL   ?L_MOV_X
+   \   00000D   90....       MOV     DPTR,#gListNum
+   \   000010   78..         MOV     R0,#?V0
+   \   000012   12....       LCALL   ?L_ADD_X
+   \   000015   7583..       MOV     DPH,#(__Constant_66 >> 8) & 0xff
+   \   000018   7582..       MOV     DPL,#__Constant_66 & 0xff
+   \   00001B   78..         MOV     R0,#?V0
+   \   00001D   12....       LCALL   ?UL_GE_X
+   \   000020   5004         JNC     ??List_cache_load_next_0
+    480                  return FALSE;
+   \   000022   7900         MOV     R1,#0x0
+   \   000024   801D         SJMP    ??List_cache_load_next_1
+    481              List_cache_force_load(gListOffset + gListNum);
+   \                     ??List_cache_load_next_0:
+   \   000026                ; Setup parameters for call to function List_cache_force_load
+   \   000026   90....       MOV     DPTR,#gListOffset
+   \   000029   78..         MOV     R0,#?V0
+   \   00002B   12....       LCALL   ?L_MOV_X
+   \   00002E   90....       MOV     DPTR,#gListNum
+   \   000031   78..         MOV     R0,#?V0
+   \   000033   12....       LCALL   ?L_ADD_X
+   \   000036   AA..         MOV     R2,?V0
+   \   000038   AB..         MOV     R3,?V1
+   \   00003A   AC..         MOV     R4,?V2
+   \   00003C   AD..         MOV     R5,?V3
+   \   00003E   12....       LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+    482              return TRUE;
+   \   000041   7901         MOV     R1,#0x1
+   \                     ??List_cache_load_next_1:
+   \   000043   02....       LJMP    ??Subroutine11_0 & 0xFFFF
+    483          }
+    484          
+    485          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    486          static void List_cache_force_load(uint32 index) {
+   \                     List_cache_force_load:
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000                REQUIRE ?V7
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V4,R2
+   \   000007   8B..         MOV     ?V5,R3
+   \   000009   8C..         MOV     ?V6,R4
+   \   00000B   8D..         MOV     ?V7,R5
+    487              gListNum = (
+    488                  index + AUTH_LIST_CACHE_SIZE > AUTH_LIST_MAX_LEN ?
+    489                  AUTH_LIST_MAX_LEN - index :
+    490                  AUTH_LIST_CACHE_SIZE
+    491              );
+   \   00000D   8A..         MOV     ?V0,R2
+   \   00000F   8B..         MOV     ?V1,R3
+   \   000011   8C..         MOV     ?V2,R4
+   \   000013   8D..         MOV     ?V3,R5
+   \   000015   90....       MOV     DPTR,#__Constant_10
+   \   000018   78..         MOV     R0,#?V0
+   \   00001A   12....       LCALL   ?L_ADD_X
+   \   00001D   7583..       MOV     DPH,#(__Constant_67 >> 8) & 0xff
+   \   000020   7582..       MOV     DPL,#__Constant_67 & 0xff
+   \   000023   78..         MOV     R0,#?V0
+   \   000025   12....       LCALL   ?UL_GE_X
+   \   000028   501D         JNC     ??List_cache_force_load_0
+   \   00002A   75..66       MOV     ?V0,#0x66
+   \   00002D   75..00       MOV     ?V1,#0x0
+   \   000030   75..00       MOV     ?V2,#0x0
+   \   000033   75..00       MOV     ?V3,#0x0
+   \   000036   78..         MOV     R0,#?V0
+   \   000038   79..         MOV     R1,#?V4
+   \   00003A   12....       LCALL   ?L_SUB
+   \   00003D   90....       MOV     DPTR,#gListNum
+   \   000040   78..         MOV     R0,#?V0
+   \   000042   12....       LCALL   ?L_MOV_TO_X
+   \   000045   800D         SJMP    ??List_cache_force_load_1
+   \                     ??List_cache_force_load_0:
+   \   000047   90....       MOV     DPTR,#gListNum
+   \   00004A   7410         MOV     A,#0x10
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   E4           CLR     A
+   \   00004F   F0           MOVX    @DPTR,A
+   \   000050   A3           INC     DPTR
+   \   000051   F0           MOVX    @DPTR,A
+   \   000052   A3           INC     DPTR
+   \   000053   F0           MOVX    @DPTR,A
+    492              gListOffset = index;
+   \                     ??List_cache_force_load_1:
+   \   000054   90....       MOV     DPTR,#gListOffset
+   \   000057   78..         MOV     R0,#?V4
+   \   000059   12....       LCALL   ?L_MOV_TO_X
+    493              if ( SUCCESS != osal_nv_read(
+    494                      APP_NV_AUTH_KEY_LIST, 
+    495                      index * sizeof(NodeRegisterEntry), 
+    496                      gListNum * sizeof(NodeRegisterEntry),
+    497                      gListCache))
+   \   00005C                ; Setup parameters for call to function osal_nv_read
+   \   00005C   75....       MOV     ?V0,#gListCache & 0xff
+   \   00005F   75....       MOV     ?V1,#(gListCache >> 8) & 0xff
+   \   000062   78..         MOV     R0,#?V0
+   \   000064   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000067   90....       MOV     DPTR,#gListNum
+   \   00006A   78..         MOV     R0,#?V0
+   \   00006C   12....       LCALL   ?L_MOV_X
+   \   00006F   E5..         MOV     A,?V0
+   \   000071   75F00A       MOV     B,#0xa
+   \   000074   A4           MUL     AB
+   \   000075   F5..         MOV     ?V0,A
+   \   000077   A8F0         MOV     R0,B
+   \   000079   75F00A       MOV     B,#0xa
+   \   00007C   E5..         MOV     A,?V1
+   \   00007E   A4           MUL     AB
+   \   00007F   28           ADD     A,R0
+   \   000080   F5..         MOV     ?V1,A
+   \   000082   78..         MOV     R0,#?V0
+   \   000084   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000087   EA           MOV     A,R2
+   \   000088   75F00A       MOV     B,#0xa
+   \   00008B   A4           MUL     AB
+   \   00008C   FC           MOV     R4,A
+   \   00008D   A8F0         MOV     R0,B
+   \   00008F   75F00A       MOV     B,#0xa
+   \   000092   EB           MOV     A,R3
+   \   000093   A4           MUL     AB
+   \   000094   28           ADD     A,R0
+   \   000095   FD           MOV     R5,A
+   \   000096   7A02         MOV     R2,#0x2
+   \   000098   7B04         MOV     R3,#0x4
+   \   00009A   12....       LCALL   `??osal_nv_read::?relay`; Banked call to: osal_nv_read
+   \   00009D   7404         MOV     A,#0x4
+   \   00009F   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000A2   E9           MOV     A,R1
+   \   0000A3   601C         JZ      ??List_cache_force_load_2
+    498              {
+    499                  List_cache_recreate();
+   \   0000A5                ; Setup parameters for call to function osal_memset
+   \   0000A5   7CA0         MOV     R4,#-0x60
+   \   0000A7   7D00         MOV     R5,#0x0
+   \   0000A9   79FF         MOV     R1,#-0x1
+   \   0000AB   7A..         MOV     R2,#gListCache & 0xff
+   \   0000AD   7B..         MOV     R3,#(gListCache >> 8) & 0xff
+   \   0000AF   12....       LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+    500                  gListNum = 0;
+   \   0000B2   90....       MOV     DPTR,#gListNum
+   \   0000B5   E4           CLR     A
+   \   0000B6   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    501                  gListOffset = AUTH_LIST_INVALID_INDEX;
+   \                     ??CrossCallReturnLabel_10:
+   \   0000B9   90....       MOV     DPTR,#gListOffset
+   \   0000BC   12....       LCALL   ?Subroutine5 & 0xFFFF
+    502              }
+   \                     ??CrossCallReturnLabel_12:
+   \   0000BF   805D         SJMP    ??List_cache_force_load_3
+    503              else if ( gListNum != AUTH_LIST_CACHE_SIZE ) {
+   \                     ??List_cache_force_load_2:
+   \   0000C1   90....       MOV     DPTR,#__Constant_10
+   \   0000C4   78..         MOV     R0,#?V0
+   \   0000C6   12....       LCALL   ?L_MOV_X
+   \   0000C9   90....       MOV     DPTR,#gListNum
+   \   0000CC   78..         MOV     R0,#?V0
+   \   0000CE   12....       LCALL   ?L_EQ_X
+   \   0000D1   604B         JZ      ??List_cache_force_load_3
+    504                  osal_memset(&gListCache[gListNum], 0xff, (AUTH_LIST_CACHE_SIZE - gListNum) * sizeof(gListCache[0]));
+   \   0000D3                ; Setup parameters for call to function osal_memset
+   \   0000D3   90....       MOV     DPTR,#gListNum
+   \   0000D6   78..         MOV     R0,#?V0
+   \   0000D8   12....       LCALL   ?L_MOV_X
+   \   0000DB   7410         MOV     A,#0x10
+   \   0000DD   C3           CLR     C
+   \   0000DE   95..         SUBB    A,?V0
+   \   0000E0   FC           MOV     R4,A
+   \   0000E1   E4           CLR     A
+   \   0000E2   95..         SUBB    A,?V1
+   \   0000E4   FD           MOV     R5,A
+   \   0000E5   EC           MOV     A,R4
+   \   0000E6   75F00A       MOV     B,#0xa
+   \   0000E9   A4           MUL     AB
+   \   0000EA   FC           MOV     R4,A
+   \   0000EB   A8F0         MOV     R0,B
+   \   0000ED   75F00A       MOV     B,#0xa
+   \   0000F0   ED           MOV     A,R5
+   \   0000F1   A4           MUL     AB
+   \   0000F2   28           ADD     A,R0
+   \   0000F3   FD           MOV     R5,A
+   \   0000F4   79FF         MOV     R1,#-0x1
+   \   0000F6   90....       MOV     DPTR,#gListNum
+   \   0000F9   78..         MOV     R0,#?V0
+   \   0000FB   12....       LCALL   ?L_MOV_X
+   \   0000FE   E5..         MOV     A,?V0
+   \   000100   75F00A       MOV     B,#0xa
+   \   000103   A4           MUL     AB
+   \   000104   F5..         MOV     ?V0,A
+   \   000106   A8F0         MOV     R0,B
+   \   000108   75F00A       MOV     B,#0xa
+   \   00010B   E5..         MOV     A,?V1
+   \   00010D   A4           MUL     AB
+   \   00010E   28           ADD     A,R0
+   \   00010F   F5..         MOV     ?V1,A
+   \   000111   74..         MOV     A,#gListCache & 0xff
+   \   000113   25..         ADD     A,?V0
+   \   000115   FA           MOV     R2,A
+   \   000116   74..         MOV     A,#(gListCache >> 8) & 0xff
+   \   000118   35..         ADDC    A,?V1
+   \   00011A   FB           MOV     R3,A
+   \   00011B   12....       LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+    505              }
+    506          }
+   \                     ??List_cache_force_load_3:
+   \   00011E   02....       LJMP    ?Subroutine0 & 0xFFFF
+    507          
+    508          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    509          static uint8 Authlist_init( uint8 load )
+   \                     Authlist_init:
+    510          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    511              List_cache_recreate();
+   \   000007                ; Setup parameters for call to function osal_memset
+   \   000007   7CA0         MOV     R4,#-0x60
+   \   000009   7D00         MOV     R5,#0x0
+   \   00000B   79FF         MOV     R1,#-0x1
+   \   00000D   7A..         MOV     R2,#gListCache & 0xff
+   \   00000F   7B..         MOV     R3,#(gListCache >> 8) & 0xff
+   \   000011   12....       LCALL   `??osal_memset::?relay`; Banked call to: osal_memset
+    512              if (load) List_cache_force_load(0);
+   \   000014   EE           MOV     A,R6
+   \   000015   6009         JZ      ??Authlist_init_0
+   \   000017                ; Setup parameters for call to function List_cache_force_load
+   \   000017   90....       MOV     DPTR,#__Constant_0
+   \   00001A   12....       LCALL   ?XLOAD_R2345
+   \   00001D   12....       LCALL   `??List_cache_force_load::?relay`; Banked call to: List_cache_force_load
+    513              return SUCCESS;
+   \                     ??Authlist_init_0:
+   \   000020   7900         MOV     R1,#0x0
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?BANKED_LEAVE_XDATA
+    514          }
+    515          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    516          bool Authlist_verify_device(uint16 ShortAddress, uint8 *ExtendedAddress,
+   \                     Authlist_verify_device:
+    517                                          uint8 CapabilityFlags, uint8 type)
+    518          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 16
+   \   000005   74F0         MOV     A,#-0x10
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EC           MOV     A,R4
+   \   00000B   FE           MOV     R6,A
+   \   00000C   ED           MOV     A,R5
+   \   00000D   FF           MOV     R7,A
+    519              uint8 sig[AUTH_LIST_KEY_LEN];
+    520          	
+    521              osal_memcpy(sig, ExtendedAddress, AUTH_LIST_KEY_LEN);
+   \   00000E                ; Setup parameters for call to function osal_memcpy
+   \   00000E   8E..         MOV     ?V0,R6
+   \   000010   8F..         MOV     ?V1,R7
+   \   000012   75..00       MOV     ?V2,#0x0
+   \   000015   78..         MOV     R0,#?V0
+   \   000017   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00001A   7C08         MOV     R4,#0x8
+   \   00001C   7D00         MOV     R5,#0x0
+   \   00001E   740B         MOV     A,#0xb
+   \   000020   12....       LCALL   ?XSTACK_DISP101_8
+   \   000023   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000026   7403         MOV     A,#0x3
+   \   000028   12....       LCALL   ?DEALLOC_XSTACK8
+    522              if (AUTH_LIST_INVALID_INDEX != 
+    523                      Authlist_find_by_key(sig, AUTH_LIST_KEY_LEN))
+   \   00002B   90....       MOV     DPTR,#__Constant_ffffffff
+   \   00002E   C082         PUSH    DPL
+   \   000030   C083         PUSH    DPH
+   \   000032                ; Setup parameters for call to function Authlist_find_by_key
+   \   000032   90....       MOV     DPTR,#__Constant_8
+   \   000035   12....       LCALL   ?PUSH_XSTACK8_X_FOUR
+   \   000038   740C         MOV     A,#0xc
+   \   00003A   12....       LCALL   ?XSTACK_DISP101_8
+   \   00003D   12....       LCALL   `??Authlist_find_by_key::?relay`; Banked call to: Authlist_find_by_key
+   \   000040   7404         MOV     A,#0x4
+   \   000042   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000045   8A..         MOV     ?V0,R2
+   \   000047   8B..         MOV     ?V1,R3
+   \   000049   8C..         MOV     ?V2,R4
+   \   00004B   8D..         MOV     ?V3,R5
+   \   00004D   D083         POP     DPH
+   \   00004F   D082         POP     DPL
+   \   000051   78..         MOV     R0,#?V0
+   \   000053   12....       LCALL   ?L_EQ_X
+   \   000056   6004         JZ      ??Authlist_verify_device_0
+    524                  return TRUE;
+   \   000058   7901         MOV     R1,#0x1
+   \   00005A   802C         SJMP    ??Authlist_verify_device_1
+    525          
+    526              Mail_uplink_notify(0, ExtendedAddress);
+   \                     ??Authlist_verify_device_0:
+   \   00005C                ; Setup parameters for call to function osal_memcpy
+   \   00005C   8E..         MOV     ?V0,R6
+   \   00005E   8F..         MOV     ?V1,R7
+   \   000060   75..00       MOV     ?V2,#0x0
+   \   000063   78..         MOV     R0,#?V0
+   \   000065   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000068   7C08         MOV     R4,#0x8
+   \   00006A   7D00         MOV     R5,#0x0
+   \   00006C   7403         MOV     A,#0x3
+   \   00006E   12....       LCALL   ?XSTACK_DISP101_8
+   \   000071   12....       LCALL   `??osal_memcpy::?relay`; Banked call to: osal_memcpy
+   \   000074   7403         MOV     A,#0x3
+   \   000076   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000079                ; Setup parameters for call to function Mail_uplink
+   \   000079   AC..         MOV     R4,?XSP + 0
+   \   00007B   AD..         MOV     R5,?XSP + 1
+   \   00007D   7B08         MOV     R3,#0x8
+   \   00007F   7A39         MOV     R2,#0x39
+   \   000081   7900         MOV     R1,#0x0
+   \   000083   12....       LCALL   `??Mail_uplink::?relay`; Banked call to: Mail_uplink
+    527              return FALSE;
+   \   000086   7900         MOV     R1,#0x0
+   \                     ??Authlist_verify_device_1:
+   \   000088   7410         MOV     A,#0x10
+   \   00008A   02....       LJMP    ??Subroutine10_0 & 0xFFFF
+    528          }
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for gAuthConfig>`:
+   \   000000   01000000     DD 1
+   \   000004   00000000     DD 0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Node_auth_init::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Node_auth_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Node_auth_wipe::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Node_auth_wipe
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_should_insert::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_should_insert
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_add::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_add
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_get::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_get
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_delete_entry::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_delete_entry
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_del::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_del
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_item_cnt::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_item_cnt
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_find_by_key::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_find_by_key
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Node_auth_uart_msg_process::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Node_auth_uart_msg_process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Set_registered_num::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Set_registered_num
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Mail_uplink::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Mail_uplink
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Mail_uplink_registered_cnt::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Mail_uplink_registered_cnt
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??List_cache_load_on_need::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    List_cache_load_on_need
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??List_cache_write_back::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    List_cache_write_back
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??List_cache_load_next::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    List_cache_load_next
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??List_cache_force_load::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    List_cache_force_load
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_init::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??Authlist_verify_device::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Authlist_verify_device
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}>`:
+   \   000000   00           DB 0
+   \   000001   00           DB 0
+   \   000002   00           DB 0
+   \   000003   00           DB 0
+   \   000004   00           DB 0
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   00           DB 0
+   \   000008   00           DB 0
+   \   000009   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_66:
+   \   000000   66000000     DD 102
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_ffffffff:
+   \   000000   FFFFFFFF     DD 4294967295
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_8:
+   \   000000   08000000     DD 8
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_fffffff0:
+   \   000000   F0FFFFFF     DD 4294967280
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_10:
+   \   000000   10000000     DD 16
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_67:
+   \   000000   67000000     DD 103
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0     74   Authlist_add
+        0     22   -> Authlist_should_insert
+        0     22   -> List_cache_force_load
+        0     22   -> List_cache_load_on_need
+        0     22   -> List_cache_write_back
+        0     22   -> Set_registered_num
+        0     25   -> osal_memcpy
+      0     65   Authlist_del
+        0     12   -> Authlist_delete_entry
+        0     16   -> Authlist_find_by_key
+      0     45   Authlist_delete_entry
+        0     30   -> List_cache_load_on_need
+        0     30   -> List_cache_write_back
+        0     30   -> Set_registered_num
+        0     33   -> osal_memcpy
+        0     30   -> osal_memset
+      2     55   Authlist_find_by_key
+        0     20   -> List_cache_force_load
+        0     20   -> List_cache_load_next
+        0     23   -> osal_memcmp
+      0     72   Authlist_get
+        0     16   -> List_cache_load_on_need
+        0     19   -> osal_memcpy
+      0     19   Authlist_init
+        0      9   -> List_cache_force_load
+        0      9   -> osal_memset
+      0     12   Authlist_item_cnt
+      2     49   Authlist_should_insert
+        0     24   -> List_cache_force_load
+        0     24   -> List_cache_load_next
+        0     27   -> osal_memcmp
+      2     33   Authlist_verify_device
+        2     32   -> Authlist_find_by_key
+        0     28   -> Mail_uplink
+        0     31   -> osal_memcpy
+      2     44   List_cache_force_load
+        0     16   -> osal_memset
+        0     20   -> osal_nv_read
+      2     36   List_cache_load_next
+        0     12   -> List_cache_force_load
+      0     46   List_cache_load_on_need
+        0     16   -> List_cache_force_load
+      0     46   List_cache_write_back
+        0     16   -> osal_nv_write
+      1     86   Mail_uplink
+        0     34   -> HalUARTWrite
+        0     34   -> MT_UartCalcFCS
+        0     37   -> osal_memcpy
+      0     65   Mail_uplink_registered_cnt
+        0     16   -> Mail_uplink
+      0     14   Node_auth_init
+        0     10   -> Authlist_init
+        0     12   -> osal_nv_item_init
+        0     14   -> osal_nv_read
+      1     54   Node_auth_uart_msg_process
+        0     49   -> Authlist_add
+        0     49   -> Authlist_del
+        0     53   -> Authlist_get
+        0     49   -> Mail_uplink
+        0     49   -> Mail_uplink_registered_cnt
+        0     49   -> Node_auth_wipe
+        0     49   -> Onboard_soft_reset
+        0     49   -> Set_registered_num
+        0     51   -> memcmp
+        0     52   -> osal_memcpy
+      2     49   Node_auth_wipe
+        2      0   -> Node_auth_init
+        2      0   -> osal_nv_delete
+      0     65   Set_registered_num
+        0     16   -> osal_nv_write
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      10  ?<Constant {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}>
+       8  ?<Initializer for gAuthConfig>
+       3  ??Subroutine10_0
+       5  ??Subroutine11_0
+       8  ??Subroutine12_0
+      17  ??Subroutine8_0
+       5  ??Subroutine9_0
+       5  ?Subroutine0
+       3  ?Subroutine1
+       2  ?Subroutine2
+      14  ?Subroutine3
+      27  ?Subroutine4
+       2  ?Subroutine5
+      11  ?Subroutine6
+      22  ?Subroutine7
+     250  Authlist_add
+       6  Authlist_add::?relay
+      52  Authlist_del
+       6  Authlist_del::?relay
+     304  Authlist_delete_entry
+       6  Authlist_delete_entry::?relay
+     251  Authlist_find_by_key
+       6  Authlist_find_by_key::?relay
+     132  Authlist_get
+       6  Authlist_get::?relay
+      39  Authlist_init
+       6  Authlist_init::?relay
+      17  Authlist_item_cnt
+       6  Authlist_item_cnt::?relay
+     260  Authlist_should_insert
+       6  Authlist_should_insert::?relay
+     141  Authlist_verify_device
+       6  Authlist_verify_device::?relay
+     289  List_cache_force_load
+       6  List_cache_force_load::?relay
+      70  List_cache_load_next
+       6  List_cache_load_next::?relay
+      70  List_cache_load_on_need
+       6  List_cache_load_on_need::?relay
+      96  List_cache_write_back
+       6  List_cache_write_back::?relay
+     158  Mail_uplink
+       6  Mail_uplink::?relay
+      57  Mail_uplink_registered_cnt
+       6  Mail_uplink_registered_cnt::?relay
+     148  Node_auth_init
+       6  Node_auth_init::?relay
+     523  Node_auth_uart_msg_process
+       6  Node_auth_uart_msg_process::?relay
+      36  Node_auth_wipe
+       6  Node_auth_wipe::?relay
+      57  Set_registered_num
+       6  Set_registered_num::?relay
+       1  WDCTL
+       1  _A_IEN0
+       4  __Constant_0
+       4  __Constant_1
+       4  __Constant_10
+       4  __Constant_66
+       4  __Constant_67
+       4  __Constant_8
+       4  __Constant_fffffff0
+       4  __Constant_ffffffff
+       8  gAuthConfig
+     160  gListCache
+       4  gListNum
+       4  gListOffset
+
+ 
+ 3 074 bytes in segment BANKED_CODE
+   114 bytes in segment BANK_RELAYS
+     2 bytes in segment SFR_AN
+     8 bytes in segment XDATA_I
+     8 bytes in segment XDATA_ID
+    42 bytes in segment XDATA_ROM_C
+   168 bytes in segment XDATA_Z
+ 
+ 3 196 bytes of CODE  memory
+    10 bytes of CONST memory (+ 32 bytes shared)
+     0 bytes of DATA  memory (+  2 bytes shared)
+   176 bytes of XDATA memory
+
+Errors: none
+Warnings: none
